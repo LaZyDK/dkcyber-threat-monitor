@@ -1,4 +1,4 @@
-name: 03 Agent 2 – Final Human-like Post
+name: 03 Agent – Final Human-like Post
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
             echo "DRAFTEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent 2 – Refine to natural Reddit post
+      - name: Agent – Refine to natural Reddit post
         id: agent2
         uses: appleboy/llm-action@v1
         with:
@@ -64,6 +64,6 @@ jobs:
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Agent 2 final Reddit-post klar til review"
+          commit_message: "Agent final Reddit-post klar til review"
           file_pattern: data/generated/**
           branch: ${{ github.head_ref || 'main' }}

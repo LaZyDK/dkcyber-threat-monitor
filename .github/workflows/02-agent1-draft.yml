@@ -1,10 +1,7 @@
-name: 02 Agent 1 – Quick Draft
+name: 02 Agent – Quick Draft
 
 on:
   push:
-    paths:
-      - 'data/raw/**'
-  pull_request:
     paths:
       - 'data/raw/**'
   workflow_dispatch:
@@ -30,7 +27,7 @@ jobs:
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent 1 – Quick draft (OpenRouter free small model)
+      - name: Agent – Quick draft
         id: agent1
         uses: appleboy/llm-action@v1
         with:
@@ -61,6 +58,6 @@ jobs:
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Agent 1 quick draft created"
+          commit_message: "Quick draft created"
           file_pattern: data/drafts/**
           branch: ${{ github.head_ref || 'main' }}
