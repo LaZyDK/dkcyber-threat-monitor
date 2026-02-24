@@ -66,12 +66,6 @@ jobs:
             fi
           fi
 
-      # Workaround for set-output deprecation/permission issue
-      - name: Extract LLM outputs manually
-        id: extract_llm
-        run: |
-          echo "title=$(jq -r .title <<< '${{ steps.create_draft.outputs.draft }}')" >> $GITHUB_ENV
-          echo "draft_body=$(jq -r .draft_body <<< '${{ steps.create_draft.outputs.draft }}')" >> $GITHUB_ENV
 
       - name: Save draft to file
         env:
