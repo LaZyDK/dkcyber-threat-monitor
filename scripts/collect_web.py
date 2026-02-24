@@ -30,11 +30,11 @@ VIGTIGT — disse tæller IKKE som danske angreb:
 - Sikkerhedstips, guides, eller nyhedsopsummeringer
 
 Svar KUN med denne JSON (ingen anden tekst):
-{
+{{
   "is_dk_attack": true/false,
   "confidence": "high"/"medium"/"low",
   "explanation": "1-2 sætninger på dansk der forklarer hvorfor"
-}
+}}
 
 Nyhed:
 Titel: {title}
