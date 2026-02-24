@@ -54,6 +54,22 @@ jobs:
       - name: Extract LLM outputs manually
         id: extract_llm
         run: |
+          # Try to extract from outputs, fallback to parsing the log file if needed
+          if [ -n "${{ steps.create_draft.outputs.title }}" ] && [ -n "${{ steps.create_draft.outputs.draft_body }}" ]; then
+            echo "title=${{ steps.create_draft.outputs.title }}" >> $GITHUB_ENV
+            echo "draft_body=${{ steps.create_draft.outputs.draft_body }}" >> $GITHUB_ENV
+          else
+            # Fallback: parse the JSON from the output file if available
+            if [ -f data/drafts/daily_${{ github.sha }}.json ]; then
+              echo "title=$(jq -r .title < data/drafts/daily_${{ github.sha }}.json)" >> $GITHUB_ENV
+              echo "draft_body=$(jq -r .draft_body < data/drafts/daily_${{ github.sha }}.json)" >> $GITHUB_ENV
+            fi
+          fi
+
+      # Workaround for set-output deprecation/permission issue
+      - name: Extract LLM outputs manually
+        id: extract_llm
+        run: |
           echo "title=$(jq -r .title <<< '${{ steps.create_draft.outputs.draft }}')" >> $GITHUB_ENV
           echo "draft_body=$(jq -r .draft_body <<< '${{ steps.create_draft.outputs.draft }}')" >> $GITHUB_ENV
 
