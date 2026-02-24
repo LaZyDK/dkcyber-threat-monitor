@@ -38,8 +38,9 @@ def parse_date(published_str):
 
 def source_name(source_url):
     mapping = {
-        'TalosBlog': 'Cisco Talos',
-        'darkreading': 'Dark Reading',
+        'cert.dk': 'DKCERT',
+        'cert.se': 'CERT-SE',
+        'version2.dk': 'Version2',
     }
     for key, name in mapping.items():
         if key.lower() in source_url.lower():

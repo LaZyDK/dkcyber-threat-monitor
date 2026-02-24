@@ -4,8 +4,9 @@ import os
 from datetime import datetime, timezone
 
 feeds = [
-    "https://feeds.feedburner.com/TalosBlog",
-    "https://www.darkreading.com/rss.xml",
+    "https://www.cert.dk/news/rss",       # DKCERT – dansk CERT
+    "https://www.cert.se/feed.rss",        # CERT-SE – svensk CERT (nordisk)
+    "https://www.version2.dk/rss",         # Version2 – dansk IT-nyheder
     # tilføj flere senere
 ]
 

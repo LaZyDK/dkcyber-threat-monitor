@@ -1,4 +1,4 @@
-name: 02 Agent 1 – Quick Draft (GitHub Models)
+name: 02 Agent 1 – Quick Draft
 
 on:
   push:
@@ -17,39 +17,43 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
-      - name: Read latest raw threat files
-        id: raw
+      - name: Read latest raw threat file
+        id: read_raw
         run: |
-          CONTENT=$(ls -1t data/raw/*.json 2>/dev/null | head -n 3 | xargs cat 2>/dev/null || echo "No raw files found")
+          RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
           {
-            echo "content<<RAWEOF"
-            echo "$CONTENT"
+            echo "raw_content<<RAWEOF"
+            cat "$RAW_FILE" | jq -c .
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent 1 – Generate quick draft
+      - name: Agent 1 – Quick draft (OpenRouter free small model)
         id: agent1
         uses: appleboy/llm-action@v1
         with:
-          api_key: ${{ secrets.GITHUB_MODELS_TOKEN }}
-          base_url: https://models.github.com/api/v1
-          model: mistral-nemo:free
+          api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          base_url: https://openrouter.ai/api/v1
+          model: meta-llama/llama-3.1-8b-instruct:free   # fast & free
           system_prompt: |
-            You are a simple Danish cybersecurity assistant.
-            Create only a title + short draft summary (max 200–300 characters).
+            Du er en simpel dansk cybersecurity-assistent.
+            Lav kun en titel + kort udkast (max 300 tegn).
           input_prompt: |
-            Latest raw threat files:
-            ${{ steps.raw.outputs.content }}
-          temperature: 0.55
-          max_tokens: 500
-          output_variable: draft_json
+            Rå data: ${{ steps.read_raw.outputs.raw_content }}
+          tool_schema: |
+            {"name": "draft", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "draft_body": {"type": "string"}}, "required": ["title", "draft_body"]}}
+          temperature: 0.6
+          max_tokens: 600
 
-      - name: Save draft
+      - name: Save draft to file
         env:
-          DRAFT: ${{ steps.agent1.outputs.draft_json }}
+          DRAFT_TITLE: ${{ steps.agent1.outputs.title }}
+          DRAFT_BODY: ${{ steps.agent1.outputs.draft_body }}
+          DRAFT_JSON: ${{ toJSON(steps.agent1.outputs) }}
         run: |
           mkdir -p data/drafts
-          printf '%s' "$DRAFT" > data/drafts/agent1_${{ github.sha }}.json
+          printf '%s' "$DRAFT_TITLE" > data/drafts/agent1_${{ github.sha }}_title.txt
+          printf '%s' "$DRAFT_BODY" > data/drafts/agent1_${{ github.sha }}_body.txt
+          printf '%s' "$DRAFT_JSON" > data/drafts/agent1_${{ github.sha }}.json
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5

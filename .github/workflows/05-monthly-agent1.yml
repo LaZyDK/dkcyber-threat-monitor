@@ -14,40 +14,41 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
-      - name: Read latest monthly raw summary
-        id: raw
+      - name: Read latest raw monthly summary
+        id: read_raw
         run: |
-          CONTENT=$(ls -1t data/monthly/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No monthly raw found")
+          RAW_FILE=$(ls -t data/monthly/raw/*.json 2>/dev/null | head -n1)
           {
-            echo "content<<RAWEOF"
-            echo "$CONTENT"
+            echo "raw_content<<RAWEOF"
+            cat "$RAW_FILE" | jq -c .
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent 1 – Generate quick monthly draft (GitHub Models)
+      - name: Agent 1 – Quick monthly draft (OpenRouter free)
         id: agent1
         uses: appleboy/llm-action@v1
         with:
-          api_key: ${{ secrets.GITHUB_MODELS_TOKEN }}
-          base_url: https://models.github.com/api/v1
-          model: mistral-nemo:free
+          api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          base_url: https://openrouter.ai/api/v1
+          model: meta-llama/llama-3.1-8b-instruct:free
           system_prompt: |
             Du er en simpel dansk cybersecurity-assistent.
-            Lav kun en titel + kort intro/opsummering til månedlig trusselsoversigt (max 400 tegn inkl. tabel-plads).
-            Output som JSON: {"title": "...", "draft_body": "..."}
+            Lav kun en titel + kort intro til månedlig opsummering.
           input_prompt: |
-            Seneste rå månedlig opsummering:
-            ${{ steps.raw.outputs.content }}
-          temperature: 0.55
-          max_tokens: 700
-          output_variable: draft_json
+            Rå månedlig opsummering: ${{ steps.read_raw.outputs.raw_content }}
+          tool_schema: |
+            {"name": "draft", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "draft_body": {"type": "string"}}, "required": ["title", "draft_body"]}}
+          temperature: 0.6
+          max_tokens: 800
 
-      - name: Save draft
+      - name: Save draft to file
         env:
-          DRAFT: ${{ steps.agent1.outputs.draft_json }}
+          DRAFT_TITLE: ${{ steps.agent1.outputs.title }}
+          DRAFT_BODY: ${{ steps.agent1.outputs.draft_body }}
         run: |
           mkdir -p data/monthly/drafts
-          printf '%s' "$DRAFT" > data/monthly/drafts/agent1_$(date +%Y-%m).json
+          printf '%s' "$DRAFT_TITLE" > data/monthly/drafts/agent1_$(date +%Y-%m)_title.txt
+          printf '%s' "$DRAFT_BODY" > data/monthly/drafts/agent1_$(date +%Y-%m)_body.txt
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5
