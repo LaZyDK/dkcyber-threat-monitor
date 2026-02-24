@@ -39,7 +39,7 @@
     "summary": "<span>Ny ClickFix‑variant misbruger DNS‑opslag </span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-16T10:48:14+01:00\" title=\"Monday, February 16, 2026 - 10:48\">Mon, 02/16/2026 - 10:48</time>\n</span>",
     "source": "https://www.cert.dk/news/rss",
     "collected_at": "2026-02-24T10:47:18.004766+00:00",
-    "is_dk_attack": true,
+    "is_dk_attack": false,
     "confidence": "high",
     "explanation": "Nyhedens kilde er cert.dk, Danmarks officielle cybersikkerhedsmyndighed, hvilket tyder på, at angrebet direkte rammer danske virksomheder eller infrastruktur."
   },
