@@ -21,11 +21,3 @@ env/
 # macOS
 .DS_Store
 
-# Data
-data/raw/*
-data/drafts/*
-data/generated/*
-data/monthly/raw/*
-data/monthly/drafts/*
-data/monthly/generated/*
-!data/verified_threats.json

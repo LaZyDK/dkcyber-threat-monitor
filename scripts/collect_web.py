@@ -9,6 +9,7 @@ feeds = [
     # tilføj flere senere
 ]
 
+
 def collect():
     threats = []
     for url in feeds:
@@ -29,6 +30,7 @@ def collect():
         json.dump(threats, f, ensure_ascii=False, indent=2)
 
     print(f"Saved {len(threats)} items to {path}")
+
 
 if __name__ == "__main__":
     collect()

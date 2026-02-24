@@ -1,0 +1,37 @@
+name: 01b Merge → Append to verified_threats.json
+
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'data/raw/**'
+  workflow_dispatch:
+
+jobs:
+  append-verified:
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Append verified threats
+        run: python scripts/append_verified.py
+
+      - name: Commit updated verified_threats.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: append verified threats from merged PR"
+          file_pattern: data/verified_threats.json
+          branch: main
