@@ -1,1 +1,162 @@
-[]
+[
+  {
+    "id": "a4c7c0352b20",
+    "title": "Cyberangreb mod Best Western rammer danske kunder",
+    "date": "2026-02-24",
+    "source": "discover:nyheder.dk",
+    "link": "https://www.nyheder.dk/nyheder/kaempe-kaede-hacket-danske-kunders-data-kan-vaere-i-fare/2362105",
+    "short_desc": "Et nyt cyberangreb har givet uvedkommende adgang til bookingoplysninger hos Best Western, hvilket kan indebære risiko for danske kunders data. Sikkerhedseksperter advarer mod målrettede svindelforsøg baseret på de stjålne oplysninger.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "8229b53cb019",
+    "title": "Cyberangreb mod dansk vandsektor",
+    "date": "2026-02-24",
+    "source": "discover:nyheder.tv2.dk",
+    "link": "https://nyheder.tv2.dk/live/samfund/2026-02-20-danmark-faar-nyt-totalberedskab",
+    "short_desc": "Vandsektoren rapporterer daglige cyberangreb, hvilket har ført til en ny totalberedskabsplan. Miljøministeren understreger vigtigheden af at sikre drikkevandssikkerhed.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "b04073180515",
+    "title": "Russiske hackerangreb rammer danske myndigheder og virksomheder",
+    "date": "2026-02-24",
+    "source": "discover:tjekdet.dk",
+    "link": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
+    "short_desc": "Russiske hackerangreb har i den seneste måned angrebet danske myndigheder og virksomheder. Mange hjemmesider er blevet nedlagt, hvilket har forårsaget betydelige forstyrrelser i drift.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "fab31043862c",
+    "title": "Grønlandske hjemmesider ramt af DDoS-angreb",
+    "date": "2026-02-24",
+    "source": "discover:dr.dk",
+    "link": "https://www.dr.dk/nyheder/seneste/groenlandske-hjemmesider-ramt-af-angreb",
+    "short_desc": "Flere grønlandske hjemmesider er blevet nedlagt af et stort overbelastningsangreb. Angrebet har ramt offentlige og private organisationer i Grønland, der er en del af Danmark.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "bf942fa29ff5",
+    "title": "Danske myndigheder udsat for russisk hackerangreb",
+    "date": "2026-02-24",
+    "source": "discover:dknyt.dk",
+    "link": "https://www.dknyt.dk/artikel/danske-myndigheder-og-virksomheder-udsat-for-omfattende-hackerangreb",
+    "short_desc": "Russe hackergrupper har iværksat et omfattende cyberangreb mod danske ministerier og kommuner i den seneste måned. Angrebet har ramt flere offentlige myndigheder og virksomheder i Danmark.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "03d3730dd4aa",
+    "title": "Russiske hackerangreb på danske ministerier og kommuner",
+    "date": "2026-02-24",
+    "source": "discover:finans.dk",
+    "link": "https://finans.dk/tech/ECE19028843/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/",
+    "short_desc": "Russerne har angrebet 40 danske hjemmesider hos ministerier, kommuner og virksomheder i løbet af den seneste måned. Angrebet er dokumenteret af danske myndigheder og private virksomheder.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "0b6a558d5060",
+    "title": "Russiske hackerangreb rammer danske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:faa.dk",
+    "link": "https://faa.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
+    "short_desc": "Danske myndigheder, kommuner og virksomheder er blevet ramt af hackerangreb i den seneste måned. Angrebet er udført af russiske hackergrupper, ifølge TjekDet.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "f965402ac82f",
+    "title": "Russiske hackerangreb rammer danske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:nordjyske.dk",
+    "link": "https://nordjyske.dk/nyheder/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/5929750",
+    "short_desc": "Russiske hackergrupper har angrebet omkring 40 danske hjemmesider hos ministerier, kommuner og virksomheder i den seneste måned. Angrebet har direkte ramt danske offentlige og private organisationer.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "33fc46361ca5",
+    "title": "Russerne angreb danske hjemmesider i bølge",
+    "date": "2026-02-24",
+    "source": "discover:frdb.dk",
+    "link": "https://frdb.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
+    "short_desc": "Danske myndigheder, kommuner og virksomheder er blevet ramt af hackerangreb i den seneste måned. Angrebene er tilskrevet russiske hackere, ifølge TjekDet.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "1eed16807d66",
+    "title": "Russer angreb 40 danske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:berlingske.dk",
+    "link": "https://www.berlingske.dk/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider?gaa_at=eafs&gaa_n=AWEtsqcJKDVEywUc5ulxR8nnbUkmJBpaTeZZgZYaoiPa8r1i0B0bKoDbvcpK&gaa_ts=699b9f0e&gaa_sig=piA0aeKbiBDCZYcnbiv2tYci99iU-IWvJGVy_7iWT45Tm2ZsgIXqvKjOENyOY_ZKNxYNW11V1rmMFbMpcrkxXg%3D%3D",
+    "short_desc": "Russiske hackergrupper har angrebet omkring 40 hjemmesider hos danske ministerier, kommuner og virksomheder i den seneste måned. Angrebet har ramt både offentlige og private organisationer i Danmark. Berlingske rapporterer om den pågående cybertrussel.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "57af5db9ff75",
+    "title": "Russiske hackere angreb Grønland – Danmark ramt",
+    "date": "2026-02-24",
+    "source": "discover:inputmag.dk",
+    "link": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
+    "short_desc": "Grønlandske myndigheders hjemmesider blev ramt af et cyberangreb af den russiske hackergruppe NoName057(16). Angrebet er angiveligt hævn for Danmarks donation af kampfly til Ukraine.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "b5c75354c7c6",
+    "title": "Russiske DDoS-angreb på 40 danske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:ekstrabladet.dk",
+    "link": "https://ekstrabladet.dk/forbrug/Teknologi/russiske-angreb-paa-danmark-40-hjemmesider-ramt/11099453",
+    "short_desc": "Russiske hackergrupper har udført DDoS-angreb på omkring 40 danske ministerier, kommuner og virksomheder. Angrebene har ramt offentlige og private organisationer i Danmark i den seneste måned.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "da2b27872f09",
+    "title": "DDoS-angreb mod grønlandske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:nordjyske.dk",
+    "link": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416",
+    "short_desc": "Grønlandske hjemmesider er under DDoS-angreb, hvilket kan føre til utilgængelighed. Angrebet er rapporteret af Nordjyske.dk den 20. februar 2026.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "565dba0b5155",
+    "title": "DDoS-angreb mod Grønlandske hjemmesider – russisk gruppe ansvarlig",
+    "date": "2026-02-24",
+    "source": "discover:sermitsiaq.ag",
+    "link": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
+    "short_desc": "Styrelsen for Samfundssikkerhed bekræfter DDoS-angreb mod grønlandske hjemmesider. Myndighederne er i dialog med danske og grønlandske autoriteter om situationen.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "f9b1d374be3b",
+    "title": "40 danske hjemmesider ramt af DDoS-angreb",
+    "date": "2026-02-24",
+    "source": "discover:bt.dk",
+    "link": "https://www.bt.dk/samfund/lagt-ned-af-angreb-40-hjemmesider-ramt",
+    "short_desc": "Russiske hackergrupper har angrebet danske ministerier, kommuner og virksomheder med DDoS-angreb. Over 40 hjemmesider er blevet nedsat i den seneste måned.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "d182c4fa9259",
+    "title": "DDoS-angreb på Grønlandske hjemmesider",
+    "date": "2026-02-24",
+    "source": "discover:ekstrabladet.dk",
+    "link": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
+    "short_desc": "Grønlandske offentlige hjemmesider blev udsat for DDoS-angreb, hvilket forårsagede tilgængelighedsproblemer. Angrebet ramte flere myndigheder og offentlige tjenester i Grønland, som er en del af Danmark.",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  }
+]
