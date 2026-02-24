@@ -23,24 +23,31 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Collect raw threats
+      - name: Collect and classify threats
         id: collect
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          OUTPUT=$(python scripts/collect_web.py)
-          echo "$OUTPUT"
-          echo "summary=$OUTPUT" >> "$GITHUB_OUTPUT"
+          python scripts/collect_web.py
 
-      - name: Summarise DK-relevant entries
+      - name: Summarise classified entries
         id: summary
         run: |
           RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
           if [ -n "$RAW_FILE" ]; then
             TOTAL=$(jq 'length' "$RAW_FILE")
-            RELEVANT=$(jq '[.[] | select(.dk_relevant == true)] | length' "$RAW_FILE")
-            FILTERED=$((TOTAL - RELEVANT))
+            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$RAW_FILE")
+            FILTERED=$((TOTAL - ATTACKS))
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
-            echo "relevant=$RELEVANT" >> "$GITHUB_OUTPUT"
+            echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
             echo "filtered=$FILTERED" >> "$GITHUB_OUTPUT"
+
+            # Build a markdown list of classified entries for the PR body
+            {
+              echo "details<<DETAILSEOF"
+              jq -r '.[] | "| \(.title[:60]) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
+              echo "DETAILSEOF"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create or update verification PR
@@ -48,18 +55,25 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: collected new raw threat data"
-          title: "Verify new threats – ${{ steps.summary.outputs.relevant }} DK-relevant"
+          title: "Verify: ${{ steps.summary.outputs.attacks }} danske angreb fundet"
           body: |
-            ## Collected threats
+            ## LLM-klassificerede trusler
 
-            | Total | DK-relevant | Filtered out |
-            |-------|-------------|--------------|
-            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.relevant }} | ${{ steps.summary.outputs.filtered }} |
+            | Total | Verified DK attacks | Filtered |
+            |-------|-------------------|----------|
+            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} | ${{ steps.summary.outputs.filtered }} |
 
-            Only entries tagged `dk_relevant: true` will be appended to verified_threats.json on merge.
-            You can override by editing the raw JSON and setting `dk_relevant: true` on any entry.
+            ### Detaljer
 
-            Please review → edit if needed → merge when verified.
+            | Titel | Dansk angreb? | Confidence | Forklaring |
+            |-------|--------------|------------|------------|
+            ${{ steps.summary.outputs.details }}
+
+            ---
+            Kun entries med `is_dk_attack: true` tilføjes til verified_threats.json ved merge.
+            Du kan override ved at redigere JSON og sætte `is_dk_attack: true` på en entry.
+
+            Review → rediger om nødvendigt → merge når verificeret.
           branch: threat-verification-${{ github.run_id }}
           delete-branch: true
           labels: verification,threat

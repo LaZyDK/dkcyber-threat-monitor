@@ -74,8 +74,8 @@ def append_verified():
             if link in existing_links:
                 continue
 
-            # Only append entries tagged as Danish-relevant
-            if not entry.get('dk_relevant', False):
+            # Only append entries verified as Danish attacks by LLM
+            if not entry.get('is_dk_attack', False):
                 skipped_irrelevant += 1
                 continue
 
