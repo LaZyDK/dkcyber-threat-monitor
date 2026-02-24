@@ -70,6 +70,9 @@ def append_verified():
                 continue
 
         for entry in entries:
+            if not isinstance(entry, dict):
+                print(f"Skipping non-dict entry in {raw_file}: {entry}")
+                continue
             link = entry.get('link', '')
             if link in existing_links:
                 continue
