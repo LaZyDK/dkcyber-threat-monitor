@@ -1,1 +1,0 @@
-Danmarks cybersikkerhedsmyndighed (cert.dk) har rapporteret om en ny ClickFix-variant, der udnytter DNS-opslag til cyberangreb. Desuden har kina-forbundne aktører misbrugt Dell 0-dagsårbarhed i over et år, mens LLM’er nu kan finde 0-dage i open source-kode.
