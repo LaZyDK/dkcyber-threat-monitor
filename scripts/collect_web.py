@@ -153,7 +153,7 @@ def collect():
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     api_url = os.environ.get("LLM_API_URL",
                              "https://openrouter.ai/api/v1/chat/completions")
-    model = os.environ.get("LLM_MODEL", "")
+    model = os.environ.get("LLM_MODEL_CHEAP", "")
     threats = []
     attack_count = 0
     skipped_dupes = 0

@@ -27,19 +27,13 @@ jobs:
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Set default LLM_MODEL_CHEAP if not set
-        run: |
-          if [ -z "$LLM_MODEL_CHEAP" ]; then
-            echo "LLM_MODEL_CHEAP=qwen/qwen3-vl-30b-a3b-thinking" >> $GITHUB_ENV
-          fi
-
       - name: Create draft from raw data
         id: create_draft
         uses: appleboy/llm-action@v1
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
           base_url: https://openrouter.ai/api/v1
-          model: ${{ env.LLM_MODEL_CHEAP }}
+          model: ${{ vars.LLM_MODEL_CHEAP }}
           system_prompt: |
             Du er en simpel dansk cybersecurity-assistent.
             Lav kun en titel + kort udkast (max 300 tegn).

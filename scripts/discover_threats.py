@@ -169,14 +169,14 @@ def discover():
                              "https://openrouter.ai/api/v1/chat/completions")
     brave_url = os.environ.get("BRAVE_SEARCH_URL",
                                "https://api.search.brave.com/res/v1/web/search")
-    model = os.environ.get("LLM_MODEL", "")
+    model = os.environ.get("LLM_MODEL_CHEAP", "")
 
     if not brave_key:
         print("BRAVE_API_KEY not set — cannot discover threats")
         return
 
     if not openrouter_key or not model:
-        print("OPENROUTER_API_KEY or LLM_MODEL not set — cannot classify")
+        print("OPENROUTER_API_KEY or LLM_MODEL_CHEAP not set — cannot classify")
         return
 
     existing_links = load_all_known_links()

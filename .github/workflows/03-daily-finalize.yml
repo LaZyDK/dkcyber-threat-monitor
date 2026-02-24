@@ -27,19 +27,13 @@ jobs:
             echo "DRAFTEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Set default LLM_MODEL_TOOLUSE if not set
-        run: |
-          if [ -z "$LLM_MODEL_TOOLUSE" ]; then
-            echo "LLM_MODEL_TOOLUSE=openai/gpt-3.5-turbo" >> $GITHUB_ENV
-          fi
-
       - name: Finalize daily post for Reddit
         id: finalize_post
         uses: appleboy/llm-action@v1
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
           base_url: https://openrouter.ai/api/v1
-          model: ${{ env.LLM_MODEL_TOOLUSE }}
+          model: ${{ vars.LLM_MODEL_TOOLUSE }}
           system_prompt: |
             Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
             Skriv engagerende, naturlig tekst på dansk.

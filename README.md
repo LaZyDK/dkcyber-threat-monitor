@@ -88,9 +88,8 @@ Nye kilder opdages automatisk via Brave Search og forelaas via PR. Du kan ogsa t
 
 | Variable | Brug | Default |
 |----------|------|---------|
-| `LLM_MODEL` | Model til klassificering og merging | (paakraevet) |
-| `LLM_MODEL_CHEAP` | Model til hurtige udkast | (paakraevet) |
-| `LLM_MODEL_TOOLUSE` | Model til finalize-trin | (paakraevet) |
+| `LLM_MODEL_CHEAP` | Klassificering, merging og udkast (fx `qwen/qwen3-vl-30b-a3b-thinking`) | (paakraevet) |
+| `LLM_MODEL_TOOLUSE` | Finalize-trin med tool use (fx `openai/gpt-3.5-turbo`) | (paakraevet) |
 | `LLM_API_URL` | LLM API endpoint | `https://openrouter.ai/api/v1/chat/completions` |
 | `BRAVE_SEARCH_URL` | Brave Search endpoint | `https://api.search.brave.com/res/v1/web/search` |
 
