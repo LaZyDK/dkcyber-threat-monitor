@@ -6,7 +6,7 @@
     "summary": "<span>Deepfake opkald sætter tillid på prøve</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-24T11:07:48+01:00\" title=\"Tuesday, February 24, 2026 - 11:07\">Tue, 02/24/2026 - 11:07</time>\n</span>",
     "source": "https://www.cert.dk/news/rss",
     "collected_at": "2026-02-24T14:14:03.118740+00:00",
-    "is_dk_attack": true,
+    "is_dk_attack": false,
     "confidence": "high",
     "explanation": "Nyhedens kilde er cert.dk, Danmarks officielle cybersikkerhedsmyndighed, hvilket tyder på, at den direkte relaterer sig til en konkrete sikkerhedshændelse i Danmark."
   },
