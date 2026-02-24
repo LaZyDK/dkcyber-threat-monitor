@@ -1,62 +1,138 @@
-# dkcybersecurity Threat Monitor 🤖
+# dkcybersecurity Threat Monitor
 
-[![AI Transparency](https://img.shields.io/badge/🤖%20AI%20Transparency-LLM%20Generated%20with%20Human%20Oversight-00bfff?style=for-the-badge&logo=artificial-intelligence&logoColor=white)](https://github.com/LaZyDK/dkcyber-threat-monitor#ai-transparency)
+[![AI Transparency](https://img.shields.io/badge/AI%20Transparency-LLM%20Generated%20with%20Human%20Oversight-00bfff?style=for-the-badge)](https://github.com/LaZyDK/dkcyber-threat-monitor#ai-transparency)
 
-**Automatisk overvågning og deling af verificerede cyber-trusler til det danske community.**
+**Automatisk overvagning og deling af verificerede cyber-trusler til det danske community.**
 
-Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds), lader **mig** verificere dem via Pull Requests, og poster derefter automatisk til **r/dkcybersecurity**.
+Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds og Brave Search), lader **mig** verificere dem via Pull Requests, og poster derefter automatisk til **r/dkcybersecurity**.
 
-### Hvordan det virker
+## Hvordan det virker
 
-1. **Rå data** → indsamles automatisk  
-2. **Draft (billig model)** → hurtigt udkast (`LLM_MODEL_CHEAP`, fx qwen/qwen3-vl-30b-a3b-thinking)  
-3. **Finalize (tool-use model)** → færdig Reddit-post (`LLM_MODEL_TOOLUSE`, fx openai/gpt-3.5-turbo)  
-4. **Human oversight** → jeg gennemgår og godkender alt i PR  
-5. **Månedlig opsummering** → samme decoupled proces den 1. i hver måned
+### Track A — Enkelte trusler
 
-#### LLM Model Environment Variables
+1. **Indsamling** (workflow 01) — RSS-feeds fra `data/feeds.json` + keyword pre-filter + LLM-klassificering
+2. **Verifikation** — PR oprettes med klassificerede trusler. Jeg gennemgar og merger
+3. **Merge** (workflow 02) — Verificerede trusler tilfojes `data/verified_threats.json`. LLM merger artikler om samme angreb
+4. **Draft** (workflow 02-daily) — Hurtigt udkast via `LLM_MODEL_CHEAP`
+5. **Finalize** (workflow 03) — Faerdig Reddit-post via `LLM_MODEL_TOOLUSE` med transparency disclaimer
 
-- `LLM_MODEL_CHEAP`: Bruges til hurtige, billige udkast (ingen tool use)
-- `LLM_MODEL_TOOLUSE`: Bruges til trin der kræver tool use eller bedre kvalitet
+### Track B — Manedlig opsummering
 
-Disse sættes som repo secrets eller i workflow env.
+1. **Opsummering** (workflow 04) — Genererer tabel over forrige maneds trusler
+2. **Draft + Finalize** (workflow 05-06) — Samme decoupled LLM-proces
+3. **Post til Reddit** (workflow 08) — Poster til r/dkcybersecurity og gemmer reddit_url
 
-### AI Transparency
+### Aktiv opdagelse
 
-**Alle tekster i dette projekt er genereret af LLM’er med human oversight.**
+- **Brave Search** (workflow 09) — Soger dagligt efter danske cyberangreb fra kilder uden for RSS-feeds
+- **Ny-kilde-opdagelse** (workflow 10) — Prober opdagede domaner for RSS-feeds og opretter PR til `data/feeds.json`
 
-- Rå data er 100 % fra kilden og gemmes uændret (`data/raw/` og `data/verified_threats.json`).
-- LLM-teksten er kun et udkast – jeg læser, retter og godkender **altid** før posting.
-- Du kan følge hele processen i repo’ets Pull Requests og commit-historik.
+## Data model
 
-**Hver Reddit-post indeholder desuden denne faste disclaimer** (automatisk tilføjet af Finalize-step):
+Hver verificeret trussel i `data/verified_threats.json`:
+
+```json
+{
+  "id": "a4c7c0352b20",
+  "name": "Russiske DDoS-angreb pa 40 danske hjemmesider",
+  "description": "Russiske hackergrupper har udfort DDoS-angreb...",
+  "source": "tjekdet.dk",
+  "link": "https://www.tjekdet.dk/...",
+  "additional_sources": [
+    {"url": "https://finans.dk/...", "name": "finans.dk"},
+    {"url": "https://bt.dk/...", "name": "bt.dk"}
+  ],
+  "timestamp": "2026-02-24",
+  "verified_by": "human-review",
+  "verified_at": "2026-02-24T12:07:24+00:00"
+}
+```
+
+Flere artikler om **samme angreb** merges automatisk. Primary link + source bevares, yderligere kilder gemmes i `additional_sources`.
+
+## Deduplikering og merging
+
+- **URL-deduplikering** — Samme URL kan aldrig optrade i flere PRs. Checker mod `verified_threats.json` og alle `data/raw/*.json` filer
+- **Attack merging** — Nar PRs merges, bruger LLM'en til at gruppere artikler der handler om samme hændelse. 16 artikler om russiske DDoS-angreb blev fx merget til 2 distinkte events
+
+## RSS-kilder
+
+Kilder styres centralt i [`data/feeds.json`](data/feeds.json). Alle scripts laeser herfra.
+
+Nye kilder opdages automatisk via Brave Search og forelaas via PR. Du kan ogsa tilfojes manuelt:
+
+```json
+{
+  "url": "https://www.cert.dk/news/rss",
+  "name": "DKCERT",
+  "language": "da",
+  "added": "2026-02-01",
+  "added_by": "manual"
+}
+```
+
+## Opsaetning
+
+### Secrets (repo → Settings → Secrets → Actions)
+
+| Secret | Brug |
+|--------|------|
+| `OPENROUTER_API_KEY` | LLM-adgang via OpenRouter |
+| `BRAVE_API_KEY` | Brave Search API (gratis: 2000 queries/md) |
+| `REDDIT_CLIENT_ID` | Reddit API (valgfrit) |
+| `REDDIT_CLIENT_SECRET` | Reddit API (valgfrit) |
+| `REDDIT_USERNAME` | Reddit API (valgfrit) |
+| `REDDIT_PASSWORD` | Reddit API (valgfrit) |
+
+### Variables (repo → Settings → Variables → Actions)
+
+| Variable | Brug | Default |
+|----------|------|---------|
+| `LLM_MODEL` | Model til klassificering og merging | (paakraevet) |
+| `LLM_MODEL_CHEAP` | Model til hurtige udkast | (paakraevet) |
+| `LLM_MODEL_TOOLUSE` | Model til finalize-trin | (paakraevet) |
+| `LLM_API_URL` | LLM API endpoint | `https://openrouter.ai/api/v1/chat/completions` |
+| `BRAVE_SEARCH_URL` | Brave Search endpoint | `https://api.search.brave.com/res/v1/web/search` |
+
+### Workflow permissions
+
+Repo → Settings → Actions → General → Workflow permissions:
+- **"Read and write permissions"**
+- **"Allow GitHub Actions to create and approve pull requests"**
+
+## AI Transparency
+
+**Alle tekster i dette projekt er genereret af LLM'er med human oversight.**
+
+- Ra data er 100 % fra kilden og gemmes uaendret (`data/raw/` og `data/verified_threats.json`)
+- LLM-teksten er kun et udkast — jeg laeser, retter og godkender **altid** for posting
+- Du kan folge hele processen i repo'ets Pull Requests og commit-historik
+
+**Hver Reddit-post indeholder denne faste disclaimer** (automatisk tilfojet):
 > ---
-> 🤖 *Denne post er genereret af LLM med human oversight via mig open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-> Rå data er verificeret af mig før posting.
+> *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+> Ra data er verificeret af mig for posting.
 
-### Teknisk opsætning
+## Workflows
 
-- 100 % GitHub Actions
-- Decoupled multi-step workflows
-- Gratis og betalte LLMs (vælg model via env vars)
-- Alt versioneret: raw → draft → final post
+| # | Navn | Trigger | Beskrivelse |
+|---|------|---------|-------------|
+| 01 | Collect Raw Threats | Dagligt kl. 07 UTC + manual | RSS-feeds → keyword filter → LLM-klassificering → PR |
+| 02 | Merge to Verified | PR merge med `data/raw/**` | Append + LLM-merge → `verified_threats.json` |
+| 02-daily | Daily Draft | Efter raw data | Hurtigt LLM-udkast |
+| 03 | Daily Finalize | Efter draft | Faerdig Reddit-post med disclaimer |
+| 04 | Monthly Raw Summary | 1. i hver maned | Tabel over forrige maneds trusler |
+| 05 | Monthly Draft | Efter monthly summary | Manedligt LLM-udkast |
+| 06 | Monthly Finalize | Efter monthly draft | Faerdig manedlig post |
+| 08 | Monthly Post to Reddit | Efter monthly finalize | Poster til r/dkcybersecurity |
+| 09 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR |
+| 10 | Suggest Sources | Nar nye kandidater opdages | Prober RSS-feeds → PR til `feeds.json` |
 
-#### Opsætning af secrets
-
-- `OPENROUTER_API_KEY` (OpenRouter LLM adgang)
-- `BRAVE_API_KEY` (Brave Search API)
-- `LLM_MODEL_CHEAP` (fx qwen/qwen3-vl-30b-a3b-thinking)
-- `LLM_MODEL_TOOLUSE` (fx openai/gpt-3.5-turbo)
-- (Valgfrit) Reddit API credentials til auto-posting
-
-### Links
+## Links
 
 - Reddit: [r/dkcybersecurity](https://www.reddit.com/r/dkcybersecurity/)
-- Issues & forslag: [Åbn et issue](../../issues)
-
-**Made with ❤️ af en dansk cybersecurity-entusiast – og en flok venlige open-source LLMs.**
+- Issues & forslag: [Abn et issue](../../issues)
 
 ---
 
-**Licens:** MIT  
-**Sidst opdateret:** februar 2026
+**Licens:** MIT
