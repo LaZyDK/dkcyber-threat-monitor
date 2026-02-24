@@ -1,0 +1,15 @@
+[
+  {
+    "title": "DDoS-angreb fra NoName057(16) mod danske hjemmesider",
+    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqfn4zUEuswHWH8OQgFMhaEVESAOvLu5bM42r3djxrF7HDFenaVUxDqs&gaa_ts=6999c8ae&gaa_sig=ZwYTgH1hJ4ibdPt3NV624fJ1p0BFv8NpQVP6FHLJm5k6yPP7o-uoZiIrvff0pCanD6roAY3EO6p5rr-oCTWmxw%3D%3D",
+    "published": "2026-02-24",
+    "summary": "Den russiske hackergruppe NoName057(16) har udført DDoS-angreb mod danske hjemmesider. Styrelsen for Samfundssikkerhed bekræfter angrebene og anbefaler forholdsforanstaltninger.",
+    "source": "discover:berlingske.dk",
+    "source_domain": "berlingske.dk",
+    "collected_at": "2026-02-24T14:01:32.385969+00:00",
+    "is_dk_attack": true,
+    "confidence": "high",
+    "explanation": "Den russiske hackergruppe NoName057(16) har udført DDoS-angreb mod danske hjemmesider. Styrelsen for Samfundssikkerhed bekræfter angrebene og anbefaler forholdsforanstaltninger.",
+    "discovered_via": "brave_search"
+  }
+]
