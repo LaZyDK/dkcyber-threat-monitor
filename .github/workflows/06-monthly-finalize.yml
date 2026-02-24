@@ -18,55 +18,75 @@ jobs:
           ref: ${{ github.head_ref || github.ref }}
 
       - name: Read latest monthly draft and raw summary
-        id: input
         run: |
-          DRAFT=$(ls -1t data/monthly/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No monthly drafts found")
-          RAW=$(ls -1t data/monthly/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No monthly raw found")
-          {
-            echo "draft<<DRAFTEOF"
-            echo "$DRAFT"
-            echo "DRAFTEOF"
-            echo "raw<<RAWEOF"
-            echo "$RAW"
-            echo "RAWEOF"
-          } >> "$GITHUB_OUTPUT"
+          DRAFT=$(ls -1t data/monthly/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "{}")
+          RAW=$(ls -1t data/monthly/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "{}")
+          echo "$DRAFT" > /tmp/monthly_draft.json
+          echo "$RAW" > /tmp/monthly_raw.json
 
-      - name: Finalize monthly Reddit post
-        id: finalize_monthly_post
-        uses: appleboy/llm-action@v1
-        with:
-          api_key: ${{ secrets.OPENROUTER_API_KEY }}
-          base_url: https://openrouter.ai/api/v1
-          model: ${{ vars.LLM_MODEL_TOOLUSE }}
-          system_prompt: |
-            Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
-            Skriv en engagerende, naturlig månedlig opsummering på dansk.
-            Inkluder hele tabellen fra rådata, fremhæv trends eller højdepunkter, stil gerne spørgsmål til læserne.
-            Emojis sparsomt.
-
-            VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
-
-            ---
-            🤖 *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-            Rå data er verificeret af mig før posting.
-          input_prompt: |
-            Rå månedlig opsummering + månedligt udkast:
-            ${{ steps.input.outputs.draft }}
-            Inkluder også rå tabellen fra:
-            ${{ steps.input.outputs.raw }}
-          tool_schema: |
-            {"name": "monthly_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
-          temperature: 0.75
-          max_tokens: 1800
-
-      - name: Save final post files
+      - name: Finalize monthly post via OpenRouter API
         env:
-          POST_TITLE: ${{ steps.finalize_monthly_post.outputs.title }}
-          POST_BODY: ${{ steps.finalize_monthly_post.outputs.body }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_MODEL_TOOLUSE: ${{ vars.LLM_MODEL_TOOLUSE }}
         run: |
+          DRAFT_CONTENT=$(cat /tmp/monthly_draft.json)
+          RAW_CONTENT=$(cat /tmp/monthly_raw.json)
+
+          SYSTEM_PROMPT="Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+          Skriv en engagerende, naturlig månedlig opsummering på dansk.
+          Inkluder hele tabellen fra rådata, fremhæv trends eller højdepunkter, stil gerne spørgsmål til læserne.
+          Emojis sparsomt.
+
+          VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
+
+          ---
+          *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+          Rå data er verificeret af mig før posting.
+
+          Svar KUN med denne JSON (ingen anden tekst):
+          {\"title\": \"...\", \"body\": \"...\"}"
+
+          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg model "$LLM_MODEL_TOOLUSE" \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg draft "$DRAFT_CONTENT" \
+              --arg raw "$RAW_CONTENT" \
+              '{
+                model: $model,
+                messages: [
+                  {role: "system", content: $system},
+                  {role: "user", content: ("Månedligt udkast:\n" + $draft + "\n\nRå tabellen:\n" + $raw)}
+                ],
+                temperature: 0.75,
+                max_tokens: 1800
+              }')")
+
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+          if [ -z "$CONTENT" ]; then
+            echo "LLM returned empty response"
+            echo "$RESPONSE" | jq .
+            exit 1
+          fi
+
+          CONTENT=$(echo "$CONTENT" | sed 's/^```json//;s/^```//;s/```$//' | tr -d '\n' | sed 's/^[[:space:]]*//')
+
+          TITLE=$(echo "$CONTENT" | jq -r '.title // empty')
+          BODY=$(echo "$CONTENT" | jq -r '.body // empty')
+
+          if [ -z "$TITLE" ] || [ -z "$BODY" ]; then
+            echo "Failed to parse LLM output:"
+            echo "$CONTENT"
+            exit 1
+          fi
+
           mkdir -p data/monthly/generated
-          printf '%s' "$POST_TITLE" > data/monthly/generated/title_$(date +%Y-%m).txt
-          printf '%s' "$POST_BODY"  > data/monthly/generated/post_$(date +%Y-%m).md
+          printf '%s' "$TITLE" > "data/monthly/generated/title_$(date +%Y-%m).txt"
+          printf '%s' "$BODY" > "data/monthly/generated/post_$(date +%Y-%m).md"
+
+          echo "Monthly finalized: $TITLE"
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5

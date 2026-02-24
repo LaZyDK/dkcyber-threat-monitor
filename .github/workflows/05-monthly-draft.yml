@@ -18,39 +18,61 @@ jobs:
           ref: ${{ github.head_ref || github.ref }}
 
       - name: Read latest raw monthly summary
-        id: read_raw
         run: |
           RAW_FILE=$(ls -t data/monthly/raw/*.json 2>/dev/null | head -n1)
-          {
-            echo "raw_content<<RAWEOF"
-            cat "$RAW_FILE" | jq -c .
-            echo "RAWEOF"
-          } >> "$GITHUB_OUTPUT"
-      - name: Create monthly draft
-        id: create_monthly_draft
-        uses: appleboy/llm-action@v1
-        with:
-          api_key: ${{ secrets.OPENROUTER_API_KEY }}
-          base_url: https://openrouter.ai/api/v1
-          model: ${{ vars.LLM_MODEL_CHEAP }}
-          system_prompt: |
-            Du er en simpel dansk cybersecurity-assistent.
-            Lav kun en titel + kort intro til månedlig opsummering.
-          input_prompt: |
-            Rå månedlig opsummering: ${{ steps.read_raw.outputs.raw_content }}
-          tool_schema: |
-            {"name": "draft", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "draft_body": {"type": "string"}}, "required": ["title", "draft_body"]}}
-          temperature: 0.6
-          max_tokens: 800
+          if [ -z "$RAW_FILE" ]; then
+            echo "No monthly raw files found"
+            exit 1
+          fi
+          jq -c . "$RAW_FILE" > /tmp/monthly_raw.json
 
-      - name: Save draft to file
+      - name: Create monthly draft via OpenRouter API
         env:
-          DRAFT_TITLE: ${{ steps.create_monthly_draft.outputs.title }}
-          DRAFT_BODY: ${{ steps.create_monthly_draft.outputs.draft_body }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: |
+          RAW_CONTENT=$(cat /tmp/monthly_raw.json)
+
+          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg model "$LLM_MODEL_CHEAP" \
+              --arg raw "$RAW_CONTENT" \
+              '{
+                model: $model,
+                messages: [{
+                  role: "user",
+                  content: ("Du er en simpel dansk cybersecurity-assistent.\nLav en titel og kort intro til månedlig opsummering.\n\nSvar KUN med denne JSON (ingen anden tekst):\n{\"title\": \"...\", \"draft_body\": \"...\"}\n\nRå månedlig opsummering: " + $raw)
+                }],
+                temperature: 0.6,
+                max_tokens: 800
+              }')")
+
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+          if [ -z "$CONTENT" ]; then
+            echo "LLM returned empty response"
+            echo "$RESPONSE" | jq .
+            exit 1
+          fi
+
+          CONTENT=$(echo "$CONTENT" | sed 's/^```json//;s/^```//;s/```$//' | tr -d '\n' | sed 's/^[[:space:]]*//')
+
+          TITLE=$(echo "$CONTENT" | jq -r '.title // empty')
+          BODY=$(echo "$CONTENT" | jq -r '.draft_body // empty')
+
+          if [ -z "$TITLE" ] || [ -z "$BODY" ]; then
+            echo "Failed to parse LLM output:"
+            echo "$CONTENT"
+            exit 1
+          fi
+
           mkdir -p data/monthly/drafts
-          printf '%s' "$DRAFT_TITLE" > data/monthly/drafts/monthly_${{ github.sha }}_title.txt
-          printf '%s' "$DRAFT_BODY" > data/monthly/drafts/monthly_${{ github.sha }}_body.txt
+          printf '%s' "$TITLE" > "data/monthly/drafts/monthly_${GITHUB_SHA}_title.txt"
+          printf '%s' "$BODY" > "data/monthly/drafts/monthly_${GITHUB_SHA}_body.txt"
+          echo "$CONTENT" > "data/monthly/drafts/monthly_${GITHUB_SHA}.json"
+
+          echo "Monthly draft created: $TITLE"
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5

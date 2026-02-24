@@ -20,46 +20,73 @@ jobs:
       - name: Read latest draft
         id: draft
         run: |
-          CONTENT=$(ls -1t data/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No drafts found")
-          {
-            echo "content<<DRAFTEOF"
-            echo "$CONTENT"
-            echo "DRAFTEOF"
-          } >> "$GITHUB_OUTPUT"
+          DRAFT_FILE=$(ls -1t data/drafts/*.json 2>/dev/null | head -n 1)
+          if [ -z "$DRAFT_FILE" ]; then
+            echo "No draft files found"
+            exit 1
+          fi
+          cp "$DRAFT_FILE" /tmp/draft.json
 
-      - name: Finalize daily post for Reddit
-        id: finalize_post
-        uses: appleboy/llm-action@v1
-        with:
-          api_key: ${{ secrets.OPENROUTER_API_KEY }}
-          base_url: https://openrouter.ai/api/v1
-          model: ${{ vars.LLM_MODEL_TOOLUSE }}
-          system_prompt: |
-            Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
-            Skriv engagerende, naturlig tekst på dansk.
-            Emojis sparsomt, stil gerne spørgsmål til læserne.
-
-            VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
-
-            ---
-            🤖 *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-            Rå data er verificeret af mig før posting.
-          input_prompt: |
-            Indhold fra dagligt udkast:
-            ${{ steps.draft.outputs.content }}
-          tool_schema: |
-            {"name": "final_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
-          temperature: 0.75
-          max_tokens: 1400
-
-      - name: Save final post files
+      - name: Finalize daily post via OpenRouter API
         env:
-          POST_TITLE: ${{ steps.finalize_post.outputs.title }}
-          POST_BODY: ${{ steps.finalize_post.outputs.body }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_MODEL_TOOLUSE: ${{ vars.LLM_MODEL_TOOLUSE }}
         run: |
+          DRAFT_CONTENT=$(cat /tmp/draft.json)
+
+          SYSTEM_PROMPT="Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+          Skriv engagerende, naturlig tekst på dansk.
+          Emojis sparsomt, stil gerne spørgsmål til læserne.
+
+          VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
+
+          ---
+          *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+          Rå data er verificeret af mig før posting.
+
+          Svar KUN med denne JSON (ingen anden tekst):
+          {\"title\": \"...\", \"body\": \"...\"}"
+
+          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg model "$LLM_MODEL_TOOLUSE" \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg draft "$DRAFT_CONTENT" \
+              '{
+                model: $model,
+                messages: [
+                  {role: "system", content: $system},
+                  {role: "user", content: ("Indhold fra dagligt udkast:\n" + $draft)}
+                ],
+                temperature: 0.75,
+                max_tokens: 1400
+              }')")
+
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+          if [ -z "$CONTENT" ]; then
+            echo "LLM returned empty response"
+            echo "$RESPONSE" | jq .
+            exit 1
+          fi
+
+          CONTENT=$(echo "$CONTENT" | sed 's/^```json//;s/^```//;s/```$//' | tr -d '\n' | sed 's/^[[:space:]]*//')
+
+          TITLE=$(echo "$CONTENT" | jq -r '.title // empty')
+          BODY=$(echo "$CONTENT" | jq -r '.body // empty')
+
+          if [ -z "$TITLE" ] || [ -z "$BODY" ]; then
+            echo "Failed to parse LLM output:"
+            echo "$CONTENT"
+            exit 1
+          fi
+
           mkdir -p data/generated
-          printf '%s' "$POST_TITLE" > data/generated/title_${{ github.sha }}.txt
-          printf '%s' "$POST_BODY"  > data/generated/post_${{ github.sha }}.md
+          printf '%s' "$TITLE" > "data/generated/title_${GITHUB_SHA}.txt"
+          printf '%s' "$BODY" > "data/generated/post_${GITHUB_SHA}.md"
+
+          echo "Finalized: $TITLE"
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5

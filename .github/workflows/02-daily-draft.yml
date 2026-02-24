@@ -21,56 +21,62 @@ jobs:
         id: read_raw
         run: |
           RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
-          {
-            echo "raw_content<<RAWEOF"
-            cat "$RAW_FILE" | jq -c .
-            echo "RAWEOF"
-          } >> "$GITHUB_OUTPUT"
+          if [ -z "$RAW_FILE" ]; then
+            echo "No raw files found"
+            exit 1
+          fi
+          # Compact JSON for prompt
+          jq -c . "$RAW_FILE" > /tmp/raw_compact.json
 
-      - name: Create draft from raw data
-        id: create_draft
-        uses: appleboy/llm-action@v1
-        with:
-          api_key: ${{ secrets.OPENROUTER_API_KEY }}
-          base_url: https://openrouter.ai/api/v1
-          model: ${{ vars.LLM_MODEL_CHEAP }}
-          system_prompt: |
-            Du er en simpel dansk cybersecurity-assistent.
-            Lav kun en titel + kort udkast (max 300 tegn).
-          input_prompt: |
-            Rå data: ${{ steps.read_raw.outputs.raw_content }}
-          tool_schema: |
-            {"name": "draft", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "draft_body": {"type": "string"}}, "required": ["title", "draft_body"]}}
-          temperature: 0.6
-          max_tokens: 600
-
-      # Workaround for set-output deprecation/permission issue
-      - name: Extract LLM outputs manually
-        id: extract_llm
+      - name: Create draft via OpenRouter API
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: |
-          # Try to extract from outputs, fallback to parsing the log file if needed
-          if [ -n "${{ steps.create_draft.outputs.title }}" ] && [ -n "${{ steps.create_draft.outputs.draft_body }}" ]; then
-            echo "title=${{ steps.create_draft.outputs.title }}" >> $GITHUB_ENV
-            echo "draft_body=${{ steps.create_draft.outputs.draft_body }}" >> $GITHUB_ENV
-          else
-            # Fallback: parse the JSON from the output file if available
-            if [ -f data/drafts/daily_${{ github.sha }}.json ]; then
-              echo "title=$(jq -r .title < data/drafts/daily_${{ github.sha }}.json)" >> $GITHUB_ENV
-              echo "draft_body=$(jq -r .draft_body < data/drafts/daily_${{ github.sha }}.json)" >> $GITHUB_ENV
-            fi
+          RAW_CONTENT=$(cat /tmp/raw_compact.json)
+
+          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg model "$LLM_MODEL_CHEAP" \
+              --arg raw "$RAW_CONTENT" \
+              '{
+                model: $model,
+                messages: [{
+                  role: "user",
+                  content: ("Du er en simpel dansk cybersecurity-assistent.\nLav en titel og kort udkast (max 300 tegn) baseret på disse data.\n\nSvar KUN med denne JSON (ingen anden tekst):\n{\"title\": \"...\", \"draft_body\": \"...\"}\n\nRå data: " + $raw)
+                }],
+                temperature: 0.6,
+                max_tokens: 600
+              }')")
+
+          # Extract content from response
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+          if [ -z "$CONTENT" ]; then
+            echo "LLM returned empty response"
+            echo "$RESPONSE" | jq .
+            exit 1
           fi
 
+          # Strip markdown code blocks if present
+          CONTENT=$(echo "$CONTENT" | sed 's/^```json//;s/^```//;s/```$//' | tr -d '\n' | sed 's/^[[:space:]]*//')
 
-      - name: Save draft to file
-        env:
-          DRAFT_TITLE: ${{ env.title }}
-          DRAFT_BODY: ${{ env.draft_body }}
-          DRAFT_JSON: ${{ steps.create_draft.outputs.draft }}
-        run: |
+          TITLE=$(echo "$CONTENT" | jq -r '.title // empty')
+          BODY=$(echo "$CONTENT" | jq -r '.draft_body // empty')
+
+          if [ -z "$TITLE" ] || [ -z "$BODY" ]; then
+            echo "Failed to parse LLM output:"
+            echo "$CONTENT"
+            exit 1
+          fi
+
           mkdir -p data/drafts
-          printf '%s' "$DRAFT_TITLE" > data/drafts/daily_${{ github.sha }}_title.txt
-          printf '%s' "$DRAFT_BODY" > data/drafts/daily_${{ github.sha }}_body.txt
-          printf '%s' "$DRAFT_JSON" > data/drafts/daily_${{ github.sha }}.json
+          printf '%s' "$TITLE" > "data/drafts/daily_${GITHUB_SHA}_title.txt"
+          printf '%s' "$BODY" > "data/drafts/daily_${GITHUB_SHA}_body.txt"
+          echo "$CONTENT" > "data/drafts/daily_${GITHUB_SHA}.json"
+
+          echo "Draft created: $TITLE"
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5
