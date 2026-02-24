@@ -17,7 +17,7 @@ ENTITIES_PATH = os.path.join(
 )
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-LLM_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
+LLM_MODEL = "qwen/qwen3-vl-30b-a3b-thinking"
 
 CLASSIFY_PROMPT = """Du er en dansk cybersikkerhedsanalytiker.
 Vurder om denne nyhed handler om et KONKRET cyberangreb, databrud \
