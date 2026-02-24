@@ -165,10 +165,10 @@ def extract_domain(url):
 def discover():
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
     brave_key = os.environ.get("BRAVE_API_KEY", "")
-    api_url = os.environ.get("LLM_API_URL",
-                             "https://openrouter.ai/api/v1/chat/completions")
-    brave_url = os.environ.get("BRAVE_SEARCH_URL",
-                               "https://api.search.brave.com/res/v1/web/search")
+    api_url = (os.environ.get("LLM_API_URL")
+               or "https://openrouter.ai/api/v1/chat/completions")
+    brave_url = (os.environ.get("BRAVE_SEARCH_URL")
+                 or "https://api.search.brave.com/res/v1/web/search")
     model = os.environ.get("LLM_MODEL_CHEAP", "")
 
     if not brave_key:

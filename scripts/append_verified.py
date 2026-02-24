@@ -230,8 +230,8 @@ def append_verified():
         return
 
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
-    api_url = os.environ.get("LLM_API_URL",
-                             "https://openrouter.ai/api/v1/chat/completions")
+    api_url = (os.environ.get("LLM_API_URL")
+               or "https://openrouter.ai/api/v1/chat/completions")
     model = os.environ.get("LLM_MODEL_CHEAP", "")
 
     if len(new_entries) > 1 and api_key and model:
