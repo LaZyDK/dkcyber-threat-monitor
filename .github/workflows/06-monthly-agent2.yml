@@ -14,13 +14,27 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
+      - name: Read latest monthly draft and raw summary
+        id: input
+        run: |
+          DRAFT=$(ls -1t data/monthly/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No monthly drafts found")
+          RAW=$(ls -1t data/monthly/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No monthly raw found")
+          {
+            echo "draft<<DRAFTEOF"
+            echo "$DRAFT"
+            echo "DRAFTEOF"
+            echo "raw<<RAWEOF"
+            echo "$RAW"
+            echo "RAWEOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Agent 2 – Refine to natural monthly summary post
         id: agent2
         uses: appleboy/llm-action@v1
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
           base_url: https://openrouter.ai/api/v1
-          model: meta-llama/llama-3.1-70b-instruct:free   # Eller meta-llama/llama-3.3-70b-instruct:free hvis tilgængelig
+          model: meta-llama/llama-3.1-70b-instruct:free
           system_prompt: |
             Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
             Skriv en engagerende, naturlig månedlig opsummering på dansk.
@@ -34,18 +48,22 @@ jobs:
             Rå data er verificeret af mig før posting.
           input_prompt: |
             Rå månedlig opsummering + Agent 1 udkast:
-            $(cat data/monthly/drafts/*.json | tail -n 1)
-            Inkluder også rå tabellen fra: $(cat data/monthly/raw/*.json | tail -n 1)
+            ${{ steps.input.outputs.draft }}
+            Inkluder også rå tabellen fra:
+            ${{ steps.input.outputs.raw }}
           tool_schema: |
             {"name": "monthly_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
           temperature: 0.75
           max_tokens: 1800
 
       - name: Save final post files
+        env:
+          POST_TITLE: ${{ steps.agent2.outputs.title }}
+          POST_BODY: ${{ steps.agent2.outputs.body }}
         run: |
           mkdir -p data/monthly/generated
-          echo "${{ steps.agent2.outputs.title }}"   > data/monthly/generated/title_$(date +%Y-%m).txt
-          echo "${{ steps.agent2.outputs.body }}"    > data/monthly/generated/post_$(date +%Y-%m).md
+          printf '%s' "$POST_TITLE" > data/monthly/generated/title_$(date +%Y-%m).txt
+          printf '%s' "$POST_BODY"  > data/monthly/generated/post_$(date +%Y-%m).md
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5

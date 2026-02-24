@@ -1,7 +1,7 @@
 import feedparser
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 feeds = [
     "https://feeds.feedburner.com/TalosBlog",
@@ -20,11 +20,11 @@ def collect():
                 "published": entry.get("published", ""),
                 "summary": entry.get("summary", ""),
                 "source": url,
-                "collected_at": datetime.utcnow().isoformat()
+                "collected_at": datetime.now(timezone.utc).isoformat()
             })
 
     os.makedirs("data/raw", exist_ok=True)
-    path = f"data/raw/web_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json"
+    path = f"data/raw/web_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(threats, f, ensure_ascii=False, indent=2)
 

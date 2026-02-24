@@ -42,7 +42,7 @@ jobs:
               client_secret=os.environ['REDDIT_CLIENT_SECRET'],
               username=os.environ['REDDIT_USERNAME'],
               password=os.environ['REDDIT_PASSWORD'],
-              user_agent='dkcyber-threat-bot v0.1 (by u/YOUR_REDDIT_USERNAME)'
+              user_agent=f'dkcyber-threat-bot v0.1 (by u/{os.environ[\"REDDIT_USERNAME\"]})'
           )
           subreddit = reddit.subreddit('dkcybersecurity')
           

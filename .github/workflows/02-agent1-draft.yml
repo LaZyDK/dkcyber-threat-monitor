@@ -17,6 +17,16 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
+      - name: Read latest raw threat files
+        id: raw
+        run: |
+          CONTENT=$(ls -1t data/raw/*.json 2>/dev/null | head -n 3 | xargs cat 2>/dev/null || echo "No raw files found")
+          {
+            echo "content<<RAWEOF"
+            echo "$CONTENT"
+            echo "RAWEOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Agent 1 – Generate quick draft
         id: agent1
         uses: appleboy/llm-action@v1
@@ -29,15 +39,17 @@ jobs:
             Create only a title + short draft summary (max 200–300 characters).
           input_prompt: |
             Latest raw threat files:
-            $(ls -1 data/raw/ | tail -n 3 | xargs -I {} cat data/raw/{})
+            ${{ steps.raw.outputs.content }}
           temperature: 0.55
           max_tokens: 500
           output_variable: draft_json
 
       - name: Save draft
+        env:
+          DRAFT: ${{ steps.agent1.outputs.draft_json }}
         run: |
           mkdir -p data/drafts
-          echo '${{ steps.agent1.outputs.draft_json }}' > data/drafts/agent1_${{ github.sha }}.json
+          printf '%s' "$DRAFT" > data/drafts/agent1_${{ github.sha }}.json
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -14,6 +14,16 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
+      - name: Read latest draft
+        id: draft
+        run: |
+          CONTENT=$(ls -1t data/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "No drafts found")
+          {
+            echo "content<<DRAFTEOF"
+            echo "$CONTENT"
+            echo "DRAFTEOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Agent 2 – Refine to natural Reddit post
         id: agent2
         uses: appleboy/llm-action@v1
@@ -33,17 +43,20 @@ jobs:
             Rå data er verificeret af mig før posting.
           input_prompt: |
             Indhold fra Agent 1:
-            $(cat data/drafts/*.json | tail -n 1)
+            ${{ steps.draft.outputs.content }}
           tool_schema: |
             {"name": "final_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
           temperature: 0.75
           max_tokens: 1400
 
       - name: Save final post files
+        env:
+          POST_TITLE: ${{ steps.agent2.outputs.title }}
+          POST_BODY: ${{ steps.agent2.outputs.body }}
         run: |
           mkdir -p data/generated
-          echo "${{ steps.agent2.outputs.title }}"   > data/generated/title_${{ github.sha }}.txt
-          echo "${{ steps.agent2.outputs.body }}"    > data/generated/post_${{ github.sha }}.md
+          printf '%s' "$POST_TITLE" > data/generated/title_${{ github.sha }}.txt
+          printf '%s' "$POST_BODY"  > data/generated/post_${{ github.sha }}.md
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5
