@@ -53,7 +53,7 @@ jobs:
             VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
 
             ---
-            🤖 *Denne post er genereret af LLM (Llama 3.1 70B) med human oversight via et open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+            🤖 *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
             Rå data er verificeret af mig før posting.
           input_prompt: |
             Rå månedlig opsummering + månedligt udkast:
