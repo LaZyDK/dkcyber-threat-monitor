@@ -44,11 +44,18 @@ jobs:
           temperature: 0.6
           max_tokens: 600
 
+      # Workaround for set-output deprecation/permission issue
+      - name: Extract LLM outputs manually
+        id: extract_llm
+        run: |
+          echo "title=$(jq -r .title <<< '${{ steps.agent1.outputs.draft }}')" >> $GITHUB_ENV
+          echo "draft_body=$(jq -r .draft_body <<< '${{ steps.agent1.outputs.draft }}')" >> $GITHUB_ENV
+
       - name: Save draft to file
         env:
-          DRAFT_TITLE: ${{ steps.agent1.outputs.title }}
-          DRAFT_BODY: ${{ steps.agent1.outputs.draft_body }}
-          DRAFT_JSON: ${{ toJSON(steps.agent1.outputs) }}
+          DRAFT_TITLE: ${{ env.title }}
+          DRAFT_BODY: ${{ env.draft_body }}
+          DRAFT_JSON: ${{ steps.agent1.outputs.draft }}
         run: |
           mkdir -p data/drafts
           printf '%s' "$DRAFT_TITLE" > data/drafts/agent1_${{ github.sha }}_title.txt
