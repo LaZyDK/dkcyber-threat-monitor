@@ -33,7 +33,7 @@ jobs:
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
           base_url: https://openrouter.ai/api/v1
-          model: qwen/qwen3-vl-30b-a3b-thinking
+          model: openai/gpt-3.5-turbo
           system_prompt: |
             Du er en simpel dansk cybersecurity-assistent.
             Lav kun en titel + kort intro til månedlig opsummering.
