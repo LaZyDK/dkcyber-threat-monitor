@@ -4,13 +4,13 @@
 
 **Automatisk overvågning og deling af verificerede cyber-trusler til det danske community.**
 
-Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds + offentlige Telegram-kanaler fra kendte APT-grupper), lader **mig** verificere dem via Pull Requests, og poster derefter automatisk til **r/dkcybersecurity**.
+Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds), lader **mig** verificere dem via Pull Requests, og poster derefter automatisk til **r/dkcybersecurity**.
 
 ### Hvordan det virker
 
 1. **Rå data** → indsamles automatisk  
-2. **Draft (billig model)** → hurtigt udkast (`LLM_MODEL_CHEAP`, fx openai/gpt-3.5-turbo)  
-3. **Finalize (tool-use model)** → færdig Reddit-post (`LLM_MODEL_TOOLUSE`, fx anthropic/claude-3-opus)  
+2. **Draft (billig model)** → hurtigt udkast (`LLM_MODEL_CHEAP`, fx qwen/qwen3-vl-30b-a3b-thinking)  
+3. **Finalize (tool-use model)** → færdig Reddit-post (`LLM_MODEL_TOOLUSE`, fx openai/gpt-3.5-turbo)  
 4. **Human oversight** → jeg gennemgår og godkender alt i PR  
 5. **Månedlig opsummering** → samme decoupled proces den 1. i hver måned
 
@@ -31,13 +31,13 @@ Disse sættes som repo secrets eller i workflow env.
 
 **Hver Reddit-post indeholder desuden denne faste disclaimer** (automatisk tilføjet af Finalize-step):
 > ---
-> 🤖 *Denne post er genereret af LLM (Llama 3.1 70B) med human oversight via et open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+> 🤖 *Denne post er genereret af LLM med human oversight via mig open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
 > Rå data er verificeret af mig før posting.
 
 ### Teknisk opsætning
 
-- 100 % GitHub Actions (undtagen Telegram-scraper på VPS)
-- Decoupled multi-step workflows (ingen kæder, ingen agent1/agent2-navne)
+- 100 % GitHub Actions
+- Decoupled multi-step workflows
 - Gratis og betalte LLMs (vælg model via env vars)
 - Alt versioneret: raw → draft → final post
 
@@ -45,8 +45,8 @@ Disse sættes som repo secrets eller i workflow env.
 
 - `OPENROUTER_API_KEY` (OpenRouter LLM adgang)
 - `BRAVE_API_KEY` (Brave Search API)
-- `LLM_MODEL_CHEAP` (fx openai/gpt-3.5-turbo)
-- `LLM_MODEL_TOOLUSE` (fx anthropic/claude-3-opus)
+- `LLM_MODEL_CHEAP` (fx qwen/qwen3-vl-30b-a3b-thinking)
+- `LLM_MODEL_TOOLUSE` (fx openai/gpt-3.5-turbo)
 - (Valgfrit) Reddit API credentials til auto-posting
 
 ### Links
