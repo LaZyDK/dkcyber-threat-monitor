@@ -28,14 +28,38 @@
     "source": "tjekdet.dk",
     "link": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
     "additional_sources": [
-      {"url": "https://www.dknyt.dk/artikel/danske-myndigheder-og-virksomheder-udsat-for-omfattende-hackerangreb", "name": "dknyt.dk"},
-      {"url": "https://finans.dk/tech/ECE19028843/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/", "name": "finans.dk"},
-      {"url": "https://faa.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider", "name": "faa.dk"},
-      {"url": "https://nordjyske.dk/nyheder/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/5929750", "name": "nordjyske.dk"},
-      {"url": "https://frdb.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider", "name": "frdb.dk"},
-      {"url": "https://www.berlingske.dk/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider?gaa_at=eafs&gaa_n=AWEtsqcJKDVEywUc5ulxR8nnbUkmJBpaTeZZgZYaoiPa8r1i0B0bKoDbvcpK&gaa_ts=699b9f0e&gaa_sig=piA0aeKbiBDCZYcnbiv2tYci99iU-IWvJGVy_7iWT45Tm2ZsgIXqvKjOENyOY_ZKNxYNW11V1rmMFbMpcrkxXg%3D%3D", "name": "berlingske.dk"},
-      {"url": "https://ekstrabladet.dk/forbrug/Teknologi/russiske-angreb-paa-danmark-40-hjemmesider-ramt/11099453", "name": "ekstrabladet.dk"},
-      {"url": "https://www.bt.dk/samfund/lagt-ned-af-angreb-40-hjemmesider-ramt", "name": "bt.dk"}
+      {
+        "url": "https://www.dknyt.dk/artikel/danske-myndigheder-og-virksomheder-udsat-for-omfattende-hackerangreb",
+        "name": "dknyt.dk"
+      },
+      {
+        "url": "https://finans.dk/tech/ECE19028843/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/",
+        "name": "finans.dk"
+      },
+      {
+        "url": "https://faa.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
+        "name": "faa.dk"
+      },
+      {
+        "url": "https://nordjyske.dk/nyheder/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/5929750",
+        "name": "nordjyske.dk"
+      },
+      {
+        "url": "https://frdb.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
+        "name": "frdb.dk"
+      },
+      {
+        "url": "https://www.berlingske.dk/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider?gaa_at=eafs&gaa_n=AWEtsqcJKDVEywUc5ulxR8nnbUkmJBpaTeZZgZYaoiPa8r1i0B0bKoDbvcpK&gaa_ts=699b9f0e&gaa_sig=piA0aeKbiBDCZYcnbiv2tYci99iU-IWvJGVy_7iWT45Tm2ZsgIXqvKjOENyOY_ZKNxYNW11V1rmMFbMpcrkxXg%3D%3D",
+        "name": "berlingske.dk"
+      },
+      {
+        "url": "https://ekstrabladet.dk/forbrug/Teknologi/russiske-angreb-paa-danmark-40-hjemmesider-ramt/11099453",
+        "name": "ekstrabladet.dk"
+      },
+      {
+        "url": "https://www.bt.dk/samfund/lagt-ned-af-angreb-40-hjemmesider-ramt",
+        "name": "bt.dk"
+      }
     ],
     "timestamp": "2026-02-24",
     "verified_by": "human-review",
@@ -48,13 +72,36 @@
     "source": "dr.dk",
     "link": "https://www.dr.dk/nyheder/seneste/groenlandske-hjemmesider-ramt-af-angreb",
     "additional_sources": [
-      {"url": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/", "name": "inputmag.dk"},
-      {"url": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416", "name": "nordjyske.dk"},
-      {"url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337", "name": "sermitsiaq.ag"},
-      {"url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165", "name": "ekstrabladet.dk"}
+      {
+        "url": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
+        "name": "inputmag.dk"
+      },
+      {
+        "url": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416",
+        "name": "nordjyske.dk"
+      },
+      {
+        "url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
+        "name": "sermitsiaq.ag"
+      },
+      {
+        "url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
+        "name": "ekstrabladet.dk"
+      }
     ],
     "timestamp": "2026-02-24",
     "verified_by": "human-review",
     "verified_at": "2026-02-24T12:07:24.819285+00:00"
+  },
+  {
+    "id": "643f2f335f87",
+    "name": "DDoS-angreb fra NoName057(16) mod danske hjemmesider",
+    "description": "Den russiske hackergruppe NoName057(16) har udført DDoS-angreb mod danske hjemmesider. Styrelsen for Samfundssikkerhed bekræfter angrebene og anbefaler forholdsforanstaltninger.",
+    "source": "berlingske.dk",
+    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqfn4zUEuswHWH8OQgFMhaEVESAOvLu5bM42r3djxrF7HDFenaVUxDqs&gaa_ts=6999c8ae&gaa_sig=ZwYTgH1hJ4ibdPt3NV624fJ1p0BFv8NpQVP6FHLJm5k6yPP7o-uoZiIrvff0pCanD6roAY3EO6p5rr-oCTWmxw%3D%3D",
+    "additional_sources": [],
+    "timestamp": "2026-02-24",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-24T14:06:32.251883+00:00"
   }
 ]
