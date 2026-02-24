@@ -1,0 +1,167 @@
+[
+  {
+    "title": "Kina-forbundne aktører misbrugte Dell 0-dagsårbarhed i over et år",
+    "link": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "published": "Wed, 18 Feb 2026 12:11:51 +0000",
+    "summary": "<span>Kina-forbundne aktører misbrugte Dell 0-dagsårbarhed i over et år </span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-18T13:11:51+01:00\" title=\"Wednesday, February 18, 2026 - 13:11\">Wed, 02/18/2026 - 13:11</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T10:24:26.854373+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "LLM’er finder nu 0‑dage i moden open source‑kode",
+    "link": "https://www.cert.dk/news/2026-02-17/LLMer-finder-nu-0%E2%80%91dage-i-moden-open-source%E2%80%91kode",
+    "published": "Tue, 17 Feb 2026 10:07:29 +0000",
+    "summary": "<span>LLM’er finder nu 0‑dage i moden open source‑kode</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-17T11:07:29+01:00\" title=\"Tuesday, February 17, 2026 - 11:07\">Tue, 02/17/2026 - 11:07</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T10:24:26.938550+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "LockBit får en ny version",
+    "link": "https://www.cert.dk/news/2026-02-17/LockBit-faar-en-ny-version",
+    "published": "Tue, 17 Feb 2026 09:00:10 +0000",
+    "summary": "<span>LockBit får en ny version</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-17T10:00:10+01:00\" title=\"Tuesday, February 17, 2026 - 10:00\">Tue, 02/17/2026 - 10:00</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T10:24:27.024788+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "Ny ClickFix‑variant misbruger DNS‑opslag",
+    "link": "https://www.cert.dk/news/2026-02-16/Ny-ClickFix%E2%80%91variant-misbruger-DNS%E2%80%91opslag",
+    "published": "Mon, 16 Feb 2026 09:48:14 +0000",
+    "summary": "<span>Ny ClickFix‑variant misbruger DNS‑opslag </span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-16T10:48:14+01:00\" title=\"Monday, February 16, 2026 - 10:48\">Mon, 02/16/2026 - 10:48</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T10:24:27.100565+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "Google lukker årets første Chrome‑0‑dagssårbarhed",
+    "link": "https://www.cert.dk/news/2026-02-16/Google-lukker-aarets-foerste-Chrome%E2%80%910%E2%80%91dagssaarbarhed",
+    "published": "Mon, 16 Feb 2026 09:39:52 +0000",
+    "summary": "<span>Google lukker årets første Chrome‑0‑dagssårbarhed</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-16T10:39:52+01:00\" title=\"Monday, February 16, 2026 - 10:39\">Mon, 02/16/2026 - 10:39</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T10:24:27.159047+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "CERT-SE:s veckobrev v.8",
+    "link": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "published": "Fri, 20 Feb 2026 12:15:00 +0100",
+    "summary": "<p>Bland veckans läsning finns till exempel en rapport om ökade angrepp mot OT-system (och om du inte redan läst CERT-PL:s rapport om angrepp mot energisektorn, finns den också nedan). Veckobrevet består utöver det som vanligt av blandade nyheter, rapporter och analyser.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T10:24:28.120448+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Kritisk sårbarhet i Dell RecoverPoint for Virtual Machines",
+    "link": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "published": "Thu, 19 Feb 2026 12:35:00 +0100",
+    "summary": "<p>Dell har publicerat information om en kritisk sårbarhet (CVE-2026-22769) som påverkar RecoverPoint for Virtual Machines. Sårbarheten är kritisk och har en CVSS v3.1-klassning på 10. [1] [2]</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T10:24:28.120713+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "CERT-SE:s veckobrev v.7",
+    "link": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "published": "Fri, 13 Feb 2026 13:37:00 +0100",
+    "summary": "<p>Idag kom nyheten om ett nytt samarbete gällande cybersäkerhet mellan Sverige och Ukraina, något som går att ta del av i veckobrevet. Utöver det kan du läsa om andra nyheter, rapporter och analyser inom cybersäkerhetsområdet.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T10:24:28.198406+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Patchtisdag februari 2026 – samlad information om månadens säkerhetsuppdateringar",
+    "link": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "published": "Wed, 11 Feb 2026 12:50:00 +0100",
+    "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för februari.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T10:24:28.198784+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "MISP-övningar 2026",
+    "link": "https://www.cert.se/2026/02/misp-se-ovningar.html",
+    "published": "Mon, 09 Feb 2026 10:30:00 +0100",
+    "summary": "<p>Behöver din organisation stärka sin förmåga att hantera cyberhot och arbeta effektivt med informationsdelning?</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T10:24:28.265552+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "Dansk universitet satser på europæisk AI: Forskning skal ikke ende i USA",
+    "link": "https://www.version2.dk/artikel/dansk-universitet-satser-paa-europaeisk-ai-forskning-skal-ikke-ende-i-usa",
+    "published": "Tue, 24 Feb 2026 10:01:57 +0100",
+    "summary": "Aalborg Universitet har kigget mod Frankrig i valget af nye AI-løsninger.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T10:24:28.513938+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "Palantir slæber medie i retten efter skriverier om systemer: »Grinagtigt og uprofessionelt«",
+    "link": "https://www.version2.dk/artikel/palantir-slaeber-medie-i-retten-efter-skriverier-om-systemer-grinagtigt-og-uprofessionelt",
+    "published": "Tue, 24 Feb 2026 06:00:00 +0100",
+    "summary": "Palantir har slæbt et kritisk medie i retten, fordi de vil have bragt yderligere genmæle efter offentliggørelse af kritiske vurderinger af selskabets systemer.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T10:24:28.592475+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "44.000 ansatte i tysk delstat har skiftet Microsoft ud med open source: Sådan er det gået",
+    "link": "https://www.version2.dk/artikel/44000-ansatte-i-tysk-delstat-har-skiftet-microsoft-ud-med-open-source-saadan-er-det-gaaet",
+    "published": "Tue, 24 Feb 2026 05:00:00 +0100",
+    "summary": "Tusindvis af offentligt ansatte i det nordlige Tyskland er for nylig skiftet til open source-programmer, når de skal sende mails og skrive dokumenter. Nu har delstatens digitaliseringsminister selv taget nyt styresystem i brug.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T10:24:28.648445+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "IT-Branchen: Digital suverænitet kræver mere end symbolpolitik",
+    "link": "https://www.version2.dk/artikel/it-branchen-digital-suveraenitet-kraever-mere-end-symbolpolitik",
+    "published": "Mon, 23 Feb 2026 10:25:33 +0100",
+    "summary": "8 ud af 10 offentlige institutioner flytter kritiske data til EU, anfører IT-Branchen i et debatindlæg – men uden en langsigtet strategi risikerer Danmark alligevel at halte bagefter.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T10:24:28.712112+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  },
+  {
+    "title": "Svenskerne slår hårdt ned på datalæk: Nu får det danske Datatilsyn kritik for at være for passivt",
+    "link": "https://www.version2.dk/artikel/svenskerne-slaar-haardt-ned-paa-datalaek-nu-faar-det-danske-datatilsyn-kritik-vaere-passivt",
+    "published": "Mon, 23 Feb 2026 10:22:00 +0100",
+    "summary": "Svensk millionbøde sætter nu spot på det danske Datatilsyns ganske få bødesager i 2025.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T10:24:28.778324+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: 404 Client Error: Not Found for url: https://openrouter.ai/api/v1/chat/completions"
+  }
+]
