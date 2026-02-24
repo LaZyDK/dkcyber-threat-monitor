@@ -1,0 +1,53 @@
+name: 03 Agent 2 – Final Human-like Post
+
+on:
+  push:
+    paths:
+      - 'data/drafts/**'
+  workflow_dispatch:
+
+jobs:
+  agent2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Agent 2 – Refine to natural Reddit post
+        id: agent2
+        uses: appleboy/llm-action@v1
+        with:
+          api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          base_url: https://openrouter.ai/api/v1
+          model: meta-llama/llama-3.1-70b-instruct:free
+          system_prompt: |
+            Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+            Skriv engagerende, naturlig tekst på dansk.
+            Emojis sparsomt, stil gerne spørgsmål til læserne.
+
+            VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
+
+            ---
+            🤖 *Denne post er genereret af LLM (Llama 3.1 70B) med human oversight via et open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+            Rå data er verificeret af mig før posting.
+          input_prompt: |
+            Indhold fra Agent 1:
+            $(cat data/drafts/*.json | tail -n 1)
+          tool_schema: |
+            {"name": "final_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
+          temperature: 0.75
+          max_tokens: 1400
+
+      - name: Save final post files
+        run: |
+          mkdir -p data/generated
+          echo "${{ steps.agent2.outputs.title }}"   > data/generated/title_${{ github.sha }}.txt
+          echo "${{ steps.agent2.outputs.body }}"    > data/generated/post_${{ github.sha }}.md
+
+      - name: Commit final post
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Agent 2 final Reddit-post klar til review"
+          file_pattern: data/generated/**
+          branch: ${{ github.head_ref || 'main' }}

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Data
+data/raw/*
+data/drafts/*
+data/generated/*
+data/monthly/raw/*
+data/monthly/drafts/*
+data/monthly/generated/*
+!data/verified_threats.json

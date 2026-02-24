@@ -1,0 +1,45 @@
+name: 05 Monthly Agent 1 – Quick Draft
+
+on:
+  push:
+    paths:
+      - 'data/monthly/raw/**'
+  workflow_dispatch:
+
+jobs:
+  agent1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Agent 1 – Generate quick monthly draft (GitHub Models)
+        id: agent1
+        uses: appleboy/llm-action@v1
+        with:
+          api_key: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          base_url: https://models.github.com/api/v1
+          model: mistral-nemo:free
+          system_prompt: |
+            Du er en simpel dansk cybersecurity-assistent.
+            Lav kun en titel + kort intro/opsummering til månedlig trusselsoversigt (max 400 tegn inkl. tabel-plads).
+            Output som JSON: {"title": "...", "draft_body": "..."}
+          input_prompt: |
+            Seneste rå månedlig opsummering:
+            $(cat data/monthly/raw/*.json | tail -n 1)
+          temperature: 0.55
+          max_tokens: 700
+          output_variable: draft_json
+
+      - name: Save draft
+        run: |
+          mkdir -p data/monthly/drafts
+          echo '${{ steps.agent1.outputs.draft_json }}' > data/monthly/drafts/agent1_$(date +%Y-%m).json
+
+      - name: Commit draft
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Monthly Agent 1 quick draft created"
+          file_pattern: data/monthly/drafts/**
+          branch: ${{ github.head_ref || 'main' }}

@@ -1,0 +1,46 @@
+name: 01 Collect Raw + Create PR
+
+on:
+  push:
+    paths:
+      - 'data/raw/**'
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  collect-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect raw threats (example)
+        run: python scripts/collect_web.py
+
+      - name: Commit raw data if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: collected new raw threat data"
+          file_pattern: data/raw/**
+          branch: main
+
+      - name: Create or update verification PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "New raw threats for verification"
+          title: "Verify new threats – manual review needed"
+          body: |
+            New raw data collected.
+            Please review → edit if needed → merge when verified.
+          branch: threat-verification-${{ github.run_id }}
+          delete-branch: true
+          labels: verification,threat

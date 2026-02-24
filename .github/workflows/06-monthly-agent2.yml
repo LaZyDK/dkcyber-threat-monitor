@@ -1,0 +1,55 @@
+name: 06 Monthly Agent 2 – Final Reddit Post
+
+on:
+  push:
+    paths:
+      - 'data/monthly/drafts/**'
+  workflow_dispatch:
+
+jobs:
+  agent2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Agent 2 – Refine to natural monthly summary post
+        id: agent2
+        uses: appleboy/llm-action@v1
+        with:
+          api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          base_url: https://openrouter.ai/api/v1
+          model: meta-llama/llama-3.1-70b-instruct:free   # Eller meta-llama/llama-3.3-70b-instruct:free hvis tilgængelig
+          system_prompt: |
+            Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+            Skriv en engagerende, naturlig månedlig opsummering på dansk.
+            Inkluder hele tabellen fra rådata, fremhæv trends eller højdepunkter, stil gerne spørgsmål til læserne.
+            Emojis sparsomt.
+
+            VIGTIGT – tilføj ALTID denne disclaimer nederst i body:
+
+            ---
+            🤖 *Denne post er genereret af LLM (Llama 3.1 70B) med human oversight via et open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+            Rå data er verificeret af mig før posting.
+          input_prompt: |
+            Rå månedlig opsummering + Agent 1 udkast:
+            $(cat data/monthly/drafts/*.json | tail -n 1)
+            Inkluder også rå tabellen fra: $(cat data/monthly/raw/*.json | tail -n 1)
+          tool_schema: |
+            {"name": "monthly_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
+          temperature: 0.75
+          max_tokens: 1800
+
+      - name: Save final post files
+        run: |
+          mkdir -p data/monthly/generated
+          echo "${{ steps.agent2.outputs.title }}"   > data/monthly/generated/title_$(date +%Y-%m).txt
+          echo "${{ steps.agent2.outputs.body }}"    > data/monthly/generated/post_$(date +%Y-%m).md
+
+      - name: Commit final post
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Monthly final Reddit-post klar til review"
+          file_pattern: data/monthly/generated/**
+          branch: ${{ github.head_ref || 'main' }}

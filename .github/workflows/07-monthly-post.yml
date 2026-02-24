@@ -1,0 +1,54 @@
+name: 07 Monthly – Post to Reddit
+
+on:
+  push:
+    paths:
+      - 'data/monthly/generated/**'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PRAW
+        run: pip install praw
+
+      - name: Find latest monthly files
+        id: files
+        run: |
+          TITLE_FILE=$(ls -t data/monthly/generated/title_*.txt | head -n1)
+          BODY_FILE=$(ls -t data/monthly/generated/post_*.md | head -n1)
+          echo "title_file=$TITLE_FILE" >> $GITHUB_OUTPUT
+          echo "body_file=$BODY_FILE" >> $GITHUB_OUTPUT
+
+      - name: Post to r/dkcybersecurity
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+        run: |
+          python -c "
+          import praw, os, sys
+          reddit = praw.Reddit(
+              client_id=os.environ['REDDIT_CLIENT_ID'],
+              client_secret=os.environ['REDDIT_CLIENT_SECRET'],
+              username=os.environ['REDDIT_USERNAME'],
+              password=os.environ['REDDIT_PASSWORD'],
+              user_agent='dkcyber-threat-bot v0.1 (by u/YOUR_REDDIT_USERNAME)'
+          )
+          subreddit = reddit.subreddit('dkcybersecurity')
+          
+          title = open('${{ steps.files.outputs.title_file }}').read().strip()
+          body = open('${{ steps.files.outputs.body_file }}').read()
+          
+          submission = subreddit.submit(title, selftext=body)
+          print(f'Posted: {submission.shortlink}')
+          "

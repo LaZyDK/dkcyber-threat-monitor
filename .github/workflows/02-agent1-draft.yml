@@ -1,0 +1,47 @@
+name: 02 Agent 1 – Quick Draft (GitHub Models)
+
+on:
+  push:
+    paths:
+      - 'data/raw/**'
+  pull_request:
+    paths:
+      - 'data/raw/**'
+  workflow_dispatch:
+
+jobs:
+  agent1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Agent 1 – Generate quick draft
+        id: agent1
+        uses: appleboy/llm-action@v1
+        with:
+          api_key: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          base_url: https://models.github.com/api/v1
+          model: mistral-nemo:free
+          system_prompt: |
+            You are a simple Danish cybersecurity assistant.
+            Create only a title + short draft summary (max 200–300 characters).
+          input_prompt: |
+            Latest raw threat files:
+            $(ls -1 data/raw/ | tail -n 3 | xargs -I {} cat data/raw/{})
+          temperature: 0.55
+          max_tokens: 500
+          output_variable: draft_json
+
+      - name: Save draft
+        run: |
+          mkdir -p data/drafts
+          echo '${{ steps.agent1.outputs.draft_json }}' > data/drafts/agent1_${{ github.sha }}.json
+
+      - name: Commit draft
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Agent 1 quick draft created"
+          file_pattern: data/drafts/**
+          branch: ${{ github.head_ref || 'main' }}
