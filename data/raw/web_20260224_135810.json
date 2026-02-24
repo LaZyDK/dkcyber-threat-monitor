@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Deepfake opkald sætter tillid på prøve",
+    "link": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "published": "Tue, 24 Feb 2026 10:07:48 +0000",
+    "summary": "<span>Deepfake opkald sætter tillid på prøve</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-24T11:07:48+01:00\" title=\"Tuesday, February 24, 2026 - 11:07\">Tue, 02/24/2026 - 11:07</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T13:58:09.419741+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: Invalid URL '': No scheme supplied. Perhaps you meant https://?"
+  },
+  {
+    "title": "Trump lægger sanktioner på flere topfolk fra straffedomstol",
+    "link": "https://www.version2.dk/artikel/trump-laegger-sanktioner-paa-flere-topfolk-fra-straffedomstol",
+    "published": "Tue, 24 Feb 2026 14:07:00 +0100",
+    "summary": "Dommere og deres familie chikaneres af USA, også af europæiske virksomheder.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T13:58:10.887458+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: Invalid URL '': No scheme supplied. Perhaps you meant https://?"
+  },
+  {
+    "title": "Ny AI-lov fjerner stopklods for dansk it-gigant: »Vi er klar til at skrue op«",
+    "link": "https://www.version2.dk/artikel/ny-ai-lov-fjerner-stopklods-dansk-it-gigant-vi-er-klar-til-skrue-op",
+    "published": "Tue, 24 Feb 2026 11:48:00 +0100",
+    "summary": "Systematic-direktør erkender dog, at bekymringer om privatliv er reelle: »Jeg kan da godt selv synes som borger, at det er svært.«",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T13:58:10.887764+00:00",
+    "is_dk_attack": false,
+    "confidence": "error",
+    "explanation": "Klassificering fejlede: Invalid URL '': No scheme supplied. Perhaps you meant https://?"
+  }
+]
