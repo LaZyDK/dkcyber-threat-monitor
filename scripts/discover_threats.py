@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 BRAVE_SEARCH_URL = "https://api.search.brave.com/res/v1/web/search"
-LLM_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
+LLM_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
 VERIFIED_PATH = 'data/verified_threats.json'
 
 # Rotating search queries — Danish cyber attacks from multiple angles
