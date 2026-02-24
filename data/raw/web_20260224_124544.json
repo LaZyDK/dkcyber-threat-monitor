@@ -1,0 +1,167 @@
+[
+  {
+    "title": "Deepfake opkald sætter tillid på prøve",
+    "link": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "published": "Tue, 24 Feb 2026 10:07:48 +0000",
+    "summary": "<span>Deepfake opkald sætter tillid på prøve</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-24T11:07:48+01:00\" title=\"Tuesday, February 24, 2026 - 11:07\">Tue, 02/24/2026 - 11:07</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T12:44:30.253610+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens titel og resumé beskriver generelt temaet om deepfake-opkald uden at nævne konkrete danske mål eller hændelser, hvilket ikke opfylder kriterierne for et dansk cyberangreb."
+  },
+  {
+    "title": "Kina-forbundne aktører misbrugte Dell 0-dagsårbarhed i over et år",
+    "link": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "published": "Wed, 18 Feb 2026 12:11:51 +0000",
+    "summary": "<span>Kina-forbundne aktører misbrugte Dell 0-dagsårbarhed i over et år </span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-18T13:11:51+01:00\" title=\"Wednesday, February 18, 2026 - 13:11\">Wed, 02/18/2026 - 13:11</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T12:44:36.345149+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden beskriver en global 0-dagsårbarhed, der blev udnyttet af kina-forbundne aktører, men nævner ikke danske virksomheder, infrastruktur eller borgeres data som mål."
+  },
+  {
+    "title": "LLM’er finder nu 0‑dage i moden open source‑kode",
+    "link": "https://www.cert.dk/news/2026-02-17/LLMer-finder-nu-0%E2%80%91dage-i-moden-open-source%E2%80%91kode",
+    "published": "Tue, 17 Feb 2026 10:07:29 +0000",
+    "summary": "<span>LLM’er finder nu 0‑dage i moden open source‑kode</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-17T11:07:29+01:00\" title=\"Tuesday, February 17, 2026 - 11:07\">Tue, 02/17/2026 - 11:07</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T12:44:41.458843+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden handler om en generel teknologisk udvikling (LLM'er som finder sårbarheder), uden at nævne konkrete danske mål eller hændelser. Det er en sårbarhedsadvarsel uden dansk ramme."
+  },
+  {
+    "title": "LockBit får en ny version",
+    "link": "https://www.cert.dk/news/2026-02-17/LockBit-faar-en-ny-version",
+    "published": "Tue, 17 Feb 2026 09:00:10 +0000",
+    "summary": "<span>LockBit får en ny version</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-17T10:00:10+01:00\" title=\"Tuesday, February 17, 2026 - 10:00\">Tue, 02/17/2026 - 10:00</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T12:44:47.055930+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens resumé nævner kun en generel opdatering af LockBit-softwaren uden specifikke danske mål eller konkrete hændelser i Danmark."
+  },
+  {
+    "title": "Ny ClickFix‑variant misbruger DNS‑opslag",
+    "link": "https://www.cert.dk/news/2026-02-16/Ny-ClickFix%E2%80%91variant-misbruger-DNS%E2%80%91opslag",
+    "published": "Mon, 16 Feb 2026 09:48:14 +0000",
+    "summary": "<span>Ny ClickFix‑variant misbruger DNS‑opslag </span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-16T10:48:14+01:00\" title=\"Monday, February 16, 2026 - 10:48\">Mon, 02/16/2026 - 10:48</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-24T12:44:51.845012+00:00",
+    "is_dk_attack": true,
+    "confidence": "high",
+    "explanation": "Nyhedens kilden er cert.dk, Danmarks officielle cybersikkerhedsmyndighed, hvilket tyder på, at angrebet direkte rammer danske systemer eller er rapporteret i forbindelse med danske sikkerhedsforhold."
+  },
+  {
+    "title": "CERT-SE:s veckobrev v.8",
+    "link": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "published": "Fri, 20 Feb 2026 12:15:00 +0100",
+    "summary": "<p>Bland veckans läsning finns till exempel en rapport om ökade angrepp mot OT-system (och om du inte redan läst CERT-PL:s rapport om angrepp mot energisektorn, finns den också nedan). Veckobrevet består utöver det som vanligt av blandade nyheter, rapporter och analyser.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T12:44:57.096929+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Kritisk sårbarhet i Dell RecoverPoint for Virtual Machines",
+    "link": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "published": "Thu, 19 Feb 2026 12:35:00 +0100",
+    "summary": "<p>Dell har publicerat information om en kritisk sårbarhet (CVE-2026-22769) som påverkar RecoverPoint for Virtual Machines. Sårbarheten är kritisk och har en CVSS v3.1-klassning på 10. [1] [2]</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T12:44:57.097208+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens resumé beskriver en generel sårbarhed i Dell-software uden specifikke henvisninger til danske virksomheder, infrastruktur eller borgeres data. Der er ingen bevis for, at angrebet direkte rammer Danmark."
+  },
+  {
+    "title": "CERT-SE:s veckobrev v.7",
+    "link": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "published": "Fri, 13 Feb 2026 13:37:00 +0100",
+    "summary": "<p>Idag kom nyheten om ett nytt samarbete gällande cybersäkerhet mellan Sverige och Ukraina, något som går att ta del av i veckobrevet. Utöver det kan du läsa om andra nyheter, rapporter och analyser inom cybersäkerhetsområdet.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T12:45:00.413224+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Patchtisdag februari 2026 – samlad information om månadens säkerhetsuppdateringar",
+    "link": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "published": "Wed, 11 Feb 2026 12:50:00 +0100",
+    "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för februari.</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T12:45:00.413658+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens resumé beskriver generelle sikkerhedsopdateringer fra leverandører uden at nævne danske mål eller konkrete hændelser i Danmark."
+  },
+  {
+    "title": "MISP-övningar 2026",
+    "link": "https://www.cert.se/2026/02/misp-se-ovningar.html",
+    "published": "Mon, 09 Feb 2026 10:30:00 +0100",
+    "summary": "<p>Behöver din organisation stärka sin förmåga att hantera cyberhot och arbeta effektivt med informationsdelning?</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-24T12:45:09.669689+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden handler om træningsøvelser (MISP-övningar) fra Sveriges CERT, ikke om et konkret cyberangreb eller databrud, der rammer Danmark."
+  },
+  {
+    "title": "Ny AI-lov fjerner stopklods for dansk it-gigant: »Vi er klar til at skrue op«",
+    "link": "https://www.version2.dk/artikel/ny-ai-lov-fjerner-stopklods-dansk-it-gigant-vi-er-klar-til-skrue-op",
+    "published": "Tue, 24 Feb 2026 11:48:00 +0100",
+    "summary": "Systematic-direktør erkender dog, at bekymringer om privatliv er reelle: »Jeg kan da godt selv synes som borger, at det er svært.«",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T12:45:15.426104+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens fokus er på en ny AI-lov og dens konsekvenser for en dansk virksomhed, ikke på et konkret cyberangreb, databrud eller sikkerhedshændelse, der direkte rammer Danmark."
+  },
+  {
+    "title": "Dansk universitet satser på europæisk AI: Forskning skal ikke ende i USA",
+    "link": "https://www.version2.dk/artikel/dansk-universitet-satser-paa-europaeisk-ai-forskning-skal-ikke-ende-i-usa",
+    "published": "Tue, 24 Feb 2026 10:01:57 +0100",
+    "summary": "Aalborg Universitet har kigget mod Frankrig i valget af nye AI-løsninger.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T12:45:21.498657+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyhedens indhold drejer sig om en strategisk samarbejde mellem Aalborg Universitet og Frankrig om AI-løsninger, uden nogen reference til cyberangreb, databrud eller sikkerhedshændelser, der rammer Danmark."
+  },
+  {
+    "title": "Palantir slæber medie i retten efter skriverier om systemer: »Grinagtigt og uprofessionelt«",
+    "link": "https://www.version2.dk/artikel/palantir-slaeber-medie-i-retten-efter-skriverier-om-systemer-grinagtigt-og-uprofessionelt",
+    "published": "Tue, 24 Feb 2026 06:00:00 +0100",
+    "summary": "Palantir har slæbt et kritisk medie i retten, fordi de vil have bragt yderligere genmæle efter offentliggørelse af kritiske vurderinger af selskabets systemer.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T12:45:26.190721+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden handler om en retssag mellem Palantir og et dansk medie om kritiske artikler, ikke om et konkrete cyberangreb eller databrud, der rammer danske virksomheder eller infrastruktur."
+  },
+  {
+    "title": "44.000 ansatte i tysk delstat har skiftet Microsoft ud med open source: Sådan er det gået",
+    "link": "https://www.version2.dk/artikel/44000-ansatte-i-tysk-delstat-har-skiftet-microsoft-ud-med-open-source-saadan-er-det-gaaet",
+    "published": "Tue, 24 Feb 2026 05:00:00 +0100",
+    "summary": "Tusindvis af offentligt ansatte i det nordlige Tyskland er for nylig skiftet til open source-programmer, når de skal sende mails og skrive dokumenter. Nu har delstatens digitaliseringsminister selv taget nyt styresystem i brug.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T12:45:32.176724+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden handler om en softwaremigrering i Tyskland, hvor tyske offentlige ansatte skifter til open source-løsninger. Der er ingen nævnt direkte påvirkning af danske virksomheder, infrastruktur eller borgers data."
+  },
+  {
+    "title": "IT-Branchen: Digital suverænitet kræver mere end symbolpolitik",
+    "link": "https://www.version2.dk/artikel/it-branchen-digital-suveraenitet-kraever-mere-end-symbolpolitik",
+    "published": "Mon, 23 Feb 2026 10:25:33 +0100",
+    "summary": "8 ud af 10 offentlige institutioner flytter kritiske data til EU, anfører IT-Branchen i et debatindlæg – men uden en langsigtet strategi risikerer Danmark alligevel at halte bagefter.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-24T12:45:37.845357+00:00",
+    "is_dk_attack": false,
+    "confidence": "high",
+    "explanation": "Nyheden handler om en strategisk debat om digital suverænitet og dataflytning til EU, men indeholder ingen konkrete oplysninger om et cyberangreb, databrud eller sikkerhedshændelse, der direkte rammer Danmark."
+  }
+]
