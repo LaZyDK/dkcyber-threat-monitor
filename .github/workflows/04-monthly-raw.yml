@@ -5,6 +5,9 @@ on:
     - cron: '30 7 1 * *'     # 1. i måneden kl 08:30 dansk tid
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   raw-summary:
     runs-on: ubuntu-latest

@@ -5,6 +5,10 @@ on:
     - cron: '0 */6 * * *'   # every 6 hours
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   collect-and-pr:
     runs-on: ubuntu-latest

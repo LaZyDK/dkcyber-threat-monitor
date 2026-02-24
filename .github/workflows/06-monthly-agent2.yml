@@ -6,6 +6,9 @@ on:
       - 'data/monthly/drafts/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   agent2:
     runs-on: ubuntu-latest

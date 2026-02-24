@@ -7,6 +7,9 @@ on:
       - 'data/raw/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   append-verified:
     runs-on: ubuntu-latest

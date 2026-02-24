@@ -6,6 +6,9 @@ on:
       - 'data/monthly/generated/**'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   post:
     runs-on: ubuntu-latest
