@@ -2,9 +2,12 @@ import json
 import os
 import feedparser
 import requests
+from datetime import datetime, timezone
 
 CANDIDATES_PATH = 'data/raw/new_source_candidates.json'
-FEEDS_REGISTRY_PATH = 'data/discovered_feeds.json'
+FEEDS_PATH = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'feeds.json'
+)
 
 # Common RSS feed path patterns to try
 FEED_PATHS = [
@@ -29,9 +32,12 @@ def try_find_feed(domain):
             if feed.entries and len(feed.entries) > 0:
                 title = feed.feed.get('title', domain)
                 return {
+                    "url": url,
+                    "name": title,
+                    "language": "da",
+                    "added": datetime.now(timezone.utc).strftime('%Y-%m-%d'),
+                    "added_by": "discovery",
                     "domain": domain,
-                    "feed_url": url,
-                    "feed_title": title,
                     "entry_count": len(feed.entries),
                     "sample_title": feed.entries[0].get('title', ''),
                 }
@@ -39,6 +45,27 @@ def try_find_feed(domain):
             continue
 
     return None
+
+
+def load_feeds():
+    """Load current feeds from feeds.json."""
+    if not os.path.exists(FEEDS_PATH):
+        return []
+    with open(FEEDS_PATH, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def save_feeds(feeds):
+    """Save feeds to feeds.json."""
+    with open(FEEDS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(feeds, f, ensure_ascii=False, indent=2)
+
+
+def extract_domain(url):
+    """Extract domain from feed URL."""
+    import re
+    match = re.match(r'https?://(?:www\.)?([^/]+)', url)
+    return match.group(1).lower() if match else ""
 
 
 def discover_sources():
@@ -53,23 +80,24 @@ def discover_sources():
         print("Empty candidates list — nothing to check")
         return
 
-    # Load previously discovered feeds to avoid re-suggesting
-    existing_feeds = set()
-    if os.path.exists(FEEDS_REGISTRY_PATH):
-        with open(FEEDS_REGISTRY_PATH, 'r', encoding='utf-8') as f:
-            existing = json.load(f)
-        existing_feeds = {e.get('domain') for e in existing}
+    # Load existing feeds to avoid duplicates
+    existing_feeds = load_feeds()
+    existing_domains = set()
+    for feed in existing_feeds:
+        domain = extract_domain(feed.get('url', ''))
+        if domain:
+            existing_domains.add(domain)
 
     discovered = []
     for domain in candidates:
-        if domain in existing_feeds:
-            print(f"  Already known: {domain}")
+        if domain in existing_domains:
+            print(f"  Already tracked: {domain}")
             continue
 
         print(f"  Probing {domain} for RSS feeds...")
         result = try_find_feed(domain)
         if result:
-            print(f"    Found: {result['feed_url']} "
+            print(f"    Found: {result['url']} "
                   f"({result['entry_count']} entries)")
             discovered.append(result)
         else:
@@ -77,27 +105,29 @@ def discover_sources():
 
     if not discovered:
         print("No new feeds discovered")
-        # Clean up candidates file
         os.remove(CANDIDATES_PATH)
         return
 
-    # Save to registry
-    all_feeds = []
-    if os.path.exists(FEEDS_REGISTRY_PATH):
-        with open(FEEDS_REGISTRY_PATH, 'r', encoding='utf-8') as f:
-            all_feeds = json.load(f)
-    all_feeds.extend(discovered)
+    # Append new feeds directly to feeds.json
+    for feed in discovered:
+        # Remove temporary fields before saving
+        clean_feed = {
+            "url": feed["url"],
+            "name": feed["name"],
+            "language": feed["language"],
+            "added": feed["added"],
+            "added_by": feed["added_by"],
+        }
+        existing_feeds.append(clean_feed)
 
-    os.makedirs(os.path.dirname(FEEDS_REGISTRY_PATH) or '.', exist_ok=True)
-    with open(FEEDS_REGISTRY_PATH, 'w', encoding='utf-8') as f:
-        json.dump(all_feeds, f, ensure_ascii=False, indent=2)
+    save_feeds(existing_feeds)
 
     # Clean up candidates
     os.remove(CANDIDATES_PATH)
 
-    print(f"Discovered {len(discovered)} new feeds:")
+    print(f"Added {len(discovered)} new feeds to feeds.json:")
     for feed in discovered:
-        print(f"  {feed['domain']}: {feed['feed_url']}")
+        print(f"  {feed['domain']}: {feed['url']}")
 
 
 if __name__ == '__main__':

@@ -27,28 +27,27 @@ jobs:
       - name: Probe candidates for RSS feeds
         run: python scripts/discover_sources.py
 
-      - name: Check if new feeds were discovered
+      - name: Check for new feeds in feeds.json
         id: check
         run: |
-          if [ -f data/discovered_feeds.json ]; then
-            COUNT=$(jq 'length' data/discovered_feeds.json)
-            echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          # Count feeds added by discovery
+          DISC_COUNT=$(jq '[.[] | select(.added_by == "discovery")] | length' data/feeds.json)
+          echo "count=$DISC_COUNT" >> "$GITHUB_OUTPUT"
 
+          if [ "$DISC_COUNT" -gt "0" ]; then
             {
               echo "feeds<<FEEDSEOF"
-              jq -r '.[] | "| \(.domain) | \(.feed_url) | \(.feed_title) | \(.entry_count) entries | \(.sample_title[:50]) |"' data/discovered_feeds.json
+              jq -r '.[] | select(.added_by == "discovery") | "| \(.name) | \(.url) | \(.added) |"' data/feeds.json
               echo "FEEDSEOF"
             } >> "$GITHUB_OUTPUT"
-          else
-            echo "count=0" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create PR suggesting new sources
+      - name: Create PR with updated feeds.json
         if: steps.check.outputs.count != '0'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: discovered new RSS feed sources"
+          commit-message: "chore: add discovered RSS feed sources to feeds.json"
           title: "New sources: ${{ steps.check.outputs.count }} RSS feeds fundet"
           body: |
             ## Automatisk opdagede RSS-kilder
@@ -56,14 +55,14 @@ jobs:
             Disse domæner dukkede op i Brave Search-resultater med
             artikler om danske cyberangreb, og har fungerende RSS feeds.
 
-            | Domæne | Feed URL | Titel | Størrelse | Eksempel |
-            |--------|----------|-------|-----------|----------|
+            De er tilføjet direkte til `data/feeds.json`.
+
+            | Navn | Feed URL | Tilføjet |
+            |------|----------|---------|
             ${{ steps.check.outputs.feeds }}
 
             ---
-            Hvis en kilde er relevant, tilføj den manuelt til
-            `scripts/collect_web.py` feeds-listen og
-            `data/danish_entities.json` source mapping.
+            Review og merge for at aktivere de nye kilder i indsamlingen.
           branch: new-sources-${{ github.run_id }}
           delete-branch: true
           labels: sources,discovery

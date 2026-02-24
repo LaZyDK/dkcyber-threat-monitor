@@ -1,13 +1,15 @@
+import glob
 import json
 import os
 import re
 import requests
 from datetime import datetime, timezone
 
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-BRAVE_SEARCH_URL = "https://api.search.brave.com/res/v1/web/search"
-LLM_MODEL = "qwen/qwen3-vl-30b-a3b-thinking"
 VERIFIED_PATH = 'data/verified_threats.json'
+FEEDS_PATH = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'feeds.json'
+)
+RAW_DIR = 'data/raw'
 
 # Rotating search queries — Danish cyber attacks from multiple angles
 SEARCH_QUERIES = [
@@ -48,35 +50,55 @@ URL: {url}
 Beskrivelse: {description}"""
 
 
-def load_existing_links():
-    if not os.path.exists(VERIFIED_PATH):
-        return set()
-    with open(VERIFIED_PATH, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return {entry.get('link', '') for entry in data}
+def load_all_known_links():
+    """Load all URLs from verified_threats.json and existing raw files."""
+    known = set()
+
+    if os.path.exists(VERIFIED_PATH):
+        with open(VERIFIED_PATH, 'r', encoding='utf-8') as f:
+            try:
+                for entry in json.load(f):
+                    link = entry.get('link', '')
+                    if link:
+                        known.add(link)
+            except json.JSONDecodeError:
+                pass
+
+    if os.path.exists(RAW_DIR):
+        for raw_file in glob.glob(os.path.join(RAW_DIR, '*.json')):
+            try:
+                with open(raw_file, 'r', encoding='utf-8') as f:
+                    for entry in json.load(f):
+                        if isinstance(entry, dict):
+                            link = entry.get('link', '')
+                            if link:
+                                known.add(link)
+            except (json.JSONDecodeError, TypeError):
+                pass
+
+    return known
 
 
 def load_known_domains():
-    """Load domains we already track via RSS feeds."""
-    collect_path = os.path.join(
-        os.path.dirname(__file__), 'collect_web.py'
-    )
+    """Load domains we already track via feeds.json."""
     known = set()
     try:
-        with open(collect_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        # Extract domains from feed URLs
-        for match in re.findall(r'https?://([^/"\s]+)', content):
-            known.add(match.lower().replace('www.', ''))
-    except FileNotFoundError:
+        with open(FEEDS_PATH, 'r', encoding='utf-8') as f:
+            feeds = json.load(f)
+        for feed in feeds:
+            url = feed.get('url', '')
+            match = re.match(r'https?://(?:www\.)?([^/]+)', url)
+            if match:
+                known.add(match.group(1).lower())
+    except (FileNotFoundError, json.JSONDecodeError):
         pass
     return known
 
 
-def brave_search(query, api_key, count=10):
+def brave_search(query, api_key, brave_url, count=10):
     try:
         resp = requests.get(
-            BRAVE_SEARCH_URL,
+            brave_url,
             headers={"Accept": "application/json",
                      "Accept-Encoding": "gzip",
                      "X-Subscription-Token": api_key},
@@ -99,7 +121,7 @@ def brave_search(query, api_key, count=10):
         return []
 
 
-def classify_result(result, openrouter_key):
+def classify_result(result, openrouter_key, api_url, model):
     prompt = CLASSIFY_PROMPT.format(
         title=result.get('title', ''),
         url=result.get('url', ''),
@@ -108,13 +130,13 @@ def classify_result(result, openrouter_key):
 
     try:
         resp = requests.post(
-            OPENROUTER_URL,
+            api_url,
             headers={
                 "Authorization": f"Bearer {openrouter_key}",
                 "Content-Type": "application/json",
             },
             json={
-                "model": LLM_MODEL,
+                "model": model,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.1,
                 "max_tokens": 300,
@@ -143,20 +165,24 @@ def extract_domain(url):
 def discover():
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
     brave_key = os.environ.get("BRAVE_API_KEY", "")
+    api_url = os.environ.get("LLM_API_URL",
+                             "https://openrouter.ai/api/v1/chat/completions")
+    brave_url = os.environ.get("BRAVE_SEARCH_URL",
+                               "https://api.search.brave.com/res/v1/web/search")
+    model = os.environ.get("LLM_MODEL", "")
 
     if not brave_key:
         print("BRAVE_API_KEY not set — cannot discover threats")
         return
 
-    if not openrouter_key:
-        print("OPENROUTER_API_KEY not set — cannot classify results")
+    if not openrouter_key or not model:
+        print("OPENROUTER_API_KEY or LLM_MODEL not set — cannot classify")
         return
 
-    existing_links = load_existing_links()
+    existing_links = load_all_known_links()
     known_domains = load_known_domains()
     year = datetime.now().year
 
-    # Select a subset of queries (rotate by day of year)
     day = datetime.now().timetuple().tm_yday
     queries_today = [
         SEARCH_QUERIES[i % len(SEARCH_QUERIES)]
@@ -170,7 +196,7 @@ def discover():
     for query_template in queries_today:
         query = query_template.format(year=year)
         print(f"Searching: {query}")
-        results = brave_search(query, brave_key)
+        results = brave_search(query, brave_key, brave_url)
 
         for result in results:
             url = result.get('url', '')
@@ -179,7 +205,8 @@ def discover():
             seen_urls.add(url)
 
             print(f"  Classifying: {result['title'][:60]}...")
-            classification = classify_result(result, openrouter_key)
+            classification = classify_result(
+                result, openrouter_key, api_url, model)
 
             domain = extract_domain(url)
             is_new_domain = domain and domain not in known_domains
@@ -206,7 +233,6 @@ def discover():
             if is_new_domain and classification.get("is_dk_attack"):
                 new_source_domains.add(domain)
 
-    # Save discovered threats
     os.makedirs("data/raw", exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
     path = f"data/raw/discover_{ts}.json"
@@ -217,7 +243,6 @@ def discover():
     print(f"Discovered {len(all_results)} results, "
           f"{attacks} verified DK attacks → {path}")
 
-    # Save new source candidates for the source discovery workflow
     if new_source_domains:
         candidates_path = "data/raw/new_source_candidates.json"
         candidates = list(new_source_domains)

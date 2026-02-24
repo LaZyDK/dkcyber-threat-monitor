@@ -30,6 +30,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Append verified threats
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
         run: python scripts/append_verified.py
 
       - name: Commit updated verified_threats.json

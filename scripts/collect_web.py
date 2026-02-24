@@ -1,23 +1,23 @@
 import feedparser
+import glob
 import json
 import os
 import re
 import requests
 from datetime import datetime, timezone
 
-feeds = [
-    "https://www.cert.dk/news/rss",       # DKCERT – dansk CERT
-    "https://www.cert.se/feed.rss",        # CERT-SE – svensk CERT (nordisk)
-    "https://www.version2.dk/rss",         # Version2 – dansk IT-nyheder
-    # tilføj flere senere
-]
-
+FEEDS_PATH = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'feeds.json'
+)
 ENTITIES_PATH = os.path.join(
     os.path.dirname(__file__), '..', 'data', 'danish_entities.json'
 )
-
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-LLM_MODEL = "qwen/qwen3-vl-30b-a3b-thinking"
+VERIFIED_PATH = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'verified_threats.json'
+)
+RAW_DIR = os.path.join(
+    os.path.dirname(__file__), '..', 'data', 'raw'
+)
 
 CLASSIFY_PROMPT = """Du er en dansk cybersikkerhedsanalytiker.
 Vurder om denne nyhed handler om et KONKRET cyberangreb, databrud \
@@ -42,6 +42,42 @@ Resumé: {summary}
 Kilde: {source}"""
 
 
+def load_feeds():
+    """Load RSS feed URLs from the shared feeds.json file."""
+    with open(FEEDS_PATH, 'r', encoding='utf-8') as f:
+        feeds_data = json.load(f)
+    return [feed['url'] for feed in feeds_data]
+
+
+def load_known_links():
+    """Load all URLs already in verified_threats.json and existing raw files."""
+    known = set()
+
+    if os.path.exists(VERIFIED_PATH):
+        with open(VERIFIED_PATH, 'r', encoding='utf-8') as f:
+            try:
+                for entry in json.load(f):
+                    link = entry.get('link', '')
+                    if link:
+                        known.add(link)
+            except json.JSONDecodeError:
+                pass
+
+    if os.path.exists(RAW_DIR):
+        for raw_file in glob.glob(os.path.join(RAW_DIR, '*.json')):
+            try:
+                with open(raw_file, 'r', encoding='utf-8') as f:
+                    for entry in json.load(f):
+                        if isinstance(entry, dict):
+                            link = entry.get('link', '')
+                            if link:
+                                known.add(link)
+            except (json.JSONDecodeError, TypeError):
+                pass
+
+    return known
+
+
 def load_danish_patterns():
     with open(ENTITIES_PATH, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -64,7 +100,7 @@ def keyword_prefilter(entry, pattern):
     return bool(pattern.search(text))
 
 
-def classify_with_llm(entry, api_key):
+def classify_with_llm(entry, api_key, api_url, model):
     prompt = CLASSIFY_PROMPT.format(
         title=entry.get('title', ''),
         summary=entry.get('summary', '')[:500],
@@ -73,13 +109,13 @@ def classify_with_llm(entry, api_key):
 
     try:
         resp = requests.post(
-            OPENROUTER_URL,
+            api_url,
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
             },
             json={
-                "model": LLM_MODEL,
+                "model": model,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.1,
                 "max_tokens": 200,
@@ -89,7 +125,6 @@ def classify_with_llm(entry, api_key):
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"]
 
-        # Extract JSON from response (handle markdown code blocks)
         content = content.strip()
         if content.startswith("```"):
             content = re.sub(r'^```\w*\n?', '', content)
@@ -112,44 +147,52 @@ def classify_with_llm(entry, api_key):
 
 
 def collect():
+    feeds = load_feeds()
     pattern = load_danish_patterns()
+    known_links = load_known_links()
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
+    api_url = os.environ.get("LLM_API_URL",
+                             "https://openrouter.ai/api/v1/chat/completions")
+    model = os.environ.get("LLM_MODEL", "")
     threats = []
     attack_count = 0
+    skipped_dupes = 0
 
     for url in feeds:
         feed = feedparser.parse(url)
         for entry in feed.entries[:5]:
+            link = entry.get("link", "")
+
+            if link in known_links:
+                skipped_dupes += 1
+                continue
+
             item = {
                 "title": entry.get("title", ""),
-                "link": entry.get("link", ""),
+                "link": link,
                 "published": entry.get("published", ""),
                 "summary": entry.get("summary", ""),
                 "source": url,
                 "collected_at": datetime.now(timezone.utc).isoformat(),
             }
 
-            # Stage 1: fast keyword pre-filter
             has_dk_keyword = keyword_prefilter(item, pattern)
 
             if not has_dk_keyword:
-                # No Danish keywords at all — skip LLM call
                 item["is_dk_attack"] = False
                 item["confidence"] = "high"
                 item["explanation"] = (
                     "Ingen danske nøgleord fundet i titel/resumé."
                 )
-            elif not api_key:
-                # No API key — fall back to keyword match only
+            elif not api_key or not model:
                 item["is_dk_attack"] = has_dk_keyword
                 item["confidence"] = "keyword-only"
                 item["explanation"] = (
                     "Nøgleordsmatch (ingen LLM-nøgle tilgængelig)."
                 )
             else:
-                # Stage 2: LLM verifies if it's a real Danish attack
                 print(f"  Classifying: {item['title'][:60]}...")
-                result = classify_with_llm(item, api_key)
+                result = classify_with_llm(item, api_key, api_url, model)
                 item["is_dk_attack"] = result["is_dk_attack"]
                 item["confidence"] = result["confidence"]
                 item["explanation"] = result["explanation"]
@@ -157,6 +200,7 @@ def collect():
             if item["is_dk_attack"]:
                 attack_count += 1
             threats.append(item)
+            known_links.add(link)
 
     os.makedirs("data/raw", exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
@@ -167,7 +211,8 @@ def collect():
     total = len(threats)
     print(f"Saved {total} items to {path} "
           f"({attack_count} verified DK attacks, "
-          f"{total - attack_count} filtered)")
+          f"{total - attack_count} filtered, "
+          f"{skipped_dupes} duplicates skipped)")
 
 
 if __name__ == "__main__":

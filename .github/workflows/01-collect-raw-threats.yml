@@ -27,6 +27,8 @@ jobs:
         id: collect
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
         run: |
           python scripts/collect_web.py
 

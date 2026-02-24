@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.cert.dk/news/rss",
+    "name": "DKCERT",
+    "language": "da",
+    "added": "2026-02-01",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://www.cert.se/feed.rss",
+    "name": "CERT-SE",
+    "language": "sv",
+    "added": "2026-02-01",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://www.version2.dk/rss",
+    "name": "Version2",
+    "language": "da",
+    "added": "2026-02-01",
+    "added_by": "manual"
+  }
+]

@@ -27,6 +27,9 @@ jobs:
         env:
           BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          BRAVE_SEARCH_URL: ${{ vars.BRAVE_SEARCH_URL }}
         run: python scripts/discover_threats.py
 
       - name: Summarise discoveries

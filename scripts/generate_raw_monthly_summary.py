@@ -25,8 +25,8 @@ def generate_raw_monthly_summary():
     df = pd.DataFrame(data)
 
     # Assume each entry has at least 'date' in ISO format 'YYYY-MM-DD...'
-    df['date'] = pd.to_datetime(df['date'], errors='coerce')
-    df = df.dropna(subset=['date'])
+    df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
+    df = df.dropna(subset=['timestamp'])
 
     now = datetime.now()
     first_of_this_month = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
@@ -34,14 +34,14 @@ def generate_raw_monthly_summary():
 
     last_month_str = first_of_last_month.strftime('%Y-%m')
 
-    monthly = df[df['date'].dt.strftime('%Y-%m') == last_month_str]
+    monthly = df[df['timestamp'].dt.strftime('%Y-%m') == last_month_str]
 
     if monthly.empty:
         print(f"No verified threats in {last_month_str} → skipping")
         return
 
     # Customize columns to whatever fields you actually store
-    columns = ['title', 'date', 'source', 'link', 'reddit_url', 'short_desc']
+    columns = ['name', 'timestamp', 'source', 'link', 'reddit_url', 'description']
     existing_cols = [c for c in columns if c in monthly.columns]
     table_md = monthly[existing_cols].to_markdown(index=False)
 
