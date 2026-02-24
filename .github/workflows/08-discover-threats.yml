@@ -1,0 +1,78 @@
+name: 08 Discover – Active Threat Search
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # daily at 10:00 UTC (11:00 Danish time)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover threats via Brave Search + LLM
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python scripts/discover_threats.py
+
+      - name: Summarise discoveries
+        id: summary
+        run: |
+          DISC_FILE=$(ls -t data/raw/discover_*.json 2>/dev/null | head -n1)
+          if [ -n "$DISC_FILE" ]; then
+            TOTAL=$(jq 'length' "$DISC_FILE")
+            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$DISC_FILE")
+            echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+            echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
+
+            {
+              echo "details<<DETAILSEOF"
+              jq -r '.[] | select(.is_dk_attack == true) | "| \(.title[:60]) | \(.confidence) | \(.link) | \(.explanation[:80]) |"' "$DISC_FILE"
+              echo "DETAILSEOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "total=0" >> "$GITHUB_OUTPUT"
+            echo "attacks=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create PR with discovered threats
+        if: steps.summary.outputs.attacks != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: discovered new Danish cyber threats"
+          title: "Discovered: ${{ steps.summary.outputs.attacks }} danske angreb (via Brave Search)"
+          body: |
+            ## Aktivt opdagede trusler
+
+            Fundet via Brave Search + LLM-klassificering (ikke fra RSS feeds).
+
+            | Total søgeresultater | Verified DK attacks |
+            |---------------------|-------------------|
+            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} |
+
+            ### Verificerede danske angreb
+
+            | Titel | Confidence | Link | Forklaring |
+            |-------|------------|------|------------|
+            ${{ steps.summary.outputs.details }}
+
+            ---
+            Review → rediger om nødvendigt → merge når verificeret.
+          branch: discover-threats-${{ github.run_id }}
+          delete-branch: true
+          labels: discovery,threat
