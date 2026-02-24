@@ -21,3 +21,6 @@ env/
 # macOS
 .DS_Store
 
+# Local notes
+TODO.local.md
+
