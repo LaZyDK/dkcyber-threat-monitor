@@ -1,4 +1,4 @@
-name: 03 Agent – Final Human-like Post
+name: 03 Daily – Finalize Post
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  agent2:
+  finalize-post:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +27,8 @@ jobs:
             echo "DRAFTEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent – Refine to natural Reddit post
-        id: agent2
+      - name: Finalize daily post for Reddit
+        id: finalize_post
         uses: appleboy/llm-action@v1
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
@@ -45,7 +45,7 @@ jobs:
             🤖 *Denne post er genereret af LLM (Llama 3.1 70B) med human oversight via et open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
             Rå data er verificeret af mig før posting.
           input_prompt: |
-            Indhold fra Agent 1:
+            Indhold fra dagligt udkast:
             ${{ steps.draft.outputs.content }}
           tool_schema: |
             {"name": "final_post", "parameters": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string"}}, "required": ["title", "body"]}}
@@ -54,8 +54,8 @@ jobs:
 
       - name: Save final post files
         env:
-          POST_TITLE: ${{ steps.agent2.outputs.title }}
-          POST_BODY: ${{ steps.agent2.outputs.body }}
+          POST_TITLE: ${{ steps.finalize_post.outputs.title }}
+          POST_BODY: ${{ steps.finalize_post.outputs.body }}
         run: |
           mkdir -p data/generated
           printf '%s' "$POST_TITLE" > data/generated/title_${{ github.sha }}.txt
@@ -64,6 +64,6 @@ jobs:
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Agent final Reddit-post klar til review"
+          commit_message: "Daily final Reddit-post klar til review"
           file_pattern: data/generated/**
           branch: ${{ github.head_ref || 'main' }}

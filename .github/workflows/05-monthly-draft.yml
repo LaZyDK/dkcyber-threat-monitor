@@ -1,4 +1,4 @@
-name: 05 Monthly Agent 1 – Quick Draft
+name: 05 Monthly – Create Draft
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  agent1:
+  create-monthly-draft:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +27,8 @@ jobs:
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Agent 1 – Quick monthly draft (OpenRouter free)
-        id: agent1
+      - name: Create monthly draft (OpenRouter free)
+        id: create_monthly_draft
         uses: appleboy/llm-action@v1
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
@@ -46,16 +46,16 @@ jobs:
 
       - name: Save draft to file
         env:
-          DRAFT_TITLE: ${{ steps.agent1.outputs.title }}
-          DRAFT_BODY: ${{ steps.agent1.outputs.draft_body }}
+          DRAFT_TITLE: ${{ steps.create_monthly_draft.outputs.title }}
+          DRAFT_BODY: ${{ steps.create_monthly_draft.outputs.draft_body }}
         run: |
           mkdir -p data/monthly/drafts
-          printf '%s' "$DRAFT_TITLE" > data/monthly/drafts/agent1_$(date +%Y-%m)_title.txt
-          printf '%s' "$DRAFT_BODY" > data/monthly/drafts/agent1_$(date +%Y-%m)_body.txt
+          printf '%s' "$DRAFT_TITLE" > data/monthly/drafts/monthly_${{ github.sha }}_title.txt
+          printf '%s' "$DRAFT_BODY" > data/monthly/drafts/monthly_${{ github.sha }}_body.txt
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Monthly Agent 1 quick draft created"
+          commit_message: "Monthly draft created"
           file_pattern: data/monthly/drafts/**
           branch: ${{ github.head_ref || 'main' }}
