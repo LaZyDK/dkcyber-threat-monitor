@@ -2,7 +2,7 @@ name: 01 Collect Raw Threats
 
 on:
   schedule:
-    - cron: '0 7 * * *'   # 0 */6 * * * every 6 hours
+    - cron: '0 */3 * * *'   # every 3 hours
   workflow_dispatch:
 
 permissions:
