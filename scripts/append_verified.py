@@ -58,6 +58,7 @@ def append_verified():
         return
 
     new_count = 0
+    skipped_irrelevant = 0
     now = datetime.now(timezone.utc).isoformat()
 
     for raw_file in raw_files:
@@ -71,6 +72,11 @@ def append_verified():
         for entry in entries:
             link = entry.get('link', '')
             if link in existing_links:
+                continue
+
+            # Only append entries tagged as Danish-relevant
+            if not entry.get('dk_relevant', False):
+                skipped_irrelevant += 1
                 continue
 
             title = entry.get('title', 'Unknown')
@@ -90,7 +96,8 @@ def append_verified():
 
     save_verified(verified)
     print(f"Appended {new_count} new verified threats "
-          f"(total: {len(verified)})")
+          f"(total: {len(verified)}, "
+          f"skipped {skipped_irrelevant} non-DK-relevant)")
 
 
 if __name__ == '__main__':

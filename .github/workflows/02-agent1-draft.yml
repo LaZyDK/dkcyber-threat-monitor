@@ -36,7 +36,7 @@ jobs:
         with:
           api_key: ${{ secrets.OPENROUTER_API_KEY }}
           base_url: https://openrouter.ai/api/v1
-          model: meta-llama/llama-3.1-8b-instruct:free   # fast & free
+          model: meta-llama/llama-3.3-70b-instruct:free
           system_prompt: |
             Du er en simpel dansk cybersecurity-assistent.
             Lav kun en titel + kort udkast (max 300 tegn).

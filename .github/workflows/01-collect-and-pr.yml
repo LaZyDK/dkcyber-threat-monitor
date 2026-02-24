@@ -24,16 +24,41 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Collect raw threats
-        run: python scripts/collect_web.py
+        id: collect
+        run: |
+          OUTPUT=$(python scripts/collect_web.py)
+          echo "$OUTPUT"
+          echo "summary=$OUTPUT" >> "$GITHUB_OUTPUT"
+
+      - name: Summarise DK-relevant entries
+        id: summary
+        run: |
+          RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
+          if [ -n "$RAW_FILE" ]; then
+            TOTAL=$(jq 'length' "$RAW_FILE")
+            RELEVANT=$(jq '[.[] | select(.dk_relevant == true)] | length' "$RAW_FILE")
+            FILTERED=$((TOTAL - RELEVANT))
+            echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+            echo "relevant=$RELEVANT" >> "$GITHUB_OUTPUT"
+            echo "filtered=$FILTERED" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create or update verification PR
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: collected new raw threat data"
-          title: "Verify new threats – manual review needed"
+          title: "Verify new threats – ${{ steps.summary.outputs.relevant }} DK-relevant"
           body: |
-            New raw data collected.
+            ## Collected threats
+
+            | Total | DK-relevant | Filtered out |
+            |-------|-------------|--------------|
+            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.relevant }} | ${{ steps.summary.outputs.filtered }} |
+
+            Only entries tagged `dk_relevant: true` will be appended to verified_threats.json on merge.
+            You can override by editing the raw JSON and setting `dk_relevant: true` on any entry.
+
             Please review → edit if needed → merge when verified.
           branch: threat-verification-${{ github.run_id }}
           delete-branch: true
