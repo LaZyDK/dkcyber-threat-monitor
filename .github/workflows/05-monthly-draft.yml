@@ -26,11 +26,11 @@ jobs:
             cat "$RAW_FILE" | jq -c .
             echo "RAWEOF"
           } >> "$GITHUB_OUTPUT"
-
       - name: Set default LLM_MODEL_CHEAP if not set
         run: |
           if [ -z "$LLM_MODEL_CHEAP" ]; then
             echo "LLM_MODEL_CHEAP=qwen/qwen3-vl-30b-a3b-thinking" >> $GITHUB_ENV
+          fi
 
       - name: Create monthly draft (OpenRouter free)
         id: create_monthly_draft

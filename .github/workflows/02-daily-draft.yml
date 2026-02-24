@@ -31,6 +31,7 @@ jobs:
         run: |
           if [ -z "$LLM_MODEL_CHEAP" ]; then
             echo "LLM_MODEL_CHEAP=qwen/qwen3-vl-30b-a3b-thinking" >> $GITHUB_ENV
+          fi
 
       - name: Create draft from raw data
         id: create_draft

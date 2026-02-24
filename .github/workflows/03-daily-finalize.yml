@@ -27,6 +27,12 @@ jobs:
             echo "DRAFTEOF"
           } >> "$GITHUB_OUTPUT"
 
+      - name: Set default LLM_MODEL_TOOLUSE if not set
+        run: |
+          if [ -z "$LLM_MODEL_TOOLUSE" ]; then
+            echo "LLM_MODEL_TOOLUSE=openai/gpt-3.5-turbo" >> $GITHUB_ENV
+          fi
+
       - name: Finalize daily post for Reddit
         id: finalize_post
         uses: appleboy/llm-action@v1
