@@ -1,4 +1,4 @@
-name: 01b Merge → Append to verified_threats.json
+name: 02 Merge to Verified
 
 on:
   pull_request:

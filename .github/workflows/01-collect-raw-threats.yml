@@ -1,4 +1,4 @@
-name: 01 Collect Raw + Create PR
+name: 01 Collect Raw Threats
 
 on:
   schedule:
