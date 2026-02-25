@@ -50,9 +50,13 @@ jobs:
               jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
+          else
+            echo "total=0" >> "$GITHUB_OUTPUT"
+            echo "attacks=0" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create or update verification PR
+        if: steps.summary.outputs.total != '0'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
