@@ -54,5 +54,12 @@
     "language": "en",
     "added": "2026-02-25",
     "added_by": "manual"
+  },
+  {
+    "url": "https://tjekdet.dk/rss.xml",
+    "name": "Tjekdet Feed",
+    "language": "da",
+    "added": "2026-02-25",
+    "added_by": "discovery"
   }
 ]
