@@ -268,5 +268,120 @@
     "url": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/",
     "analyzed_at": "2026-02-25T10:00:16.490713+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-25T19:11:41.407817+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-25T19:11:48.727650+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-25T19:11:53.857722+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/critical-cisco-sd-wan-bug-exploited-in-zero-day-attacks-since-2023/",
+    "analyzed_at": "2026-02-25T19:14:16.809252+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/chinese-cyberspies-breached-dozens-of-telecom-firms-govt-agencies/",
+    "analyzed_at": "2026-02-25T19:14:16.809539+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/marquis-sues-sonicwall-over-backup-breach-that-led-to-ransomware-attack/",
+    "analyzed_at": "2026-02-25T19:14:16.809774+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/the-openclaw-hype-analysis-of-chatter-from-open-source-deep-and-dark-web/",
+    "analyzed_at": "2026-02-25T19:14:16.809982+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers/",
+    "analyzed_at": "2026-02-25T19:14:16.810228+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/google-disrupts-unc2814-gridtide.html",
+    "analyzed_at": "2026-02-25T19:14:21.445815+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/claude-code-flaws-allow-remote-code.html",
+    "analyzed_at": "2026-02-25T19:14:21.446174+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/slh-offers-5001000-per-call-to-recruit.html",
+    "analyzed_at": "2026-02-25T19:14:21.446552+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/top-5-ways-broken-triage-increases.html",
+    "analyzed_at": "2026-02-25T19:14:35.181808+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-nuget-packages-stole-aspnet.html",
+    "analyzed_at": "2026-02-25T19:14:35.182374+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/the-blast-radius-problem-stolen-credentials-are-weaponizing-agentic-ai/",
+    "analyzed_at": "2026-02-25T19:14:35.449535+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/google-disrupts-chinese-cyberespionage-campaign-targeting-telecoms-governments/",
+    "analyzed_at": "2026-02-25T19:14:35.449871+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/solarwinds-patches-four-critical-serv-u-vulnerabilities/",
+    "analyzed_at": "2026-02-25T19:14:35.450192+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/medical-device-maker-ufp-technologies-hit-by-cyberattack/",
+    "analyzed_at": "2026-02-25T19:14:39.592118+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ex-us-defense-contractor-executive-jailed-for-selling-exploits-to-russia/",
+    "analyzed_at": "2026-02-25T19:14:39.592776+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-25T19:14:47.580770+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-25T19:15:02.884480+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/saadan-foregaar-et-af-den-russiske-cyberkrigs-mest-anvendte-angreb",
+    "analyzed_at": "2026-02-25T19:15:02.885266+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/fup-og-spam/annoncer-sundhedsprodukter-snyder-forbrugerne",
+    "analyzed_at": "2026-02-25T19:15:02.885509+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/hver-tredje-dansker-stoeder-dagligt-paa-falsk-og-fordrejet-information",
+    "analyzed_at": "2026-02-25T19:15:15.335392+00:00",
+    "is_dk_attack": false
   }
 ]
