@@ -1,0 +1,202 @@
+[
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "analyzed_at": "2026-02-25T06:20:38.832001+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "analyzed_at": "2026-02-25T06:21:06.778249+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-17/LLMer-finder-nu-0%E2%80%91dage-i-moden-open-source%E2%80%91kode",
+    "analyzed_at": "2026-02-25T06:21:12.901897+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-17/LockBit-faar-en-ny-version",
+    "analyzed_at": "2026-02-25T06:21:22.247778+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-16/Ny-ClickFix%E2%80%91variant-misbruger-DNS%E2%80%91opslag",
+    "analyzed_at": "2026-02-25T06:21:29.885547+00:00",
+    "is_dk_attack": true
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "analyzed_at": "2026-02-25T06:21:47.043930+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "analyzed_at": "2026-02-25T06:21:47.044201+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "analyzed_at": "2026-02-25T06:21:51.473704+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "analyzed_at": "2026-02-25T06:21:51.474093+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/misp-se-ovningar.html",
+    "analyzed_at": "2026-02-25T06:21:54.922904+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-virksomheder-misser-store-ai-gevinster-teknologi-er-ikke-magi",
+    "analyzed_at": "2026-02-25T06:22:02.033815+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/trump-laegger-sanktioner-paa-flere-topfolk-fra-straffedomstol",
+    "analyzed_at": "2026-02-25T06:22:12.517778+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/ny-ai-lov-fjerner-stopklods-dansk-it-gigant-vi-er-klar-til-skrue-op",
+    "analyzed_at": "2026-02-25T06:22:17.384918+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/dansk-universitet-satser-paa-europaeisk-ai-forskning-skal-ikke-ende-i-usa",
+    "analyzed_at": "2026-02-25T06:22:22.843048+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/palantir-slaeber-medie-i-retten-efter-skriverier-om-systemer-grinagtigt-og-uprofessionelt",
+    "analyzed_at": "2026-02-25T06:22:28.881805+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294680/anthropic-faar-ultimatum-fra-pentagon-faar-tre-dage-til-at-fjerne-begraensninger-paa-militaert-ai?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T06:22:34.604810+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294679/morgen-briefing-datatilsynet-aabner-kontor-i-groenland-om-tre-maaneder-er-det-slut-for-det-fysiske-rejsekort-tdcs-nye-cyberloesning-opdager-angreb-paa-faa-minutter?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T06:22:34.605032+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294675/tech-giganter-advares-om-risiko-for-oekonomisk-apokalypse-jeg-sover-med-et-oeje-aabent-siger-tim-cook?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T06:22:43.170885+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294673/test-denne-adraette-maskine-er-en-teknologisk-perle?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T06:22:43.171399+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294672/apple-laegger-op-til-hardware-fest-i-naeste-uge-superbillig-macbook-kan-vaere-paa-trapperne-her-er-hvad-du-kan-forvente?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T06:22:43.171632+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/microsoft-graph-remembered-to-restict-mail-send-application-permission-app-access-policies/",
+    "analyzed_at": "2026-02-25T06:22:53.914853+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/windows-secure-boot-certificate-expiration-2026/",
+    "analyzed_at": "2026-02-25T06:22:59.121076+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/ownerless-teams/",
+    "analyzed_at": "2026-02-25T06:23:05.054326+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/blocking-tor-botnet-anonymous-proxy-access-to-m365/",
+    "analyzed_at": "2026-02-25T06:23:10.539666+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/01/first-look-unified-tenant-configuration-management-apis/",
+    "analyzed_at": "2026-02-25T06:23:17.084658+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/phishing-campaign-targets-freight-and-logistics-orgs-in-the-us-europe/",
+    "analyzed_at": "2026-02-25T06:23:23.041656+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/wynn-resorts-confirms-employee-data-breach-after-extortion-threat/",
+    "analyzed_at": "2026-02-25T06:23:23.041881+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/1campaign-platform-helps-malicious-google-ads-evade-detection/",
+    "analyzed_at": "2026-02-25T06:23:23.042073+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cargurus-data-breach-exposes-information-of-124-million-accounts/",
+    "analyzed_at": "2026-02-25T06:23:23.042309+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-adds-copilot-data-controls-to-all-storage-locations/",
+    "analyzed_at": "2026-02-25T06:23:23.042502+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/cisa-confirms-active-exploitation-of.html",
+    "analyzed_at": "2026-02-25T06:23:23.539152+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/roguepilot-flaw-in-github-codespaces.html",
+    "analyzed_at": "2026-02-25T06:23:23.539529+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/uac-0050-targets-european-financial.html",
+    "analyzed_at": "2026-02-25T06:23:23.539936+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/identity-prioritization-isnt-backlog.html",
+    "analyzed_at": "2026-02-25T06:23:31.910480+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/lazarus-group-uses-medusa-ransomware-in.html",
+    "analyzed_at": "2026-02-25T06:23:36.815291+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/arkanix-stealer-malware-disappears-shortly-after-debut/",
+    "analyzed_at": "2026-02-25T06:23:37.043964+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/vmware-aria-operations-vulnerability-could-allow-remote-code-execution/",
+    "analyzed_at": "2026-02-25T06:23:37.044409+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ciso-conversations-timothy-youngblood-4x-fortune-500-ciso-cso/",
+    "analyzed_at": "2026-02-25T06:23:37.044787+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/new-sandworm_mode-supply-chain-attack-hits-npm/",
+    "analyzed_at": "2026-02-25T06:23:37.045273+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/",
+    "analyzed_at": "2026-02-25T06:23:37.045691+00:00",
+    "is_dk_attack": false
+  }
+]
