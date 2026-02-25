@@ -200,123 +200,73 @@
     "is_dk_attack": false
   },
   {
-    "url": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
-    "analyzed_at": "2026-02-25T10:44:15.468755+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.dknyt.dk/artikel/danske-myndigheder-og-virksomheder-udsat-for-omfattende-hackerangreb",
-    "analyzed_at": "2026-02-25T10:44:29.681522+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://borsen.dk/nyheder/opinion/det-farligste-ved-cyberangreb-i-2026-er-banaliteten",
-    "analyzed_at": "2026-02-25T10:44:46.159260+00:00",
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv%E2%80%91U",
+    "analyzed_at": "2026-02-25T09:59:00.399668+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://frdb.dk/alarm112/smaa-og-nye-innovative-virksomheder-er-attraktive-maal-for-spionage",
-    "analyzed_at": "2026-02-25T10:44:58.897088+00:00",
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI%E2%80%91agenter-aabner-ny-angrebsflade-i-supply-chain%E2%80%91kaeden",
+    "analyzed_at": "2026-02-25T09:59:08.806552+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://finans.dk/tech/ECE19028843/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/",
-    "analyzed_at": "2026-02-25T10:45:13.702869+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://faa.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
-    "analyzed_at": "2026-02-25T10:45:33.826695+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://nordjyske.dk/nyheder/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider/5929750",
-    "analyzed_at": "2026-02-25T10:45:50.553633+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://frdb.dk/indland/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider",
-    "analyzed_at": "2026-02-25T10:46:13.346127+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.nyheder.dk/nyheder/lige-nu-gronland-under-hacker-angreb/2362413",
-    "analyzed_at": "2026-02-25T10:46:29.899468+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.berlingske.dk/danmark/boelge-af-russiske-hackerangreb-har-ramt-danske-hjemmesider?gaa_at=eafs&gaa_n=AWEtsqcJKDVEywUc5ulxR8nnbUkmJBpaTeZZgZYaoiPa8r1i0B0bKoDbvcpK&gaa_ts=699b9f0e&gaa_sig=piA0aeKbiBDCZYcnbiv2tYci99iU-IWvJGVy_7iWT45Tm2ZsgIXqvKjOENyOY_ZKNxYNW11V1rmMFbMpcrkxXg%3D%3D",
-    "analyzed_at": "2026-02-25T10:46:48.567758+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://avisendanmark.dk/indland/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-2026-2-20",
-    "analyzed_at": "2026-02-25T10:47:22.324249+00:00",
+    "url": "https://www.version2.dk/artikel/danske-virksomheder-gaar-glip-store-ai-gevinster-ekspert-peger-paa-helt-forkert-prioritering",
+    "analyzed_at": "2026-02-25T09:59:19.080823+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
-    "analyzed_at": "2026-02-25T10:47:41.834968+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://ekstrabladet.dk/forbrug/Teknologi/russiske-angreb-paa-danmark-40-hjemmesider-ramt/11099453",
-    "analyzed_at": "2026-02-25T10:47:48.349720+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416",
-    "analyzed_at": "2026-02-25T10:48:20.799815+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
-    "analyzed_at": "2026-02-25T10:48:58.766751+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
-    "analyzed_at": "2026-02-25T10:49:08.160085+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqfn4zUEuswHWH8OQgFMhaEVESAOvLu5bM42r3djxrF7HDFenaVUxDqs&gaa_ts=6999c8ae&gaa_sig=ZwYTgH1hJ4ibdPt3NV624fJ1p0BFv8NpQVP6FHLJm5k6yPP7o-uoZiIrvff0pCanD6roAY3EO6p5rr-oCTWmxw%3D%3D",
-    "analyzed_at": "2026-02-25T10:49:17.805296+00:00",
-    "is_dk_attack": true
-  },
-  {
-    "url": "https://www.dr.dk/nyheder/indland/dansk-industri-og-pet-lancerer-ny-antispionage-kampagne",
-    "analyzed_at": "2026-02-25T10:49:25.296092+00:00",
+    "url": "https://www.computerworld.dk/art/294685/dansk-stiftede-unity-kan-vaere-paa-vej-til-kaempe-frasalg-staar-til-at-score-en-milliard-dollar?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:25.698544+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.gdpr-hotline.dk/smaa-virksomheder-er-store-nok-til-phishing/",
-    "analyzed_at": "2026-02-25T10:49:43.241508+00:00",
+    "url": "https://www.computerworld.dk/art/294666/nyt-haab-og-ukendte-fjender-i-den-foerste-star-wars-film-i-syv-aar-det-kommer-den-til-at-handle-om?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:30.374640+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.computerbild.de/artikel/News-Sicherheit-Phishing-Angriff-auf-ADAC-Kunden-40757373.html",
-    "analyzed_at": "2026-02-25T10:50:07.319474+00:00",
+    "url": "https://www.computerworld.dk/art/294671/mens-amerikanske-rigmaend-droemmer-om-kaempe-datacentre-i-groenland-er-lokale-politikere-begyndt-at-sondere-terraenet?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:34.756195+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.pirateri.dk/sikkerhed-phishing-og-ansvarlig-viden-hvad-du-kan-finde-paa-pirateri-dk/",
-    "analyzed_at": "2026-02-25T10:50:32.112279+00:00",
+    "url": "https://www.computerworld.dk/art/294682/iphonen-opnaar-historisk-stor-markedsandel-i-et-dalende-europaeisk-marked?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:41.528830+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.infosecurity-magazine.com/news/starkiller-phishing-kit-bypasses/",
-    "analyzed_at": "2026-02-25T10:50:44.582765+00:00",
+    "url": "https://www.computerworld.dk/art/294681/xbox-stifter-mistaenker-microsoft-for-at-lukke-ned-for-sin-spilkonsol?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:41.529240+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.darkreading.com/threat-intelligence/starkiller-phishing-kit-mfa",
-    "analyzed_at": "2026-02-25T10:51:16.448129+00:00",
+    "url": "https://www.bleepingcomputer.com/news/security/ex-l3harris-exec-jailed-for-selling-zero-days-to-russian-exploit-broker/",
+    "analyzed_at": "2026-02-25T09:59:43.246589+00:00",
     "is_dk_attack": false
   },
   {
-    "url": "https://www.spambrella.com/ai-powered-phishing-in-2026-the-threat-your-old-filters-cant-see/",
-    "analyzed_at": "2026-02-25T10:51:31.946108+00:00",
+    "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5077241-update-improves-bitlocker-adds-sysmon-tool/",
+    "analyzed_at": "2026-02-25T09:59:59.349164+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/defense-contractor-employee-jailed-for.html",
+    "analyzed_at": "2026-02-25T09:59:59.583518+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/solarwinds-patches-4-critical-serv-u.html",
+    "analyzed_at": "2026-02-25T10:00:05.971305+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/claudes-new-ai-vulnerability-scanner-sends-cybersecurity-shares-plunging/",
+    "analyzed_at": "2026-02-25T10:00:11.528181+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/",
+    "analyzed_at": "2026-02-25T10:00:16.490713+00:00",
     "is_dk_attack": false
   }
 ]
