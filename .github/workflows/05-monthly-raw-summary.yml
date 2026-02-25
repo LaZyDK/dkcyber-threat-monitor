@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 jobs:
   raw-summary:
     runs-on: ubuntu-latest
@@ -24,6 +28,9 @@ jobs:
 
       - name: Generate raw monthly summary
         run: python scripts/generate_raw_monthly_summary.py
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
 
       - name: Commit raw summary
         uses: stefanzweifel/git-auto-commit-action@v5

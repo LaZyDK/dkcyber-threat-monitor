@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 jobs:
   create-draft:
     runs-on: ubuntu-latest
@@ -75,6 +79,9 @@ jobs:
           echo "$CONTENT" > "data/drafts/daily_${GITHUB_SHA}.json"
 
           echo "Draft created: $TITLE"
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
 
       - name: Commit draft
         uses: stefanzweifel/git-auto-commit-action@v5

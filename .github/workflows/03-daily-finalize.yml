@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 jobs:
   finalize-post:
     runs-on: ubuntu-latest
@@ -99,6 +103,9 @@ jobs:
             '{title: $title, body: $body}' > "data/generated/post_${GITHUB_SHA}.json"
 
           echo "Finalized: $TITLE"
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5

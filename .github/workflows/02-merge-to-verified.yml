@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 jobs:
   append-verified:
     runs-on: ubuntu-latest
@@ -41,6 +45,9 @@ jobs:
           rm -f data/raw/*.json
           rm -f data/drafts/*.json
           rm -f data/generated/*.json
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
 
       - name: Commit verified threats and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5
