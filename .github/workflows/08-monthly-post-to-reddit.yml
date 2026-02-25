@@ -31,9 +31,15 @@ jobs:
           REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
         run: python scripts/post_to_reddit.py monthly
 
-      - name: Commit updated verified_threats.json
+      - name: Clean up monthly intermediate files
+        run: |
+          rm -f data/monthly/raw/*.json
+          rm -f data/monthly/drafts/*.json data/monthly/drafts/*.txt
+          rm -f data/monthly/generated/*.txt data/monthly/generated/*.md
+
+      - name: Commit updated verified_threats.json and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: add reddit_url to verified threats after posting"
-          file_pattern: data/verified_threats.json
+          commit_message: "chore: add reddit_url + clean up monthly files after posting"
+          file_pattern: "data/verified_threats.json data/monthly/"
           branch: main

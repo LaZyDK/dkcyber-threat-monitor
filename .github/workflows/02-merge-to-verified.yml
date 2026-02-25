@@ -36,9 +36,15 @@ jobs:
           LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: python scripts/append_verified.py
 
-      - name: Commit updated verified_threats.json
+      - name: Clean up processed files
+        run: |
+          rm -f data/raw/*.json
+          rm -f data/drafts/*.json data/drafts/*.txt
+          rm -f data/generated/*.txt data/generated/*.md
+
+      - name: Commit verified threats and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: append verified threats from merged PR"
-          file_pattern: data/verified_threats.json
+          commit_message: "chore: append verified threats + clean up processed files"
+          file_pattern: "data/verified_threats.json data/raw/ data/drafts/ data/generated/"
           branch: main

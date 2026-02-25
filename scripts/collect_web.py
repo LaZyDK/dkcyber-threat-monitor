@@ -6,18 +6,12 @@ import re
 import requests
 from datetime import datetime, timezone
 
-FEEDS_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'feeds.json'
-)
-ENTITIES_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'danish_entities.json'
-)
-VERIFIED_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'verified_threats.json'
-)
-RAW_DIR = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'raw'
-)
+DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+FEEDS_PATH = os.path.join(DATA_DIR, 'feeds.json')
+ENTITIES_PATH = os.path.join(DATA_DIR, 'danish_entities.json')
+VERIFIED_PATH = os.path.join(DATA_DIR, 'verified_threats.json')
+LEDGER_PATH = os.path.join(DATA_DIR, 'analyzed_urls.json')
+RAW_DIR = os.path.join(DATA_DIR, 'raw')
 
 CLASSIFY_PROMPT = """Du er en dansk cybersikkerhedsanalytiker.
 Vurder om denne nyhed handler om et KONKRET cyberangreb, databrud \
@@ -49,8 +43,57 @@ def load_feeds():
     return [feed['url'] for feed in feeds_data]
 
 
+def load_ledger():
+    """Load the analyzed URLs ledger."""
+    if os.path.exists(LEDGER_PATH):
+        try:
+            with open(LEDGER_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            pass
+    return []
+
+
+def save_ledger(ledger):
+    """Save the analyzed URLs ledger."""
+    with open(LEDGER_PATH, 'w', encoding='utf-8') as f:
+        json.dump(ledger, f, ensure_ascii=False, indent=2)
+
+
+def seed_ledger_if_needed():
+    """One-time: populate ledger from existing raw files if ledger is empty."""
+    if os.path.exists(LEDGER_PATH):
+        return
+    ledger = []
+    seen = set()
+    if os.path.exists(RAW_DIR):
+        for raw_file in glob.glob(os.path.join(RAW_DIR, '*.json')):
+            try:
+                with open(raw_file, 'r', encoding='utf-8') as f:
+                    for entry in json.load(f):
+                        if isinstance(entry, dict):
+                            link = entry.get('link', '')
+                            if link and link not in seen:
+                                seen.add(link)
+                                ledger.append({
+                                    "url": link,
+                                    "analyzed_at": entry.get(
+                                        'collected_at',
+                                        datetime.now(
+                                            timezone.utc).strftime(
+                                            '%Y-%m-%d')),
+                                    "is_dk_attack": entry.get(
+                                        'is_dk_attack', False),
+                                })
+            except (json.JSONDecodeError, TypeError):
+                pass
+    if ledger:
+        save_ledger(ledger)
+        print(f"Seeded ledger with {len(ledger)} URLs from existing raw files")
+
+
 def load_known_links():
-    """Load all URLs already in verified_threats.json and existing raw files."""
+    """Load all URLs from ledger and verified_threats.json."""
     known = set()
 
     if os.path.exists(VERIFIED_PATH):
@@ -60,20 +103,18 @@ def load_known_links():
                     link = entry.get('link', '')
                     if link:
                         known.add(link)
+                    for src in entry.get('additional_sources', []):
+                        url = src.get('url', '')
+                        if url:
+                            known.add(url)
             except json.JSONDecodeError:
                 pass
 
-    if os.path.exists(RAW_DIR):
-        for raw_file in glob.glob(os.path.join(RAW_DIR, '*.json')):
-            try:
-                with open(raw_file, 'r', encoding='utf-8') as f:
-                    for entry in json.load(f):
-                        if isinstance(entry, dict):
-                            link = entry.get('link', '')
-                            if link:
-                                known.add(link)
-            except (json.JSONDecodeError, TypeError):
-                pass
+    ledger = load_ledger()
+    for entry in ledger:
+        url = entry.get('url', '')
+        if url:
+            known.add(url)
 
     return known
 
@@ -147,9 +188,11 @@ def classify_with_llm(entry, api_key, api_url, model):
 
 
 def collect():
+    seed_ledger_if_needed()
     feeds = load_feeds()
     pattern = load_danish_patterns()
     known_links = load_known_links()
+    ledger = load_ledger()
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     api_url = (os.environ.get("LLM_API_URL")
                or "https://openrouter.ai/api/v1/chat/completions")
@@ -201,12 +244,19 @@ def collect():
                 attack_count += 1
             threats.append(item)
             known_links.add(link)
+            ledger.append({
+                "url": link,
+                "analyzed_at": item["collected_at"],
+                "is_dk_attack": item["is_dk_attack"],
+            })
 
     os.makedirs("data/raw", exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
     path = f"data/raw/web_{ts}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(threats, f, ensure_ascii=False, indent=2)
+
+    save_ledger(ledger)
 
     total = len(threats)
     print(f"Saved {total} items to {path} "

@@ -1,15 +1,14 @@
-import glob
 import json
 import os
 import re
 import requests
 from datetime import datetime, timezone
 
-VERIFIED_PATH = 'data/verified_threats.json'
-FEEDS_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'data', 'feeds.json'
-)
-RAW_DIR = 'data/raw'
+DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+VERIFIED_PATH = os.path.join(DATA_DIR, 'verified_threats.json')
+FEEDS_PATH = os.path.join(DATA_DIR, 'feeds.json')
+LEDGER_PATH = os.path.join(DATA_DIR, 'analyzed_urls.json')
+RAW_DIR = os.path.join(DATA_DIR, 'raw')
 
 # Rotating search queries — Danish cyber attacks from multiple angles
 SEARCH_QUERIES = [
@@ -50,8 +49,25 @@ URL: {url}
 Beskrivelse: {description}"""
 
 
+def load_ledger():
+    """Load the analyzed URLs ledger."""
+    if os.path.exists(LEDGER_PATH):
+        try:
+            with open(LEDGER_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            pass
+    return []
+
+
+def save_ledger(ledger):
+    """Save the analyzed URLs ledger."""
+    with open(LEDGER_PATH, 'w', encoding='utf-8') as f:
+        json.dump(ledger, f, ensure_ascii=False, indent=2)
+
+
 def load_all_known_links():
-    """Load all URLs from verified_threats.json and existing raw files."""
+    """Load all URLs from ledger and verified_threats.json."""
     known = set()
 
     if os.path.exists(VERIFIED_PATH):
@@ -61,20 +77,18 @@ def load_all_known_links():
                     link = entry.get('link', '')
                     if link:
                         known.add(link)
+                    for src in entry.get('additional_sources', []):
+                        url = src.get('url', '')
+                        if url:
+                            known.add(url)
             except json.JSONDecodeError:
                 pass
 
-    if os.path.exists(RAW_DIR):
-        for raw_file in glob.glob(os.path.join(RAW_DIR, '*.json')):
-            try:
-                with open(raw_file, 'r', encoding='utf-8') as f:
-                    for entry in json.load(f):
-                        if isinstance(entry, dict):
-                            link = entry.get('link', '')
-                            if link:
-                                known.add(link)
-            except (json.JSONDecodeError, TypeError):
-                pass
+    ledger = load_ledger()
+    for entry in ledger:
+        url = entry.get('url', '')
+        if url:
+            known.add(url)
 
     return known
 
@@ -181,6 +195,7 @@ def discover():
 
     existing_links = load_all_known_links()
     known_domains = load_known_domains()
+    ledger = load_ledger()
     year = datetime.now().year
 
     day = datetime.now().timetuple().tm_yday
@@ -229,6 +244,11 @@ def discover():
                 "discovered_via": "brave_search",
             }
             all_results.append(entry)
+            ledger.append({
+                "url": url,
+                "analyzed_at": entry["collected_at"],
+                "is_dk_attack": entry["is_dk_attack"],
+            })
 
             if is_new_domain and classification.get("is_dk_attack"):
                 new_source_domains.add(domain)
@@ -238,6 +258,8 @@ def discover():
     path = f"data/raw/discover_{ts}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, ensure_ascii=False, indent=2)
+
+    save_ledger(ledger)
 
     attacks = sum(1 for r in all_results if r.get("is_dk_attack"))
     print(f"Discovered {len(all_results)} results, "
