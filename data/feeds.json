@@ -19,5 +19,40 @@
     "language": "da",
     "added": "2026-02-01",
     "added_by": "manual"
+  },
+  {
+    "url": "https://www.computerworld.dk/rss/all",
+    "name": "Computerworld DK",
+    "language": "da",
+    "added": "2026-02-25",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://blog.mindcore.dk/feed/",
+    "name": "Mindcore Techblog",
+    "language": "en",
+    "added": "2026-02-25",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/feed/",
+    "name": "Bleeping Computer",
+    "language": "en",
+    "added": "2026-02-25",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://feeds.feedburner.com/TheHackersNews",
+    "name": "The Hacker News",
+    "language": "en",
+    "added": "2026-02-25",
+    "added_by": "manual"
+  },
+  {
+    "url": "https://www.securityweek.com/feed/",
+    "name": "SecurityWeek",
+    "language": "en",
+    "added": "2026-02-25",
+    "added_by": "manual"
   }
 ]
