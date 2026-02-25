@@ -198,5 +198,75 @@
     "url": "https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover/",
     "analyzed_at": "2026-02-25T06:23:37.045691+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv%E2%80%91U",
+    "analyzed_at": "2026-02-25T09:59:00.399668+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI%E2%80%91agenter-aabner-ny-angrebsflade-i-supply-chain%E2%80%91kaeden",
+    "analyzed_at": "2026-02-25T09:59:08.806552+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-virksomheder-gaar-glip-store-ai-gevinster-ekspert-peger-paa-helt-forkert-prioritering",
+    "analyzed_at": "2026-02-25T09:59:19.080823+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294685/dansk-stiftede-unity-kan-vaere-paa-vej-til-kaempe-frasalg-staar-til-at-score-en-milliard-dollar?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:25.698544+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294666/nyt-haab-og-ukendte-fjender-i-den-foerste-star-wars-film-i-syv-aar-det-kommer-den-til-at-handle-om?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:30.374640+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294671/mens-amerikanske-rigmaend-droemmer-om-kaempe-datacentre-i-groenland-er-lokale-politikere-begyndt-at-sondere-terraenet?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:34.756195+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294682/iphonen-opnaar-historisk-stor-markedsandel-i-et-dalende-europaeisk-marked?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:41.528830+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294681/xbox-stifter-mistaenker-microsoft-for-at-lukke-ned-for-sin-spilkonsol?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T09:59:41.529240+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/ex-l3harris-exec-jailed-for-selling-zero-days-to-russian-exploit-broker/",
+    "analyzed_at": "2026-02-25T09:59:43.246589+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5077241-update-improves-bitlocker-adds-sysmon-tool/",
+    "analyzed_at": "2026-02-25T09:59:59.349164+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/defense-contractor-employee-jailed-for.html",
+    "analyzed_at": "2026-02-25T09:59:59.583518+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/solarwinds-patches-4-critical-serv-u.html",
+    "analyzed_at": "2026-02-25T10:00:05.971305+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/claudes-new-ai-vulnerability-scanner-sends-cybersecurity-shares-plunging/",
+    "analyzed_at": "2026-02-25T10:00:11.528181+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/",
+    "analyzed_at": "2026-02-25T10:00:16.490713+00:00",
+    "is_dk_attack": false
   }
 ]
