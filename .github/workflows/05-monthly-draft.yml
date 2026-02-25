@@ -68,8 +68,6 @@ jobs:
           fi
 
           mkdir -p data/monthly/drafts
-          printf '%s' "$TITLE" > "data/monthly/drafts/monthly_${GITHUB_SHA}_title.txt"
-          printf '%s' "$BODY" > "data/monthly/drafts/monthly_${GITHUB_SHA}_body.txt"
           echo "$CONTENT" > "data/monthly/drafts/monthly_${GITHUB_SHA}.json"
 
           echo "Monthly draft created: $TITLE"

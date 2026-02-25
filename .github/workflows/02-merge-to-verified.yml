@@ -39,8 +39,8 @@ jobs:
       - name: Clean up processed files
         run: |
           rm -f data/raw/*.json
-          rm -f data/drafts/*.json data/drafts/*.txt
-          rm -f data/generated/*.txt data/generated/*.md
+          rm -f data/drafts/*.json
+          rm -f data/generated/*.json
 
       - name: Commit verified threats and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5

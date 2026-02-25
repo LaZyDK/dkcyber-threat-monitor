@@ -100,8 +100,8 @@ jobs:
           fi
 
           mkdir -p data/monthly/generated
-          printf '%s' "$TITLE" > "data/monthly/generated/title_$(date +%Y-%m).txt"
-          printf '%s' "$BODY" > "data/monthly/generated/post_$(date +%Y-%m).md"
+          jq -n --arg title "$TITLE" --arg body "$BODY" \
+            '{title: $title, body: $body}' > "data/monthly/generated/post_$(date +%Y-%m).json"
 
           echo "Monthly finalized: $TITLE"
 

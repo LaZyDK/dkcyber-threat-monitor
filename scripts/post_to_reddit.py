@@ -15,7 +15,14 @@ def find_latest_file(pattern):
     return files[0]
 
 
-def post_to_reddit(title_file, body_file):
+def load_post(post_file):
+    """Load title and body from a JSON post file."""
+    with open(post_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data['title'].strip(), data['body']
+
+
+def post_to_reddit(title, body):
     reddit = praw.Reddit(
         client_id=os.environ['REDDIT_CLIENT_ID'],
         client_secret=os.environ['REDDIT_CLIENT_SECRET'],
@@ -26,9 +33,6 @@ def post_to_reddit(title_file, body_file):
             f"(by u/{os.environ['REDDIT_USERNAME']})"
         ),
     )
-
-    title = open(title_file, encoding='utf-8').read().strip()
-    body = open(body_file, encoding='utf-8').read()
 
     subreddit = reddit.subreddit('dkcybersecurity')
     submission = subreddit.submit(title, selftext=body)
@@ -66,17 +70,16 @@ def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else 'monthly'
 
     if mode == 'monthly':
-        title_file = find_latest_file('data/monthly/generated/title_*.txt')
-        body_file = find_latest_file('data/monthly/generated/post_*.md')
+        post_file = find_latest_file('data/monthly/generated/post_*.json')
     else:
-        title_file = find_latest_file('data/generated/title_*.txt')
-        body_file = find_latest_file('data/generated/post_*.md')
+        post_file = find_latest_file('data/generated/post_*.json')
 
-    if not title_file or not body_file:
-        print(f"No {mode} post files found — skipping")
+    if not post_file:
+        print(f"No {mode} post file found — skipping")
         sys.exit(1)
 
-    reddit_url = post_to_reddit(title_file, body_file)
+    title, body = load_post(post_file)
+    reddit_url = post_to_reddit(title, body)
     save_reddit_url(reddit_url)
 
 

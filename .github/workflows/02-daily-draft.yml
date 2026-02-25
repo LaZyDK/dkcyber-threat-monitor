@@ -72,8 +72,6 @@ jobs:
           fi
 
           mkdir -p data/drafts
-          printf '%s' "$TITLE" > "data/drafts/daily_${GITHUB_SHA}_title.txt"
-          printf '%s' "$BODY" > "data/drafts/daily_${GITHUB_SHA}_body.txt"
           echo "$CONTENT" > "data/drafts/daily_${GITHUB_SHA}.json"
 
           echo "Draft created: $TITLE"

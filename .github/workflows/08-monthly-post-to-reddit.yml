@@ -34,8 +34,8 @@ jobs:
       - name: Clean up monthly intermediate files
         run: |
           rm -f data/monthly/raw/*.json
-          rm -f data/monthly/drafts/*.json data/monthly/drafts/*.txt
-          rm -f data/monthly/generated/*.txt data/monthly/generated/*.md
+          rm -f data/monthly/drafts/*.json
+          rm -f data/monthly/generated/*.json
 
       - name: Commit updated verified_threats.json and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5

@@ -95,8 +95,8 @@ jobs:
           fi
 
           mkdir -p data/generated
-          printf '%s' "$TITLE" > "data/generated/title_${GITHUB_SHA}.txt"
-          printf '%s' "$BODY" > "data/generated/post_${GITHUB_SHA}.md"
+          jq -n --arg title "$TITLE" --arg body "$BODY" \
+            '{title: $title, body: $body}' > "data/generated/post_${GITHUB_SHA}.json"
 
           echo "Finalized: $TITLE"
 
