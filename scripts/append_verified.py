@@ -171,6 +171,8 @@ def build_merged_entry(group, new_entries, now):
         'id': make_id(primary_link, name),
         'name': name[:80],
         'description': description[:300],
+        'attack_type': primary.get('attack_type', 'ukendt'),
+        'sector': primary.get('sector', 'ukendt'),
         'source': primary_source,
         'link': primary_link,
         'additional_sources': all_sources[1:] if len(all_sources) > 1

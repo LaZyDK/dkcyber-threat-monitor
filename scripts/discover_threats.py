@@ -38,6 +38,8 @@ Svar KUN med denne JSON (ingen anden tekst):
 {{
   "is_dk_attack": true/false,
   "confidence": "high"/"medium"/"low",
+  "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"andet"/"ukendt",
+  "sector": "sundhed"/"finans"/"offentlig"/"energi"/"transport"/"telecom"/"uddannelse"/"detailhandel"/"it"/"andet"/"ukendt",
   "title": "Kort dansk titel til truslen (max 80 tegn)",
   "short_desc": "2-3 sætninger på dansk der beskriver angrebet",
   "is_new_source": true/false
@@ -240,6 +242,9 @@ def discover():
                 "is_dk_attack": classification.get("is_dk_attack",
                                                    False),
                 "confidence": classification.get("confidence", "low"),
+                "attack_type": classification.get("attack_type",
+                                                   "ukendt"),
+                "sector": classification.get("sector", "ukendt"),
                 "explanation": classification.get("short_desc", ""),
                 "discovered_via": "brave_search",
             }

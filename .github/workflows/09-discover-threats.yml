@@ -44,7 +44,7 @@ jobs:
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title[:60])](\(.link)) | \(.confidence) | \(.explanation[:80]) |"' "$DISC_FILE"
+              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title[:60])](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$DISC_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -70,8 +70,8 @@ jobs:
 
             ### Verificerede danske angreb
 
-            | Titel | Confidence | Forklaring |
-            |-------|------------|------------|
+            | Titel | Type | Sektor | Confidence | Forklaring |
+            |-------|------|--------|------------|------------|
             ${{ steps.summary.outputs.details }}
 
             ---

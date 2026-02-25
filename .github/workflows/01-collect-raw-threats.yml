@@ -47,7 +47,7 @@ jobs:
             # Build a markdown list of classified entries for the PR body
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
+              jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -71,8 +71,8 @@ jobs:
 
             ### Detaljer
 
-            | Titel | Dansk angreb? | Confidence | Forklaring |
-            |-------|--------------|------------|------------|
+            | Titel | Dansk angreb? | Type | Sektor | Confidence | Forklaring |
+            |-------|--------------|------|--------|------------|------------|
             ${{ steps.summary.outputs.details }}
 
             ---

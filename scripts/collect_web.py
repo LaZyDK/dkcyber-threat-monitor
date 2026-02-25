@@ -27,6 +27,8 @@ Svar KUN med denne JSON (ingen anden tekst):
 {{
   "is_dk_attack": true/false,
   "confidence": "high"/"medium"/"low",
+  "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"andet"/"ukendt",
+  "sector": "sundhed"/"finans"/"offentlig"/"energi"/"transport"/"telecom"/"uddannelse"/"detailhandel"/"it"/"andet"/"ukendt",
   "explanation": "1-2 sætninger på dansk der forklarer hvorfor"
 }}
 
@@ -175,6 +177,8 @@ def classify_with_llm(entry, api_key, api_url, model):
         return {
             "is_dk_attack": bool(result.get("is_dk_attack", False)),
             "confidence": result.get("confidence", "low"),
+            "attack_type": result.get("attack_type", "ukendt"),
+            "sector": result.get("sector", "ukendt"),
             "explanation": result.get("explanation", ""),
         }
     except (requests.RequestException, json.JSONDecodeError,
@@ -183,6 +187,8 @@ def classify_with_llm(entry, api_key, api_url, model):
         return {
             "is_dk_attack": False,
             "confidence": "error",
+            "attack_type": "ukendt",
+            "sector": "ukendt",
             "explanation": f"Klassificering fejlede: {e}",
         }
 
@@ -224,12 +230,16 @@ def collect():
             if not has_dk_keyword:
                 item["is_dk_attack"] = False
                 item["confidence"] = "high"
+                item["attack_type"] = "ukendt"
+                item["sector"] = "ukendt"
                 item["explanation"] = (
                     "Ingen danske nøgleord fundet i titel/resumé."
                 )
             elif not api_key or not model:
                 item["is_dk_attack"] = has_dk_keyword
                 item["confidence"] = "keyword-only"
+                item["attack_type"] = "ukendt"
+                item["sector"] = "ukendt"
                 item["explanation"] = (
                     "Nøgleordsmatch (ingen LLM-nøgle tilgængelig)."
                 )
@@ -238,6 +248,8 @@ def collect():
                 result = classify_with_llm(item, api_key, api_url, model)
                 item["is_dk_attack"] = result["is_dk_attack"]
                 item["confidence"] = result["confidence"]
+                item["attack_type"] = result["attack_type"]
+                item["sector"] = result["sector"]
                 item["explanation"] = result["explanation"]
 
             if item["is_dk_attack"]:
