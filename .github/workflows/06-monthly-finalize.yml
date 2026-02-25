@@ -36,7 +36,7 @@ jobs:
           Skriv en engagerende, naturlig månedlig opsummering på dansk. Emojis sparsomt.
 
           VIGTIGT – brug en markdown-tabel med disse kolonner:
-          Dato | Hændelse | Type | Sektor | Beskrivelse | Kilde
+          Dato | Hændelse | Type | Sektor | Beskrivelse | Kilde | Diskussion
 
           Hvor:
           - Dato = timestamp
@@ -45,6 +45,7 @@ jobs:
           - Sektor = berørt sektor (sundhed, finans, offentlig, etc.)
           - Beskrivelse = kort beskrivelse
           - Kilde = markdown-link [kilde](url)
+          - Diskussion = hvis reddit_url findes, link til den daglige Reddit-tråd [tråd](reddit_url). Ellers udelad eller skriv '-'.
 
           Fremhæv trends: er der mønstre i angrebstyper eller sektorer denne måned?
 

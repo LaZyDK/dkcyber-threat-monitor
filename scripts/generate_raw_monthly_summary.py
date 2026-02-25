@@ -42,7 +42,7 @@ def generate_raw_monthly_summary():
 
     # Customize columns to whatever fields you actually store
     columns = ['name', 'timestamp', 'attack_type', 'sector', 'source', 'link',
-               'description']
+               'reddit_url', 'description']
     existing_cols = [c for c in columns if c in monthly.columns]
     table_md = monthly[existing_cols].to_markdown(index=False)
 
