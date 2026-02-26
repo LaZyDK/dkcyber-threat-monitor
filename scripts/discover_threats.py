@@ -310,7 +310,7 @@ def discover():
             fh.write(f"raw_file={path}\n")
 
     if new_source_domains:
-        candidates_path = "data/raw/new_source_candidates.json"
+        candidates_path = "data/new_source_candidates.json"
         candidates = list(new_source_domains)
         with open(candidates_path, "w", encoding="utf-8") as f:
             json.dump(candidates, f, ensure_ascii=False, indent=2)

@@ -4,7 +4,7 @@ import feedparser
 import requests
 from datetime import datetime, timezone
 
-CANDIDATES_PATH = 'data/raw/new_source_candidates.json'
+CANDIDATES_PATH = 'data/new_source_candidates.json'
 FEEDS_PATH = os.path.join(
     os.path.dirname(__file__), '..', 'data', 'feeds.json'
 )
@@ -24,7 +24,7 @@ def try_find_feed(domain):
         try:
             resp = requests.get(url, timeout=10,
                                 allow_redirects=True,
-                                headers={'User-Agent': 'dkcyber-bot/1.0'})
+                                headers={'User-Agent': 'dkcyber-threat-bot/0.1'})
             if resp.status_code != 200:
                 continue
 

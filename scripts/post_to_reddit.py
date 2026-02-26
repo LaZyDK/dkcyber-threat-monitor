@@ -29,7 +29,7 @@ def post_to_reddit(title, body):
         username=os.environ['REDDIT_USERNAME'],
         password=os.environ['REDDIT_PASSWORD'],
         user_agent=(
-            f"dkcyber-threat-bot v0.1 "
+            f"dkcyber-threat-bot/0.1 "
             f"(by u/{os.environ['REDDIT_USERNAME']})"
         ),
     )

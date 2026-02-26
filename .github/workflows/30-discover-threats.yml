@@ -1,4 +1,4 @@
-name: 30 Discover – Active Threat Search
+name: 30 Active Threat Search
 
 on:
   schedule:
@@ -46,7 +46,7 @@ jobs:
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title[:60])](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
+              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title)](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
