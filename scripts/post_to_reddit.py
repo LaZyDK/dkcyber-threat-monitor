@@ -209,6 +209,14 @@ def generate_issues():
             f"Add the `approved` label to post this to r/dkcybersecurity."
         )
 
+        # Ensure the label exists (create it if missing)
+        subprocess.run(
+            ["gh", "label", "create", "reddit-post-pending",
+             "--description", "Reddit post awaiting human review",
+             "--color", "FBCA04"],
+            capture_output=True, text=True,
+        )
+
         result = subprocess.run(
             ["gh", "issue", "create",
              "--title", issue_title,
