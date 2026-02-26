@@ -518,5 +518,40 @@
     "url": "https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/",
     "analyzed_at": "2026-02-26T13:15:48.165788+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294706/samsung-soesaetter-en-stribe-nye-toptelefoner-faas-nu-med-en-helt-unik-skaermteknologi",
+    "analyzed_at": "2026-02-26T15:56:51.846481+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294703/apple-paa-vej-med-ny-macbook-pro-med-touchskaerm-kopierer-elementer-fra-iphone-og-ipad",
+    "analyzed_at": "2026-02-26T15:56:51.846739+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294704/efter-et-15-aar-med-sandt-it-mareridt-britisk-regering-kaster-fire-milliarder-kroner-efter-afloeser-til-skandale-system",
+    "analyzed_at": "2026-02-26T15:56:51.846984+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/",
+    "analyzed_at": "2026-02-26T15:56:53.518545+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html",
+    "analyzed_at": "2026-02-26T15:56:53.804586+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/claude-code-flaws-exposed-developer-devices-to-silent-hacking/",
+    "analyzed_at": "2026-02-26T15:56:58.149700+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/la-og-el-i-skarp-debat-har-norge-tabt-fire-milliarder-paa-haeve-formueskatten",
+    "analyzed_at": "2026-02-26T15:56:59.295176+00:00",
+    "is_dk_attack": false
   }
 ]
