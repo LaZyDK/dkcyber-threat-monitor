@@ -1,1 +1,227 @@
-[]
+[
+  {
+    "url": "https://www.cert.dk/news/2026-02-26/Myndigheder-advarer-om-fleraarig-udnyttelse-af-0-dage-i-Cisco",
+    "analyzed_at": "2026-02-26T18:23:41.837132+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv%E2%80%91U",
+    "analyzed_at": "2026-02-26T18:23:46.950700+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI%E2%80%91agenter-aabner-ny-angrebsflade-i-supply-chain%E2%80%91kaeden",
+    "analyzed_at": "2026-02-26T18:23:53.478129+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "analyzed_at": "2026-02-26T18:23:58.622335+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "analyzed_at": "2026-02-26T18:24:03.660178+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-nolldagssarbarhet-i-cisco-catalyst-sd-wan.html",
+    "analyzed_at": "2026-02-26T18:24:09.874591+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "analyzed_at": "2026-02-26T18:24:20.714645+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "analyzed_at": "2026-02-26T18:24:20.715133+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "analyzed_at": "2026-02-26T18:24:25.711321+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "analyzed_at": "2026-02-26T18:24:25.711753+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/usa-diplomater-skal-kaempe-mod-unoedvendig-regulering-af-techgiganter",
+    "analyzed_at": "2026-02-26T18:24:37.364921+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/kvantecomputer-skulle-oege-dansk-suveraenitet-men-dens-indmad-er-microsoft-og-usa-tech",
+    "analyzed_at": "2026-02-26T18:24:37.365187+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-26T18:24:43.663274+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-26T18:24:48.320677+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-26T18:24:56.056499+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294706/samsung-soesaetter-en-stribe-nye-toptelefoner-faas-nu-med-en-helt-unik-skaermteknologi",
+    "analyzed_at": "2026-02-26T18:25:00.888845+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294703/apple-paa-vej-med-ny-macbook-pro-med-touchskaerm-kopierer-elementer-fra-iphone-og-ipad",
+    "analyzed_at": "2026-02-26T18:25:00.889119+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294704/efter-et-15-aar-med-sandt-it-mareridt-britisk-regering-kaster-fire-milliarder-kroner-efter-afloeser-til-skandale-system",
+    "analyzed_at": "2026-02-26T18:25:00.889333+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294705/google-er-i-al-stilhed-ved-at-stramme-grebet-om-android-store-open-source-organisationer-dybt-bekymrede",
+    "analyzed_at": "2026-02-26T18:25:00.889588+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294701/netcompany-indsaetter-sin-egen-topchef-efter-milliardopkoeb-af-sdc-sdc-direktoer-torben-finnemann-fratraeder",
+    "analyzed_at": "2026-02-26T18:25:00.889816+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/microsoft-graph-remembered-to-restict-mail-send-application-permission-app-access-policies/",
+    "analyzed_at": "2026-02-26T18:25:08.551910+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/windows-secure-boot-certificate-expiration-2026/",
+    "analyzed_at": "2026-02-26T18:25:12.830262+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/ownerless-teams/",
+    "analyzed_at": "2026-02-26T18:25:18.176471+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/blocking-tor-botnet-anonymous-proxy-access-to-m365/",
+    "analyzed_at": "2026-02-26T18:25:22.568036+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/01/first-look-unified-tenant-configuration-management-apis/",
+    "analyzed_at": "2026-02-26T18:25:27.193778+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-critical-apex-one-rce-vulnerabilities/",
+    "analyzed_at": "2026-02-26T18:25:31.331905+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/european-dyi-chain-manomano-data-breach-impacts-38-million-customers/",
+    "analyzed_at": "2026-02-26T18:25:31.332179+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/critical-juniper-networks-ptx-flaw-allows-full-router-takeover/",
+    "analyzed_at": "2026-02-26T18:25:31.332390+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/olympique-marseille-football-club-confirms-cyberattack-after-data-leak/",
+    "analyzed_at": "2026-02-26T18:25:31.332635+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/",
+    "analyzed_at": "2026-02-26T18:25:36.325077+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/uat-10027-targets-us-education-and.html",
+    "analyzed_at": "2026-02-26T18:25:36.498861+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html",
+    "analyzed_at": "2026-02-26T18:25:36.499301+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html",
+    "analyzed_at": "2026-02-26T18:25:36.499758+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html",
+    "analyzed_at": "2026-02-26T18:25:45.101740+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html",
+    "analyzed_at": "2026-02-26T18:25:45.102191+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/apple-iphone-and-ipad-cleared-for-classified-nato-use/",
+    "analyzed_at": "2026-02-26T18:25:45.380386+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/four-risks-boards-cannot-treat-as-background-noise/",
+    "analyzed_at": "2026-02-26T18:25:45.380737+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/claude-code-flaws-exposed-developer-devices-to-silent-hacking/",
+    "analyzed_at": "2026-02-26T18:25:45.381133+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/gambit-security-emerges-from-stealth-with-61-million-in-funding/",
+    "analyzed_at": "2026-02-26T18:25:45.381507+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/zyxel-patches-critical-vulnerability-in-many-device-models/",
+    "analyzed_at": "2026-02-26T18:25:45.381900+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/la-og-el-i-skarp-debat-har-norge-tabt-fire-milliarder-paa-haeve-formueskatten",
+    "analyzed_at": "2026-02-26T18:25:46.502347+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/msncom/se-video-en-haer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T18:25:50.803447+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/en-bothaer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T18:25:59.774426+00:00",
+    "is_dk_attack": true
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-26T18:26:07.598087+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-26T18:26:26.908243+00:00",
+    "is_dk_attack": false
+  }
+]
