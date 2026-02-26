@@ -56,11 +56,15 @@ VIGTIGT — disse tæller IKKE:
 - Nyheder fra danske kilder (f.eks. DK CERT, Version2) om internationale hændelser — \
 kilden gør det IKKE dansk. Indholdet SKAL nævne et konkret dansk offer eller mål
 
+Feltet "confidence" angiver din sikkerhed på at angrebet FAKTISK rammer Danmark \
+(danske ofre, dansk infrastruktur, danske data). \
+"high" = klart dansk mål nævnt, "medium" = sandsynligt dansk, "low" = usikkert/tvivlsomt.
+
 Svar KUN med denne JSON (ingen anden tekst):
 {{
   "is_dk_attack": true/false,
   "confidence": "high"/"medium"/"low",
-  "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"andet"/"ukendt",
+  "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"datatyveri"/"digital_svindel"/"destruktiv"/"ot_manipulation"/"malware"/"insider"/"exploit"/"andet"/"ukendt",
   "sector": "sundhed"/"finans"/"offentlig"/"energi"/"transport"/"telecom"/"uddannelse"/"detailhandel"/"it"/"andet"/"ukendt",
   "title": "Kort dansk titel til truslen (max 80 tegn)",
   "short_desc": "2-3 sætninger på dansk der beskriver angrebet",
