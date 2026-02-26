@@ -10,11 +10,11 @@ Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds og 
 
 ### Track A — Enkelte trusler
 
-1. **Indsamling** (workflow 01) — RSS-feeds fra `data/feeds.json` + keyword pre-filter + LLM-klassificering
-2. **Verifikation** — PR oprettes med klassificerede trusler. Jeg gennemgar og merger
-3. **Merge** (workflow 02) — Verificerede trusler tilfojes `data/verified_threats.json`. LLM merger artikler om samme angreb
-4. **Draft** (workflow 02-daily) — Hurtigt udkast via `LLM_MODEL_CHEAP`
-5. **Finalize** (workflow 03) — Faerdig Reddit-post via `LLM_MODEL_TOOLUSE` med transparency disclaimer
+1. **Indsamling** (workflow 01, hver 3. time) — RSS-feeds fra `data/feeds.json` + keyword pre-filter + LLM-klassificering
+2. **Verifikation** — PR oprettes med klassificerede trusler. Hver kørsel = et commit, så du reviewer kun nye data
+3. **Merge** (workflow 02) — Verificerede trusler tilføjes `data/verified_threats.json`. LLM merger artikler om samme angreb
+4. **Draft** (workflow 02-daily) — Hurtigt udkast via `LLM_MODEL_CHEAP` (kun baseret på verificerede DK-angreb)
+5. **Finalize** (workflow 03) — Færdig Reddit-post via `LLM_MODEL_TOOLUSE` med transparency disclaimer
 
 ### Track B — Manedlig opsummering
 
@@ -52,8 +52,9 @@ Flere artikler om **samme angreb** merges automatisk. Primary link + source beva
 
 ## Deduplikering og merging
 
-- **URL-deduplikering** — Samme URL kan aldrig optrade i flere PRs. Checker mod `verified_threats.json` og alle `data/raw/*.json` filer
-- **Attack merging** — Nar PRs merges, bruger LLM'en til at gruppere artikler der handler om samme hændelse. 16 artikler om russiske DDoS-angreb blev fx merget til 2 distinkte events
+- **URL-deduplikering** — Samme URL kan aldrig optræde i flere PRs. Checker mod `verified_threats.json` og alle `data/raw/*.json` filer
+- **URL-cleaning** — Tracking-parametre (utm_*, gaa_*, fbclid, etc.) strippes automatisk ved indsamling, så samme artikel med forskellige tracking-links ikke duplikeres
+- **Attack merging** — Når PRs merges, bruger LLM'en til at gruppere artikler der handler om samme hændelse. 16 artikler om russiske DDoS-angreb blev fx merget til 2 distinkte events
 
 ## RSS-kilder
 
@@ -99,33 +100,42 @@ Repo → Settings → Actions → General → Workflow permissions:
 - **"Read and write permissions"**
 - **"Allow GitHub Actions to create and approve pull requests"**
 
+## Klassificering
+
+LLM-klassificeringen bruger strenge regler for at undgå false positives:
+
+- Artiklen SKAL nævne et **konkret dansk offer eller mål** for at tælle som dansk angreb
+- Danske kilder (DK CERT, Version2 etc.) der rapporterer om internationale hændelser tæller IKKE
+- Generelle CVE-advarsler, tips og guides filtreres fra
+- Angreb med ukendt type nedgraderes automatisk
+
 ## AI Transparency
 
 **Alle tekster i dette projekt er genereret af LLM'er med human oversight.**
 
-- Ra data er 100 % fra kilden og gemmes uaendret (`data/raw/` og `data/verified_threats.json`)
-- LLM-teksten er kun et udkast — jeg laeser, retter og godkender **altid** for posting
-- Du kan folge hele processen i repo'ets Pull Requests og commit-historik
+- Rå data er 100 % fra kilden og gemmes uændret (`data/raw/` og `data/verified_threats.json`)
+- LLM-teksten er kun et udkast — jeg læser, retter og godkender **altid** før posting
+- Du kan følge hele processen i repo'ets Pull Requests og commit-historik
 
-**Hver Reddit-post indeholder denne faste disclaimer** (automatisk tilfojet):
+**Hver Reddit-post indeholder denne faste disclaimer** (automatisk tilføjet):
 > ---
 > *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-> Ra data er verificeret af mig for posting.
+> Rå data er verificeret af mig før posting.
 
 ## Workflows
 
 | # | Navn | Trigger | Beskrivelse |
 |---|------|---------|-------------|
-| 01 | Collect Raw Threats | Dagligt kl. 07 UTC + manual | RSS-feeds → keyword filter → LLM-klassificering → PR |
-| 02 | Merge to Verified | PR merge med `data/raw/**` | Append + LLM-merge → `verified_threats.json` |
-| 02-daily | Daily Draft | Efter raw data | Hurtigt LLM-udkast |
-| 03 | Daily Finalize | Efter draft | Faerdig Reddit-post med disclaimer |
-| 04 | Monthly Raw Summary | 1. i hver maned | Tabel over forrige maneds trusler |
-| 05 | Monthly Draft | Efter monthly summary | Manedligt LLM-udkast |
-| 06 | Monthly Finalize | Efter monthly draft | Faerdig manedlig post |
+| 01 | Collect Raw Threats | Hver 3. time + manual | RSS-feeds → keyword filter → LLM-klassificering → PR (et commit per kørsel) |
+| 02 | Merge to Verified | PR merge med `data/raw/**` | Append + LLM-merge → `verified_threats.json` + oprydning |
+| 02-daily | Daily Draft | Push til `data/raw/**` | LLM-udkast kun baseret på verificerede DK-angreb |
+| 03 | Daily Finalize | Efter draft | Færdig Reddit-post med disclaimer |
+| 04 | Monthly Raw Summary | 1. i hver måned | Tabel over forrige måneds trusler |
+| 05 | Monthly Draft | Efter monthly summary | Månedligt LLM-udkast |
+| 06 | Monthly Finalize | Efter monthly draft | Færdig månedlig post |
 | 08 | Monthly Post to Reddit | Efter monthly finalize | Poster til r/dkcybersecurity |
-| 09 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR |
-| 10 | Suggest Sources | Nar nye kandidater opdages | Prober RSS-feeds → PR til `feeds.json` |
+| 09 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR (et commit per kørsel) |
+| 10 | Suggest Sources | Når nye kandidater opdages | Prober RSS-feeds → PR til `feeds.json` (kun virkelig nye kilder) |
 
 ## Links
 
