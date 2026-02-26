@@ -1,109 +1,5 @@
 [
   {
-    "id": "351b76113da7",
-    "name": "DDoS-angreb mod grønlandske hjemmesider",
-    "description": "Grønlandske myndigheder og hjemmesider blev ramt af et koordineret DDoS-angreb. Hackergruppen NoName057(16) har taget ansvar og angiver, at angrebet er en hævn for Danmarks donationer til Grønland.",
-    "attack_type": "ddos",
-    "sector": "offentlig",
-    "source": "inputmag.dk",
-    "link": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
-    "additional_sources": [
-      {
-        "url": "https://www.seoghoer.dk/nyheder/lige-nu-ddos-angreb-mod-groenlandske-hjemmesider",
-        "name": "seoghoer.dk"
-      },
-      {
-        "url": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416",
-        "name": "nordjyske.dk"
-      },
-      {
-        "url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
-        "name": "sermitsiaq.ag"
-      },
-      {
-        "url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
-        "name": "ekstrabladet.dk"
-      },
-      {
-        "url": "https://jyllands-posten.dk/indland/ECE19039708/groenlandske-hjemmesider-er-under-angreb/",
-        "name": "jyllands-posten.dk"
-      }
-    ],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T06:39:21.775071+00:00"
-  },
-  {
-    "id": "081334635e75",
-    "name": "DDoS-angreb mod danske myndigheder og kommuner",
-    "description": "En DDoS-angreb har ramt danske myndigheder, kommuner og online-tjenester. Den russiske hackergruppe NoName057(16) har bekræftet ansvar for angrebet, der har forårsaget nedlæggelser.",
-    "attack_type": "ddos",
-    "sector": "offentlig",
-    "source": "tjekdet.dk",
-    "link": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
-    "additional_sources": [
-      {
-        "url": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqe9_LXA61fw0Jxb6173fbXSH_iuw7RqH0kcZUhdlsmJ_EWMuPVTfwCI&gaa_ts=6999f152&gaa_sig=ZojeD9TWT5zfcdoPzKM6JgER6OJSGanEhVfx8wWnNm6bfjyoPYmwpfa0BHFc1eCStxz5HSpv_nz-GHDFtkebEQ%3D%3D",
-        "name": "berlingske.dk"
-      }
-    ],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T06:39:21.775071+00:00"
-  },
-  {
-    "id": "74c353a35ab5",
-    "name": "Booking.com-datastjælning",
-    "description": "Svindlere har stjålet danske bookingdata fra Booking.com, herunder gæsternes navne, datoer og bookingnumre. De bruger disse oplysninger til at snyde danske kunder.",
-    "attack_type": "databrud",
-    "sector": "detailhandel",
-    "source": "jyllands-posten.dk",
-    "link": "https://jyllands-posten.dk/indland/ECE19044692/bookingcom-advarer-svindlere-har-faaet-adgang-til-vigtige-detaljer-om-bookinger-fra-danske-kunder/",
-    "additional_sources": [],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T06:39:21.775071+00:00"
-  },
-  {
-    "id": "2c7d542d27d0",
-    "name": "DDoS-angreb mod Grønland",
-    "description": "En DDoS-angreb på grønlandske hjemmesider er rapporteret. Styrelsen for Samfundssikkerhed og danske myndigheder følger situationen, men angrebet rammer ikke Danmark direkte.",
-    "attack_type": "ddos",
-    "sector": "ukendt",
-    "source": "nyheder.tv2.dk",
-    "link": "https://nyheder.tv2.dk/live/2025-01-06-kampen-om-groenlands-fremtid/ddos-angreb-mod-groenland?entry=f2d24f5f-7117-4788-a4e6-0fcf9c6fe1b9",
-    "additional_sources": [],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T07:49:23.172319+00:00"
-  },
-  {
-    "id": "9c871de1753c",
-    "name": "Russiske DDoS-angreb mod danske hjemmesider",
-    "description": "Den russiske hackergruppe NoName057(16) har taget ansvar for DDoS-angreb mod danske hjemmesider. Styrelsen for Samfundssikkerhed bekræfter angrebene, der har ramt flere danske organisationer.",
-    "attack_type": "ddos",
-    "sector": "ukendt",
-    "source": "berlingske.dk",
-    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqfn4zUEuswHWH8OQgFMhaEVESAOvLu5bM42r3djxrF7HDFenaVUxDqs&gaa_ts=6999c8ae&gaa_sig=ZwYTgH1hJ4ibdPt3NV624fJ1p0BFv8NpQVP6FHLJm5k6yPP7o-uoZiIrvff0pCanD6roAY3EO6p5rr-oCTWmxw%3D%3D",
-    "additional_sources": [],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T07:49:23.172319+00:00"
-  },
-  {
-    "id": "14d2ea10f4fa",
-    "name": "Russiske DDoS-angreb mod danske hjemmesider",
-    "description": "Den russiske hackergruppe NoName057(16) har taget ansvar for DDoS-angreb, ifølge Styrelsen for Samfundssikkerhed. Angrebene har ramt danske hjemmesider og er udført ved overbelastning.",
-    "attack_type": "ddos",
-    "sector": "offentlig",
-    "source": "berlingske.dk",
-    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1",
-    "additional_sources": [],
-    "timestamp": "2026-02-26",
-    "verified_by": "human-review",
-    "verified_at": "2026-02-26T08:13:34.422281+00:00"
-  },
-  {
     "id": "f9c3bd2cdf53",
     "name": "En bothær af brødristere, køleskabe og elkogere angriber danske myndigheder",
     "description": "",
@@ -114,6 +10,6 @@
     "additional_sources": [],
     "timestamp": "2026-02-26",
     "verified_by": "human-review",
-    "verified_at": "2026-02-26T12:59:25.460806+00:00"
+    "verified_at": "2026-02-26T18:31:05.994064+00:00"
   }
 ]
