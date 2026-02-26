@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Kritisk nolldagssårbarhet i Cisco Catalyst SD-WAN",
+    "link": "https://www.cert.se/2026/02/kritisk-nolldagssarbarhet-i-cisco-catalyst-sd-wan.html",
+    "published": "Thu, 26 Feb 2026 08:45:00 +0100",
+    "summary": "<p>Cisco har publicerat information om en nolldagssårbarhet (CVE-2026-20127) som påverkar i Cisco Catalyst SD-WAN Controller (tidigare vSmart) och Cisco Catalyst SD-WAN Manager (tidigare vManage). Sårbarheten är kritisk och har fått en CVSS v3.1-klassning på 10 av Cisco. [1]</p>",
+    "source": "https://www.cert.se/feed.rss",
+    "collected_at": "2026-02-26T08:12:54.059988+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Nyhed om en generel sårbarhed uden konkrete danske ofre eller mål, kun en CVSS-klassificering af en Cisco-sårbarhed."
+  },
+  {
+    "title": "USA-diplomater skal kæmpe mod »unødvendig regulering« af techgiganter",
+    "link": "https://www.version2.dk/artikel/usa-diplomater-skal-kaempe-mod-unoedvendig-regulering-af-techgiganter",
+    "published": "Thu, 26 Feb 2026 09:08:00 +0100",
+    "summary": "USA’s udenrigsminister pålægger landets diplomater at arbejde imod andre landes forsøg på at »forstyrre globale datastrømme« og »begrænse AI- og cloud-tjenester«.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-02-26T08:13:13.419060+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "SAP midt i \"strategisk refresh:\" Topchef Mikkel Stavnsbo ser et nyt ERP-skifte i gang",
+    "link": "https://www.computerworld.dk/art/294686/sap-midt-i-strategisk-refresh-topchef-mikkel-stavnsbo-ser-et-nyt-erp-skifte-i-gang",
+    "published": "Thu, 26 Feb 2026 09:00:00 +0100",
+    "summary": "Ifølge SAP genovervejer flere virksomheder nu deres applikationslandskab. Målet er ikke længere flest mulige specialløsninger, men mere sammenhængende processer, mindre integrationsgæld og et stærkere core-system.",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-26T08:13:19.536745+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Foruroligende forskning: AI-modeller er vilde med at anbefale atomkrig",
+    "link": "https://www.computerworld.dk/art/294696/foruroligende-forskning-ai-modeller-er-vilde-med-at-anbefale-atomkrig",
+    "published": "Thu, 26 Feb 2026 08:32:00 +0100",
+    "summary": "Klodens førende AI-modeller synes at foretrække atomkrig i over 95 procents af de simulerede krigsscenarier.",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-26T08:13:19.537027+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Nyhedens indhold handler om generel forskning i AI-modeller uden konkrete danske mål eller hændelser, hvilket ikke opfylder kriterierne for et dansk cyberangreb."
+  },
+  {
+    "title": "Nvidia leverer over forventningerne: AI-guldfeber giver 73 procents vækst",
+    "link": "https://www.computerworld.dk/art/294695/nvidia-leverer-over-forventningerne-ai-guldfeber-giver-73-procents-vaekst",
+    "published": "Thu, 26 Feb 2026 07:48:00 +0100",
+    "summary": "Nvidia slår igen analytikernes forventninger med en omsætningsvækst på 73 procent, drevet af en datacenterforretning der nu udgør over 91 procent af selskabets samlede salg",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-26T08:13:25.698423+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Nyhedens indhold handler om Nvidia's økonomiske resultater og ikke om et cyberangreb eller sikkerhedshændelse, der rammer Danmark."
+  },
+  {
+    "title": "Masseovervågning og kamprobotter: Anthropic bukker under for Pentagons pres",
+    "link": "https://www.computerworld.dk/art/294694/masseovervaagning-og-kamprobotter-anthropic-bukker-under-for-pentagons-pres",
+    "published": "Thu, 26 Feb 2026 07:03:00 +0100",
+    "summary": "AI-selskabet Anthropic opgiver sine egne sikkerhedsprincipper efter pres fra det amerikanske forsvar.",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-26T08:13:30.737903+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]
