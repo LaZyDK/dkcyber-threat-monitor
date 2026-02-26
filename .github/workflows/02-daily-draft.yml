@@ -22,7 +22,7 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref }}
 
-      - name: Read latest raw threat file
+      - name: Read latest raw threat file (DK attacks only)
         id: read_raw
         run: |
           RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
@@ -30,10 +30,17 @@ jobs:
             echo "No raw files found"
             exit 1
           fi
-          # Compact JSON for prompt
-          jq -c . "$RAW_FILE" > /tmp/raw_compact.json
+          # Filter to only verified DK attacks
+          jq -c '[.[] | select(.is_dk_attack == true)]' "$RAW_FILE" > /tmp/raw_compact.json
+          COUNT=$(jq 'length' /tmp/raw_compact.json)
+          echo "Found $COUNT DK attacks in $(basename "$RAW_FILE")"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No DK attacks to draft — skipping"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create draft via OpenRouter API
+        if: steps.read_raw.outputs.skip != 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
@@ -81,12 +88,16 @@ jobs:
 
           echo "Draft created: $TITLE"
 
-      - name: Pull latest main
-        run: git pull --rebase origin main
-
-      - name: Commit draft
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Daily draft created"
-          file_pattern: data/drafts/**
-          branch: ${{ github.head_ref || 'main' }}
+      - name: Commit and push draft
+        if: steps.read_raw.outputs.skip != 'true'
+        run: |
+          git add data/drafts/
+          if git diff --cached --quiet; then
+            echo "No draft changes to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "Daily draft created"
+            git pull --rebase origin main
+            git push origin main
+          fi
