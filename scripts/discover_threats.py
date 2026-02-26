@@ -291,9 +291,9 @@ def discover():
             if is_new_domain and classification.get("is_dk_attack"):
                 new_source_domains.add(domain)
 
-    os.makedirs("data/raw", exist_ok=True)
+    os.makedirs("data/daily/raw", exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
-    path = f"data/raw/discover_{ts}.json"
+    path = f"data/daily/raw/discover_{ts}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, ensure_ascii=False, indent=2)
 

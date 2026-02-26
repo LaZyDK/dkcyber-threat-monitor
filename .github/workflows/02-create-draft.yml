@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'data/raw/**'
+      - 'data/daily/raw/**'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
       - name: Read latest raw threat file (DK attacks only)
         id: read_raw
         run: |
-          RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
+          RAW_FILE=$(ls -t data/daily/raw/*.json 2>/dev/null | head -n1)
           if [ -z "$RAW_FILE" ]; then
             echo "No raw files found — nothing to draft"
             echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -84,15 +84,15 @@ jobs:
             exit 1
           fi
 
-          mkdir -p data/drafts
-          echo "$CONTENT" > "data/drafts/daily_${GITHUB_SHA}.json"
+          mkdir -p data/daily/drafts
+          echo "$CONTENT" > "data/daily/drafts/daily_${GITHUB_SHA}.json"
 
           echo "Draft created: $TITLE"
 
       - name: Commit and push draft
         if: steps.read_raw.outputs.skip != 'true'
         run: |
-          git add data/drafts/ data/raw/
+          git add data/daily/drafts/ data/daily/raw/
           if git diff --cached --quiet; then
             echo "No draft changes to commit"
           else

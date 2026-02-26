@@ -54,6 +54,9 @@ jobs:
 
           Fremhæv trends: er der mønstre i angrebstyper eller sektorer denne måned?
 
+          VIGTIGT - Svar KUN med dette JSON format (ingen rå tekst):
+          {\"title\": \"...\", \"body\": \"...\"}
+
           VIGTIGT – tilføj en '## Diskussion' sektion EFTER tabellen med 2-3 spørgsmål:
           - Er jeres organisation eller sektor berørt af lignende angreb?
           - Har I set tegn på lignende aktivitet?
@@ -64,10 +67,7 @@ jobs:
 
           ---
           *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-          Rå data er verificeret af mig før posting.
-
-          Svar KUN med denne JSON (ingen anden tekst):
-          {\"title\": \"...\", \"body\": \"...\"}"
+          Rå data er verificeret af mig før posting."
 
           RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
             -H "Authorization: Bearer $OPENROUTER_API_KEY" \
@@ -81,7 +81,7 @@ jobs:
                 model: $model,
                 messages: [
                   {role: "system", content: $system},
-                  {role: "user", content: ("Månedligt udkast:\n" + $draft + "\n\nRå tabellen:\n" + $raw)}
+                  {role: "user", content: ("Månedligt udkast:\n" + $draft + "\n\nDen rå tabel:\n" + $raw)}
                 ],
                 temperature: 0.75,
                 max_tokens: 1800

@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'data/drafts/**'
+      - 'data/daily/drafts/**'
   workflow_dispatch:
 
 permissions:
@@ -24,8 +24,8 @@ jobs:
 
       - name: Read latest draft and raw data
         run: |
-          DRAFT=$(ls -1t data/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "{}")
-          RAW=$(ls -1t data/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "[]")
+          DRAFT=$(ls -1t data/daily/drafts/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "{}")
+          RAW=$(ls -1t data/daily/raw/*.json 2>/dev/null | head -n 1 | xargs cat 2>/dev/null || echo "[]")
           echo "$DRAFT" > /tmp/draft.json
           echo "$RAW" > /tmp/raw.json
 
@@ -103,9 +103,9 @@ jobs:
             exit 1
           fi
 
-          mkdir -p data/generated
+          mkdir -p data/daily/generated
           jq -n --arg title "$TITLE" --arg body "$BODY" \
-            '{title: $title, body: $body}' > "data/generated/post_${GITHUB_SHA}.json"
+            '{title: $title, body: $body}' > "data/daily/generated/post_${GITHUB_SHA}.json"
 
           echo "Finalized: $TITLE"
 
@@ -114,12 +114,12 @@ jobs:
       
       - name: Clean up processed files
         run: |
-          rm -f data/raw/*.json
-          rm -f data/drafts/*.json
+          rm -f data/daily/raw/*.json
+          rm -f data/daily/drafts/*.json
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Daily final Reddit-post klar til review"
-          file_pattern: data/generated/**
+          file_pattern: data/daily/generated/**
           branch: ${{ github.head_ref || 'main' }}
