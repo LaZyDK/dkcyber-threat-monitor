@@ -40,6 +40,9 @@ jobs:
           SYSTEM_PROMPT="Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
           Skriv engagerende, naturlig tekst på dansk. Emojis sparsomt.
 
+          VIGTIGT - Svar KUN med dette JSON format (ingen rå tekst):
+          {\"title\": \"...\", \"body\": \"...\"}
+
           VIGTIGT – for HVER hændelse SKAL du inkludere disse datapunkter:
           1. Dato (fra timestamp/published)
           2. Navn/titel på hændelsen
@@ -58,10 +61,7 @@ jobs:
 
           ---
           *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
-          Rå data er verificeret af mig før posting.
-
-          Svar KUN med dette JSON format (ingen anden tekst):
-          {\"title\": \"...\", \"body\": \"...\"}"
+          Rå data er verificeret af mig før posting."
 
           RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
             -H "Authorization: Bearer $OPENROUTER_API_KEY" \
