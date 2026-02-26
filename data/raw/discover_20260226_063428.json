@@ -202,7 +202,7 @@
     "source": "discover:jyllands-posten.dk",
     "source_domain": "jyllands-posten.dk",
     "collected_at": "2026-02-26T06:29:35.165627+00:00",
-    "is_dk_attack": true,
+    "is_dk_attack": false,
     "confidence": "high",
     "attack_type": "phishing",
     "sector": "finans",
