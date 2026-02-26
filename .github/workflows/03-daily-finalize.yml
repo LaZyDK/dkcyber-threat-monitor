@@ -2,6 +2,7 @@ name: 03 Daily – Finalize Post
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/drafts/**'
   workflow_dispatch:

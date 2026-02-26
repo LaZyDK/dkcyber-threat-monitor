@@ -2,6 +2,7 @@ name: 04 Daily – Post to Reddit
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/generated/**'
   workflow_dispatch:

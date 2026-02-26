@@ -248,6 +248,13 @@ def discover():
                 "explanation": classification.get("short_desc", ""),
                 "discovered_via": "brave_search",
             }
+            # If classified as DK attack but type is unknown, skip it
+            if (entry["is_dk_attack"]
+                    and entry.get("attack_type") == "ukendt"):
+                entry["is_dk_attack"] = False
+                entry["explanation"] += (
+                    " Nedgraderet: angrebstype kunne ikke bestemmes.")
+
             all_results.append(entry)
             ledger.append({
                 "url": url,

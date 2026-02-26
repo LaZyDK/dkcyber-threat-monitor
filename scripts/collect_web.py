@@ -252,6 +252,13 @@ def collect():
                 item["sector"] = result["sector"]
                 item["explanation"] = result["explanation"]
 
+            # If classified as DK attack but type is unknown, skip it
+            if (item["is_dk_attack"]
+                    and item.get("attack_type") == "ukendt"):
+                item["is_dk_attack"] = False
+                item["explanation"] += (
+                    " Nedgraderet: angrebstype kunne ikke bestemmes.")
+
             if item["is_dk_attack"]:
                 attack_count += 1
             threats.append(item)

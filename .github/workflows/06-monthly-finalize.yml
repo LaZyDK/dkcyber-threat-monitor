@@ -2,6 +2,7 @@ name: 06 Monthly – Finalize Post
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/monthly/drafts/**'
   workflow_dispatch:

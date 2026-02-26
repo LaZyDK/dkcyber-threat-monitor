@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Preserve raw files from existing open PR
+        run: |
+          if git ls-remote --heads origin discover-threats | grep -q discover-threats; then
+            git fetch origin discover-threats
+            git checkout origin/discover-threats -- data/raw/ 2>/dev/null || true
+            echo "Restored raw files from existing PR branch"
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,19 +40,19 @@ jobs:
           BRAVE_SEARCH_URL: ${{ vars.BRAVE_SEARCH_URL }}
         run: python scripts/discover_threats.py
 
-      - name: Summarise discoveries
+      - name: Summarise all discoveries
         id: summary
         run: |
-          DISC_FILE=$(ls -t data/raw/discover_*.json 2>/dev/null | head -n1)
-          if [ -n "$DISC_FILE" ]; then
-            TOTAL=$(jq 'length' "$DISC_FILE")
-            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$DISC_FILE")
+          DISC_FILES=$(ls data/raw/discover_*.json 2>/dev/null)
+          if [ -n "$DISC_FILES" ]; then
+            TOTAL=$(jq -s '[.[] | .[]] | length' data/raw/discover_*.json)
+            ATTACKS=$(jq -s '[.[] | .[] | select(.is_dk_attack == true)] | length' data/raw/discover_*.json)
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title[:60])](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$DISC_FILE"
+              jq -s -r '[.[] | .[] | select(.is_dk_attack == true)] | .[] | "| [\(.title[:60])](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' data/raw/discover_*.json
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -76,6 +84,6 @@ jobs:
 
             ---
             Review → rediger om nødvendigt → merge når verificeret.
-          branch: discover-threats-${{ github.run_id }}
+          branch: discover-threats
           delete-branch: true
           labels: discovery,threat

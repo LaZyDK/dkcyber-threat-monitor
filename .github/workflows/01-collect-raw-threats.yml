@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Preserve raw files from existing open PR
+        run: |
+          if git ls-remote --heads origin threat-verification | grep -q threat-verification; then
+            git fetch origin threat-verification
+            git checkout origin/threat-verification -- data/raw/ 2>/dev/null || true
+            echo "Restored raw files from existing PR branch"
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,22 +40,22 @@ jobs:
         run: |
           python scripts/collect_web.py
 
-      - name: Summarise classified entries
+      - name: Summarise all classified entries
         id: summary
         run: |
-          RAW_FILE=$(ls -t data/raw/*.json 2>/dev/null | head -n1)
-          if [ -n "$RAW_FILE" ]; then
-            TOTAL=$(jq 'length' "$RAW_FILE")
-            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$RAW_FILE")
+          RAW_FILES=$(ls data/raw/*.json 2>/dev/null)
+          if [ -n "$RAW_FILES" ]; then
+            # Aggregate all raw files into one summary
+            TOTAL=$(jq -s '[.[] | .[]] | length' data/raw/*.json)
+            ATTACKS=$(jq -s '[.[] | .[] | select(.is_dk_attack == true)] | length' data/raw/*.json)
             FILTERED=$((TOTAL - ATTACKS))
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
             echo "filtered=$FILTERED" >> "$GITHUB_OUTPUT"
 
-            # Build a markdown list of classified entries for the PR body
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
+              jq -s -r '[.[] | .[]] | .[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' data/raw/*.json
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -80,6 +88,6 @@ jobs:
             Du kan override ved at redigere JSON og sætte `is_dk_attack: true` på en entry.
 
             Review → rediger om nødvendigt → merge når verificeret.
-          branch: threat-verification-${{ github.run_id }}
+          branch: threat-verification
           delete-branch: true
           labels: verification,threat

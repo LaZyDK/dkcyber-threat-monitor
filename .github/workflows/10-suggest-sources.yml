@@ -63,6 +63,6 @@ jobs:
 
             ---
             Review og merge for at aktivere de nye kilder i indsamlingen.
-          branch: new-sources-${{ github.run_id }}
+          branch: new-sources
           delete-branch: true
           labels: sources,discovery

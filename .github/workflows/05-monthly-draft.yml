@@ -2,6 +2,7 @@ name: 05 Monthly – Create Draft
 
 on:
   push:
+    branches: [main]
     paths:
       - 'data/monthly/raw/**'
   workflow_dispatch:
