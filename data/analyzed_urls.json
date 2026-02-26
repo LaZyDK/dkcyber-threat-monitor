@@ -378,5 +378,15 @@
     "url": "https://www.chosun.com/english/national-en/2026/02/25/JV57DH5ZTRDP3DYQTSWMDMFXVE/",
     "analyzed_at": "2026-02-26T07:45:50.283309+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1",
+    "analyzed_at": "2026-02-26T08:11:27.567467+00:00",
+    "is_dk_attack": true
+  },
+  {
+    "url": "https://cybersecurefox.com/de/android-backdoor-keenadu-supply-chain-angriff/",
+    "analyzed_at": "2026-02-26T08:12:11.715674+00:00",
+    "is_dk_attack": false
   }
 ]
