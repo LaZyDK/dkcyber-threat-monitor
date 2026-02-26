@@ -33,6 +33,8 @@ VIGTIGT — disse tæller IKKE:
 - Artikler om cybersikkerhed generelt (tips, guides, rapporter)
 - Gamle kendte angreb (WannaCry, NotPetya) medmindre ny info
 - Artikler der kun nævner Danmark i forbifarten
+- Nyheder fra danske kilder (f.eks. DK CERT, Version2) om internationale hændelser — \
+kilden gør det IKKE dansk. Indholdet SKAL nævne et konkret dansk offer eller mål
 
 Svar KUN med denne JSON (ingen anden tekst):
 {{

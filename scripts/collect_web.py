@@ -22,6 +22,8 @@ VIGTIGT — disse tæller IKKE som danske angreb:
 - Generelle sårbarhedsadvarsler (CVE, patches, 0-dage) uden dansk offer
 - Globale trusler der ikke specifikt nævner danske mål
 - Sikkerhedstips, guides, eller nyhedsopsummeringer
+- Nyheder fra danske kilder (f.eks. DK CERT, Version2) om internationale hændelser — \
+kilden gør det IKKE dansk. Indholdet SKAL nævne et konkret dansk offer eller mål
 
 Svar KUN med denne JSON (ingen anden tekst):
 {{
