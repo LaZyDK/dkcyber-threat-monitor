@@ -117,7 +117,40 @@ def generate_post_for_threat(threat, api_key, api_url, model):
             content = re.sub(r'^```\w*\n?', '', content)
             content = re.sub(r'\n?```$', '', content)
 
-        result = json.loads(content)
+        # Some LLMs return literal newlines inside JSON string values.
+        # Try parsing as-is first; on failure, escape control chars and retry.
+        try:
+            result = json.loads(content)
+        except json.JSONDecodeError:
+            def _escape_string_values(s):
+                """Escape control chars inside JSON string values only."""
+                out = []
+                in_string = False
+                escape_next = False
+                for ch in s:
+                    if escape_next:
+                        out.append(ch)
+                        escape_next = False
+                        continue
+                    if ch == '\\':
+                        out.append(ch)
+                        escape_next = True
+                        continue
+                    if ch == '"':
+                        in_string = not in_string
+                        out.append(ch)
+                        continue
+                    if in_string and ch == '\n':
+                        out.append('\\n')
+                    elif in_string and ch == '\r':
+                        out.append('\\r')
+                    elif in_string and ch == '\t':
+                        out.append('\\t')
+                    else:
+                        out.append(ch)
+                return ''.join(out)
+
+            result = json.loads(_escape_string_values(content))
         title = result.get('title', '').strip()
         body = result.get('body', '').strip()
 
