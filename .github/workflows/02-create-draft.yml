@@ -1,4 +1,4 @@
-name: 02 Daily – Create Draft
+name: 02 Create Draft
 
 on:
   push:

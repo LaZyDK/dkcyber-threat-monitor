@@ -1,10 +1,10 @@
-name: 08 Monthly – Post to Reddit
+name: 20 Post to Reddit
 
 on:
   push:
     branches: [main]
     paths:
-      - 'data/monthly/generated/**'
+      - 'data/generated/**'
   workflow_dispatch:
 
 permissions:
@@ -34,20 +34,14 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
           REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-        run: python scripts/post_to_reddit.py monthly
-
-      - name: Clean up monthly intermediate files
-        run: |
-          rm -f data/monthly/raw/*.json
-          rm -f data/monthly/drafts/*.json
-          rm -f data/monthly/generated/*.json
+        run: python scripts/post_to_reddit.py daily
 
       - name: Pull latest main
         run: git pull --rebase origin main
 
-      - name: Commit updated verified_threats.json and cleanup
+      - name: Commit updated verified_threats.json
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: add reddit_url + clean up monthly files after posting"
-          file_pattern: "data/verified_threats.json data/monthly/"
+          commit_message: "chore: add reddit_url to verified threats after daily post"
+          file_pattern: data/verified_threats.json
           branch: main

@@ -1,4 +1,4 @@
-name: 02 Merge to Verified
+name: 03 Merge to Verified
 
 on:
   pull_request:
@@ -40,9 +40,9 @@ jobs:
           LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: python scripts/append_verified.py
 
-      - name: Commit and push verified threats and cleanup
+      - name: Commit and push verified threats
         run: |
-          git add data/verified_threats.json data/raw/ data/drafts/ data/generated/
+          git add data/verified_threats.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

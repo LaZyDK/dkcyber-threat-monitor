@@ -96,7 +96,7 @@ def merge_with_llm(new_entries, api_key, api_url, model):
         articles.append(
             f"[{i}] Titel: {entry.get('title', '')}\n"
             f"    Kilde: {entry.get('source', '')}\n"
-            f"    Resumé: {entry.get('summary', '')[:200]}"
+            f"    Resumé: {entry.get('summary', '')}"
         )
 
     prompt = MERGE_PROMPT.format(articles="\n".join(articles))
@@ -147,8 +147,7 @@ def build_merged_entry(group, new_entries, now):
     primary = new_entries[indices[0]]
 
     name = group.get("name") or primary.get('title', 'Unknown')
-    description = group.get("description") or (
-        primary.get('summary', '')[:300] or '')
+    description = group.get("description") or (primary.get('summary', '') or '')
 
     all_sources = []
     earliest_date = None
@@ -170,7 +169,7 @@ def build_merged_entry(group, new_entries, now):
     verified_entry = {
         'id': make_id(primary_link, name),
         'name': name[:80],
-        'description': description[:300],
+        'description': description,
         'attack_type': primary.get('attack_type', 'ukendt'),
         'sector': primary.get('sector', 'ukendt'),
         'source': primary_source,
