@@ -1,4 +1,4 @@
-name: 03 Merge to Verified
+name: 03 Merge to Verified + Post to Reddit
 
 on:
   pull_request:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  append-verified:
+  append-and-post:
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'workflow_dispatch' ||
@@ -40,15 +40,28 @@ jobs:
           LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: python scripts/append_verified.py
 
-      - name: Commit and push verified threats
+      - name: Post each new threat to Reddit
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL_TOOLUSE: ${{ vars.LLM_MODEL_TOOLUSE }}
+        run: python scripts/post_to_reddit.py daily
+
+      - name: Clean up processed files
         run: |
-          git add data/verified_threats.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: append verified threats"
-            git pull --rebase origin main
-            git push origin main
-          fi
+          rm -f data/daily/raw/*.json
+          rm -f data/daily/newly_added.json
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
+
+      - name: Commit verified threats and cleanup
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: append verified threats + post to Reddit"
+          file_pattern: "data/verified_threats.json data/daily/"
+          branch: main

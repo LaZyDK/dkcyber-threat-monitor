@@ -9,6 +9,7 @@ from dateutil import parser as dateparser
 
 VERIFIED_PATH = 'data/verified_threats.json'
 RAW_DIR = 'data/daily/raw'
+NEWLY_ADDED_PATH = 'data/daily/newly_added.json'
 FEEDS_PATH = os.path.join(
     os.path.dirname(__file__), '..', 'data', 'feeds.json'
 )
@@ -242,12 +243,19 @@ def append_verified():
         groups = [{"indices": [i]} for i in range(len(new_entries))]
 
     merged_count = 0
+    newly_added_ids = []
     for group in groups:
         merged_entry = build_merged_entry(group, new_entries, now)
         verified.append(merged_entry)
+        newly_added_ids.append(merged_entry['id'])
         merged_count += 1
 
     save_verified(verified)
+
+    # Write newly added IDs so post_to_reddit.py knows which threats to post
+    os.makedirs(os.path.dirname(NEWLY_ADDED_PATH), exist_ok=True)
+    with open(NEWLY_ADDED_PATH, 'w', encoding='utf-8') as f:
+        json.dump(newly_added_ids, f, ensure_ascii=False, indent=2)
 
     source_count = len(new_entries)
     print(f"Appended {merged_count} threats from {source_count} sources "
