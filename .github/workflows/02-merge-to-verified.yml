@@ -46,12 +46,15 @@ jobs:
           rm -f data/drafts/*.json
           rm -f data/generated/*.json
 
-      - name: Pull latest main
-        run: git pull --rebase origin main
-
-      - name: Commit verified threats and cleanup
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: append verified threats + clean up processed files"
-          file_pattern: "data/verified_threats.json data/raw/ data/drafts/ data/generated/"
-          branch: main
+      - name: Commit and push verified threats and cleanup
+        run: |
+          git add data/verified_threats.json data/raw/ data/drafts/ data/generated/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: append verified threats + clean up processed files"
+            git pull --rebase origin main
+            git push origin main
+          fi
