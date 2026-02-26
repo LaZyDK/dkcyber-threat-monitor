@@ -89,9 +89,6 @@ jobs:
 
           echo "Draft created: $TITLE"
 
-          # Replace original file with compact version for later use in finalization step
-          mv /tmp/raw_compact.json "$RAW_FILE"
-
       - name: Commit and push draft
         if: steps.read_raw.outputs.skip != 'true'
         run: |

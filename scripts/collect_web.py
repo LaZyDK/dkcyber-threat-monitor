@@ -105,13 +105,7 @@ def seed_ledger_if_needed():
                                 seen.add(link)
                                 ledger.append({
                                     "url": link,
-                                    "analyzed_at": entry.get(
-                                        'collected_at',
-                                        datetime.now(
-                                            timezone.utc).strftime(
-                                            '%Y-%m-%d')),
-                                    "is_dk_attack": entry.get(
-                                        'is_dk_attack', False),
+                                    "analyzed_at": entry.get('collected_at', datetime.now(timezone.utc).strftime('%Y-%m-%d')),
                                 })
             except (json.JSONDecodeError, TypeError):
                 pass
@@ -267,7 +261,7 @@ def collect():
                 item["attack_type"] = "ukendt"
                 item["sector"] = "ukendt"
                 item["explanation"] = (
-                    "Nøgleordsmatch (ingen LLM-nøgle tilgængelig)."
+                    "Nøgleordsmatch (ingen LLM tilgængelig)."
                 )
             else:
                 print(f"  Classifying: {item['title'][:60]}...")
@@ -292,7 +286,6 @@ def collect():
             ledger.append({
                 "url": link,
                 "analyzed_at": item["collected_at"],
-                "is_dk_attack": item["is_dk_attack"],
             })
 
     os.makedirs("data/raw", exist_ok=True)
