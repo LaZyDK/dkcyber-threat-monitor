@@ -388,5 +388,50 @@
     "url": "https://cybersecurefox.com/de/android-backdoor-keenadu-supply-chain-angriff/",
     "analyzed_at": "2026-02-26T08:12:11.715674+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-nolldagssarbarhet-i-cisco-catalyst-sd-wan.html",
+    "analyzed_at": "2026-02-26T09:55:01.444981+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/usa-diplomater-skal-kaempe-mod-unoedvendig-regulering-af-techgiganter",
+    "analyzed_at": "2026-02-26T09:55:05.639514+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/kvantecomputer-skulle-oege-dansk-suveraenitet-men-dens-indmad-er-microsoft-og-usa-tech",
+    "analyzed_at": "2026-02-26T09:55:05.639783+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294692/markant-opbrud-i-markedet-for-store-offentlige-it-aftaler-nye-bevaegelser-paavirker-baade-indkoebere-og-leverandoerer",
+    "analyzed_at": "2026-02-26T09:55:10.593600+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294667/apple-fylder-50-aar-med-en-stribe-innovative-loesninger-og-en-hel-del-fejlskud",
+    "analyzed_at": "2026-02-26T09:55:16.652453+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294686/sap-midt-i-strategisk-refresh-topchef-mikkel-stavnsbo-ser-et-nyt-erp-skifte-i-gang",
+    "analyzed_at": "2026-02-26T09:55:20.638980+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294696/foruroligende-forskning-ai-modeller-er-vilde-med-at-anbefale-atomkrig",
+    "analyzed_at": "2026-02-26T09:55:20.639452+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294695/nvidia-leverer-over-forventningerne-ai-guldfeber-giver-73-procents-vaekst",
+    "analyzed_at": "2026-02-26T09:55:25.440077+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/cisco-patches-catalyst-sd-wan-zero-day-exploited-by-highly-sophisticated-hackers/",
+    "analyzed_at": "2026-02-26T09:55:32.797848+00:00",
+    "is_dk_attack": false
   }
 ]
