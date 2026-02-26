@@ -129,6 +129,17 @@ def discover_sources():
     for feed in discovered:
         print(f"  {feed['domain']}: {feed['url']}")
 
+    # Expose count to GitHub Actions
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a") as fh:
+            fh.write(f"new_count={len(discovered)}\n")
+            details = "\n".join(
+                f"| {f['name']} | {f['url']} | {f['added']} |"
+                for f in discovered
+            )
+            fh.write(f"new_feeds<<FEEDSEOF\n{details}\nFEEDSEOF\n")
+
 
 if __name__ == '__main__':
     discover_sources()

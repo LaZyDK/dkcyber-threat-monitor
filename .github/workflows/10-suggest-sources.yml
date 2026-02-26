@@ -25,30 +25,16 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Probe candidates for RSS feeds
+        id: probe
         run: python scripts/discover_sources.py
 
-      - name: Check for new feeds in feeds.json
-        id: check
-        run: |
-          # Count feeds added by discovery
-          DISC_COUNT=$(jq '[.[] | select(.added_by == "discovery")] | length' data/feeds.json)
-          echo "count=$DISC_COUNT" >> "$GITHUB_OUTPUT"
-
-          if [ "$DISC_COUNT" -gt "0" ]; then
-            {
-              echo "feeds<<FEEDSEOF"
-              jq -r '.[] | select(.added_by == "discovery") | "| \(.name) | \(.url) | \(.added) |"' data/feeds.json
-              echo "FEEDSEOF"
-            } >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Create PR with updated feeds.json
-        if: steps.check.outputs.count != '0'
+        if: steps.probe.outputs.new_count != '0' && steps.probe.outputs.new_count != ''
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: add discovered RSS feed sources to feeds.json"
-          title: "New sources: ${{ steps.check.outputs.count }} RSS feeds fundet"
+          commit-message: "chore: add ${{ steps.probe.outputs.new_count }} discovered RSS feed sources to feeds.json"
+          title: "New sources: ${{ steps.probe.outputs.new_count }} RSS feeds fundet"
           body: |
             ## Automatisk opdagede RSS-kilder
 
@@ -59,7 +45,7 @@ jobs:
 
             | Navn | Feed URL | Tilføjet |
             |------|----------|---------|
-            ${{ steps.check.outputs.feeds }}
+            ${{ steps.probe.outputs.new_feeds }}
 
             ---
             Review og merge for at aktivere de nye kilder i indsamlingen.
