@@ -433,5 +433,90 @@
     "url": "https://www.securityweek.com/cisco-patches-catalyst-sd-wan-zero-day-exploited-by-highly-sophisticated-hackers/",
     "analyzed_at": "2026-02-26T09:55:32.797848+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294701/netcompany-indsaetter-sin-egen-topchef-efter-milliardopkoeb-af-sdc-sdc-direktoer-torben-finnemann-fratraeder",
+    "analyzed_at": "2026-02-26T12:55:11.228139+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294699/usa-beordrer-alle-sine-diplomater-til-at-modarbejde-gdpr-og-andre-love-der-underminerer-borgerrettigheder-og-oeger-censur",
+    "analyzed_at": "2026-02-26T12:55:29.446196+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294607/lev-med-det-dansk-it-bliver-en-rodebutik-de-kommende-aar",
+    "analyzed_at": "2026-02-26T12:55:29.446663+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294697/faa-dage-efter-exit-tidligere-microsoft-direktoer-camilla-hillerup-klar-med-nyt-job",
+    "analyzed_at": "2026-02-26T12:55:37.349543+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294692/stort-opbrud-i-markedet-for-offentlige-it-aftaler-er-i-gang-nye-bevaegelser-paavirker-baade-indkoebere-og-leverandoerer",
+    "analyzed_at": "2026-02-26T12:55:45.835846+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/",
+    "analyzed_at": "2026-02-26T12:55:51.741257+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html",
+    "analyzed_at": "2026-02-26T12:55:52.170316+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html",
+    "analyzed_at": "2026-02-26T12:55:52.170745+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/gambit-security-emerges-from-stealth-with-61-million-in-funding/",
+    "analyzed_at": "2026-02-26T12:55:52.468644+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/zyxel-patches-critical-vulnerability-in-many-device-models/",
+    "analyzed_at": "2026-02-26T12:55:52.469044+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/us-sanctions-russian-exploit-broker-operation-zero/",
+    "analyzed_at": "2026-02-26T12:55:52.469400+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/trend-micro-patches-critical-apex-one-vulnerabilities/",
+    "analyzed_at": "2026-02-26T12:55:57.373619+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/msncom/se-video-en-haer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T12:55:58.799324+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/en-bothaer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T12:56:15.936323+00:00",
+    "is_dk_attack": true
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-26/Myndigheder-advarer-om-fleraarig-udnyttelse-af-0-dage-i-Cisco",
+    "analyzed_at": "2026-02-26T13:15:25.171450+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294705/google-er-i-al-stilhed-ved-at-stramme-grebet-om-android-store-open-source-organisationer-dybt-bekymrede",
+    "analyzed_at": "2026-02-26T13:15:46.464070+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/",
+    "analyzed_at": "2026-02-26T13:15:48.165788+00:00",
+    "is_dk_attack": false
   }
 ]
