@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "16b56f3d9725",
+    "name": "Botnet af IoT-enheder angriber danske myndigheder",
+    "description": "En cyberangreb hvor en botnet bestående af brødristere, køleskabe og elkogere angreb danske myndigheder. Angrebet understregede sikkerhedsrisici i IoT-enheder og deres potentielle brug i koordinerede angreb.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "Tjekdet Feed",
+    "link": "https://www.tjekdet.dk/msncom/se-video-en-haer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "additional_sources": [
+      {
+        "url": "https://www.tjekdet.dk/video/en-bothaer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+        "name": "Tjekdet Feed"
+      }
+    ],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T22:52:07.239718+00:00"
+  }
+]
