@@ -268,5 +268,150 @@
     "url": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/",
     "analyzed_at": "2026-02-25T10:00:16.490713+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/kvantecomputer-er-en-hyldest-til-dansk-suveraenitet-men-i-dens-hjerte-banker-microsoft-og-usa-tech",
+    "analyzed_at": "2026-02-26T04:53:40.679248+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-26T04:53:53.349692+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-26T04:54:03.673417+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-26T04:54:12.101549+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294688/fik-ai-til-at-skrive-et-lille-program-til-fjernstyring-af-sin-robotstoevsuger-kunne-pludselig-styre-en-haer-paa-6-700-robotter?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T04:54:22.520064+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294689/spar-plads-og-stroem-brug-din-egen-router-eller-mesh-loesning-og-faa-fuldt-udbytte-af-din-fiberforbindelse?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T04:55:00.064602+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294638/adgang-forbudt-men-computerworld-er-kommet-ind-i-microsofts-strengt-bevogtede-cloud-hjerte-cloud-virker-kun-hvis-dette-rum-aldrig-stopper?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T04:55:18.291377+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294687/mystisk-fejl-faar-cursor-i-outlook-til-pludselig-at-forsvinde-nu-er-microsoft-klar-med-en-slags-loesning-paa-problemet?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T04:55:18.291968+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294550/de-danske-kommuner-skal-goere-sig-klar-til-ny-fase-i-digitaliseringen-her-er-de-tre-store-pejlemaerker?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T04:55:28.936046+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/medical-device-maker-ufp-technologies-warns-of-data-stolen-in-cyberattack/",
+    "analyzed_at": "2026-02-26T04:55:39.640837+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fake-nextjs-job-interview-tests-backdoor-developers-devices/",
+    "analyzed_at": "2026-02-26T04:55:39.641038+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/critical-cisco-sd-wan-bug-exploited-in-zero-day-attacks-since-2023/",
+    "analyzed_at": "2026-02-26T04:56:02.928658+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/chinese-cyberspies-breached-dozens-of-telecom-firms-govt-agencies/",
+    "analyzed_at": "2026-02-26T04:56:02.929164+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/marquis-sues-sonicwall-over-backup-breach-that-led-to-ransomware-attack/",
+    "analyzed_at": "2026-02-26T04:56:02.929648+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/google-disrupts-unc2814-gridtide.html",
+    "analyzed_at": "2026-02-26T04:56:03.204349+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/claude-code-flaws-allow-remote-code.html",
+    "analyzed_at": "2026-02-26T04:56:03.204770+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/slh-offers-5001000-per-call-to-recruit.html",
+    "analyzed_at": "2026-02-26T04:56:03.205169+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/top-5-ways-broken-triage-increases.html",
+    "analyzed_at": "2026-02-26T04:56:12.124898+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-nuget-packages-stole-aspnet.html",
+    "analyzed_at": "2026-02-26T04:56:12.125487+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/the-blast-radius-problem-stolen-credentials-are-weaponizing-agentic-ai/",
+    "analyzed_at": "2026-02-26T04:56:12.330793+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/google-disrupts-chinese-cyberespionage-campaign-targeting-telecoms-governments/",
+    "analyzed_at": "2026-02-26T04:56:12.331203+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/solarwinds-patches-four-critical-serv-u-vulnerabilities/",
+    "analyzed_at": "2026-02-26T04:56:12.331566+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/medical-device-maker-ufp-technologies-hit-by-cyberattack/",
+    "analyzed_at": "2026-02-26T04:56:24.104202+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ex-us-defense-contractor-executive-jailed-for-selling-exploits-to-russia/",
+    "analyzed_at": "2026-02-26T04:56:24.104894+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-26T04:56:37.736455+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-26T04:57:02.984578+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/saadan-foregaar-et-af-den-russiske-cyberkrigs-mest-anvendte-angreb",
+    "analyzed_at": "2026-02-26T04:57:02.985884+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/fup-og-spam/annoncer-sundhedsprodukter-snyder-forbrugerne",
+    "analyzed_at": "2026-02-26T04:57:02.986236+00:00",
+    "is_dk_attack": true
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/hver-tredje-dansker-stoeder-dagligt-paa-falsk-og-fordrejet-information",
+    "analyzed_at": "2026-02-26T04:57:43.961886+00:00",
+    "is_dk_attack": false
   }
 ]
