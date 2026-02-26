@@ -84,11 +84,15 @@ jobs:
           CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
           if [ -z "$CONTENT" ]; then
             echo "LLM returned empty response"
-            echo "$RESPONSE" | jq .
+            echo "$RESPONSE"
             exit 1
           fi
 
-          CONTENT=$(echo "$CONTENT" | sed 's/^```json//;s/^```//;s/```$//' | tr -d '\n' | sed 's/^[[:space:]]*//')
+          if ! echo "$CONTENT" | jq . >/dev/null 2>&1; then
+            echo "Malformed JSON from LLM:"
+            echo "$CONTENT"
+            exit 1
+          fi
 
           TITLE=$(echo "$CONTENT" | jq -r '.title // empty')
           BODY=$(echo "$CONTENT" | jq -r '.body // empty')
