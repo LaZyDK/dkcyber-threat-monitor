@@ -43,8 +43,6 @@ jobs:
       - name: Clean up processed files
         run: |
           rm -f data/raw/*.json
-          rm -f data/drafts/*.json
-          rm -f data/generated/*.json
 
       - name: Commit and push verified threats and cleanup
         run: |
