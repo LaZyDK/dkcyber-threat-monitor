@@ -60,7 +60,7 @@ jobs:
           *Denne post er genereret af LLM med human oversight via mit open-source GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
           Rå data er verificeret af mig før posting.
 
-          Svar KUN med denne JSON (ingen anden tekst):
+          Svar KUN med dette JSON format (ingen anden tekst):
           {\"title\": \"...\", \"body\": \"...\"}"
 
           RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
