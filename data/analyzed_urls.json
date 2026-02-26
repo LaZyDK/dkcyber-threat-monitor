@@ -133,5 +133,230 @@
     "url": "https://ekstrabladet.dk/nyheder/politik/alvorlig-trussel-danmark-skal-have-et-totalberedskab/11101937",
     "analyzed_at": "2026-02-26T06:34:28.460392+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv%E2%80%91U",
+    "analyzed_at": "2026-02-26T07:19:14.808507+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI%E2%80%91agenter-aabner-ny-angrebsflade-i-supply-chain%E2%80%91kaeden",
+    "analyzed_at": "2026-02-26T07:19:20.310740+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "analyzed_at": "2026-02-26T07:19:24.631413+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "analyzed_at": "2026-02-26T07:19:28.717579+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-17/LLMer-finder-nu-0%E2%80%91dage-i-moden-open-source%E2%80%91kode",
+    "analyzed_at": "2026-02-26T07:19:33.111729+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "analyzed_at": "2026-02-26T07:19:40.467215+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "analyzed_at": "2026-02-26T07:19:40.467498+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "analyzed_at": "2026-02-26T07:19:45.180568+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "analyzed_at": "2026-02-26T07:19:45.181002+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.cert.se/2026/02/misp-se-ovningar.html",
+    "analyzed_at": "2026-02-26T07:19:49.065802+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/kvantecomputer-er-en-hyldest-til-dansk-suveraenitet-men-i-dens-hjerte-banker-microsoft-og-usa-tech",
+    "analyzed_at": "2026-02-26T07:19:54.411432+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-26T07:19:59.568616+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-26T07:20:03.976828+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-26T07:20:07.642879+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/trump-laegger-sanktioner-paa-flere-topfolk-fra-straffedomstol",
+    "analyzed_at": "2026-02-26T07:20:15.453257+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294695/nvidia-leverer-over-forventningerne-ai-guldfeber-giver-73-procents-vaekst?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T07:20:26.170830+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294694/anthropic-bukker-under-for-pentagons-pres-og-lemper-ai-sikkerhed?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T07:20:30.882962+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294693/morgen-briefing-udbredt-tilfredshed-med-offentlige-digitale-loesninger-anthropic-dropper-sit-vigtigste-princip-sloejfer-egne-ai-sikkerhedsregler-microsoft-sovereign-cloud-udvides-med-nye-lokale-loesninger?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T07:20:30.883371+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294688/fik-ai-til-at-skrive-et-lille-program-til-fjernstyring-af-sin-robotstoevsuger-kunne-pludselig-styre-en-haer-paa-6-700-robotter?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T07:20:35.662827+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294689/spar-plads-og-stroem-brug-din-egen-router-eller-mesh-loesning-og-faa-fuldt-udbytte-af-din-fiberforbindelse?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-26T07:20:41.071403+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/microsoft-graph-remembered-to-restict-mail-send-application-permission-app-access-policies/",
+    "analyzed_at": "2026-02-26T07:20:47.312388+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/windows-secure-boot-certificate-expiration-2026/",
+    "analyzed_at": "2026-02-26T07:20:51.970989+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/ownerless-teams/",
+    "analyzed_at": "2026-02-26T07:20:56.993446+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/blocking-tor-botnet-anonymous-proxy-access-to-m365/",
+    "analyzed_at": "2026-02-26T07:21:01.691296+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/01/first-look-unified-tenant-configuration-management-apis/",
+    "analyzed_at": "2026-02-26T07:21:05.483232+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/medical-device-maker-ufp-technologies-warns-of-data-stolen-in-cyberattack/",
+    "analyzed_at": "2026-02-26T07:21:09.782349+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fake-nextjs-job-interview-tests-backdoor-developers-devices/",
+    "analyzed_at": "2026-02-26T07:21:09.782560+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/critical-cisco-sd-wan-bug-exploited-in-zero-day-attacks-since-2023/",
+    "analyzed_at": "2026-02-26T07:21:15.467267+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/chinese-cyberspies-breached-dozens-of-telecom-firms-govt-agencies/",
+    "analyzed_at": "2026-02-26T07:21:15.467826+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/marquis-sues-sonicwall-over-backup-breach-that-led-to-ransomware-attack/",
+    "analyzed_at": "2026-02-26T07:21:15.468090+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html",
+    "analyzed_at": "2026-02-26T07:21:15.741348+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/google-disrupts-unc2814-gridtide.html",
+    "analyzed_at": "2026-02-26T07:21:15.741743+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/claude-code-flaws-allow-remote-code.html",
+    "analyzed_at": "2026-02-26T07:21:15.742157+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/slh-offers-5001000-per-call-to-recruit.html",
+    "analyzed_at": "2026-02-26T07:21:15.742561+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/top-5-ways-broken-triage-increases.html",
+    "analyzed_at": "2026-02-26T07:21:19.662432+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/the-blast-radius-problem-stolen-credentials-are-weaponizing-agentic-ai/",
+    "analyzed_at": "2026-02-26T07:21:19.870386+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/google-disrupts-chinese-cyberespionage-campaign-targeting-telecoms-governments/",
+    "analyzed_at": "2026-02-26T07:21:19.870792+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/solarwinds-patches-four-critical-serv-u-vulnerabilities/",
+    "analyzed_at": "2026-02-26T07:21:19.871159+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/medical-device-maker-ufp-technologies-hit-by-cyberattack/",
+    "analyzed_at": "2026-02-26T07:21:27.541828+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ex-us-defense-contractor-executive-jailed-for-selling-exploits-to-russia/",
+    "analyzed_at": "2026-02-26T07:21:27.542400+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-26T07:21:33.522881+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-26T07:21:44.206119+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/saadan-foregaar-et-af-den-russiske-cyberkrigs-mest-anvendte-angreb",
+    "analyzed_at": "2026-02-26T07:21:44.206993+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/fup-og-spam/annoncer-sundhedsprodukter-snyder-forbrugerne",
+    "analyzed_at": "2026-02-26T07:21:44.207257+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/hver-tredje-dansker-stoeder-dagligt-paa-falsk-og-fordrejet-information",
+    "analyzed_at": "2026-02-26T07:21:51.554386+00:00",
+    "is_dk_attack": false
   }
 ]
