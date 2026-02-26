@@ -7,7 +7,7 @@
     "source": "discover:nyheder.tv2.dk",
     "source_domain": "nyheder.tv2.dk",
     "collected_at": "2026-02-26T07:44:31.707954+00:00",
-    "is_dk_attack": false,
+    "is_dk_attack": true,
     "confidence": "high",
     "attack_type": "ddos",
     "sector": "ukendt",
