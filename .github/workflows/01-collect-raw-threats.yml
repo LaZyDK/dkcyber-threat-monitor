@@ -47,7 +47,7 @@ jobs:
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
+              jq -r '.[] | "| [\(.title)](\(.link)) | \(if .is_dk_attack then "**JA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else

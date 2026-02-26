@@ -107,6 +107,11 @@ jobs:
 
       - name: Pull latest main
         run: git pull --rebase origin main
+      
+      - name: Clean up processed files
+        run: |
+          rm -f data/raw/*.json
+          rm -f data/drafts/*.json
 
       - name: Commit final post
         uses: stefanzweifel/git-auto-commit-action@v5
