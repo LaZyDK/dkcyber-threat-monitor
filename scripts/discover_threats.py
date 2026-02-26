@@ -3,6 +3,26 @@ import os
 import re
 import requests
 from datetime import datetime, timezone
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+
+# Tracking parameters to strip from URLs
+_TRACKING_PARAMS = {
+    'gaa_at', 'gaa_n', 'gaa_ts', 'gaa_sig',  # Google extended access
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+    'fbclid', 'gclid', 'msclkid', 'mc_cid', 'mc_eid',  # ad/social trackers
+    'ref', '_ga', '_gl', 'ncid', 'sr_share',  # analytics
+}
+
+
+def clean_url(url):
+    """Strip tracking/analytics query parameters from a URL."""
+    if not url:
+        return url
+    parsed = urlparse(url)
+    params = parse_qs(parsed.query, keep_blank_values=True)
+    cleaned = {k: v for k, v in params.items() if k not in _TRACKING_PARAMS}
+    new_query = urlencode(cleaned, doseq=True) if cleaned else ''
+    return urlunparse(parsed._replace(query=new_query, fragment=''))
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 VERIFIED_PATH = os.path.join(DATA_DIR, 'verified_threats.json')
@@ -129,7 +149,7 @@ def brave_search(query, api_key, brave_url, count=10):
         return [
             {
                 "title": r.get("title", ""),
-                "url": r.get("url", ""),
+                "url": clean_url(r.get("url", "")),
                 "description": r.get("description", ""),
             }
             for r in results
