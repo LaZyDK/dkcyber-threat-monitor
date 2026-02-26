@@ -89,5 +89,18 @@
     "timestamp": "2026-02-26",
     "verified_by": "human-review",
     "verified_at": "2026-02-26T07:49:23.172319+00:00"
+  },
+  {
+    "id": "14d2ea10f4fa",
+    "name": "Russiske DDoS-angreb mod danske hjemmesider",
+    "description": "Den russiske hackergruppe NoName057(16) har taget ansvar for DDoS-angreb, ifølge Styrelsen for Samfundssikkerhed. Angrebene har ramt danske hjemmesider og er udført ved overbelastning.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "berlingske.dk",
+    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1",
+    "additional_sources": [],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T08:13:34.422281+00:00"
   }
 ]
