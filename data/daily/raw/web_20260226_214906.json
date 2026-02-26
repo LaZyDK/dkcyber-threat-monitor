@@ -539,7 +539,7 @@
     "summary": "",
     "source": "https://tjekdet.dk/rss.xml",
     "collected_at": "2026-02-26T21:48:35.452864+00:00",
-    "is_dk_attack": true,
+    "is_dk_attack": false,
     "confidence": "high",
     "attack_type": "ddos",
     "sector": "offentlig",
