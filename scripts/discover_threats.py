@@ -277,6 +277,12 @@ def discover():
     print(f"Discovered {len(all_results)} results, "
           f"{attacks} verified DK attacks → {path}")
 
+    # Expose output file to GitHub Actions
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a") as fh:
+            fh.write(f"raw_file={path}\n")
+
     if new_source_domains:
         candidates_path = "data/raw/new_source_candidates.json"
         candidates = list(new_source_domains)

@@ -15,14 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Preserve raw files from existing open PR
-        run: |
-          if git ls-remote --heads origin threat-verification | grep -q threat-verification; then
-            git fetch origin threat-verification
-            git checkout origin/threat-verification -- data/raw/ 2>/dev/null || true
-            echo "Restored raw files from existing PR branch"
-          fi
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -58,14 +50,6 @@ jobs:
               jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
-
-            # Cumulative counts across all raw files on the branch
-            ALL_TOTAL=$(jq -s '[.[] | .[]] | length' data/raw/*.json)
-            ALL_ATTACKS=$(jq -s '[.[] | .[] | select(.is_dk_attack == true)] | length' data/raw/*.json)
-            RAW_COUNT=$(ls data/raw/*.json 2>/dev/null | wc -l | tr -d ' ')
-            echo "all_total=$ALL_TOTAL" >> "$GITHUB_OUTPUT"
-            echo "all_attacks=$ALL_ATTACKS" >> "$GITHUB_OUTPUT"
-            echo "raw_count=$RAW_COUNT" >> "$GITHUB_OUTPUT"
           else
             echo "total=0" >> "$GITHUB_OUTPUT"
             echo "attacks=0" >> "$GITHUB_OUTPUT"
@@ -76,8 +60,8 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: collected new raw threat data"
-          title: "Verify: ${{ steps.summary.outputs.attacks }}/${{ steps.summary.outputs.total }} danske angreb (${{ steps.summary.outputs.raw_file }})"
+          commit-message: "chore: ${{ steps.summary.outputs.raw_file }} — ${{ steps.summary.outputs.attacks }} DK attacks / ${{ steps.summary.outputs.total }} total"
+          title: "Verify: nye trusler til review"
           body: |
             ## Seneste indsamling: `${{ steps.summary.outputs.raw_file }}`
 
@@ -85,25 +69,16 @@ jobs:
             |-----------|-------------------|----------|
             | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} | ${{ steps.summary.outputs.filtered }} |
 
-            ### Detaljer (denne kørsel)
+            ### Detaljer
 
             | Titel | Dansk angreb? | Type | Sektor | Confidence | Forklaring |
             |-------|--------------|------|--------|------------|------------|
             ${{ steps.summary.outputs.details }}
 
             ---
+            **Tip:** Hver commit = én indsamlingskørsel. Review commits individuelt.
 
-            ### Kumulativt på branch (${{ steps.summary.outputs.raw_count }} filer)
-
-            | Total entries | Verified DK attacks |
-            |--------------|-------------------|
-            | ${{ steps.summary.outputs.all_total }} | ${{ steps.summary.outputs.all_attacks }} |
-
-            ---
             Kun entries med `is_dk_attack: true` tilføjes til verified_threats.json ved merge.
-            Du kan override ved at redigere JSON og sætte `is_dk_attack: true` på en entry.
-
-            Review → rediger om nødvendigt → merge når verificeret.
           branch: threat-verification
           delete-branch: true
           labels: verification,threat
