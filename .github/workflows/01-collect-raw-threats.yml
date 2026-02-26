@@ -91,3 +91,4 @@ jobs:
           branch: threat-verification
           delete-branch: true
           labels: verification,threat
+          assignees: LaZyDK

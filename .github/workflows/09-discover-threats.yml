@@ -87,3 +87,4 @@ jobs:
           branch: discover-threats
           delete-branch: true
           labels: discovery,threat
+          assignees: LaZyDK
