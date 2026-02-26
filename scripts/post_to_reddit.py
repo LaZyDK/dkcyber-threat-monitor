@@ -60,6 +60,13 @@ def find_latest_file(pattern):
 
 
 def get_reddit():
+    required = ['REDDIT_CLIENT_ID', 'REDDIT_CLIENT_SECRET',
+                'REDDIT_USERNAME', 'REDDIT_PASSWORD']
+    missing = [k for k in required if not os.environ.get(k)]
+    if missing:
+        print(f"Reddit auth not configured (missing: {', '.join(missing)})"
+              " — skipping Reddit post")
+        return None
     return praw.Reddit(
         client_id=os.environ['REDDIT_CLIENT_ID'],
         client_secret=os.environ['REDDIT_CLIENT_SECRET'],
@@ -239,7 +246,9 @@ def generate_issues():
             f"### Title\n{title}\n\n"
             f"### Body\n{body}\n\n"
             f"---\n\n"
-            f"Add the `approved` label to post this to r/dkcybersecurity."
+            f"**Close this issue** to post to r/dkcybersecurity.\n"
+            f"**Close as not planned** to reject (removes from verified threats).\n"
+            f"**Close as duplicate** to skip (removes from verified threats)."
         )
 
         # Ensure the label exists (create it if missing)
@@ -268,22 +277,53 @@ def generate_issues():
     print(f"Created {created} review issues")
 
 
-def post_approved(issue_number):
-    """Post an approved issue's content to Reddit."""
-    # Read issue body via gh CLI
+def _extract_threat_id(issue_body):
+    """Extract threat ID from issue body."""
+    id_match = re.search(r'\*\*Threat ID:\*\* `(.+?)`', issue_body)
+    return id_match.group(1) if id_match else None
+
+
+def _read_issue(issue_number):
+    """Read issue data via gh CLI."""
     result = subprocess.run(
         ["gh", "issue", "view", str(issue_number),
-         "--json", "body,title"],
+         "--json", "body,title,stateReason"],
         capture_output=True, text=True,
     )
     if result.returncode != 0:
         print(f"Failed to read issue #{issue_number}: {result.stderr}")
         sys.exit(1)
+    return json.loads(result.stdout)
 
-    issue_data = json.loads(result.stdout)
+
+def handle_issue(issue_number, state_reason):
+    """Handle a closed issue based on its close reason."""
+    issue_data = _read_issue(issue_number)
     issue_body = issue_data['body']
+    threat_id = _extract_threat_id(issue_body)
 
-    # Parse the title and body from the issue markdown
+    # Use state_reason from workflow event (more reliable than API)
+    reason = state_reason or issue_data.get('stateReason', 'completed')
+
+    if reason == 'not_planned':
+        # Rejected or duplicate — remove from verified_threats.json
+        if threat_id:
+            verified = load_verified()
+            before = len(verified)
+            verified = [e for e in verified if e.get('id') != threat_id]
+            after = len(verified)
+            if after < before:
+                save_verified(verified)
+                print(f"Removed threat {threat_id} from verified_threats.json"
+                      " (closed as not planned)")
+            else:
+                print(f"Threat {threat_id} not found in verified — "
+                      "nothing to remove")
+        else:
+            print("No threat ID found in issue — nothing to remove")
+        return
+
+    # state_reason == 'completed' → post to Reddit
     title_match = re.search(r'### Title\n(.+?)(?:\n\n|\n###)', issue_body,
                             re.DOTALL)
     body_match = re.search(r'### Body\n(.+?)(?:\n\n---|\Z)', issue_body,
@@ -296,12 +336,12 @@ def post_approved(issue_number):
     post_title = title_match.group(1).strip()
     post_body = body_match.group(1).strip()
 
-    # Extract threat ID
-    id_match = re.search(r'\*\*Threat ID:\*\* `(.+?)`', issue_body)
-    threat_id = id_match.group(1) if id_match else None
-
     # Post to Reddit
     reddit = get_reddit()
+    if not reddit:
+        print("Skipping Reddit post (auth not configured)")
+        return
+
     reddit_url = submit_to_reddit(reddit, post_title, post_body)
 
     # Update verified_threats.json with the reddit_url
@@ -314,10 +354,10 @@ def post_approved(issue_number):
         save_verified(verified)
         print(f"Tagged threat {threat_id} with {reddit_url}")
 
-    # Close the issue
+    # Add a comment with the Reddit URL (issue is already closed)
     subprocess.run(
-        ["gh", "issue", "close", str(issue_number),
-         "--comment", f"Posted to Reddit: {reddit_url}"],
+        ["gh", "issue", "comment", str(issue_number),
+         "--body", f"Posted to Reddit: {reddit_url}"],
     )
 
 
@@ -335,6 +375,10 @@ def monthly_post():
     body = data['body']
 
     reddit = get_reddit()
+    if not reddit:
+        print("Skipping monthly Reddit post (auth not configured)")
+        return
+
     reddit_url = submit_to_reddit(reddit, title, body)
 
     # Tag untagged threats with the monthly summary URL
@@ -355,11 +399,14 @@ def main():
 
     if mode == 'generate':
         generate_issues()
-    elif mode == 'post-approved':
+    elif mode == 'handle-closed':
         if len(sys.argv) < 3:
-            print("Usage: post_to_reddit.py post-approved <issue_number>")
+            print("Usage: post_to_reddit.py handle-closed <issue_number>"
+                  " [state_reason]")
             sys.exit(1)
-        post_approved(sys.argv[2])
+        issue_num = sys.argv[2]
+        reason = sys.argv[3] if len(sys.argv) > 3 else None
+        handle_issue(issue_num, reason)
     elif mode == 'monthly':
         monthly_post()
     else:
