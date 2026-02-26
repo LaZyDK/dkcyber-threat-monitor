@@ -40,24 +40,32 @@ jobs:
         run: |
           python scripts/collect_web.py
 
-      - name: Summarise all classified entries
+      - name: Summarise this run
         id: summary
         run: |
-          RAW_FILES=$(ls data/raw/*.json 2>/dev/null)
-          if [ -n "$RAW_FILES" ]; then
-            # Aggregate all raw files into one summary
-            TOTAL=$(jq -s '[.[] | .[]] | length' data/raw/*.json)
-            ATTACKS=$(jq -s '[.[] | .[] | select(.is_dk_attack == true)] | length' data/raw/*.json)
+          RAW_FILE="${{ steps.collect.outputs.raw_file }}"
+          if [ -n "$RAW_FILE" ] && [ -f "$RAW_FILE" ]; then
+            TOTAL=$(jq 'length' "$RAW_FILE")
+            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$RAW_FILE")
             FILTERED=$((TOTAL - ATTACKS))
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
             echo "filtered=$FILTERED" >> "$GITHUB_OUTPUT"
+            echo "raw_file=$(basename "$RAW_FILE")" >> "$GITHUB_OUTPUT"
 
             {
               echo "details<<DETAILSEOF"
-              jq -s -r '[.[] | .[]] | .[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' data/raw/*.json
+              jq -r '.[] | "| [\(.title[:60])](\(.link)) | \(if .is_dk_attack then "**DA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation[:80]) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
+
+            # Cumulative counts across all raw files on the branch
+            ALL_TOTAL=$(jq -s '[.[] | .[]] | length' data/raw/*.json)
+            ALL_ATTACKS=$(jq -s '[.[] | .[] | select(.is_dk_attack == true)] | length' data/raw/*.json)
+            RAW_COUNT=$(ls data/raw/*.json 2>/dev/null | wc -l | tr -d ' ')
+            echo "all_total=$ALL_TOTAL" >> "$GITHUB_OUTPUT"
+            echo "all_attacks=$ALL_ATTACKS" >> "$GITHUB_OUTPUT"
+            echo "raw_count=$RAW_COUNT" >> "$GITHUB_OUTPUT"
           else
             echo "total=0" >> "$GITHUB_OUTPUT"
             echo "attacks=0" >> "$GITHUB_OUTPUT"
@@ -69,19 +77,27 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: collected new raw threat data"
-          title: "Verify: ${{ steps.summary.outputs.attacks }} danske angreb fundet"
+          title: "Verify: ${{ steps.summary.outputs.attacks }}/${{ steps.summary.outputs.total }} danske angreb (${{ steps.summary.outputs.raw_file }})"
           body: |
-            ## LLM-klassificerede trusler
+            ## Seneste indsamling: `${{ steps.summary.outputs.raw_file }}`
 
-            | Total | Verified DK attacks | Filtered |
-            |-------|-------------------|----------|
+            | Collected | Verified DK attacks | Filtered |
+            |-----------|-------------------|----------|
             | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} | ${{ steps.summary.outputs.filtered }} |
 
-            ### Detaljer
+            ### Detaljer (denne kørsel)
 
             | Titel | Dansk angreb? | Type | Sektor | Confidence | Forklaring |
             |-------|--------------|------|--------|------------|------------|
             ${{ steps.summary.outputs.details }}
+
+            ---
+
+            ### Kumulativt på branch (${{ steps.summary.outputs.raw_count }} filer)
+
+            | Total entries | Verified DK attacks |
+            |--------------|-------------------|
+            | ${{ steps.summary.outputs.all_total }} | ${{ steps.summary.outputs.all_attacks }} |
 
             ---
             Kun entries med `is_dk_attack: true` tilføjes til verified_threats.json ved merge.

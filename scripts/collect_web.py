@@ -283,6 +283,12 @@ def collect():
           f"{total - attack_count} filtered, "
           f"{skipped_dupes} duplicates skipped)")
 
+    # Expose output file to GitHub Actions
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a") as fh:
+            fh.write(f"raw_file={path}\n")
+
 
 if __name__ == "__main__":
     collect()
