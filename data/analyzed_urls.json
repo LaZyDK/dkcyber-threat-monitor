@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "url": "https://www.cert.dk/news/2026-02-26/Myndigheder-advarer-om-fleraarig-udnyttelse-af-0-dage-i-Cisco",
+    "analyzed_at": "2026-02-26T22:29:52.100700+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv%E2%80%91U",
+    "analyzed_at": "2026-02-26T22:30:03.999915+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI%E2%80%91agenter-aabner-ny-angrebsflade-i-supply-chain%E2%80%91kaeden",
+    "analyzed_at": "2026-02-26T22:30:10.261999+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Deepfake-opkald-saetter-tillid-paa-proeve",
+    "analyzed_at": "2026-02-26T22:30:15.590113+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-18/Kina-forbundne-aktoerer-misbrugte-Dell-0-dag-i-over-et-aar",
+    "analyzed_at": "2026-02-26T22:30:20.491300+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-nolldagssarbarhet-i-cisco-catalyst-sd-wan.html",
+    "analyzed_at": "2026-02-26T22:30:27.521061+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v8.html",
+    "analyzed_at": "2026-02-26T22:30:36.690471+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/kritisk-sarbarhet-i-dell-recoverpoint.html",
+    "analyzed_at": "2026-02-26T22:30:36.690923+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v7.html",
+    "analyzed_at": "2026-02-26T22:30:45.600561+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/patchtisdag-februari-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "analyzed_at": "2026-02-26T22:30:45.600998+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/usa-diplomater-skal-kaempe-mod-unoedvendig-regulering-af-techgiganter",
+    "analyzed_at": "2026-02-26T22:30:50.526465+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/kvantecomputer-skulle-oege-dansk-suveraenitet-men-dens-indmad-er-microsoft-og-usa-tech",
+    "analyzed_at": "2026-02-26T22:30:50.526700+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-26T22:30:55.538596+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-26T22:31:00.189279+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-26T22:31:06.633383+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294706/samsung-soesaetter-en-stribe-nye-toptelefoner-faas-nu-med-en-helt-unik-skaermteknologi",
+    "analyzed_at": "2026-02-26T22:31:14.735930+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294703/apple-paa-vej-med-ny-macbook-pro-med-touchskaerm-kopierer-elementer-fra-iphone-og-ipad",
+    "analyzed_at": "2026-02-26T22:31:14.736180+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294704/efter-et-15-aar-med-sandt-it-mareridt-britisk-regering-kaster-fire-milliarder-kroner-efter-afloeser-til-skandale-system",
+    "analyzed_at": "2026-02-26T22:31:14.736425+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294705/google-er-i-al-stilhed-ved-at-stramme-grebet-om-android-store-open-source-organisationer-dybt-bekymrede",
+    "analyzed_at": "2026-02-26T22:31:14.736678+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294701/netcompany-indsaetter-sin-egen-topchef-efter-milliardopkoeb-af-sdc-sdc-direktoer-torben-finnemann-fratraeder",
+    "analyzed_at": "2026-02-26T22:31:14.736903+00:00"
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/microsoft-graph-remembered-to-restict-mail-send-application-permission-app-access-policies/",
+    "analyzed_at": "2026-02-26T22:31:21.788576+00:00"
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/windows-secure-boot-certificate-expiration-2026/",
+    "analyzed_at": "2026-02-26T22:31:28.095466+00:00"
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/ownerless-teams/",
+    "analyzed_at": "2026-02-26T22:31:33.077728+00:00"
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/02/blocking-tor-botnet-anonymous-proxy-access-to-m365/",
+    "analyzed_at": "2026-02-26T22:31:37.413861+00:00"
+  },
+  {
+    "url": "https://blog.mindcore.dk/2026/01/first-look-unified-tenant-configuration-management-apis/",
+    "analyzed_at": "2026-02-26T22:31:41.693487+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/previously-harmless-google-api-keys-now-expose-gemini-ai-data/",
+    "analyzed_at": "2026-02-26T22:31:45.847949+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-critical-apex-one-rce-vulnerabilities/",
+    "analyzed_at": "2026-02-26T22:31:45.848169+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/european-dyi-chain-manomano-data-breach-impacts-38-million-customers/",
+    "analyzed_at": "2026-02-26T22:31:45.848389+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/critical-juniper-networks-ptx-flaw-allows-full-router-takeover/",
+    "analyzed_at": "2026-02-26T22:31:45.848594+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/olympique-marseille-football-club-confirms-cyberattack-after-data-leak/",
+    "analyzed_at": "2026-02-26T22:31:45.848837+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/aeternum-c2-botnet-stores-encrypted.html",
+    "analyzed_at": "2026-02-26T22:31:50.304004+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/uat-10027-targets-us-education-and.html",
+    "analyzed_at": "2026-02-26T22:31:50.304442+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html",
+    "analyzed_at": "2026-02-26T22:31:50.304863+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html",
+    "analyzed_at": "2026-02-26T22:31:50.305322+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html",
+    "analyzed_at": "2026-02-26T22:31:55.344373+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/apple-iphone-and-ipad-cleared-for-classified-nato-use/",
+    "analyzed_at": "2026-02-26T22:31:55.496735+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/four-risks-boards-cannot-treat-as-background-noise/",
+    "analyzed_at": "2026-02-26T22:31:55.497079+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/claude-code-flaws-exposed-developer-devices-to-silent-hacking/",
+    "analyzed_at": "2026-02-26T22:31:55.497471+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/gambit-security-emerges-from-stealth-with-61-million-in-funding/",
+    "analyzed_at": "2026-02-26T22:31:55.497838+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/zyxel-patches-critical-vulnerability-in-many-device-models/",
+    "analyzed_at": "2026-02-26T22:31:55.498222+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/la-og-el-i-skarp-debat-har-norge-tabt-fire-milliarder-paa-haeve-formueskatten",
+    "analyzed_at": "2026-02-26T22:31:57.152724+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/msncom/se-video-en-haer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T22:32:04.076527+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/en-bothaer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
+    "analyzed_at": "2026-02-26T22:32:32.769562+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-26T22:32:37.110698+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-26T22:32:52.020008+00:00"
+  }
+]
