@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Myndigheder advarer om flerårig udnyttelse af 0-dage i Cisco",
+    "link": "https://www.cert.dk/news/2026-02-26/Myndigheder-advarer-om-fleraarig-udnyttelse-af-0-dage-i-Cisco",
+    "published": "Thu, 26 Feb 2026 13:02:03 +0000",
+    "summary": "<span>Myndigheder advarer om flerårig udnyttelse af 0-dage i Cisco</span>\n\n<span><span>eskil</span></span>\n\n<span><time datetime=\"2026-02-26T14:02:03+01:00\" title=\"Thursday, February 26, 2026 - 14:02\">Thu, 02/26/2026 - 14:02</time>\n</span>",
+    "source": "https://www.cert.dk/news/rss",
+    "collected_at": "2026-02-26T13:15:25.171450+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "exploit",
+    "sector": "ukendt",
+    "explanation": "Nyhedens indhold er en generel advarsel fra DK CERT om 0-dage i Cisco uden at nævne konkrete danske ofre eller mål."
+  },
+  {
+    "title": "Google er i al stilhed ved at stramme grebet om Android: Store open source-organisationer dybt bekymrede",
+    "link": "https://www.computerworld.dk/art/294705/google-er-i-al-stilhed-ved-at-stramme-grebet-om-android-store-open-source-organisationer-dybt-bekymrede",
+    "published": "Thu, 26 Feb 2026 14:06:00 +0100",
+    "summary": "En række af verdens kendte open source-organisationer langer ud efter Google, som de mener er godt i gang med skade Android.",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-26T13:15:46.464070+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Microsoft expands Windows restore to more enterprise devices",
+    "link": "https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/",
+    "published": "Thu, 26 Feb 2026 08:04:02 -0500",
+    "summary": "Microsoft now allows more enterprise users to restore their personal settings and Microsoft Store apps from a previous Windows 11 device. [...]",
+    "source": "https://www.bleepingcomputer.com/feed/",
+    "collected_at": "2026-02-26T13:15:48.165788+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]

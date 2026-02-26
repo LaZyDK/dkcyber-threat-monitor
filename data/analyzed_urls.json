@@ -503,5 +503,20 @@
     "url": "https://www.tjekdet.dk/video/en-bothaer-af-broedristere-koeleskabe-og-elkogere-angriber-danske-myndigheder",
     "analyzed_at": "2026-02-26T12:56:15.936323+00:00",
     "is_dk_attack": true
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-26/Myndigheder-advarer-om-fleraarig-udnyttelse-af-0-dage-i-Cisco",
+    "analyzed_at": "2026-02-26T13:15:25.171450+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294705/google-er-i-al-stilhed-ved-at-stramme-grebet-om-android-store-open-source-organisationer-dybt-bekymrede",
+    "analyzed_at": "2026-02-26T13:15:46.464070+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/",
+    "analyzed_at": "2026-02-26T13:15:48.165788+00:00",
+    "is_dk_attack": false
   }
 ]
