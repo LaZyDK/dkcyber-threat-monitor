@@ -3,7 +3,7 @@ name: 31 Suggest New RSS Sources
 on:
   push:
     paths:
-      - 'data/raw/new_source_candidates.json'
+      - 'data/new_source_candidates.json'
   workflow_dispatch:
 
 permissions:
