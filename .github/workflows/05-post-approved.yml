@@ -1,0 +1,49 @@
+name: 05 Post Approved to Reddit
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
+jobs:
+  post-to-reddit:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'approved'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Post approved issue to Reddit
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/post_to_reddit.py post-approved ${{ github.event.issue.number }}
+
+      - name: Pull latest main
+        run: git pull --rebase origin main
+
+      - name: Commit updated verified_threats.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: add reddit_url after posting issue #${{ github.event.issue.number }}"
+          file_pattern: data/verified_threats.json
+          branch: main

@@ -1,4 +1,4 @@
-name: 03 Merge to Verified + Post to Reddit
+name: 03 Merge to Verified + Generate Reddit Posts
 
 on:
   pull_request:
@@ -9,13 +9,14 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: push-to-main
   cancel-in-progress: false
 
 jobs:
-  append-and-post:
+  append-and-generate:
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'workflow_dispatch' ||
@@ -40,16 +41,13 @@ jobs:
           LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
         run: python scripts/append_verified.py
 
-      - name: Post each new threat to Reddit
+      - name: Generate Reddit posts and create review issues
         env:
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
-          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           LLM_API_URL: ${{ vars.LLM_API_URL }}
           LLM_MODEL_TOOLUSE: ${{ vars.LLM_MODEL_TOOLUSE }}
-        run: python scripts/post_to_reddit.py daily
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/post_to_reddit.py generate
 
       - name: Clean up processed files
         run: |
@@ -62,6 +60,6 @@ jobs:
       - name: Commit verified threats and cleanup
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: append verified threats + post to Reddit"
+          commit_message: "chore: append verified threats (review issues created)"
           file_pattern: "data/verified_threats.json data/daily/"
           branch: main
