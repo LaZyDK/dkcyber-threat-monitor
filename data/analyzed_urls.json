@@ -268,5 +268,135 @@
     "url": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/",
     "analyzed_at": "2026-02-25T10:00:16.490713+00:00",
     "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/eu-har-de-rigtige-maal-oprydningen-i-den-digitale-lovgivning-men-sigter-forkert-paa-gdpr-omraadet",
+    "analyzed_at": "2026-02-25T16:07:48.417924+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/holdning/competenceporn-1-vol",
+    "analyzed_at": "2026-02-25T16:07:53.399475+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/danske-ai-projekter-gaar-glip-af-store-gevinster-medicinalkaempe-har-endnu-begraenset-effekt-paa",
+    "analyzed_at": "2026-02-25T16:07:57.248403+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294688/fik-ai-til-at-skrive-et-lille-program-til-fjernstyring-af-sin-robotstoevsuger-kunne-pludselig-styre-en-haer-paa-6-700-robotter?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T16:08:02.538468+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294689/spar-plads-og-stroem-brug-din-egen-router-eller-mesh-loesning-og-faa-fuldt-udbytte-af-din-fiberforbindelse?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T16:08:18.940381+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294638/adgang-forbudt-men-computerworld-er-kommet-ind-i-microsofts-strengt-bevogtede-cloud-hjerte-cloud-virker-kun-hvis-dette-rum-aldrig-stopper?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T16:08:28.447424+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294687/mystisk-fejl-faar-cursor-i-outlook-til-pludselig-at-forsvinde-nu-er-microsoft-klar-med-en-slags-loesning-paa-problemet?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T16:08:28.448185+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294550/de-danske-kommuner-skal-goere-sig-klar-til-ny-fase-i-digitaliseringen-her-er-de-tre-store-pejlemaerker?utm_source=RSS&utm_medium=RSS&utm_campaign=RSS",
+    "analyzed_at": "2026-02-25T16:08:37.153921+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/marquis-sues-sonicwall-over-backup-breach-that-led-to-ransomware-attack/",
+    "analyzed_at": "2026-02-25T16:08:43.157486+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/the-openclaw-hype-analysis-of-chatter-from-open-source-deep-and-dark-web/",
+    "analyzed_at": "2026-02-25T16:08:43.157764+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers/",
+    "analyzed_at": "2026-02-25T16:08:43.158069+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/us-sanctions-russian-exploit-broker-for-buying-stolen-zero-days/",
+    "analyzed_at": "2026-02-25T16:08:52.952380+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/slh-offers-5001000-per-call-to-recruit.html",
+    "analyzed_at": "2026-02-25T16:08:59.770330+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/top-5-ways-broken-triage-increases.html",
+    "analyzed_at": "2026-02-25T16:09:20.046234+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-nuget-packages-stole-aspnet.html",
+    "analyzed_at": "2026-02-25T16:09:20.047189+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/manual-processes-are-putting-national.html",
+    "analyzed_at": "2026-02-25T16:09:20.047777+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/google-disrupts-chinese-cyberespionage-campaign-targeting-telecoms-governments/",
+    "analyzed_at": "2026-02-25T16:09:28.392379+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/solarwinds-patches-four-critical-serv-u-vulnerabilities/",
+    "analyzed_at": "2026-02-25T16:09:28.392785+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/medical-device-maker-ufp-technologies-hit-by-cyberattack/",
+    "analyzed_at": "2026-02-25T16:09:39.877719+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/ex-us-defense-contractor-executive-jailed-for-selling-exploits-to-russia/",
+    "analyzed_at": "2026-02-25T16:09:39.878431+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.securityweek.com/over-12-million-users-impacted-by-cargurus-data-breach/",
+    "analyzed_at": "2026-02-25T16:09:48.559513+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/kaedebrev-i-omloeb-igen-har-en-skole-forbudt-et-barn-med-autisme-deltage-i-skoleudflugt",
+    "analyzed_at": "2026-02-25T16:09:49.586853+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/hvem-gaar-mest-op-i-dyrevelfaerd-spoerger-ministeren-men-stemmer-selv-imod-forslag-om",
+    "analyzed_at": "2026-02-25T16:34:48.155497+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/saadan-foregaar-et-af-den-russiske-cyberkrigs-mest-anvendte-angreb",
+    "analyzed_at": "2026-02-25T16:34:48.156426+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/fup-og-spam/annoncer-sundhedsprodukter-snyder-forbrugerne",
+    "analyzed_at": "2026-02-25T16:34:48.156714+00:00",
+    "is_dk_attack": false
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/hver-tredje-dansker-stoeder-dagligt-paa-falsk-og-fordrejet-information",
+    "analyzed_at": "2026-02-25T16:35:30.577702+00:00",
+    "is_dk_attack": false
   }
 ]
