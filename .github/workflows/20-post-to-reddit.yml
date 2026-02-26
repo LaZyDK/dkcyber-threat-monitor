@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'data/generated/**'
+      - 'data/daily/generated/**'
   workflow_dispatch:
 
 permissions:

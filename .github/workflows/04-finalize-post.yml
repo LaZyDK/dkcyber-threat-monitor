@@ -121,5 +121,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Daily final Reddit-post klar til review"
-          file_pattern: data/daily/generated/**
+          file_pattern: data/daily/generated/** data/daily/raw/** data/daily/drafts/**
           branch: ${{ github.head_ref || 'main' }}

@@ -72,7 +72,7 @@ def main():
     if mode == 'monthly':
         post_file = find_latest_file('data/monthly/generated/post_*.json')
     else:
-        post_file = find_latest_file('data/generated/post_*.json')
+        post_file = find_latest_file('data/daily/generated/post_*.json')
 
     if not post_file:
         print(f"No {mode} post file found — skipping")
