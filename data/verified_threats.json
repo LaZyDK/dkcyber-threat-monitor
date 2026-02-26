@@ -63,5 +63,31 @@
     "timestamp": "2026-02-26",
     "verified_by": "human-review",
     "verified_at": "2026-02-26T06:39:21.775071+00:00"
+  },
+  {
+    "id": "2c7d542d27d0",
+    "name": "DDoS-angreb mod Grønland",
+    "description": "En DDoS-angreb på grønlandske hjemmesider er rapporteret. Styrelsen for Samfundssikkerhed og danske myndigheder følger situationen, men angrebet rammer ikke Danmark direkte.",
+    "attack_type": "ddos",
+    "sector": "ukendt",
+    "source": "nyheder.tv2.dk",
+    "link": "https://nyheder.tv2.dk/live/2025-01-06-kampen-om-groenlands-fremtid/ddos-angreb-mod-groenland?entry=f2d24f5f-7117-4788-a4e6-0fcf9c6fe1b9",
+    "additional_sources": [],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T07:49:23.172319+00:00"
+  },
+  {
+    "id": "9c871de1753c",
+    "name": "Russiske DDoS-angreb mod danske hjemmesider",
+    "description": "Den russiske hackergruppe NoName057(16) har taget ansvar for DDoS-angreb mod danske hjemmesider. Styrelsen for Samfundssikkerhed bekræfter angrebene, der har ramt flere danske organisationer.",
+    "attack_type": "ddos",
+    "sector": "ukendt",
+    "source": "berlingske.dk",
+    "link": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1?gaa_at=eafs&gaa_n=AWEtsqfn4zUEuswHWH8OQgFMhaEVESAOvLu5bM42r3djxrF7HDFenaVUxDqs&gaa_ts=6999c8ae&gaa_sig=ZwYTgH1hJ4ibdPt3NV624fJ1p0BFv8NpQVP6FHLJm5k6yPP7o-uoZiIrvff0pCanD6roAY3EO6p5rr-oCTWmxw%3D%3D",
+    "additional_sources": [],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T07:49:23.172319+00:00"
   }
 ]
