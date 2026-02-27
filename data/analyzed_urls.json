@@ -515,5 +515,25 @@
   {
     "url": "https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/",
     "analyzed_at": "2026-02-27T15:41:37.393889+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/den-anden-ai-boble-og-den-noedvendige-landing-af-hypen",
+    "analyzed_at": "2026-02-27T18:51:00.075528+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/police-crackdown-on-the-com-cybercrime-gang-leads-to-30-arrests/",
+    "analyzed_at": "2026-02-27T18:51:09.039386+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-that-resurge-malware-can-be-dormant-on-ivanti-devices/",
+    "analyzed_at": "2026-02-27T18:51:09.039619+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/900-sangoma-freepbx-instances.html",
+    "analyzed_at": "2026-02-27T18:51:09.374340+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/malicious-go-crypto-module-steals.html",
+    "analyzed_at": "2026-02-27T18:51:14.437601+00:00"
   }
 ]
