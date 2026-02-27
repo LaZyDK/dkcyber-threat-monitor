@@ -68,5 +68,18 @@
     "timestamp": "2026-02-26",
     "verified_by": "human-review",
     "verified_at": "2026-02-26T23:20:31.932087+00:00"
+  },
+  {
+    "id": "966525fef550",
+    "name": "Afsløring: Kriminelle forbereder svindel med den kommende årsopgørelse",
+    "description": "Årsopgørelserne er på trapperne og ligger klar til danskerne 23. marts.; TjekDet kan nu afsløre, at svindlere er i gang med at &nbsp;forberede hjemmesider, som efterligner Skats officielle hjemmeside, og som skal franarre danskerne penge og personlige oplysninger, når de vil tjekke deres årsopgørelse.; TjekDet har identificeret en række domæner, som allerede ligger klar og blot venter på, at svindlerne aktiverer dem.; Vi kan derfor også advare om, hvilke domæner du skal passe på. &nbsp; &nbsp;",
+    "attack_type": "phishing",
+    "sector": "offentlig",
+    "source": "Tjekdet Feed",
+    "link": "https://www.tjekdet.dk/indsigt/afsloering-kriminelle-forbereder-svindel-med-den-kommende-aarsopgoerelse",
+    "additional_sources": [],
+    "timestamp": "2026-02-27",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-27T06:20:27.788309+00:00"
   }
 ]
