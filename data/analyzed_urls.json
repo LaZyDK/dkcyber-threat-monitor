@@ -407,5 +407,65 @@
   {
     "url": "https://www.securityweek.com/critical-flaws-exposed-gardyn-smart-gardens-to-remote-hacking/",
     "analyzed_at": "2026-02-27T09:48:36.645334+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-27/Kritisk-saarbarhed-i-Juniper-Junos-OS-Evolved",
+    "analyzed_at": "2026-02-27T13:07:00.426502+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/valgkampstabu",
+    "analyzed_at": "2026-02-27T13:07:10.966809+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294722/google-boejer-sig-for-eu-krav-aendringer-af-dine-soegeresultater-paa-vej",
+    "analyzed_at": "2026-02-27T13:07:16.512448+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294622/som-55-aarig-havde-tidligere-top-cio-jesper-kingo-svaert-ved-at-faa-nyt-it-fuldtidsjob-nu-flytter-han-til-fyn-og-bliver-oberstloejtnant",
+    "analyzed_at": "2026-02-27T13:07:16.512663+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294714/laes-hele-computerworlds-store-magasin-om-offentlig-it-store-aendringer-er-paa-vej",
+    "analyzed_at": "2026-02-27T13:07:19.671398+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294716/jeff-bezos-og-hans-stenrige-venner-goer-klar-til-at-opkoebe-industri-virksomheder-der-bliver-koert-bagud-af-ai",
+    "analyzed_at": "2026-02-27T13:07:29.184631+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294715/vinder-stor-dr-kontrakt-i-million-klassen-for-naesen-af-rivalerne-dustin-og-ed",
+    "analyzed_at": "2026-02-27T13:07:36.037398+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/ukrainian-man-pleads-guilty-to-running-ai-powered-fake-id-site/",
+    "analyzed_at": "2026-02-27T13:07:42.915788+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/scarcruft-uses-zoho-workdrive-and-usb.html",
+    "analyzed_at": "2026-02-27T13:07:43.161822+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/trojanized-gaming-tools-spread-java.html",
+    "analyzed_at": "2026-02-27T13:07:47.651571+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/chilean-carding-shop-operator-extradited-to-us/",
+    "analyzed_at": "2026-02-27T13:07:47.803897+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/anthropic-refuses-to-bend-to-pentagon-on-ai-safeguards-as-dispute-nears-deadline/",
+    "analyzed_at": "2026-02-27T13:07:47.804236+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/aeternum-botnet-loader-employs-polygon-blockchain-cc-to-boost-resilience/",
+    "analyzed_at": "2026-02-27T13:07:52.533899+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/juniper-networks-ptx-routers-affected-by-critical-vulnerability/",
+    "analyzed_at": "2026-02-27T13:07:52.534541+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/fup-og-spam/smykkevirksomhed-lokker-med-lagerudsalg-og-personlig-fortaelling-om-marie",
+    "analyzed_at": "2026-02-27T13:08:01.593181+00:00"
   }
 ]
