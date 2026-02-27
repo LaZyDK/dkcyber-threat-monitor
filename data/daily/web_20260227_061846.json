@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Morgen-briefing: Danmark vinder europæisk sølv i mobilnet / Digitaliseringsminister sætter barsel i bero – skal føre valgkamp / Google opgraderer ’Nano Banana’ billedgeneratoren",
+    "link": "https://www.computerworld.dk/art/294709/morgen-briefing-danmark-vinder-europaeisk-soelv-i-mobilnet-digitaliseringsminister-saetter-barsel-i-bero-skal-foere-valgkamp-google-opgraderer-nano-banana-billedgeneratoren",
+    "published": "Fri, 27 Feb 2026 06:00:00 +0100",
+    "summary": "Morgen-briefing: Danmark vinder europæisk sølv i mobilnet / Digitaliseringsminister sætter barsel i bero – skal føre valgkamp / Google opgraderer ’Nano Banana’ billedgeneratoren",
+    "source": "https://www.computerworld.dk/rss/all",
+    "collected_at": "2026-02-27T06:18:28.000929+00:00",
+    "is_dk_attack": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Nyhedens indhold drejer sig om generelle nyheder om mobilnetværk, politisk personale og teknologisk opdateringer uden nogen konkrete cyberangreb, databrud eller sikkerhedshændelse, der rammer Danmark."
+  },
+  {
+    "title": "Afsløring: Kriminelle forbereder svindel med den kommende årsopgørelse",
+    "link": "https://www.tjekdet.dk/indsigt/afsloering-kriminelle-forbereder-svindel-med-den-kommende-aarsopgoerelse",
+    "published": "fre, 27 feb 26 06:03:00 +0100",
+    "summary": "Årsopgørelserne er på trapperne og ligger klar til danskerne 23. marts.; TjekDet kan nu afsløre, at svindlere er i gang med at &nbsp;forberede hjemmesider, som efterligner Skats officielle hjemmeside, og som skal franarre danskerne penge og personlige oplysninger, når de vil tjekke deres årsopgørelse.; TjekDet har identificeret en række domæner, som allerede ligger klar og blot venter på, at svindlerne aktiverer dem.; Vi kan derfor også advare om, hvilke domæner du skal passe på. &nbsp; &nbsp;",
+    "source": "https://tjekdet.dk/rss.xml",
+    "collected_at": "2026-02-27T06:18:39.915578+00:00",
+    "is_dk_attack": true,
+    "confidence": "high",
+    "attack_type": "phishing",
+    "sector": "offentlig",
+    "explanation": "Nyhedens indhold angiver specifikt, at svindlere forbereder falske hjemmesider, der efterligner Skats officielle side, og som er rettet mod danske borgere ved årsopgørelsen, hvilket direkte rammer danske borgeres data og finansielle interesser."
+  }
+]
