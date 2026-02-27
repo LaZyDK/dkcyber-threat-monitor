@@ -375,5 +375,37 @@
     "url": "https://www.doi.dk/solenergi/artikel/regeringen-opretter-nyt-nationalt-vandkatastrofeberedskab",
     "analyzed_at": "2026-02-27T07:06:13.522892+00:00",
     "is_dk_relevant": true
+  },
+  {
+    "url": "https://www.version2.dk/artikel/svensk-medie-advarer-energisystemerne-i-hele-norden-staar-over-ny-trussel",
+    "analyzed_at": "2026-02-27T09:47:23.326852+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294700/analyse-vil-ny-regering-goere-op-med-en-mere-end-20-aar-gammel-dansk-angst-for-at-faa-beskidte-digitale-fingre",
+    "analyzed_at": "2026-02-27T09:47:55.344043+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294668/en-af-de-mest-monstroese-satsninger-er-klar-med-en-ny-saeson",
+    "analyzed_at": "2026-02-27T09:48:07.960916+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294553/it-sikkerhed-faar-topprioritet-i-offentlige-it-indkoeb-vi-er-fedtet-ind-og-det-goer-os-ekstremt-saarbare-siger-ski-direktoer-signe-lynggaard-madsen",
+    "analyzed_at": "2026-02-27T09:48:16.840797+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294712/flere-maaneders-opkoebsdrama-stopper-nu-netflix-opgiver-milliardhandel",
+    "analyzed_at": "2026-02-27T09:48:28.840329+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294711/anthropic-naegter-at-boeje-sig-for-pentagon-nu-ulmer-et-opgoer-i-ai-industrien",
+    "analyzed_at": "2026-02-27T09:48:28.840802+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/meta-files-lawsuits-against-brazil.html",
+    "analyzed_at": "2026-02-27T09:48:30.459888+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/critical-flaws-exposed-gardyn-smart-gardens-to-remote-hacking/",
+    "analyzed_at": "2026-02-27T09:48:36.645334+00:00"
   }
 ]
