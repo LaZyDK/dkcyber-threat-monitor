@@ -12,19 +12,18 @@ Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds og 
 
 1. **Indsamling** (workflow 01, hver 3. time) — RSS-feeds fra `data/feeds.json` + keyword pre-filter + LLM-klassificering
 2. **Verifikation** — PR oprettes med klassificerede trusler. Hver kørsel = et commit, så du reviewer kun nye data
-3. **Merge + Issue** (workflow 03) — Ved PR-merge: verificerede trusler tilføjes `data/verified_threats.json`, LLM merger artikler om samme angreb, og der oprettes et **GitHub Issue per trussel** med genereret Reddit-post til review
-4. **Godkendelse** (workflow 05) — Luk issue'et → posten sendes automatisk til r/dkcybersecurity
+3. **Merge + Issue** (workflow 02) — Ved PR-merge: verificerede trusler tilføjes `data/verified_threats.json`, LLM merger artikler om samme angreb, og der oprettes et **GitHub Issue per trussel** med genereret Reddit-post til review
+4. **Godkendelse** (workflow 03) — Luk issue'et → posten sendes automatisk til r/dkcybersecurity
 
 ### Track B — Månedlig opsummering
 
-1. **Opsummering** (workflow 06) — Genererer tabel over forrige måneds trusler med links til individuelle Reddit-posts
-2. **Draft + Finalize** (workflow 07-08) — Samme decoupled LLM-proces
-3. **Post til Reddit** (workflow 21) — Poster til r/dkcybersecurity og gemmer reddit_url
+1. **Opsummering + Issue** (workflow 04, 1. i hver måned) — Genererer tabel over forrige måneds trusler → LLM skriver Reddit-post → GitHub Issue oprettes til review
+2. **Godkendelse** (workflow 03) — Luk issue'et → posten sendes automatisk til r/dkcybersecurity (samme flow som Track A)
 
 ### Aktiv opdagelse
 
-- **Brave Search** (workflow 30) — Søger dagligt efter danske cyberangreb fra kilder uden for RSS-feeds
-- **Ny-kilde-opdagelse** (workflow 31) — Prober opdagede domæner for RSS-feeds og opretter PR til `data/feeds.json`
+- **Brave Search** (workflow 05) — Søger dagligt efter danske cyberangreb fra kilder uden for RSS-feeds
+- **Ny-kilde-opdagelse** (workflow 06) — Prober opdagede domæner for RSS-feeds og opretter PR til `data/feeds.json`
 
 ## Data model
 
@@ -116,7 +115,7 @@ Repo → Settings → Actions → General → Workflow permissions:
 
 ### GitHub Labels
 
-Workflow 05 trigges når et issue med `reddit-post-pending` label lukkes. Labelet oprettes automatisk ved første brug.
+Workflow 03 trigges når et issue med `reddit-post-pending` label lukkes. Labelet oprettes automatisk ved første brug.
 
 ## Klassificering
 
@@ -145,14 +144,11 @@ LLM-klassificeringen bruger strenge regler for at undgå false positives:
 | # | Navn | Trigger | Beskrivelse |
 |---|------|---------|-------------|
 | 01 | Collect Raw Threats | Hver 3. time + manual | RSS-feeds → keyword filter → LLM-klassificering → PR |
-| 03 | Merge + Generate Posts | PR merge med `data/daily/raw/**` | Append + LLM-merge → `verified_threats.json` + GitHub Issue per trussel |
-| 05 | Post Approved | Issue lukkes med `reddit-post-pending` label | Poster til r/dkcybersecurity → tagger `reddit_url` |
-| 06 | Monthly Raw Summary | 1. i hver måned | Tabel over forrige måneds trusler |
-| 07 | Monthly Draft | Efter monthly summary | Månedligt LLM-udkast |
-| 08 | Monthly Finalize | Efter monthly draft | Færdig månedlig post |
-| 21 | Monthly Post to Reddit | Efter monthly finalize | Poster til r/dkcybersecurity |
-| 30 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR |
-| 31 | Suggest Sources | Når nye kandidater opdages | Prober RSS-feeds → PR til `feeds.json` |
+| 02 | Merge + Generate Posts | PR merge med `data/daily/raw/**` | Append + LLM-merge → `verified_threats.json` + GitHub Issue per trussel |
+| 03 | Post Approved | Issue lukkes med `reddit-post-pending` label | Poster til r/dkcybersecurity → tagger `reddit_url` |
+| 04 | Monthly Summary | 1. i hver måned | Opsummering → LLM-post → GitHub Issue til review |
+| 05 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR |
+| 06 | Suggest Sources | Når nye kandidater opdages | Prober RSS-feeds → PR til `feeds.json` |
 
 ## Mappestruktur
 
@@ -161,9 +157,7 @@ data/
 ├── daily/
 │   └── raw/              ← Rå indsamlede trusler (slettes efter merge)
 ├── monthly/
-│   ├── raw/              ← Månedlig opsummering
-│   ├── drafts/           ← Månedligt udkast
-│   └── generated/        ← Færdig månedlig post
+│   └── raw/              ← Månedlig opsummering (slettes efter issue-oprettelse)
 ├── feeds.json            ← RSS-kilder
 ├── danish_entities.json   ← Keyword-mønstre til pre-filter
 ├── analyzed_urls.json     ← Ledger over analyserede URLs

@@ -11,6 +11,43 @@ import requests
 VERIFIED_PATH = 'data/verified_threats.json'
 NEWLY_ADDED_PATH = 'data/daily/newly_added.json'
 
+MONTHLY_PROMPT = """Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+Skriv en engagerende, naturlig månedlig opsummering på dansk. Emojis sparsomt.
+
+VIGTIGT – brug en markdown-tabel med disse kolonner:
+Dato | Hændelse | Type | Sektor | Beskrivelse | Kilde | Diskussion
+
+Hvor:
+- Dato = timestamp
+- Hændelse = navn på angrebet
+- Type = angrebstype (ransomware, DDoS, phishing, databrud, etc.)
+- Sektor = berørt sektor (sundhed, finans, offentlig, etc.)
+- Beskrivelse = kort beskrivelse
+- Kilde = markdown-link [kilde](url)
+- Diskussion = hvis reddit_url findes, link til Reddit-tråd [tråd](reddit_url). \
+Ellers skriv '-'.
+
+Fremhæv trends: er der mønstre i angrebstyper eller sektorer denne måned?
+
+VIGTIGT - Svar KUN med dette JSON format (ingen rå tekst):
+{{"title": "...", "body": "..."}}
+
+Tilføj en '## Diskussion' sektion EFTER tabellen med 2-3 spørgsmål:
+- Er jeres organisation eller sektor berørt af lignende angreb?
+- Har I set tegn på lignende aktivitet?
+- Hvilke forholdsregler tager I mod denne type angreb?
+(Tilpas spørgsmålene til månedens trends og hændelser)
+
+Tilføj ALTID denne disclaimer NEDERST i body:
+
+---
+*Denne post er genereret af LLM med human oversight via mit open-source \
+GitHub-projekt: https://github.com/LaZyDK/dkcyber-threat-monitor*
+Rå data er verificeret af mig før posting.
+
+Månedlig opsummering:
+{raw_summary}"""
+
 POST_PROMPT = """Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
 Skriv en engagerende Reddit-post på dansk om denne specifikke hændelse.
 
@@ -102,74 +139,17 @@ def generate_post_for_threat(threat, api_key, api_url, model):
         sources=sources_text,
     )
 
-    try:
-        resp = requests.post(
-            api_url,
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": model,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.75,
-                "max_tokens": 1400,
-            },
-            timeout=60,
-        )
-        resp.raise_for_status()
-        content = resp.json()["choices"][0]["message"]["content"]
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r'^```\w*\n?', '', content)
-            content = re.sub(r'\n?```$', '', content)
-
-        # Some LLMs return literal newlines inside JSON string values.
-        # Try parsing as-is first; on failure, escape control chars and retry.
-        try:
-            result = json.loads(content)
-        except json.JSONDecodeError:
-            def _escape_string_values(s):
-                """Escape control chars inside JSON string values only."""
-                out = []
-                in_string = False
-                escape_next = False
-                for ch in s:
-                    if escape_next:
-                        out.append(ch)
-                        escape_next = False
-                        continue
-                    if ch == '\\':
-                        out.append(ch)
-                        escape_next = True
-                        continue
-                    if ch == '"':
-                        in_string = not in_string
-                        out.append(ch)
-                        continue
-                    if in_string and ch == '\n':
-                        out.append('\\n')
-                    elif in_string and ch == '\r':
-                        out.append('\\r')
-                    elif in_string and ch == '\t':
-                        out.append('\\t')
-                    else:
-                        out.append(ch)
-                return ''.join(out)
-
-            result = json.loads(_escape_string_values(content))
-        title = result.get('title', '').strip()
-        body = result.get('body', '').strip()
-
-        if not title or not body:
-            print(f"  LLM returned empty title/body for {threat.get('name')}")
-            return None, None
-        return title, body
-
-    except (requests.RequestException, json.JSONDecodeError,
-            KeyError, IndexError) as e:
-        print(f"  LLM post generation failed: {e}")
+    result = _call_llm(prompt, api_key, api_url, model)
+    if not result:
         return None, None
+
+    title = result.get('title', '').strip()
+    body = result.get('body', '').strip()
+
+    if not title or not body:
+        print(f"  LLM returned empty title/body for {threat.get('name')}")
+        return None, None
+    return title, body
 
 
 def validate_sources_in_body(body, threat):
@@ -186,6 +166,102 @@ def validate_sources_in_body(body, threat):
         body += sources_md
         print("  Added missing source links to post body")
     return body
+
+
+def _call_llm(prompt, api_key, api_url, model, max_tokens=1400):
+    """Call LLM and parse JSON response with escape fallback."""
+    try:
+        resp = requests.post(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.75,
+                "max_tokens": max_tokens,
+            },
+            timeout=60,
+        )
+        resp.raise_for_status()
+        content = resp.json()["choices"][0]["message"]["content"]
+        content = content.strip()
+        if content.startswith("```"):
+            content = re.sub(r'^```\w*\n?', '', content)
+            content = re.sub(r'\n?```$', '', content)
+
+        try:
+            return json.loads(content)
+        except json.JSONDecodeError:
+            return json.loads(_escape_string_values(content))
+
+    except (requests.RequestException, json.JSONDecodeError,
+            KeyError, IndexError) as e:
+        print(f"  LLM call failed: {e}")
+        return None
+
+
+def _escape_string_values(s):
+    """Escape control chars inside JSON string values only."""
+    out = []
+    in_string = False
+    escape_next = False
+    for ch in s:
+        if escape_next:
+            out.append(ch)
+            escape_next = False
+            continue
+        if ch == '\\':
+            out.append(ch)
+            escape_next = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+            out.append(ch)
+            continue
+        if in_string and ch == '\n':
+            out.append('\\n')
+        elif in_string and ch == '\r':
+            out.append('\\r')
+        elif in_string and ch == '\t':
+            out.append('\\t')
+        else:
+            out.append(ch)
+    return ''.join(out)
+
+
+def _ensure_label(name, description, color):
+    """Ensure a GitHub label exists (create if missing)."""
+    subprocess.run(
+        ["gh", "label", "create", name,
+         "--description", description,
+         "--color", color],
+        capture_output=True, text=True,
+    )
+
+
+def _create_issue(title, body, labels):
+    """Create a GitHub issue and return its URL."""
+    for label in labels:
+        _ensure_label(label, "", "FBCA04")
+
+    result = subprocess.run(
+        ["gh", "issue", "create",
+         "--title", title,
+         "--body", body,
+         "--label", ",".join(labels)],
+        capture_output=True, text=True,
+    )
+
+    if result.returncode == 0:
+        issue_url = result.stdout.strip()
+        print(f"  Created issue: {issue_url}")
+        return issue_url
+    else:
+        print(f"  Failed to create issue: {result.stderr}")
+        return None
 
 
 def generate_issues():
@@ -247,32 +323,15 @@ def generate_issues():
             f"### Body\n{body}\n\n"
             f"---\n\n"
             f"**Close this issue** to post to r/dkcybersecurity.\n"
-            f"**Close as not planned** to reject (removes from verified threats).\n"
-            f"**Close as duplicate** to skip (removes from verified threats)."
+            f"**Close as not planned** to reject (removes from "
+            f"verified threats).\n"
+            f"**Close as duplicate** to skip (removes from "
+            f"verified threats)."
         )
 
-        # Ensure the label exists (create it if missing)
-        subprocess.run(
-            ["gh", "label", "create", "reddit-post-pending",
-             "--description", "Reddit post awaiting human review",
-             "--color", "FBCA04"],
-            capture_output=True, text=True,
-        )
-
-        result = subprocess.run(
-            ["gh", "issue", "create",
-             "--title", issue_title,
-             "--body", issue_body,
-             "--label", "reddit-post-pending"],
-            capture_output=True, text=True,
-        )
-
-        if result.returncode == 0:
-            issue_url = result.stdout.strip()
-            print(f"  Created issue: {issue_url}")
+        if _create_issue(issue_title, issue_body,
+                         ["reddit-post-pending"]):
             created += 1
-        else:
-            print(f"  Failed to create issue: {result.stderr}")
 
     print(f"Created {created} review issues")
 
@@ -281,6 +340,17 @@ def _extract_threat_id(issue_body):
     """Extract threat ID from issue body."""
     id_match = re.search(r'\*\*Threat ID:\*\* `(.+?)`', issue_body)
     return id_match.group(1) if id_match else None
+
+
+def _extract_month(issue_body):
+    """Extract month from monthly summary issue body."""
+    month_match = re.search(r'\*\*Month:\*\* (\d{4}-\d{2})', issue_body)
+    return month_match.group(1) if month_match else None
+
+
+def _is_monthly_issue(issue_body):
+    """Check if this is a monthly summary issue."""
+    return '**Type:** monthly-summary' in issue_body
 
 
 def _read_issue(issue_number):
@@ -300,22 +370,24 @@ def handle_issue(issue_number, state_reason):
     """Handle a closed issue based on its close reason."""
     issue_data = _read_issue(issue_number)
     issue_body = issue_data['body']
+    is_monthly = _is_monthly_issue(issue_body)
     threat_id = _extract_threat_id(issue_body)
 
     # Use state_reason from workflow event (more reliable than API)
     reason = state_reason or issue_data.get('stateReason', 'completed')
 
     if reason == 'not_planned':
-        # Rejected or duplicate — remove from verified_threats.json
-        if threat_id:
+        if is_monthly:
+            print("Monthly summary rejected — no action needed")
+        elif threat_id:
             verified = load_verified()
             before = len(verified)
             verified = [e for e in verified if e.get('id') != threat_id]
             after = len(verified)
             if after < before:
                 save_verified(verified)
-                print(f"Removed threat {threat_id} from verified_threats.json"
-                      " (closed as not planned)")
+                print(f"Removed threat {threat_id} from "
+                      "verified_threats.json (closed as not planned)")
             else:
                 print(f"Threat {threat_id} not found in verified — "
                       "nothing to remove")
@@ -336,7 +408,6 @@ def handle_issue(issue_number, state_reason):
     post_title = title_match.group(1).strip()
     post_body = body_match.group(1).strip()
 
-    # Post to Reddit
     reddit = get_reddit()
     if not reddit:
         print("Skipping Reddit post (auth not configured)")
@@ -344,8 +415,20 @@ def handle_issue(issue_number, state_reason):
 
     reddit_url = submit_to_reddit(reddit, post_title, post_body)
 
-    # Update verified_threats.json with the reddit_url
-    if threat_id:
+    if is_monthly:
+        # Tag all untagged threats with the monthly summary URL
+        month = _extract_month(issue_body)
+        verified = load_verified()
+        updated = 0
+        for entry in verified:
+            if not entry.get('reddit_url'):
+                entry['reddit_url'] = reddit_url
+                updated += 1
+        if updated:
+            save_verified(verified)
+            print(f"Tagged {updated} threats with monthly URL "
+                  f"({month}): {reddit_url}")
+    elif threat_id:
         verified = load_verified()
         for entry in verified:
             if entry.get('id') == threat_id:
@@ -354,51 +437,81 @@ def handle_issue(issue_number, state_reason):
         save_verified(verified)
         print(f"Tagged threat {threat_id} with {reddit_url}")
 
-    # Add a comment with the Reddit URL (issue is already closed)
     subprocess.run(
         ["gh", "issue", "comment", str(issue_number),
          "--body", f"Posted to Reddit: {reddit_url}"],
     )
 
 
-def monthly_post():
-    """Post monthly summary (single combined post)."""
-    post_file = find_latest_file('data/monthly/generated/post_*.json')
-    if not post_file:
-        print("No monthly post file found — skipping")
-        sys.exit(1)
-
-    with open(post_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    title = data['title'].strip()
-    body = data['body']
-
-    reddit = get_reddit()
-    if not reddit:
-        print("Skipping monthly Reddit post (auth not configured)")
+def generate_monthly_issue():
+    """Generate monthly summary post via LLM and create GitHub Issue."""
+    raw_file = find_latest_file('data/monthly/raw/summary_*.json')
+    if not raw_file:
+        print("No monthly raw summary found — nothing to generate")
         return
 
-    reddit_url = submit_to_reddit(reddit, title, body)
+    with open(raw_file, 'r', encoding='utf-8') as f:
+        raw_data = json.load(f)
 
-    # Tag untagged threats with the monthly summary URL
-    verified = load_verified()
-    updated = 0
-    for entry in verified:
-        if not entry.get('reddit_url'):
-            entry['reddit_url'] = reddit_url
-            updated += 1
+    month = raw_data.get('month', 'unknown')
+    raw_summary = raw_data.get('table_markdown', '')
+    if not raw_summary:
+        print("Monthly summary is empty — nothing to generate")
+        return
 
-    if updated:
-        save_verified(verified)
-        print(f"Updated {updated} entries with monthly reddit_url")
+    api_key = os.environ.get("OPENROUTER_API_KEY", "")
+    api_url = (os.environ.get("LLM_API_URL")
+               or "https://openrouter.ai/api/v1/chat/completions")
+    model = os.environ.get("LLM_MODEL_TOOLUSE", "")
+
+    if not api_key or not model:
+        print("OPENROUTER_API_KEY or LLM_MODEL_TOOLUSE not set — cannot "
+              "generate monthly post")
+        return
+
+    print(f"Generating monthly summary for {month}...")
+    prompt = MONTHLY_PROMPT.format(raw_summary=raw_summary)
+    result = _call_llm(prompt, api_key, api_url, model, max_tokens=1800)
+
+    if not result:
+        print("Failed to generate monthly post")
+        return
+
+    title = result.get('title', '').strip()
+    body = result.get('body', '').strip()
+
+    if not title or not body:
+        print("LLM returned empty title/body for monthly post")
+        return
+
+    issue_title = f"Månedlig opsummering: {title}"
+    issue_body = (
+        f"## Monthly Summary Preview\n\n"
+        f"**Type:** monthly-summary\n"
+        f"**Month:** {month}\n\n"
+        f"---\n\n"
+        f"### Title\n{title}\n\n"
+        f"### Body\n{body}\n\n"
+        f"---\n\n"
+        f"**Close this issue** to post to r/dkcybersecurity.\n"
+        f"**Close as not planned** to skip posting."
+    )
+
+    _create_issue(issue_title, issue_body, ["reddit-post-pending"])
 
 
 def main():
-    mode = sys.argv[1] if len(sys.argv) > 1 else 'monthly'
+    if len(sys.argv) < 2:
+        print("Usage: post_to_reddit.py <mode> [args]")
+        print("Modes: generate, generate-monthly, handle-closed")
+        sys.exit(1)
+
+    mode = sys.argv[1]
 
     if mode == 'generate':
         generate_issues()
+    elif mode == 'generate-monthly':
+        generate_monthly_issue()
     elif mode == 'handle-closed':
         if len(sys.argv) < 3:
             print("Usage: post_to_reddit.py handle-closed <issue_number>"
@@ -407,8 +520,6 @@ def main():
         issue_num = sys.argv[2]
         reason = sys.argv[3] if len(sys.argv) > 3 else None
         handle_issue(issue_num, reason)
-    elif mode == 'monthly':
-        monthly_post()
     else:
         print(f"Unknown mode: {mode}")
         sys.exit(1)

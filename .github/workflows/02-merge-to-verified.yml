@@ -1,0 +1,68 @@
+name: 02 Merge to Verified + Generate Reddit Posts
+
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'data/daily/raw/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
+jobs:
+  append-and-generate:
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.pull_request.merged == true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Append verified threats
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL_CHEAP: ${{ vars.LLM_MODEL_CHEAP }}
+        run: python scripts/append_verified.py
+
+      - name: Generate Reddit posts and create review issues
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_API_URL: ${{ vars.LLM_API_URL }}
+          LLM_MODEL_TOOLUSE: ${{ vars.LLM_MODEL_TOOLUSE }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/post_to_reddit.py generate
+
+      - name: Clean up processed files
+        run: |
+          rm -f data/daily/raw/*.json
+          rm -f data/daily/newly_added.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/verified_threats.json data/daily/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: append verified threats (review issues created)"
+            git pull --rebase origin main
+            git push origin main
+          fi

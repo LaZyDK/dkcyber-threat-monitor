@@ -1,4 +1,4 @@
-name: 30 Active Threat Search
+name: 05 Discover Threats
 
 on:
   schedule:

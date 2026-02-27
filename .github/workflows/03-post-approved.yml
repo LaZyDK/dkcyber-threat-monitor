@@ -1,4 +1,4 @@
-name: 05 Post Approved to Reddit
+name: 03 Post Approved to Reddit
 
 on:
   issues:
