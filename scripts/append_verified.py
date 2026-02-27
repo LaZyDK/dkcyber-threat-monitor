@@ -125,8 +125,14 @@ def merge_with_llm(new_entries, api_key, api_url, model):
             print(f"  LLM returned unparseable content: {content[:200]}")
             return [{"indices": [i]} for i in range(len(new_entries))]
 
+        # LLM may return {"groups": [...]} or just [...]
+        if isinstance(result, list):
+            raw_groups = result
+        else:
+            raw_groups = result.get("groups", [])
+
         groups = []
-        for group in result.get("groups", []):
+        for group in raw_groups:
             indices = group.get("indices", [])
             if indices:
                 groups.append({
