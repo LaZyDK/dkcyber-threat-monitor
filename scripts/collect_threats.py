@@ -52,7 +52,7 @@ Feltet "confidence" angiver din sikkerhed på at angrebet FAKTISK rammer Danmark
 
 Svar KUN med denne JSON (ingen anden tekst):
 {{
-  "is_dk_attack": true/false,
+  "is_dk_relevant": true/false,
   "confidence": "high"/"medium"/"low",
   "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"datatyveri"/"digital_svindel"/"destruktiv"/"ot_manipulation"/"malware"/"insider"/"exploit"/"andet"/"ukendt",
   "sector": "sundhed"/"finans"/"offentlig"/"energi"/"transport"/"telecom"/"uddannelse"/"detailhandel"/"it"/"andet"/"ukendt",
@@ -193,7 +193,7 @@ def classify_with_llm(entry, api_key, api_url, model):
             print(f"  LLM returned unparseable content: {content[:200]}")
             raise ValueError("Unparseable LLM response")
         return {
-            "is_dk_attack": bool(result.get("is_dk_attack", False)),
+            "is_dk_relevant": bool(result.get("is_dk_relevant", False)),
             "confidence": result.get("confidence", "low"),
             "attack_type": result.get("attack_type", "ukendt"),
             "sector": result.get("sector", "ukendt"),
@@ -203,7 +203,7 @@ def classify_with_llm(entry, api_key, api_url, model):
             ValueError) as e:
         print(f"  LLM classification failed: {e}")
         return {
-            "is_dk_attack": False,
+            "is_dk_relevant": False,
             "confidence": "error",
             "attack_type": "ukendt",
             "sector": "ukendt",
@@ -246,7 +246,7 @@ def collect():
             has_dk_keyword = keyword_prefilter(item, pattern)
 
             if not has_dk_keyword:
-                item["is_dk_attack"] = False
+                item["is_dk_relevant"] = False
                 item["confidence"] = "low"
                 item["attack_type"] = "ukendt"
                 item["sector"] = "ukendt"
@@ -254,7 +254,7 @@ def collect():
                     "Ingen danske nøgleord fundet i titel/resumé."
                 )
             elif not api_key or not model:
-                item["is_dk_attack"] = has_dk_keyword
+                item["is_dk_relevant"] = has_dk_keyword
                 item["confidence"] = "keyword-only"
                 item["attack_type"] = "ukendt"
                 item["sector"] = "ukendt"
@@ -264,20 +264,20 @@ def collect():
             else:
                 print(f"  Classifying: {item['title'][:60]}...")
                 result = classify_with_llm(item, api_key, api_url, model)
-                item["is_dk_attack"] = result["is_dk_attack"]
+                item["is_dk_relevant"] = result["is_dk_relevant"]
                 item["confidence"] = result["confidence"]
                 item["attack_type"] = result["attack_type"]
                 item["sector"] = result["sector"]
                 item["explanation"] = result["explanation"]
 
             # If classified as DK attack but type is unknown, skip it
-            if (item["is_dk_attack"]
+            if (item["is_dk_relevant"]
                     and item.get("attack_type") == "ukendt"):
-                item["is_dk_attack"] = False
+                item["is_dk_relevant"] = False
                 item["explanation"] += (
                     " Nedgraderet: angrebstype kunne ikke bestemmes.")
 
-            if item["is_dk_attack"]:
+            if item["is_dk_relevant"]:
                 attack_count += 1
             threats.append(item)
             known_links.add(link)

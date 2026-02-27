@@ -39,14 +39,14 @@ jobs:
           RAW_FILE="${{ steps.discover.outputs.raw_file }}"
           if [ -n "$RAW_FILE" ] && [ -f "$RAW_FILE" ]; then
             TOTAL=$(jq 'length' "$RAW_FILE")
-            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$RAW_FILE")
+            ATTACKS=$(jq '[.[] | select(.is_dk_relevant == true)] | length' "$RAW_FILE")
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
             echo "raw_file=$(basename "$RAW_FILE")" >> "$GITHUB_OUTPUT"
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | select(.is_dk_attack == true) | "| [\(.title)](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
+              jq -r '.[] | select(.is_dk_relevant == true) | "| [\(.title)](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else

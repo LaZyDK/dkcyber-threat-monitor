@@ -63,7 +63,7 @@ Feltet "confidence" angiver din sikkerhed på at angrebet FAKTISK rammer Danmark
 
 Svar KUN med denne JSON (ingen anden tekst):
 {{
-  "is_dk_attack": true/false,
+  "is_dk_relevant": true/false,
   "confidence": "high"/"medium"/"low",
   "attack_type": "ransomware"/"ddos"/"phishing"/"databrud"/"supply-chain"/"datatyveri"/"digital_svindel"/"destruktiv"/"ot_manipulation"/"malware"/"insider"/"exploit"/"andet"/"ukendt",
   "sector": "sundhed"/"finans"/"offentlig"/"energi"/"transport"/"telecom"/"uddannelse"/"detailhandel"/"it"/"andet"/"ukendt",
@@ -191,11 +191,11 @@ def classify_result(result, openrouter_key, api_url, model):
         result = extract_json(content)
         if result is None:
             print(f"  LLM returned unparseable content: {content[:200]}")
-            return {"is_dk_attack": False, "confidence": "error"}
+            return {"is_dk_relevant": False, "confidence": "error"}
         return result
     except (requests.RequestException, KeyError, IndexError) as e:
         print(f"  LLM classify failed: {e}")
-        return {"is_dk_attack": False, "confidence": "error"}
+        return {"is_dk_relevant": False, "confidence": "error"}
 
 
 def extract_domain(url):
@@ -264,7 +264,7 @@ def discover():
                 "source": f"discover:{domain}",
                 "source_domain": domain,
                 "collected_at": datetime.now(timezone.utc).isoformat(),
-                "is_dk_attack": classification.get("is_dk_attack",
+                "is_dk_relevant": classification.get("is_dk_relevant",
                                                    False),
                 "confidence": classification.get("confidence", "low"),
                 "attack_type": classification.get("attack_type",
@@ -274,9 +274,9 @@ def discover():
                 "discovered_via": "brave_search",
             }
             # If classified as DK attack but type is unknown, skip it
-            if (entry["is_dk_attack"]
+            if (entry["is_dk_relevant"]
                     and entry.get("attack_type") == "ukendt"):
-                entry["is_dk_attack"] = False
+                entry["is_dk_relevant"] = False
                 entry["explanation"] += (
                     " Nedgraderet: angrebstype kunne ikke bestemmes.")
 
@@ -284,10 +284,10 @@ def discover():
             ledger.append({
                 "url": url,
                 "analyzed_at": entry["collected_at"],
-                "is_dk_attack": entry["is_dk_attack"],
+                "is_dk_relevant": entry["is_dk_relevant"],
             })
 
-            if is_new_domain and classification.get("is_dk_attack"):
+            if is_new_domain and classification.get("is_dk_relevant"):
                 new_source_domains.add(domain)
 
     os.makedirs("data/daily", exist_ok=True)
@@ -298,7 +298,7 @@ def discover():
 
     save_ledger(ledger)
 
-    attacks = sum(1 for r in all_results if r.get("is_dk_attack"))
+    attacks = sum(1 for r in all_results if r.get("is_dk_relevant"))
     print(f"Discovered {len(all_results)} results, "
           f"{attacks} verified DK attacks → {path}")
 

@@ -38,7 +38,7 @@ jobs:
           RAW_FILE="${{ steps.collect.outputs.raw_file }}"
           if [ -n "$RAW_FILE" ] && [ -f "$RAW_FILE" ]; then
             TOTAL=$(jq 'length' "$RAW_FILE")
-            ATTACKS=$(jq '[.[] | select(.is_dk_attack == true)] | length' "$RAW_FILE")
+            ATTACKS=$(jq '[.[] | select(.is_dk_relevant == true)] | length' "$RAW_FILE")
             FILTERED=$((TOTAL - ATTACKS))
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
@@ -47,7 +47,7 @@ jobs:
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | "| [\(.title)](\(.link)) | \(if .is_dk_attack then "**JA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
+              jq -r '.[] | "| [\(.title)](\(.link)) | \(if .is_dk_relevant then "**JA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -78,7 +78,7 @@ jobs:
             ---
             **Tip:** Hver commit = én indsamlingskørsel. Review commits individuelt.
 
-            Kun entries med `is_dk_attack: true` tilføjes til verified_threats.json ved merge.
+            Kun entries med `is_dk_relevant: true` tilføjes til verified_threats.json ved merge.
           branch: threat-verification
           delete-branch: true
           labels: verification,threat

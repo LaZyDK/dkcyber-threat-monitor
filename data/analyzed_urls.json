@@ -182,142 +182,142 @@
   {
     "url": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
     "analyzed_at": "2026-02-26T23:08:34.571351+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://www.seoghoer.dk/nyheder/lige-nu-ddos-angreb-mod-groenlandske-hjemmesider",
     "analyzed_at": "2026-02-26T23:09:00.330182+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
     "analyzed_at": "2026-02-26T23:09:22.689610+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://avisendanmark.dk/indland/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-2026-2-20",
     "analyzed_at": "2026-02-26T23:10:01.290902+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://nyheder.tv2.dk/live/2025-01-06-kampen-om-groenlands-fremtid/ddos-angreb-mod-groenland?entry=f2d24f5f-7117-4788-a4e6-0fcf9c6fe1b9",
     "analyzed_at": "2026-02-26T23:10:23.923949+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://nordjyske.dk/nyheder/danmark/groenlandske-hjemmesider-er-under-angreb/5933416",
     "analyzed_at": "2026-02-26T23:10:55.453162+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
     "analyzed_at": "2026-02-26T23:11:17.003834+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://borsen.dk/nyheder/opinion/det-farligste-ved-cyberangreb-i-2026-er-banaliteten",
     "analyzed_at": "2026-02-26T23:11:39.102260+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
     "analyzed_at": "2026-02-26T23:12:03.753909+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://www.berlingske.dk/danmark/fakta-overbelastning-bruges-til-at-laegge-hjemmesider-ned-1",
     "analyzed_at": "2026-02-26T23:12:28.428057+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.dr.dk/nyheder/indland/dansk-industri-og-pet-lancerer-ny-antispionage-kampagne",
     "analyzed_at": "2026-02-26T23:12:37.305049+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.computerbild.de/artikel/News-Sicherheit-Phishing-Angriff-auf-ADAC-Kunden-40757373.html",
     "analyzed_at": "2026-02-26T23:13:05.036589+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.pirateri.dk/sikkerhed-phishing-og-ansvarlig-viden-hvad-du-kan-finde-paa-pirateri-dk/",
     "analyzed_at": "2026-02-26T23:13:34.080502+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.newsbreak.com/news/4510685418933-2026-fraud-trends-and-phishing-predictions-report-with-bolster-ai",
     "analyzed_at": "2026-02-26T23:14:06.871015+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.chosun.com/english/national-en/2026/02/25/JV57DH5ZTRDP3DYQTSWMDMFXVE/",
     "analyzed_at": "2026-02-26T23:14:17.245609+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.spambrella.com/ai-powered-phishing-in-2026-the-threat-your-old-filters-cant-see/",
     "analyzed_at": "2026-02-26T23:14:33.518283+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.infosecurity-magazine.com/news/starkiller-phishing-kit-bypasses/",
     "analyzed_at": "2026-02-26T23:15:03.645565+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://jyllands-posten.dk/indland/ECE19044692/bookingcom-advarer-svindlere-har-faaet-adgang-til-vigtige-detaljer-om-bookinger-fra-danske-kunder/",
     "analyzed_at": "2026-02-26T23:15:55.389171+00:00",
-    "is_dk_attack": true
+    "is_dk_relevant": true
   },
   {
     "url": "https://www.fushinyheder.dk/totalberedskab-og-kritisk-infrastruktur-saadan-styrker-danmark-sikkerheden-og-saadan-guider-fushinyheder-dk-dig-gennem-udviklingen/",
     "analyzed_at": "2026-02-26T23:16:27.787383+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.aftenposten.no/norge/i/aJbljM/politiet-kriminelle-nettverk-utgjoer-en-betydelig-og-vedvarende-trussel-i-2026",
     "analyzed_at": "2026-02-26T23:17:03.324386+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.vg.no/nyheter/i/ln3wvL/politiet-kriminelle-nettverk-utgjoer-en-betydelig-og-vedvarende-trussel-i-2026",
     "analyzed_at": "2026-02-26T23:17:17.637759+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.computerworld.dk/art/294692/stort-opbrud-i-markedet-for-offentlige-it-aftaler-er-i-gang-nye-bevaegelser-paavirker-baade-indkoebere-og-leverandoerer",
     "analyzed_at": "2026-02-26T23:17:31.257725+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.computerworld.dk/art/294546/afgoerende-for-offentlig-it-her-er-de-danske-kommuners-store-planer-for-it-sikkerhed-ai-og-suveraenitet-i-de-kommende-aar",
     "analyzed_at": "2026-02-26T23:17:58.324083+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.danva.dk/nyheder/2026/danva-nyt-totalberedskab-er-noedvendig-anerkendelse-af-vandforsyningen-som-kritisk-infrastruktur/",
     "analyzed_at": "2026-02-26T23:18:29.516699+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.dr.dk/nyheder/seneste/kritisk-infrastruktur-i-ukraine-angrebet-i-nat",
     "analyzed_at": "2026-02-26T23:18:54.645026+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://nyheder.tv2.dk/politik/2026-02-20-saadan-ser-danmarks-nye-totalberedskab-ud",
     "analyzed_at": "2026-02-26T23:19:00.713797+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.dr.dk/nyheder/indland/regeringen-danmark-skal-have-totalberedskab",
     "analyzed_at": "2026-02-26T23:19:08.117281+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.computerworld.dk/art/294690/digitaliseringsministeriet-saetter-tal-paa-derfor-er-danmark-et-af-eus-digitale-lokomotiver",
     "analyzed_at": "2026-02-26T23:19:13.207716+00:00",
-    "is_dk_attack": false
+    "is_dk_relevant": false
   },
   {
     "url": "https://www.computerworld.dk/art/294709/morgen-briefing-danmark-vinder-europaeisk-soelv-i-mobilnet-digitaliseringsminister-saetter-barsel-i-bero-skal-foere-valgkamp-google-opgraderer-nano-banana-billedgeneratoren",

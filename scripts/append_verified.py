@@ -218,7 +218,7 @@ def append_verified():
             if link in existing_links:
                 continue
 
-            if not entry.get('is_dk_attack', False):
+            if not entry.get('is_dk_relevant', False):
                 skipped_irrelevant += 1
                 continue
 
