@@ -188,7 +188,7 @@
     "summary": "En hjemmeside ved navn ‘Atlantic København’ spreder lige nu annoncer på Facebook med en historie om, at de udfaser en del af deres mest populære smykkekollektion.; Kunderne skal derfor skynde sig, hvis de vil have fat i smykkerne.&nbsp;; Der er tale om en tilbagevendende tendens, hvor svindlere lokker facebookbrugere ind på deres webshops ved brug af opdigtede historier, der skal vække følelser.&nbsp;; I sidste ende handler det om at få folk til at gennemføre køb på hjemmesiden.&nbsp;; Flere kunder skriver på Trustpilot, at varerne er sendt fra Kina, og at identiske produkter kan findes på handelsplatformen Temu.",
     "source": "https://tjekdet.dk/rss.xml",
     "collected_at": "2026-02-27T13:08:01.593181+00:00",
-    "is_dk_relevant": true,
+    "is_dk_relevant": false,
     "confidence": "high",
     "attack_type": "digital_svindel",
     "sector": "detailhandel",
