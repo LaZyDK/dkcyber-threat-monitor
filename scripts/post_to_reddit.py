@@ -445,7 +445,7 @@ def handle_issue(issue_number, state_reason):
 
 def generate_monthly_issue():
     """Generate monthly summary post via LLM and create GitHub Issue."""
-    raw_file = find_latest_file('data/monthly/raw/summary_*.json')
+    raw_file = find_latest_file('data/monthly/summary_*.json')
     if not raw_file:
         print("No monthly raw summary found — nothing to generate")
         return

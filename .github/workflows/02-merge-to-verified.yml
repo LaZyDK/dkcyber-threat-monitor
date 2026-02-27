@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [closed]
     paths:
-      - 'data/daily/raw/**'
+      - 'data/daily/**'
   workflow_dispatch:
 
 permissions:
@@ -51,7 +51,7 @@ jobs:
 
       - name: Clean up processed files
         run: |
-          rm -f data/daily/raw/*.json
+          rm -f data/daily/web_*.json data/daily/discover_*.json
           rm -f data/daily/newly_added.json
 
       - name: Commit and push

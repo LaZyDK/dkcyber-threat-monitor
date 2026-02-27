@@ -41,7 +41,7 @@ jobs:
         run: python scripts/post_to_reddit.py generate-monthly
 
       - name: Clean up raw summary files
-        run: rm -f data/monthly/raw/*.json
+        run: rm -f data/monthly/summary_*.json
 
       - name: Commit cleanup
         run: |

@@ -130,7 +130,7 @@ LLM-klassificeringen bruger strenge regler for at undgå false positives:
 
 **Alle tekster i dette projekt er genereret af LLM'er med human oversight.**
 
-- Rå data er 100 % fra kilden og gemmes uændret (`data/daily/raw/` og `data/verified_threats.json`)
+- Rå data er 100 % fra kilden og gemmes uændret (`data/daily/` og `data/verified_threats.json`)
 - LLM-teksten er kun et udkast — jeg læser, retter og godkender **altid** før posting via GitHub Issues
 - Du kan følge hele processen i repo'ets Pull Requests, Issues og commit-historik
 
@@ -144,7 +144,7 @@ LLM-klassificeringen bruger strenge regler for at undgå false positives:
 | # | Navn | Trigger | Beskrivelse |
 |---|------|---------|-------------|
 | 01 | Collect Raw Threats | Hver 3. time + manual | RSS-feeds → keyword filter → LLM-klassificering → PR |
-| 02 | Merge + Generate Posts | PR merge med `data/daily/raw/**` | Append + LLM-merge → `verified_threats.json` + GitHub Issue per trussel |
+| 02 | Merge + Generate Posts | PR merge med `data/daily/**` | Append + LLM-merge → `verified_threats.json` + GitHub Issue per trussel |
 | 03 | Post Approved | Issue lukkes med `reddit-post-pending` label | Poster til r/dkcybersecurity → tagger `reddit_url` |
 | 04 | Monthly Summary | 1. i hver måned | Opsummering → LLM-post → GitHub Issue til review |
 | 05 | Discover Threats | Dagligt kl. 10 UTC + manual | Brave Search → LLM → PR |
@@ -154,10 +154,8 @@ LLM-klassificeringen bruger strenge regler for at undgå false positives:
 
 ```
 data/
-├── daily/
-│   └── raw/              ← Rå indsamlede trusler (slettes efter merge)
-├── monthly/
-│   └── raw/              ← Månedlig opsummering (slettes efter issue-oprettelse)
+├── daily/                ← Rå indsamlede trusler (slettes efter merge)
+├── monthly/              ← Månedlig opsummering (slettes efter issue-oprettelse)
 ├── feeds.json            ← RSS-kilder
 ├── danish_entities.json   ← Keyword-mønstre til pre-filter
 ├── analyzed_urls.json     ← Ledger over analyserede URLs

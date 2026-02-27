@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from dateutil import parser as dateparser
 
 VERIFIED_PATH = 'data/verified_threats.json'
-RAW_DIR = 'data/daily/raw'
+RAW_DIR = 'data/daily'
 NEWLY_ADDED_PATH = 'data/daily/newly_added.json'
 FEEDS_PATH = os.path.join(
     os.path.dirname(__file__), '..', 'data', 'feeds.json'
@@ -196,7 +196,7 @@ def append_verified():
 
     raw_files = sorted(glob.glob(os.path.join(RAW_DIR, '*.json')))
     if not raw_files:
-        print("No raw files found in data/daily/raw/ - nothing to append")
+        print("No raw files found in data/daily/ - nothing to append")
         return
 
     new_entries = []

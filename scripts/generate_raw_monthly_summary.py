@@ -53,8 +53,8 @@ def generate_raw_monthly_summary():
         "generated_at": now.isoformat()
     }
 
-    os.makedirs('data/monthly/raw', exist_ok=True)
-    out_path = f'data/monthly/raw/summary_{last_month_str}.json'
+    os.makedirs('data/monthly', exist_ok=True)
+    out_path = f'data/monthly/summary_{last_month_str}.json'
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
 

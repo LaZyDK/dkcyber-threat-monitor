@@ -288,9 +288,9 @@ def collect():
                 "analyzed_at": item["collected_at"],
             })
 
-    os.makedirs("data/daily/raw", exist_ok=True)
+    os.makedirs("data/daily", exist_ok=True)
     ts = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
-    path = f"data/daily/raw/web_{ts}.json"
+    path = f"data/daily/web_{ts}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(threats, f, ensure_ascii=False, indent=2)
 
