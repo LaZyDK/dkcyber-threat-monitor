@@ -535,5 +535,21 @@
   {
     "url": "https://thehackernews.com/2026/02/malicious-go-crypto-module-steals.html",
     "analyzed_at": "2026-02-27T18:51:14.437601+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-testing-windows-11-batch-file-security-improvements/",
+    "analyzed_at": "2026-02-27T21:33:00.194535+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/apt37-hackers-use-new-malware-to-breach-air-gapped-networks/",
+    "analyzed_at": "2026-02-27T21:33:00.194721+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/doj-seizes-61-million-in-tether-linked.html",
+    "analyzed_at": "2026-02-27T21:33:00.486507+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/trump-orders-all-federal-agencies-to-phase-out-use-of-anthropic-technology/",
+    "analyzed_at": "2026-02-27T21:33:00.807220+00:00"
   }
 ]
