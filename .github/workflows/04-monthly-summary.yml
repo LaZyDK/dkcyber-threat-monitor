@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate raw monthly summary
-        run: python scripts/generate_raw_monthly_summary.py
+      - name: Generate monthly summary
+        run: python scripts/generate_monthly_summary.py
 
       - name: Generate monthly post and create review issue
         env:

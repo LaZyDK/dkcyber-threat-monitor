@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 VERIFIED_PATH = 'data/verified_threats.json'
 
 
-def generate_raw_monthly_summary():
+def generate_monthly_summary():
     if not os.path.exists(VERIFIED_PATH):
         print(f"Verified file {VERIFIED_PATH} does not exist yet → skipping")
         return
@@ -62,4 +62,4 @@ def generate_raw_monthly_summary():
 
 
 if __name__ == '__main__':
-    generate_raw_monthly_summary()
+    generate_monthly_summary()
