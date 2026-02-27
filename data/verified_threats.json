@@ -16,5 +16,57 @@
     "timestamp": "2026-02-26",
     "verified_by": "human-review",
     "verified_at": "2026-02-26T22:52:07.239718+00:00"
+  },
+  {
+    "id": "32ffc319f923",
+    "name": "DDoS-angreb mod Grønlands offentlige hjemmesider",
+    "description": "En koordineret DDoS-angreb af den russiske hackergruppe NoName057(16) ramte Grønlands myndigheder. Angrebet er en hævn for Danmarks donationer til Grønland og forårsagede nedetid og serviceforstyrrelser på grønlandske hjemmesider.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "inputmag.dk",
+    "link": "https://www.inputmag.dk/russiske-hackere-angreb-groenland/",
+    "additional_sources": [
+      {
+        "url": "https://www.seoghoer.dk/nyheder/lige-nu-ddos-angreb-mod-groenlandske-hjemmesider",
+        "name": "seoghoer.dk"
+      },
+      {
+        "url": "https://www.sermitsiaq.ag/samfund/gronlandske-hjemmesider-under-angreb-russisk-gruppe-siger-de-star-bag/2347337",
+        "name": "sermitsiaq.ag"
+      },
+      {
+        "url": "https://ekstrabladet.dk/nyheder/samfund/groenlandske-hjemmesider-udsat-for-ddos-angreb/11102165",
+        "name": "ekstrabladet.dk"
+      }
+    ],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T23:20:31.932087+00:00"
+  },
+  {
+    "id": "081334635e75",
+    "name": "DDoS-angreb mod danske myndigheder og kommuner",
+    "description": "Såkaldte DDoS-angreb ramte Udenrigsministeriet, Rigspolitiet, borger.dk og flere danske kommuner. Angrebet forårsagede overbelastning og nedetid af hjemmesider i Danmark.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "tjekdet.dk",
+    "link": "https://www.tjekdet.dk/indsigt/danske-virksomheder-og-myndigheder-udsat-omfattende-hackerangreb",
+    "additional_sources": [],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T23:20:31.932087+00:00"
+  },
+  {
+    "id": "5e59f5653348",
+    "name": "Booking.com-svindel med kundebogninger",
+    "description": "Svindlere har stjålet kundens navne, datoer og bookingnumre fra Booking.com og brugt dataen til at snyde med falske hotelbetalinger. Booking.com advarer om risikoen for at miste penge.",
+    "attack_type": "databrud",
+    "sector": "detailhandel",
+    "source": "jyllands-posten.dk",
+    "link": "https://jyllands-posten.dk/indland/ECE19044692/bookingcom-advarer-svindlere-har-faaet-adgang-til-vigtige-detaljer-om-bookinger-fra-danske-kunder/",
+    "additional_sources": [],
+    "timestamp": "2026-02-26",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-26T23:20:31.932087+00:00"
   }
 ]
