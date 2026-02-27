@@ -50,9 +50,7 @@ jobs:
         run: python scripts/post_to_reddit.py generate
 
       - name: Clean up processed files
-        run: |
-          rm -f data/daily/web_*.json data/daily/discover_*.json
-          rm -f data/daily/newly_added.json
+        run: rm -f data/daily/web_*.json data/daily/discover_*.json
 
       - name: Commit and push
         run: |

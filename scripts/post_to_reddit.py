@@ -6,6 +6,7 @@ import subprocess
 import sys
 import glob
 import requests
+from llm_utils import extract_json
 
 
 VERIFIED_PATH = 'data/verified_threats.json'
@@ -187,49 +188,14 @@ def _call_llm(prompt, api_key, api_url, model, max_tokens=1400):
         )
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"]
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r'^```\w*\n?', '', content)
-            content = re.sub(r'\n?```$', '', content)
+        result = extract_json(content)
+        if result is None:
+            print(f"  LLM returned unparseable content: {content[:200]}")
+        return result
 
-        try:
-            return json.loads(content)
-        except json.JSONDecodeError:
-            return json.loads(_escape_string_values(content))
-
-    except (requests.RequestException, json.JSONDecodeError,
-            KeyError, IndexError) as e:
+    except (requests.RequestException, KeyError, IndexError) as e:
         print(f"  LLM call failed: {e}")
         return None
-
-
-def _escape_string_values(s):
-    """Escape control chars inside JSON string values only."""
-    out = []
-    in_string = False
-    escape_next = False
-    for ch in s:
-        if escape_next:
-            out.append(ch)
-            escape_next = False
-            continue
-        if ch == '\\':
-            out.append(ch)
-            escape_next = True
-            continue
-        if ch == '"':
-            in_string = not in_string
-            out.append(ch)
-            continue
-        if in_string and ch == '\n':
-            out.append('\\n')
-        elif in_string and ch == '\r':
-            out.append('\\r')
-        elif in_string and ch == '\t':
-            out.append('\\t')
-        else:
-            out.append(ch)
-    return ''.join(out)
 
 
 def _ensure_label(name, description, color):
@@ -291,6 +257,7 @@ def generate_issues():
         return
 
     created = 0
+    failed_ids = []
     for threat_id in newly_added_ids:
         threat = threats_by_id.get(threat_id)
         if not threat:
@@ -307,6 +274,7 @@ def generate_issues():
 
         if not title or not body:
             print(f"  Skipping {threat_id} — failed to generate post")
+            failed_ids.append(threat_id)
             continue
 
         body = validate_sources_in_body(body, threat)
@@ -332,6 +300,19 @@ def generate_issues():
         if _create_issue(issue_title, issue_body,
                          ["reddit-post-pending"]):
             created += 1
+        else:
+            failed_ids.append(threat_id)
+
+    # Write back failed IDs so they can be retried next run
+    if failed_ids:
+        with open(NEWLY_ADDED_PATH, 'w', encoding='utf-8') as f:
+            json.dump(failed_ids, f, ensure_ascii=False, indent=2)
+        print(f"  {len(failed_ids)} threats failed — kept in "
+              "newly_added.json for retry")
+    else:
+        # All succeeded — clean up
+        if os.path.exists(NEWLY_ADDED_PATH):
+            os.remove(NEWLY_ADDED_PATH)
 
     print(f"Created {created} review issues")
 
