@@ -467,5 +467,53 @@
   {
     "url": "https://www.tjekdet.dk/fup-og-spam/smykkevirksomhed-lokker-med-lagerudsalg-og-personlig-fortaelling-om-marie",
     "analyzed_at": "2026-02-27T13:08:01.593181+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-27/Flere-kritiske-saarbarheder-rapporteret-i-n8n-platformen",
+    "analyzed_at": "2026-02-27T15:40:23.659923+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-25/Kritiske-saarbarheder-i-SolarWinds-Serv-U",
+    "analyzed_at": "2026-02-27T15:40:35.135612+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-02-24/Autonome-AI-agenter-aabner-ny-angrebsflade-i-supply-chain-kaeden",
+    "analyzed_at": "2026-02-27T15:40:45.900540+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/02/cert-se-veckobrev-v9.html",
+    "analyzed_at": "2026-02-27T15:40:53.507439+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294717/test-samsungs-buds4-pro-er-smaa-teknologiske-lydperler",
+    "analyzed_at": "2026-02-27T15:41:01.360247+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294723/tdc-kraever-200-millioner-kroner-i-erstatning-for-udskiftning-af-huawei-udstyr",
+    "analyzed_at": "2026-02-27T15:41:01.360480+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294718/noergaard-fy-mogens-det-er-for-galt-at-du-ikke-har-betalt-en-regning-som-du-ikke-har-faaet",
+    "analyzed_at": "2026-02-27T15:41:21.536917+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294722/google-boejer-sig-for-eu-krav-aendringer-i-dine-soegeresultater-paa-vej",
+    "analyzed_at": "2026-02-27T15:41:35.466936+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/third-party-patching-and-the-business-footprint-we-all-share/",
+    "analyzed_at": "2026-02-27T15:41:36.841461+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/in-other-news-attck-advisory-council-russian-cyberattacks-aid-missile-strikes-predator-bypasses-ios-indicators/",
+    "analyzed_at": "2026-02-27T15:41:37.392963+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/38-million-allegedly-impacted-by-manomano-data-breach/",
+    "analyzed_at": "2026-02-27T15:41:37.393548+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/900-sangoma-freepbx-instances-infected-with-web-shells/",
+    "analyzed_at": "2026-02-27T15:41:37.393889+00:00"
   }
 ]
