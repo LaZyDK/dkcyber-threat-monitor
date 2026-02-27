@@ -40,13 +40,15 @@ jobs:
           if [ -n "$RAW_FILE" ] && [ -f "$RAW_FILE" ]; then
             TOTAL=$(jq 'length' "$RAW_FILE")
             ATTACKS=$(jq '[.[] | select(.is_dk_relevant == true)] | length' "$RAW_FILE")
+            FILTERED=$((TOTAL - ATTACKS))
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
             echo "attacks=$ATTACKS" >> "$GITHUB_OUTPUT"
+            echo "filtered=$FILTERED" >> "$GITHUB_OUTPUT"
             echo "raw_file=$(basename "$RAW_FILE")" >> "$GITHUB_OUTPUT"
 
             {
               echo "details<<DETAILSEOF"
-              jq -r '.[] | select(.is_dk_relevant == true) | "| [\(.title)](\(.link)) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
+              jq -r '.[] | "| [\(.title)](\(.link)) | \(if .is_dk_relevant then "**JA**" else "Nej" end) | \(.attack_type // "?") | \(.sector // "?") | \(.confidence) | \(.explanation) |"' "$RAW_FILE"
               echo "DETAILSEOF"
             } >> "$GITHUB_OUTPUT"
           else
@@ -66,20 +68,20 @@ jobs:
 
             Fundet via Brave Search + LLM-klassificering (ikke fra RSS feeds).
 
-            | Total søgeresultater | Verified DK attacks |
-            |---------------------|-------------------|
-            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} |
+            | Total søgeresultater | Verified DK relevant | Filtered |
+            |---------------------|---------------------|----------|
+            | ${{ steps.summary.outputs.total }} | ${{ steps.summary.outputs.attacks }} | ${{ steps.summary.outputs.filtered }} |
 
-            ### Verificerede danske angreb
+            ### Detaljer
 
-            | Titel | Type | Sektor | Confidence | Forklaring |
-            |-------|------|--------|------------|------------|
+            | Titel | Dansk relevant? | Type | Sektor | Confidence | Forklaring |
+            |-------|----------------|------|--------|------------|------------|
             ${{ steps.summary.outputs.details }}
 
             ---
             **Tip:** Hver commit = én søgekørsel. Review commits individuelt.
 
-            Review → rediger om nødvendigt → merge når verificeret.
+            Kun entries med `is_dk_relevant: true` tilføjes til verified_threats.json ved merge.
           branch: discover-threats
           delete-branch: true
           labels: discovery,threat
