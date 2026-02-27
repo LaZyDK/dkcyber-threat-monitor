@@ -6,6 +6,7 @@ import re
 import requests
 from datetime import datetime, timezone
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+from llm_utils import extract_json
 
 # Tracking parameters to strip from URLs
 _TRACKING_PARAMS = {
@@ -187,13 +188,10 @@ def classify_with_llm(entry, api_key, api_url, model):
         )
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"]
-
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r'^```\w*\n?', '', content)
-            content = re.sub(r'\n?```$', '', content)
-
-        result = json.loads(content)
+        result = extract_json(content)
+        if result is None:
+            print(f"  LLM returned unparseable content: {content[:200]}")
+            raise ValueError("Unparseable LLM response")
         return {
             "is_dk_attack": bool(result.get("is_dk_attack", False)),
             "confidence": result.get("confidence", "low"),
@@ -201,8 +199,8 @@ def classify_with_llm(entry, api_key, api_url, model):
             "sector": result.get("sector", "ukendt"),
             "explanation": result.get("explanation", ""),
         }
-    except (requests.RequestException, json.JSONDecodeError,
-            KeyError, IndexError) as e:
+    except (requests.RequestException, KeyError, IndexError,
+            ValueError) as e:
         print(f"  LLM classification failed: {e}")
         return {
             "is_dk_attack": False,

@@ -4,6 +4,7 @@ import re
 import requests
 from datetime import datetime, timezone
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+from llm_utils import extract_json
 
 # Tracking parameters to strip from URLs
 _TRACKING_PARAMS = {
@@ -187,14 +188,12 @@ def classify_result(result, openrouter_key, api_url, model):
         )
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"]
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r'^```\w*\n?', '', content)
-            content = re.sub(r'\n?```$', '', content)
-
-        return json.loads(content)
-    except (requests.RequestException, json.JSONDecodeError,
-            KeyError, IndexError) as e:
+        result = extract_json(content)
+        if result is None:
+            print(f"  LLM returned unparseable content: {content[:200]}")
+            return {"is_dk_attack": False, "confidence": "error"}
+        return result
+    except (requests.RequestException, KeyError, IndexError) as e:
         print(f"  LLM classify failed: {e}")
         return {"is_dk_attack": False, "confidence": "error"}
 

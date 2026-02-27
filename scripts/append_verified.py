@@ -6,6 +6,7 @@ import re
 import requests
 from datetime import datetime, timezone
 from dateutil import parser as dateparser
+from llm_utils import extract_json
 
 VERIFIED_PATH = 'data/verified_threats.json'
 RAW_DIR = 'data/daily'
@@ -119,12 +120,11 @@ def merge_with_llm(new_entries, api_key, api_url, model):
         )
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"]
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r'^```\w*\n?', '', content)
-            content = re.sub(r'\n?```$', '', content)
+        result = extract_json(content)
+        if result is None:
+            print(f"  LLM returned unparseable content: {content[:200]}")
+            return [{"indices": [i]} for i in range(len(new_entries))]
 
-        result = json.loads(content)
         groups = []
         for group in result.get("groups", []):
             indices = group.get("indices", [])
@@ -136,8 +136,7 @@ def merge_with_llm(new_entries, api_key, api_url, model):
                 })
         return groups
 
-    except (requests.RequestException, json.JSONDecodeError,
-            KeyError, IndexError) as e:
+    except (requests.RequestException, KeyError, IndexError) as e:
         print(f"  LLM merge failed: {e} — keeping entries separate")
         return [{"indices": [i]} for i in range(len(new_entries))]
 
