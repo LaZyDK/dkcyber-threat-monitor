@@ -81,5 +81,41 @@
     "timestamp": "2026-02-27",
     "verified_by": "human-review",
     "verified_at": "2026-02-27T06:20:27.788309+00:00"
+  },
+  {
+    "id": "e72041672235",
+    "name": "Cyberangreb mod danske vandværker og kritisk infrastruktur",
+    "description": "Daglige cyberangreb mod vandsektoren har ført til vandafbrydelser og skærpet trusselsbilledet mod kritisk infrastruktur. Angrebet har resulteret i nye beredskabsplaner og akutpakker for at styrke modstanden mod fremtidige angreb.",
+    "attack_type": "destruktiv",
+    "sector": "offentlig",
+    "source": "nyheder.tv2.dk",
+    "link": "https://nyheder.tv2.dk/live/samfund/2026-02-20-danmark-faar-nyt-totalberedskab/danmark-staar-over-for-en-meget-voldsom-trussel?entry=296e153e-69cb-43de-9e00-5c9eff4a382b",
+    "additional_sources": [
+      {
+        "url": "https://www.doi.dk/solenergi/artikel/regeringen-opretter-nyt-nationalt-vandkatastrofeberedskab",
+        "name": "doi.dk"
+      }
+    ],
+    "timestamp": "2026-02-27",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-27T07:14:20.119755+00:00"
+  },
+  {
+    "id": "96db4f3981ef",
+    "name": "Regeringens beredskabsplan mod generelle cyberangreb",
+    "description": "Regeringen har indført en ny beredskabsplan og totalberedskab med 1,2 milliarder i akutpakke som svar på gentagne cyberangreb. Planen fokuserer på forberedelse mod kriser uden at nævne specifikke hændelser.",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "source": "computerworld.dk",
+    "link": "https://www.computerworld.dk/art/294634/regeringen-pumper-1-2-milliarder-kroner-ind-i-ny-beredskabsplan-for-danmark-saadan-kommer-pengene-til-at-blive-fordelt",
+    "additional_sources": [
+      {
+        "url": "https://nyheder.tv2.dk/live/samfund/2026-02-20-danmark-faar-nyt-totalberedskab/nyt-totalredskab-vil-bringe-danmark-op-i-gear-siger-beredskabschef?entry=e030174a-2910-45ee-860e-3bf904b440ad",
+        "name": "nyheder.tv2.dk"
+      }
+    ],
+    "timestamp": "2026-02-27",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-27T07:14:20.119755+00:00"
   }
 ]
