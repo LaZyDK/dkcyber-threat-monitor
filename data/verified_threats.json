@@ -117,5 +117,31 @@
     "timestamp": "2026-02-27",
     "verified_by": "human-review",
     "verified_at": "2026-02-27T07:14:20.119755+00:00"
+  },
+  {
+    "id": "357b5b2abe95",
+    "name": "Sikkerhedsbrud hos DR med børnedsdata",
+    "description": "DR oplevede en sikkerhedsbrud, hvor uvedkommende fik adgang til personlige oplysninger om børn, der havde sendt forslag til DR Ultra. Børnene og deres data blev udsat for risiko.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "nyheder.dk",
+    "link": "https://www.nyheder.dk/nyheder/sikkerhedsbrud-hos-dr/2367477",
+    "additional_sources": [],
+    "timestamp": "2026-02-28",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-28T13:54:25.879485+00:00"
+  },
+  {
+    "id": "4bec09a139d3",
+    "name": "MitID-udfald rammer danske offentlige tjenester",
+    "description": "MitID var utilgængeligt, hvilket forårsagede nedbrud i login til offentlige tjenester og banker. Årsagen var ukendt, men leverandøren arbejdede på at løse problemet.",
+    "attack_type": "andet",
+    "sector": "offentlig",
+    "source": "nyheder.dk",
+    "link": "https://www.nyheder.dk/indland/ramt-af-kaempe-nedbrud/2367248",
+    "additional_sources": [],
+    "timestamp": "2026-02-28",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-28T13:54:25.879485+00:00"
   }
 ]
