@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Hackers Weaponize Claude Code in Mexican Government Cyberattack",
+    "link": "https://www.securityweek.com/hackers-weaponize-claude-code-in-mexican-government-cyberattack/",
+    "published": "Sun, 01 Mar 2026 12:30:00 +0000",
+    "summary": "<p>The AI was abused to write exploits, create tools, and automatically exfiltrate over 150GB of data.</p>\n<p>The post <a href=\"https://www.securityweek.com/hackers-weaponize-claude-code-in-mexican-government-cyberattack/\">Hackers Weaponize Claude Code in Mexican Government Cyberattack</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+    "source": "https://www.securityweek.com/feed/",
+    "collected_at": "2026-03-01T12:56:35.118233+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Microgpt",
+    "link": "http://karpathy.github.io/2026/02/12/microgpt/",
+    "published": "Sun, 01 Mar 2026 01:39:26 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47202708\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T12:56:36.751714+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Decision trees – the unreasonable power of nested decision rules",
+    "link": "https://mlu-explain.github.io/decision-tree/",
+    "published": "Sun, 01 Mar 2026 08:55:52 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47204964\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T12:56:36.751818+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "We do not think Anthropic should be designated as a supply chain risk",
+    "link": "https://twitter.com/OpenAI/status/2027846016423321831",
+    "published": "Sat, 28 Feb 2026 21:24:16 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47200420\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T12:56:36.751962+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "10-202: Introduction to Modern AI (CMU)",
+    "link": "https://modernaicourse.org",
+    "published": "Sun, 01 Mar 2026 07:35:03 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47204559\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T12:56:36.752096+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Why is the first C++ (m)allocation always 72 KB?",
+    "link": "https://joelsiks.com/posts/cpp-emergency-pool-72kb-allocation/",
+    "published": "Sun, 01 Mar 2026 09:27:34 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47205129\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T12:56:36.752225+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]
