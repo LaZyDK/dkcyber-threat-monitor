@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Blogindlæg: Tak, Trump.",
+    "link": "https://www.version2.dk/holdning/tak-trump",
+    "published": "Sun, 01 Mar 2026 15:44:50 +0100",
+    "summary": "Ingen har gjort mere for dansk digital suverænitet, end den mand vi helst ikke vil have noget med at gøre.",
+    "source": "https://www.version2.dk/rss",
+    "collected_at": "2026-03-01T18:38:56.335426+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Nyhedens indhold er en kommentar fra en dansk kilde om Trumps påvirkning af dansk digital suverænitet uden at nævne konkrete danske ofre, angreb eller sikkerhedshændelser i Danmark."
+  },
+  {
+    "title": "Samsung TVs to stop collecting Texans’ data without express consent",
+    "link": "https://www.bleepingcomputer.com/news/security/samsung-tvs-to-stop-collecting-texans-data-without-express-consent/",
+    "published": "Sun, 01 Mar 2026 10:23:34 -0500",
+    "summary": "Samsung and the State of Texas have reached a settlement agreement over the alleged unlawful collection of content-viewing information through its smart TVs [...]",
+    "source": "https://www.bleepingcomputer.com/feed/",
+    "collected_at": "2026-03-01T18:39:08.919522+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Ghostty – Terminal Emulator",
+    "link": "https://ghostty.org/docs",
+    "published": "Sun, 01 Mar 2026 12:13:03 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47206009\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T18:39:10.954034+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "When does MCP make sense vs CLI?",
+    "link": "https://ejholmes.github.io/2026/02/28/mcp-is-dead-long-live-the-cli.html",
+    "published": "Sun, 01 Mar 2026 16:54:49 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47208398\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T18:39:10.954168+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Why XML Tags Are So Fundamental to Claude",
+    "link": "https://glthr.com/XML-fundamental-to-Claude",
+    "published": "Sun, 01 Mar 2026 14:52:22 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47207236\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-01T18:39:10.954301+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]
