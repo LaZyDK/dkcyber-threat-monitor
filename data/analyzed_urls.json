@@ -660,5 +660,25 @@
     "url": "https://techcrunch.com/2026/02/25/inside-the-story-of-the-us-defense-contractor-who-leaked-hacking-tools-to-russia/",
     "analyzed_at": "2026-02-28T10:23:32.834686+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/quicklens-chrome-extension-steals-crypto-shows-clickfix-attack/",
+    "analyzed_at": "2026-03-01T06:53:06.460385+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/48m-in-crypto-stolen-after-korean-tax-agency-exposes-wallet-seed/",
+    "analyzed_at": "2026-03-01T06:53:10.261510+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/clawjacked-flaw-lets-malicious-sites.html",
+    "analyzed_at": "2026-03-01T06:53:10.438608+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/thousands-of-public-google-cloud-api.html",
+    "analyzed_at": "2026-03-01T06:53:10.439065+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/canadian-tire-data-breach-impacts-38-million-accounts/",
+    "analyzed_at": "2026-03-01T06:53:10.713762+00:00"
   }
 ]
