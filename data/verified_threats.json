@@ -143,5 +143,18 @@
     "timestamp": "2026-02-28",
     "verified_by": "human-review",
     "verified_at": "2026-02-28T13:54:25.879485+00:00"
+  },
+  {
+    "id": "c0a83ecca9cb",
+    "name": "MitID-udfald i Danmark",
+    "description": "Den danske digital ID-tjeneste MitID var nede på grund af en cyberangreb. Udfaldet ramte offentlige tjenester og borgeres adgang til digitale services.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "news.ycombinator.com",
+    "link": "https://news.ycombinator.com/item?id=47179038",
+    "additional_sources": [],
+    "timestamp": "2026-03-01",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-01T10:27:13.061432+00:00"
   }
 ]
