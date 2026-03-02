@@ -156,5 +156,18 @@
     "timestamp": "2026-03-01",
     "verified_by": "human-review",
     "verified_at": "2026-03-01T10:27:13.061432+00:00"
+  },
+  {
+    "id": "f8cf628677cc",
+    "name": "DR-databrud: Børnepersonoplysninger lækket",
+    "description": "DR har anmeldt en databrud, hvor børnepersonoplysninger kan være lækket. DR's chef, Morten Skov, understreger, at de arbejder for at være foran teknologien. Det er en konstant udfordring at sikre data i en dynamisk verden.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "dr.dk",
+    "link": "https://www.dr.dk/nyheder/seneste/oplysninger-om-boern-kan-vaere-laekket-i-dr-databrud",
+    "additional_sources": [],
+    "timestamp": "2026-03-02",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-02T10:44:07.019370+00:00"
   }
 ]
