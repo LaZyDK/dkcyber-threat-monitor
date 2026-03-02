@@ -873,5 +873,60 @@
   {
     "url": "https://github.com/getomnico/omni",
     "analyzed_at": "2026-03-02T09:55:53.968826+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/02/uac-0050-targets-european-financial.html",
+    "analyzed_at": "2026-03-02T10:37:51.197565+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://industrialcyber.co/reports/maritime-cyber-incidents-jump-103-as-cytur-warns-smart-ships-under-fire-urges-secure-by-design-overhaul/",
+    "analyzed_at": "2026-03-02T10:38:34.276127+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://trustedcomputinggroup.org/what-cybersecurity-trends-can-we-expect-to-see-in-2026/",
+    "analyzed_at": "2026-03-02T10:39:08.343578+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.hendryadrian.com/ransom-denmark-k12-wi-us-mar-2026/",
+    "analyzed_at": "2026-03-02T10:39:37.093428+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=RKeW4Xd9V9E",
+    "analyzed_at": "2026-03-02T10:39:47.032813+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.varonis.com/blog/ransomware-statistics",
+    "analyzed_at": "2026-03-02T10:40:03.084683+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.dr.dk/nyheder/seneste/oplysninger-om-boern-kan-vaere-laekket-i-dr-databrud",
+    "analyzed_at": "2026-03-02T10:40:21.527651+00:00",
+    "is_dk_relevant": true
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294683/fratraeder-som-cdo-i-samfundskritisk-dansk-virksomhed-stillingen-nedlaegges",
+    "analyzed_at": "2026-03-02T10:40:28.430474+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.gdpr-hotline.dk/datatilsynets-katalog-over-sikkerhedsforanstaltninger/",
+    "analyzed_at": "2026-03-02T10:40:41.222455+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.globenewswire.com/news-release/2026/02/26/3245781/0/da/KORRIGERENDE-INFORMATION-SUPPLEMENTARY-INFORMATION-TIL-%C3%85RSRAPPORTEN-FOR-2024-OG-DEL%C3%85RSRAPPORTEN-FOR-1-HALV%C3%85R-2025.html",
+    "analyzed_at": "2026-03-02T10:40:48.660371+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://archive.ph/EcBKR",
+    "analyzed_at": "2026-03-02T10:41:41.996446+00:00",
+    "is_dk_relevant": false
   }
 ]
