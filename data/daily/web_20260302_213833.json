@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Fake Google Security site uses PWA app to steal credentials, MFA codes",
+    "link": "https://www.bleepingcomputer.com/news/security/fake-google-security-site-uses-pwa-app-to-steal-credentials-mfa-codes/",
+    "published": "Mon, 02 Mar 2026 15:23:41 -0500",
+    "summary": "A phishing campaign is using a fake Google Account security page to deliver a web-based app capable of stealing one-time passcodes, harvesting cryptocurrency wallet addresses, and proxying attacker traffic through victims' browsers. [...]",
+    "source": "https://www.bleepingcomputer.com/feed/",
+    "collected_at": "2026-03-02T21:38:31.875614+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "LFortran Compiles Fpm",
+    "link": "https://lfortran.org/blog/2026/02/lfortran-compiles-fpm/",
+    "published": "Sat, 28 Feb 2026 00:12:24 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47188014\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-02T21:38:33.934721+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]

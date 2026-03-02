@@ -1052,5 +1052,13 @@
   {
     "url": "https://www.economist.com/culture/2026/02/26/thirty-years-on-pokemon-is-still-a-monster-hit",
     "analyzed_at": "2026-03-02T18:57:42.732345+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fake-google-security-site-uses-pwa-app-to-steal-credentials-mfa-codes/",
+    "analyzed_at": "2026-03-02T21:38:31.875614+00:00"
+  },
+  {
+    "url": "https://lfortran.org/blog/2026/02/lfortran-compiles-fpm/",
+    "analyzed_at": "2026-03-02T21:38:33.934721+00:00"
   }
 ]
