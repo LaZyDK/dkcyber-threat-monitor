@@ -928,5 +928,129 @@
     "url": "https://archive.ph/EcBKR",
     "analyzed_at": "2026-03-02T10:41:41.996446+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/aarhus-gav-mig-big-tech-alternativer-men-er-jeg-blank-til-open-source",
+    "analyzed_at": "2026-03-02T18:54:46.509398+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/foreningen-af-maend-paa-toemmerflaaden",
+    "analyzed_at": "2026-03-02T18:54:59.689681+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/charlotte-var-klar-til-koebe-sit-droemmehus-nu-smuldrer-det-under-microsofts-datacenter",
+    "analyzed_at": "2026-03-02T18:55:06.062888+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/drop-ai-vaerktoejer-til-lave-dit-naeste-password-claude-gentog-samme-kode-18-gange",
+    "analyzed_at": "2026-03-02T18:55:19.068469+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294740/stor-nyhed-fra-apple-nu-kommer-iphone-17-i-en-billig-version-se-hvad-den-koster",
+    "analyzed_at": "2026-03-02T18:55:19.561550+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294736/overblik-en-helt-ny-klasse-af-laptops-paa-vej-det-bliver-bedre-billigere-og-hurtigere-at-opgradere",
+    "analyzed_at": "2026-03-02T18:55:19.561761+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294733/bombarderes-med-spoergsmaal-om-banedanmarks-it-sikkerhed-derfor-er-banedanmark-efter-flere-aar-stadig-ikke-i-maal",
+    "analyzed_at": "2026-03-02T18:55:27.668983+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294738/sap-reorganiserer-og-vil-justere-sin-produktportefoelje-vi-er-noedt-til-at-transformere-sap-fra-den-ene-ende-til-den-anden",
+    "analyzed_at": "2026-03-02T18:56:34.341770+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294707/jeg-har-laest-fire-store-danske-udspil-om-digital-suveraenitet-her-er-de-tre-ting-som-de-er-enige-om",
+    "analyzed_at": "2026-03-02T18:56:45.386544+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/alabama-man-pleads-guilty-to-hacking-extorting-hundreds-of-women/",
+    "analyzed_at": "2026-03-02T18:56:51.944781+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/florida-woman-imprisoned-for-massive-microsoft-license-fraud-scheme/",
+    "analyzed_at": "2026-03-02T18:56:51.945027+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/uk-warns-of-iranian-cyberattack-risks-amid-middle-east-conflict/",
+    "analyzed_at": "2026-03-02T18:56:51.945248+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/how-deepfakes-and-injection-attacks-are-breaking-identity-verification/",
+    "analyzed_at": "2026-03-02T18:56:51.945488+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/",
+    "analyzed_at": "2026-03-02T18:56:51.945805+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/new-chrome-vulnerability-let-malicious.html",
+    "analyzed_at": "2026-03-02T18:56:52.286945+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/google-develops-merkle-tree.html",
+    "analyzed_at": "2026-03-02T18:56:52.287383+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/weekly-recap-sd-wan-0-day-critical-cves.html",
+    "analyzed_at": "2026-03-02T18:56:59.608835+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/how-to-protect-your-saas-from-bot.html",
+    "analyzed_at": "2026-03-02T18:57:04.512592+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apt28-tied-to-cve-2026-21513-mshtml-0.html",
+    "analyzed_at": "2026-03-02T18:57:16.149273+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/vulnerability-allowed-hijacking-chromes-gemini-live-ai-assistant/",
+    "analyzed_at": "2026-03-02T18:57:24.814825+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/openclaw-vulnerability-allowed-malicious-websites-to-hijack-ai-agents/",
+    "analyzed_at": "2026-03-02T18:57:29.045432+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/madison-square-garden-data-breach-confirmed-months-after-hacker-attack/",
+    "analyzed_at": "2026-03-02T18:57:29.046318+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/nick-andersen-appointed-acting-director-of-cisa/",
+    "analyzed_at": "2026-03-02T18:57:29.046820+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/aws-expands-security-hub-into-a-cross-domain-security-platform/",
+    "analyzed_at": "2026-03-02T18:57:29.047221+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/pro-iransk-propaganda-forvandler-ukrainsk-vaabenlager-til-atomkraftvaerk-i-israel",
+    "analyzed_at": "2026-03-02T18:57:30.132788+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/msncom/landbrugsministeren-roser-regeringens-indsats-dyrevelfaerd-men-stemmer-selv-imod",
+    "analyzed_at": "2026-03-02T18:57:30.133089+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/hvilke-partier-gaar-mest-op-i-dyrevelfaerd",
+    "analyzed_at": "2026-03-02T18:57:30.133185+00:00"
+  },
+  {
+    "url": "https://health.ucdavis.edu/news/headlines/first-ever-in-utero-stem-cell-therapy-for-fetal-spina-bifida-repair-is-safe-study-finds/2026/02",
+    "analyzed_at": "2026-03-02T18:57:30.494285+00:00"
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/",
+    "analyzed_at": "2026-03-02T18:57:42.731754+00:00"
+  },
+  {
+    "url": "https://govbase.com",
+    "analyzed_at": "2026-03-02T18:57:42.732131+00:00"
+  },
+  {
+    "url": "https://www.economist.com/culture/2026/02/26/thirty-years-on-pokemon-is-still-a-monster-hit",
+    "analyzed_at": "2026-03-02T18:57:42.732345+00:00"
   }
 ]
