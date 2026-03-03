@@ -1323,5 +1323,105 @@
   {
     "url": "https://www.bbc.com/news/articles/c178zzw780xo",
     "analyzed_at": "2026-03-03T13:07:26.169988+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-03/Steaelite-Ny-alt-i-en-RAT-samler-datatyveri-og-ransomware",
+    "analyzed_at": "2026-03-03T18:57:32.095184+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/konsulenthus-slaar-alarm-vi-er-staerkt-afhaengige-af-microsoft-og-google-og-vi-har-ikke-kontrol-over",
+    "analyzed_at": "2026-03-03T18:57:33.718459+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/hackede-overvaagningskameraer-afsloerede-khameneis-lokation-iran-svarede-igen-med-usaedvanlig-taktik",
+    "analyzed_at": "2026-03-03T18:57:49.415943+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294761/apple-loefter-sloeret-for-den-nye-macbook-pro-se-priserne-her",
+    "analyzed_at": "2026-03-03T18:57:56.061759+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294757/efter-iranske-droneangreb-aws-cloud-er-lammet-i-mellemoesten",
+    "analyzed_at": "2026-03-03T18:57:56.061908+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294758/aarets-hidtil-mest-interessante-kontor-computere-ser-ud-til-at-komme-fra-lenovo",
+    "analyzed_at": "2026-03-03T18:57:56.062064+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294751/120-steder-i-danmark-faar-bedre-mobildaekning-se-her-hvor-landets-stoerste-mobilnet-bliver-udbygget",
+    "analyzed_at": "2026-03-03T18:57:56.062212+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294746/digital-suveraenitet-kan-ikke-reduceres-til-kapacitet-vi-kan-ikke-bygge-os-ud-af-afhaengighederne",
+    "analyzed_at": "2026-03-03T18:58:11.633352+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/google-chrome-shifts-to-two-week-release-cycle-for-increased-stability/",
+    "analyzed_at": "2026-03-03T18:58:17.818518+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/lexisnexis-confirms-data-breach-as-hackers-leak-stolen-files/",
+    "analyzed_at": "2026-03-03T18:58:22.564141+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/compromised-site-management-panels-are-a-hot-item-in-cybercrime-markets/",
+    "analyzed_at": "2026-03-03T18:58:32.168991+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/fake-tech-support-spam-deploys.html",
+    "analyzed_at": "2026-03-03T18:58:32.663122+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/building-high-impact-tier-1-3-steps.html",
+    "analyzed_at": "2026-03-03T18:58:32.663475+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/open-source-cyberstrikeai-deployed-in.html",
+    "analyzed_at": "2026-03-03T18:58:32.663818+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/fig-security-launches-with-38-million-to-bolster-secops-resilience/",
+    "analyzed_at": "2026-03-03T18:58:32.906301+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/honeywell-researcher-clash-over-impact-of-building-controller-vulnerability/",
+    "analyzed_at": "2026-03-03T18:58:32.906623+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/quantum-decryption-of-rsa-is-much-closer-than-expected/",
+    "analyzed_at": "2026-03-03T18:58:32.906975+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/new-airsnitch-attack-shows-wi-fi-client-isolation-could-be-a-false-sense-of-security/",
+    "analyzed_at": "2026-03-03T18:58:32.907477+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/1-2-million-affected-by-university-of-hawaii-cancer-center-data-breach/",
+    "analyzed_at": "2026-03-03T18:58:32.907970+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/dansk-medie-bragte-gammelt-billede-som-illustration-angreb-i-dubai",
+    "analyzed_at": "2026-03-03T18:58:37.885837+00:00"
+  },
+  {
+    "url": "https://neilzone.co.uk/2026/03/im-struggling-to-think-of-any-online-services-for-which-id-be-willing-to-verify-my-identity-or-age/",
+    "analyzed_at": "2026-03-03T18:58:48.742870+00:00"
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/",
+    "analyzed_at": "2026-03-03T18:58:48.742998+00:00"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=B3m3AMRlYfc",
+    "analyzed_at": "2026-03-03T18:58:48.743110+00:00"
+  },
+  {
+    "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+    "analyzed_at": "2026-03-03T18:58:48.743249+00:00"
+  },
+  {
+    "url": "https://newsletter.manager.dev/p/dont-become-an-engineering-manager",
+    "analyzed_at": "2026-03-03T18:58:48.743326+00:00"
   }
 ]
