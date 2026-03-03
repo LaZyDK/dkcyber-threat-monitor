@@ -187,7 +187,10 @@ def classify_with_llm(entry, api_key, api_url, model):
             timeout=30,
         )
         resp.raise_for_status()
-        content = resp.json()["choices"][0]["message"]["content"]
+        content = resp.json()["choices"][0]["message"].get("content")
+        if content is None:
+            print("  LLM returned null content")
+            raise ValueError("LLM returned null content")
         result = extract_json(content)
         if result is None:
             print(f"  LLM returned unparseable content: {content[:200]}")
