@@ -1255,5 +1255,73 @@
     "url": "https://www.euronews.com/next/2026/03/02/iran-conflict-may-trigger-wave-of-geopolitical-cyberattacks-palo-alto-executive-warns",
     "analyzed_at": "2026-03-03T10:43:18.670225+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/eksperter-dumper-las-atomkraftplaner-det-kan-hurtigt-blive-en-ic4-loesning",
+    "analyzed_at": "2026-03-03T13:05:53.221847+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294741/her-er-10-ledige-it-stillinger-som-du-kan-soege-lige-nu",
+    "analyzed_at": "2026-03-03T13:06:07.886984+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294747/stor-fyringsrunde-i-danske-bank-rammer-it-ansatte",
+    "analyzed_at": "2026-03-03T13:06:13.915265+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294750/elon-musk-paa-trapperne-med-verdenshistoriens-stoerste-rumfartoej-skal-bane-vejen-for-gigantisk-boersnotering",
+    "analyzed_at": "2026-03-03T13:06:18.740996+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294739/har-ligget-stille-i-aarevis-nu-genoptages-udvikling-af-ny-topudgave-af-libreoffice",
+    "analyzed_at": "2026-03-03T13:06:18.741458+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294748/foelger-trop-efter-opgoer-med-trump-store-amerikanske-ministerier-saetter-anthropic-paa-porten-dropper-claude",
+    "analyzed_at": "2026-03-03T13:06:25.352532+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/technology/amazon-drone-strikes-damaged-aws-data-centers-in-middle-east/",
+    "analyzed_at": "2026-03-03T13:06:26.949020+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/star-citizen-game-dev-discloses-breach-affecting-user-data/",
+    "analyzed_at": "2026-03-03T13:06:43.845254+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/ai-agents-next-wave-identity-dark.html",
+    "analyzed_at": "2026-03-03T13:06:54.411450+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/starkiller-phishing-suite-uses-aitm.html",
+    "analyzed_at": "2026-03-03T13:07:00.671859+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/microsoft-warns-oauth-redirect-abuse.html",
+    "analyzed_at": "2026-03-03T13:07:00.672537+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/android-update-patches-exploited-qualcomm-zero-day/",
+    "analyzed_at": "2026-03-03T13:07:06.002740+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/iran-cyber-front-hacktivist-activity-rises-but-state-sponsored-attacks-stay-low/",
+    "analyzed_at": "2026-03-03T13:07:06.003107+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/vulnerability-in-ms-agent-ai-framework-can-allow-full-system-compromise/",
+    "analyzed_at": "2026-03-03T13:07:06.003527+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/ulighed-fylder-i-valgkampen-lever-50000-danske-boern-i-fattigdom",
+    "analyzed_at": "2026-03-03T13:07:07.436733+00:00"
+  },
+  {
+    "url": "https://editor.p5js.org/isohedral/full/vJa5RiZWs",
+    "analyzed_at": "2026-03-03T13:07:26.169832+00:00"
+  },
+  {
+    "url": "https://www.bbc.com/news/articles/c178zzw780xo",
+    "analyzed_at": "2026-03-03T13:07:26.169988+00:00"
   }
 ]
