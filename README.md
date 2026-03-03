@@ -12,7 +12,7 @@ Dette open-source projekt indsamler trusler fra offentlige kilder (RSS-feeds og 
 
 1. **Indsamling** (workflow 01, hver 3. time) — RSS-feeds fra `data/feeds.json` + keyword pre-filter + LLM-klassificering
 2. **Verifikation** — PR oprettes med klassificerede trusler. Hver kørsel = et commit, så du reviewer kun nye data
-3. **Merge + Issue** (workflow 02) — Ved PR-merge: verificerede trusler tilføjes `data/verified_threats.json`, LLM merger artikler om samme angreb, og der oprettes et **GitHub Issue per trussel** med genereret Reddit-post til review
+3. **Merge + Issue** (workflow 02) — Ved PR-merge: cross-dedup mod eksisterende trusler, LLM merger nye artikler om samme angreb, tilføjer til `data/verified_threats.json`, søger Brave for yderligere kilder, og opretter et **GitHub Issue per trussel** med beriget Reddit-post til review
 4. **Godkendelse** (workflow 03) — Luk issue'et → posten sendes automatisk til r/dkcybersecurity
 
 ### Track B — Månedlig opsummering
@@ -55,7 +55,18 @@ Flere artikler om **samme angreb** merges automatisk. Primary link + source beva
 
 - **URL-deduplikering** — Samme URL kan aldrig optræde i flere PRs. Checker mod `verified_threats.json` og `data/analyzed_urls.json`
 - **URL-cleaning** — Tracking-parametre (utm_*, gaa_*, fbclid, etc.) strippes automatisk ved indsamling, så samme artikel med forskellige tracking-links ikke duplikeres
+- **Cross-dedup (emne + tid)** — Nye artikler sammenlignes med eksisterende verificerede trusler via LLM. Hvis en ny artikel handler om **samme hændelse** (inden for 14 dage), tilføjes den som ekstra kilde i stedet for at oprette en duplikat
 - **Attack merging** — Når PRs merges, bruger LLM'en til at gruppere artikler der handler om samme hændelse
+
+## Multi-kilde berigelse
+
+Når en Reddit-post genereres (workflow 02), beriges den automatisk med flere kilder:
+
+1. **Brave Search** — Søger efter yderligere artikler om den specifikke hændelse (op til 5 ekstra kilder)
+2. **LLM-syntese** — Kombinerer information fra alle kilder til en forbedret beskrivelse med nøglefund
+3. **Reddit-post** — Den genererede post indeholder information og links fra alle fundne kilder
+
+Berigelsen kræver `BRAVE_API_KEY`. Uden den bruges kun de eksisterende kilder fra indsamlingen.
 
 ## Confidence-feltet
 
