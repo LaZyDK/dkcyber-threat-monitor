@@ -169,5 +169,18 @@
     "timestamp": "2026-03-02",
     "verified_by": "human-review",
     "verified_at": "2026-03-02T10:44:07.019370+00:00"
+  },
+  {
+    "id": "da931d39b619",
+    "name": "Databrud i Ringkøbing-Skjern Kommune (ingen CPR-tilgang)",
+    "description": "Ringkøbing-Skjern Kommune har konstateret et databrud ved en fejl i et digitalt elbilkort, der viste 32.000 CPR- og registreringsnumre. Kommunen bekræfter, at ingen har haft adgang til oplysningerne.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "dknyt.dk",
+    "link": "https://www.dknyt.dk/artikel/stort-databrud-i-ringkoebing-skjern-men-ingen-cpr-numre-blev-tilgaaet",
+    "additional_sources": [],
+    "timestamp": "2026-03-03",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-03T10:59:42.214109+00:00"
   }
 ]
