@@ -2,9 +2,8 @@ import json
 import os
 import hashlib
 import glob
-import re
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from dateutil import parser as dateparser
 from llm_utils import extract_json
 
@@ -41,6 +40,37 @@ Regler:
 
 Artikler:
 {articles}"""
+
+DEDUP_PROMPT = """Du er en dansk cybersikkerhedsanalytiker.
+Sammenlign nye artikler med EKSISTERENDE verificerede trusler.
+
+En ny artikel er en DUPLIKAT hvis den handler om PRÆCIS SAMME \
+hændelse/angreb som en eksisterende trussel OG tidspunkterne er \
+tæt på hinanden (inden for 14 dage).
+
+EKSISTERENDE verificerede trusler:
+{existing}
+
+NYE artikler:
+{new_articles}
+
+Returnér KUN denne JSON (ingen anden tekst):
+{{
+  "duplicates": [
+    {{
+      "new_index": 0,
+      "existing_id": "abc123",
+      "reason": "Kort forklaring"
+    }}
+  ]
+}}
+
+Regler:
+- Kun marker som duplikat hvis det TYDELIGT er SAMME hændelse
+- Forskellige angreb mod samme sektor er IKKE duplikater
+- Artikler der tilføjer NY info om en eksisterende hændelse ER \
+duplikater (de skal tilføjes som ekstra kilde)
+- Returnér tom liste hvis ingen duplikater: {{"duplicates": []}}"""
 
 
 def load_verified():
@@ -147,6 +177,143 @@ def merge_with_llm(new_entries, api_key, api_url, model):
         return [{"indices": [i]} for i in range(len(new_entries))]
 
 
+def dedup_against_verified(new_entries, verified, api_key, api_url,
+                           model):
+    """Check new entries against existing verified threats by subject+time.
+
+    Returns:
+        kept: list of new_entries that are NOT duplicates
+        to_augment: list of (new_entry, existing_id) for entries that
+                    should be added as additional sources to existing threats
+    """
+    if not new_entries or not verified or not api_key or not model:
+        return new_entries, []
+
+    # Only compare against recent threats (last 30 days)
+    cutoff_date = (datetime.now(timezone.utc) - timedelta(days=30)
+                   ).strftime('%Y-%m-%d')
+    recent = [v for v in verified
+              if v.get('timestamp', '') >= cutoff_date]
+
+    # If fewer than 30 recent, expand window
+    if len(recent) < len(verified):
+        sorted_v = sorted(verified,
+                          key=lambda x: x.get('timestamp', ''),
+                          reverse=True)
+        recent = sorted_v[:30]
+
+    if not recent:
+        return new_entries, []
+
+    # Build context for LLM
+    existing_text = ""
+    for v in recent:
+        existing_text += (
+            f"[ID: {v['id']}] {v['name']}\n"
+            f"  Dato: {v.get('timestamp', '')}\n"
+            f"  Type: {v.get('attack_type', '')}\n"
+            f"  Beskrivelse: {v.get('description', '')[:100]}\n\n"
+        )
+
+    new_text = ""
+    for i, entry in enumerate(new_entries):
+        new_text += (
+            f"[{i}] Titel: {entry.get('title', '')}\n"
+            f"    Dato: {entry.get('published', '')}\n"
+            f"    Type: {entry.get('attack_type', '')}\n"
+            f"    Resumé: {entry.get('summary', '')[:100]}\n\n"
+        )
+
+    prompt = DEDUP_PROMPT.format(
+        existing=existing_text,
+        new_articles=new_text,
+    )
+
+    try:
+        resp = requests.post(
+            api_url,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.1,
+                "max_tokens": 500,
+            },
+            timeout=60,
+        )
+        resp.raise_for_status()
+        content = resp.json()["choices"][0]["message"]["content"]
+        result = extract_json(content)
+        if result is None:
+            print(f"  Dedup LLM unparseable: {content[:200]}")
+            return new_entries, []
+
+        duplicates = result.get("duplicates", [])
+        if not duplicates:
+            print("  Cross-dedup: no duplicates found")
+            return new_entries, []
+
+        # Build sets
+        dup_indices = set()
+        to_augment = []
+        for dup in duplicates:
+            idx = dup.get("new_index")
+            eid = dup.get("existing_id", "")
+            reason = dup.get("reason", "")
+            if idx is not None and 0 <= idx < len(new_entries):
+                dup_indices.add(idx)
+                to_augment.append((new_entries[idx], eid))
+                print(f"  Cross-dedup: [{idx}] matches "
+                      f"existing {eid} — {reason}")
+
+        kept = [e for i, e in enumerate(new_entries)
+                if i not in dup_indices]
+        print(f"  Cross-dedup: {len(dup_indices)} duplicates, "
+              f"{len(kept)} kept")
+        return kept, to_augment
+
+    except (requests.RequestException, KeyError, IndexError) as e:
+        print(f"  Cross-dedup failed: {e} — keeping all entries")
+        return new_entries, []
+
+
+def augment_existing_threats(verified, to_augment):
+    """Add duplicate entries as additional sources to existing threats."""
+    if not to_augment:
+        return 0
+
+    threats_by_id = {e.get('id'): e for e in verified}
+    augmented = 0
+
+    for entry, existing_id in to_augment:
+        threat = threats_by_id.get(existing_id)
+        if not threat:
+            continue
+
+        new_url = entry.get('link', '')
+        if not new_url:
+            continue
+
+        # Check not already in sources
+        all_urls = {threat.get('link', '')}
+        for src in threat.get('additional_sources', []):
+            all_urls.add(src.get('url', ''))
+
+        if new_url in all_urls:
+            continue
+
+        source = source_name(entry.get('source', ''))
+        threat.setdefault('additional_sources', []).append(
+            {"url": new_url, "name": source}
+        )
+        augmented += 1
+
+    return augmented
+
+
 def build_merged_entry(group, new_entries, now):
     """Build a single verified entry from a group of related entries."""
     indices = group["indices"]
@@ -241,6 +408,30 @@ def append_verified():
                or "https://openrouter.ai/api/v1/chat/completions")
     model = os.environ.get("LLM_MODEL_CHEAP", "")
 
+    # Cross-dedup: check new entries against existing verified threats
+    # by subject + time before within-batch merging
+    cross_dedup_count = 0
+    if api_key and model and verified:
+        print(f"Cross-dedup: checking {len(new_entries)} entries "
+              f"against {len(verified)} verified threats...")
+        new_entries, to_augment = dedup_against_verified(
+            new_entries, verified, api_key, api_url, model)
+        cross_dedup_count = len(to_augment)
+        if to_augment:
+            aug = augment_existing_threats(verified, to_augment)
+            print(f"  Augmented {aug} existing threats "
+                  f"with new sources")
+
+    if not new_entries:
+        if cross_dedup_count:
+            save_verified(verified)
+            print(f"All new entries were duplicates of existing "
+                  f"threats ({cross_dedup_count} augmented)")
+        else:
+            print(f"No new DK attacks to append "
+                  f"(skipped {skipped_irrelevant} non-DK-relevant)")
+        return
+
     if len(new_entries) > 1 and api_key and model:
         print(f"Merging {len(new_entries)} entries...")
         groups = merge_with_llm(new_entries, api_key, api_url, model)
@@ -263,10 +454,15 @@ def append_verified():
         json.dump(newly_added_ids, f, ensure_ascii=False, indent=2)
 
     source_count = len(new_entries)
+    dedup_msg = ""
+    if cross_dedup_count:
+        dedup_msg = (f", cross-dedup {cross_dedup_count} "
+                     f"matched existing")
     print(f"Appended {merged_count} threats from {source_count} sources "
           f"(total: {len(verified)}, "
           f"skipped {skipped_irrelevant} non-DK-relevant, "
-          f"merged {source_count - merged_count} duplicates)")
+          f"merged {source_count - merged_count} duplicates"
+          f"{dedup_msg})")
 
 
 if __name__ == '__main__':
