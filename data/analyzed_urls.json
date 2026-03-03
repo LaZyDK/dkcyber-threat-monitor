@@ -1108,5 +1108,57 @@
   {
     "url": "https://www.computerworld.dk/art/294744/en-af-verdens-stoerste-beskedtjenester-udruller-reklamer-til-sine-europaeiske-app-brugere",
     "analyzed_at": "2026-03-03T07:42:04.700285+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-03/RESURGE-malware-kan-forblive-skjult-paa-Ivanti-enheder",
+    "analyzed_at": "2026-03-03T10:13:33.028449+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-03/Vulnerability-Lookup-Kritiske-saarbarheder-satte-tempoet-i-februar-2026",
+    "analyzed_at": "2026-03-03T10:13:33.028729+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/frontberetning-fra-cyberspace-stil-ukrainsk-soldat-og-tidligere-cybergeneral-et-spoergsmaal",
+    "analyzed_at": "2026-03-03T10:13:39.223510+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294676/cio-morten-clar-i-gang-med-at-genstarte-milliardstort-energiselskab-siger-farvel-til-de-gamle-as400-servere",
+    "analyzed_at": "2026-03-03T10:13:52.792142+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294670/en-flot-fortaelling-om-teknologi-tab-og-menneskets-behov-for-forbindelse",
+    "analyzed_at": "2026-03-03T10:13:52.792422+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294732/dansk-politi-har-kun-opklaret-n-ud-af-50-anmeldte-sager-om-ransomware-har-lagt-hundredevis-af-sager-i-skuffen",
+    "analyzed_at": "2026-03-03T10:13:52.792664+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/university-of-hawaii-cancer-center-ransomware-attack-affects-nearly-12-million-people/",
+    "analyzed_at": "2026-03-03T10:14:22.112420+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/google-patches-android-zero-day-actively-exploited-in-attacks/",
+    "analyzed_at": "2026-03-03T10:14:26.827621+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/google-confirms-cve-2026-21385-in.html",
+    "analyzed_at": "2026-03-03T10:14:27.042722+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/sloppylemming-targets-pakistan-and.html",
+    "analyzed_at": "2026-03-03T10:14:47.642974+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/researchers-uncover-method-to-track-cars-via-tire-sensors/",
+    "analyzed_at": "2026-03-03T10:14:47.881251+00:00"
+  },
+  {
+    "url": "https://chipsandcheese.com/p/arms-cortex-x925-reaching-desktop",
+    "analyzed_at": "2026-03-03T10:14:49.261687+00:00"
+  },
+  {
+    "url": "https://blog.replit.com/browsers-dont-want-to-be-cameras",
+    "analyzed_at": "2026-03-03T10:14:49.261832+00:00"
   }
 ]
