@@ -12,7 +12,8 @@ from llm_utils import extract_json
 VERIFIED_PATH = 'data/verified_threats.json'
 NEWLY_ADDED_PATH = 'data/daily/newly_added.json'
 
-MONTHLY_PROMPT = """Du er en dansk cybersecurity-entusiast der poster i r/dkcybersecurity.
+MONTHLY_PROMPT = """Du er en dansk cybersecurity-entusiast \
+der poster i r/dkcybersecurity.
 Skriv en engagerende, naturlig månedlig opsummering på dansk. Emojis sparsomt.
 
 VIGTIGT – brug en markdown-tabel med disse kolonner:
@@ -59,8 +60,9 @@ Posten SKAL indeholde:
 1. Dato: {timestamp}
 2. Angrebstype: {attack_type}
 3. Berørt sektor: {sector}
-4. Beskrivelse af hændelsen
+4. En GRUNDIG beskrivelse der kombinerer information fra ALLE kilder
 5. ALLE kildelinks i markdown-format — dette er KRITISK, inkluder altid kildelinks
+6. Hvis der er nøglefund fra flere kilder, fremhæv disse
 
 Tilføj en '## Diskussion' sektion med 2-3 relevante spørgsmål til community.
 
@@ -74,8 +76,105 @@ Rå data er verificeret af mig før posting.
 Hændelse:
 Titel: {name}
 Beskrivelse: {description}
-Kilder (SKAL inkluderes som links i posten):
+{enrichment_section}Kilder (SKAL inkluderes som links i posten):
 {sources}"""
+
+
+ENRICH_PROMPT = """Du er en dansk cybersikkerhedsanalytiker.
+Du har fundet flere kilder om denne cyberhændelse:
+
+Hændelse: {name}
+Oprindelig beskrivelse: {description}
+
+Yderligere kilder fundet:
+{extra_sources}
+
+Skriv en FORBEDRET beskrivelse på dansk (4-6 sætninger) der kombinerer \
+information fra ALLE kilder. Inkluder nye detaljer, tidslinjer, eller \
+konsekvenser som de ekstra kilder bidrager med.
+
+VIGTIGT - Svar KUN med denne JSON (ingen anden tekst):
+{{"enriched_description": "...", "key_findings": ["...", "..."]}}"""
+
+
+def enrich_threat_sources(threat, brave_key, brave_url):
+    """Search Brave for additional articles about a specific threat."""
+    if not brave_key:
+        return []
+
+    name = threat.get('name', '')
+    if not name:
+        return []
+
+    # Build a targeted search query from the threat name
+    query = f"{name} cyberangreb"
+
+    # Collect URLs we already have to avoid duplicates
+    known_urls = {threat.get('link', '')}
+    for src in threat.get('additional_sources', []):
+        known_urls.add(src.get('url', ''))
+
+    try:
+        resp = requests.get(
+            brave_url,
+            headers={"Accept": "application/json",
+                     "Accept-Encoding": "gzip",
+                     "X-Subscription-Token": brave_key},
+            params={"q": query, "count": 10,
+                    "search_lang": "da", "freshness": "pm"},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        results = resp.json().get("web", {}).get("results", [])
+
+        extra_sources = []
+        for r in results:
+            url = r.get("url", "")
+            if not url or url in known_urls:
+                continue
+            # Skip if same domain as primary source
+            known_urls.add(url)
+            extra_sources.append({
+                "url": url,
+                "title": r.get("title", ""),
+                "snippet": r.get("description", ""),
+            })
+
+        print(f"  Enrichment: found {len(extra_sources)} additional sources")
+        return extra_sources[:5]  # Cap at 5 extra sources
+
+    except requests.RequestException as e:
+        print(f"  Enrichment search failed: {e}")
+        return []
+
+
+def summarize_sources(threat, extra_sources, api_key, api_url, model):
+    """Use LLM to synthesize findings from all sources into enriched context."""
+    if not extra_sources:
+        return None
+
+    sources_text = ""
+    for i, src in enumerate(extra_sources, 1):
+        sources_text += (
+            f"{i}. [{src['title']}]({src['url']})\n"
+            f"   {src['snippet']}\n\n"
+        )
+
+    prompt = ENRICH_PROMPT.format(
+        name=threat.get('name', ''),
+        description=threat.get('description', ''),
+        extra_sources=sources_text,
+    )
+
+    result = _call_llm(prompt, api_key, api_url, model, max_tokens=800)
+    if not result:
+        return None
+
+    return {
+        "enriched_description": result.get("enriched_description", ""),
+        "key_findings": result.get("key_findings", []),
+        "extra_sources": extra_sources,
+    }
 
 
 def load_verified():
@@ -125,11 +224,43 @@ def submit_to_reddit(reddit, title, body):
     return reddit_url
 
 
-def generate_post_for_threat(threat, api_key, api_url, model):
-    """Use LLM to generate a Reddit post for a single threat."""
+def generate_post_for_threat(threat, api_key, api_url, model,
+                             brave_key="", brave_url=""):
+    """Use LLM to generate a Reddit post for a single threat.
+
+    If brave_key is provided, searches for additional sources first
+    and summarizes findings for a richer post.
+    """
+    # Step 1: Enrich with additional sources via Brave Search
+    enrichment = None
+    if brave_key:
+        extra_sources = enrich_threat_sources(threat, brave_key, brave_url)
+        if extra_sources:
+            enrichment = summarize_sources(
+                threat, extra_sources, api_key, api_url, model)
+
+    # Step 2: Build sources list (original + enrichment)
     sources_text = f"- [{threat.get('source', '')}]({threat.get('link', '')})"
     for src in threat.get('additional_sources', []):
         sources_text += f"\n- [{src.get('name', '')}]({src.get('url', '')})"
+
+    enrichment_section = ""
+    if enrichment:
+        enrichment_section = (
+            f"Forbedret beskrivelse baseret på flere kilder:\n"
+            f"{enrichment['enriched_description']}\n\n"
+        )
+        if enrichment.get('key_findings'):
+            enrichment_section += "Nøglefund fra yderligere kilder:\n"
+            for finding in enrichment['key_findings']:
+                enrichment_section += f"- {finding}\n"
+            enrichment_section += "\n"
+
+        # Add extra source links
+        for src in enrichment.get('extra_sources', []):
+            sources_text += (
+                f"\n- [{src.get('title', 'Kilde')}]({src.get('url', '')})"
+            )
 
     prompt = POST_PROMPT.format(
         timestamp=threat.get('timestamp', ''),
@@ -137,6 +268,7 @@ def generate_post_for_threat(threat, api_key, api_url, model):
         sector=threat.get('sector', 'ukendt'),
         name=threat.get('name', ''),
         description=threat.get('description', ''),
+        enrichment_section=enrichment_section,
         sources=sources_text,
     )
 
@@ -250,11 +382,17 @@ def generate_issues():
     api_url = (os.environ.get("LLM_API_URL")
                or "https://openrouter.ai/api/v1/chat/completions")
     model = os.environ.get("LLM_MODEL_TOOLUSE", "")
+    brave_key = os.environ.get("BRAVE_API_KEY", "")
+    brave_url = (os.environ.get("BRAVE_SEARCH_URL")
+                 or "https://api.search.brave.com/res/v1/web/search")
 
     if not api_key or not model:
         print("OPENROUTER_API_KEY or LLM_MODEL_TOOLUSE not set — cannot "
               "generate posts")
         return
+
+    if not brave_key:
+        print("BRAVE_API_KEY not set — posts will use existing sources only")
 
     created = 0
     failed_ids = []
@@ -270,7 +408,8 @@ def generate_issues():
 
         print(f"Generating post for: {threat.get('name', threat_id)}")
         title, body = generate_post_for_threat(
-            threat, api_key, api_url, model)
+            threat, api_key, api_url, model,
+            brave_key=brave_key, brave_url=brave_url)
 
         if not title or not body:
             print(f"  Skipping {threat_id} — failed to generate post")
