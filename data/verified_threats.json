@@ -81,5 +81,93 @@
     "timestamp": "2026-02-27",
     "verified_by": "human-review",
     "verified_at": "2026-02-27T06:20:27.788309+00:00"
+  },
+  {
+    "id": "e72041672235",
+    "name": "Cyberangreb mod danske vandværker og kritisk infrastruktur",
+    "description": "Daglige cyberangreb mod vandsektoren har ført til vandafbrydelser og skærpet trusselsbilledet mod kritisk infrastruktur. Angrebet har resulteret i nye beredskabsplaner og akutpakker for at styrke modstanden mod fremtidige angreb.",
+    "attack_type": "destruktiv",
+    "sector": "offentlig",
+    "source": "nyheder.tv2.dk",
+    "link": "https://nyheder.tv2.dk/live/samfund/2026-02-20-danmark-faar-nyt-totalberedskab/danmark-staar-over-for-en-meget-voldsom-trussel?entry=296e153e-69cb-43de-9e00-5c9eff4a382b",
+    "additional_sources": [
+      {
+        "url": "https://www.doi.dk/solenergi/artikel/regeringen-opretter-nyt-nationalt-vandkatastrofeberedskab",
+        "name": "doi.dk"
+      }
+    ],
+    "timestamp": "2026-02-27",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-27T07:14:20.119755+00:00"
+  },
+  {
+    "id": "96db4f3981ef",
+    "name": "Regeringens beredskabsplan mod generelle cyberangreb",
+    "description": "Regeringen har indført en ny beredskabsplan og totalberedskab med 1,2 milliarder i akutpakke som svar på gentagne cyberangreb. Planen fokuserer på forberedelse mod kriser uden at nævne specifikke hændelser.",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "source": "computerworld.dk",
+    "link": "https://www.computerworld.dk/art/294634/regeringen-pumper-1-2-milliarder-kroner-ind-i-ny-beredskabsplan-for-danmark-saadan-kommer-pengene-til-at-blive-fordelt",
+    "additional_sources": [
+      {
+        "url": "https://nyheder.tv2.dk/live/samfund/2026-02-20-danmark-faar-nyt-totalberedskab/nyt-totalredskab-vil-bringe-danmark-op-i-gear-siger-beredskabschef?entry=e030174a-2910-45ee-860e-3bf904b440ad",
+        "name": "nyheder.tv2.dk"
+      }
+    ],
+    "timestamp": "2026-02-27",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-27T07:14:20.119755+00:00"
+  },
+  {
+    "id": "357b5b2abe95",
+    "name": "Sikkerhedsbrud hos DR med børnedsdata",
+    "description": "DR oplevede en sikkerhedsbrud, hvor uvedkommende fik adgang til personlige oplysninger om børn, der havde sendt forslag til DR Ultra. Børnene og deres data blev udsat for risiko.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "nyheder.dk",
+    "link": "https://www.nyheder.dk/nyheder/sikkerhedsbrud-hos-dr/2367477",
+    "additional_sources": [],
+    "timestamp": "2026-02-28",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-28T13:54:25.879485+00:00"
+  },
+  {
+    "id": "4bec09a139d3",
+    "name": "MitID-udfald rammer danske offentlige tjenester",
+    "description": "MitID var utilgængeligt, hvilket forårsagede nedbrud i login til offentlige tjenester og banker. Årsagen var ukendt, men leverandøren arbejdede på at løse problemet.",
+    "attack_type": "andet",
+    "sector": "offentlig",
+    "source": "nyheder.dk",
+    "link": "https://www.nyheder.dk/indland/ramt-af-kaempe-nedbrud/2367248",
+    "additional_sources": [],
+    "timestamp": "2026-02-28",
+    "verified_by": "human-review",
+    "verified_at": "2026-02-28T13:54:25.879485+00:00"
+  },
+  {
+    "id": "c0a83ecca9cb",
+    "name": "MitID-udfald i Danmark",
+    "description": "Den danske digital ID-tjeneste MitID var nede på grund af en cyberangreb. Udfaldet ramte offentlige tjenester og borgeres adgang til digitale services.",
+    "attack_type": "ddos",
+    "sector": "offentlig",
+    "source": "news.ycombinator.com",
+    "link": "https://news.ycombinator.com/item?id=47179038",
+    "additional_sources": [],
+    "timestamp": "2026-03-01",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-01T10:27:13.061432+00:00"
+  },
+  {
+    "id": "f8cf628677cc",
+    "name": "DR-databrud: Børnepersonoplysninger lækket",
+    "description": "DR har anmeldt en databrud, hvor børnepersonoplysninger kan være lækket. DR's chef, Morten Skov, understreger, at de arbejder for at være foran teknologien. Det er en konstant udfordring at sikre data i en dynamisk verden.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "dr.dk",
+    "link": "https://www.dr.dk/nyheder/seneste/oplysninger-om-boern-kan-vaere-laekket-i-dr-databrud",
+    "additional_sources": [],
+    "timestamp": "2026-03-02",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-02T10:44:07.019370+00:00"
   }
 ]
