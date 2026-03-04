@@ -1423,5 +1423,89 @@
   {
     "url": "https://newsletter.manager.dev/p/dont-become-an-engineering-manager",
     "analyzed_at": "2026-03-03T18:58:48.743326+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/gentofte-dropper-frit-pc-valg-kun-et-lille-hul-saa-har-vi-balladen",
+    "analyzed_at": "2026-03-04T09:46:00.235184+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294749/halvdelen-af-sap-kunderne-naar-ikke-2027-deadline-det-kommer-til-at-koste",
+    "analyzed_at": "2026-03-04T09:46:01.091145+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294752/guy-ritchies-unge-sherlock-holmes-lander-med-flere-rekorder-i-bagagen",
+    "analyzed_at": "2026-03-04T09:46:01.091361+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294665/den-danske-top-cio-jesper-kingo-i-stort-karrierespring-skal-lede-kapitalfond-der-saetter-penge-i-saerlig-type-startups",
+    "analyzed_at": "2026-03-04T09:46:01.091563+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294765/kan-forvandle-chrome-og-edge-til-spionvaerktoej-udspekuleret-fup-kan-goere-dig-til-mellemstation-for-hackere",
+    "analyzed_at": "2026-03-04T09:46:12.139944+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294764/sam-altman-indroemmer-fejl-openai-vil-aendre-sjusket-pentagon-aftale-efter-haard-kritik",
+    "analyzed_at": "2026-03-04T09:46:12.140323+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-vmware-aria-operations-rce-flaw-as-exploited-in-attacks/",
+    "analyzed_at": "2026-03-04T09:46:22.882271+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/paint-maker-giant-akzonobel-confirms-cyberattack-on-us-site/",
+    "analyzed_at": "2026-03-04T09:46:22.882548+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/technology/facebook-hit-with-worldwide-outage-stating-accounts-are-unavailable/",
+    "analyzed_at": "2026-03-04T09:46:22.882736+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-hackers-abuse-oauth-error-flows-to-spread-malware/",
+    "analyzed_at": "2026-03-04T09:46:22.882902+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apt41-linked-silver-dragon-targets.html",
+    "analyzed_at": "2026-03-04T09:46:23.367829+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/cisa-adds-actively-exploited-vmware.html",
+    "analyzed_at": "2026-03-04T09:46:23.368264+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/critical-freescout-vulnerability-leads-to-full-server-compromise/",
+    "analyzed_at": "2026-03-04T09:46:23.504032+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/vmware-aria-operations-vulnerability-exploited-in-the-wild/",
+    "analyzed_at": "2026-03-04T09:46:23.504423+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/iranian-strikes-on-amazon-data-centers-highlight-industrys-vulnerability-to-physical-disasters/",
+    "analyzed_at": "2026-03-04T09:46:23.504779+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/manden-bag-nazisternes-propaganda-saadan-forfoerte-han-en-hel-nation",
+    "analyzed_at": "2026-03-04T09:46:25.160912+00:00"
+  },
+  {
+    "url": "https://grapheneos.social/@GrapheneOS/116160393783585567",
+    "analyzed_at": "2026-03-04T09:46:29.761465+00:00"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9849.html",
+    "analyzed_at": "2026-03-04T09:46:29.761609+00:00"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/",
+    "analyzed_at": "2026-03-04T09:46:29.761714+00:00"
+  },
+  {
+    "url": "https://github.com/vladich/pg_jitter",
+    "analyzed_at": "2026-03-04T09:46:29.761819+00:00"
+  },
+  {
+    "url": "https://github.com/robertcprice/nCPU",
+    "analyzed_at": "2026-03-04T09:46:29.761911+00:00"
   }
 ]
