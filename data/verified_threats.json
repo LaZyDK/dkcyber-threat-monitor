@@ -182,5 +182,18 @@
     "timestamp": "2026-03-03",
     "verified_by": "human-review",
     "verified_at": "2026-03-03T10:59:42.214109+00:00"
+  },
+  {
+    "id": "bd7d7cca89a6",
+    "name": "DDoS-angreb mod Danmark og Grønland i marts 2026",
+    "description": "Pro-russiske angriber NoName057(16) udsatte Danmark og Grønland for et koordineret DDoS-angreb mellem 23. februar og 1. marts 2026. Angrebet blev udført med DDoSia-værktøjet og var en del af en større kampagne mod flere lande.",
+    "attack_type": "ddos",
+    "sector": "ukendt",
+    "source": "socradar.io",
+    "link": "https://socradar.io/blog/denmark-greenland-ukraine-under-ddos-3-mar26/",
+    "additional_sources": [],
+    "timestamp": "2026-03-04",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-04T10:54:45.684658+00:00"
   }
 ]
