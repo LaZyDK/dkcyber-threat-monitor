@@ -1458,5 +1458,109 @@
     "url": "https://it-kanalen.dk/ny-dansk-cyberloesning-kan-opdage-hackerangreb-paa-faa-minutter-frem-for-halvanden-uge/",
     "analyzed_at": "2026-03-04T10:51:16.370221+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.version2.dk/artikel/gentofte-dropper-frit-pc-valg-kun-et-lille-hul-saa-har-vi-balladen",
+    "analyzed_at": "2026-03-04T13:04:47.457010+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294737/anders-har-vaeret-rasende-paa-ai-men-saa-vendte-han-paa-en-tallerken-og-byggede-sin-egen-loesning",
+    "analyzed_at": "2026-03-04T13:04:48.095906+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294770/openai-taet-paa-at-lande-stor-aftale-med-nato-selskabets-ai-skal-slippes-loes-i-natos-netvaerk",
+    "analyzed_at": "2026-03-04T13:04:48.096247+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294766/shehzad-ahmad-saadan-faar-du-som-ciso-baade-entusiasterne-og-skeptikerne-med-paa-vognen",
+    "analyzed_at": "2026-03-04T13:04:48.096422+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294702/kalundborg-kommune-har-udviklet-11-ai-loesninger-paa-egen-hardware-alene-n-af-dem-daekker-udgifterne-til-koebet-af-en-nvidia-gpu",
+    "analyzed_at": "2026-03-04T13:04:54.551954+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294767/google-skruer-markant-op-for-antallet-af-opdateringer-til-chrome",
+    "analyzed_at": "2026-03-04T13:05:04.196356+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-vmware-aria-operations-rce-flaw-as-exploited-in-attacks/",
+    "analyzed_at": "2026-03-04T13:05:05.486854+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/paint-maker-giant-akzonobel-confirms-cyberattack-on-us-site/",
+    "analyzed_at": "2026-03-04T13:05:05.487129+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/technology/facebook-hit-with-worldwide-outage-stating-accounts-are-unavailable/",
+    "analyzed_at": "2026-03-04T13:05:05.487315+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-hackers-abuse-oauth-error-flows-to-spread-malware/",
+    "analyzed_at": "2026-03-04T13:05:05.487481+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/new-rfp-template-for-ai-usage-control.html",
+    "analyzed_at": "2026-03-04T13:05:05.743869+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/fake-laravel-packages-on-packagist.html",
+    "analyzed_at": "2026-03-04T13:05:05.744276+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apt41-linked-silver-dragon-targets.html",
+    "analyzed_at": "2026-03-04T13:05:05.744683+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/cisa-adds-actively-exploited-vmware.html",
+    "analyzed_at": "2026-03-04T13:05:05.745082+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/how-pirated-software-turns-helpful-employees-into-malware-delivery-agents/",
+    "analyzed_at": "2026-03-04T13:05:06.000616+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/ai-security-firm-jetstream-launches-with-34-million-in-seed-funding/",
+    "analyzed_at": "2026-03-04T13:05:06.001152+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/lastpass-warns-of-new-phishing-campaign/",
+    "analyzed_at": "2026-03-04T13:05:06.001540+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/webinar-today-designing-an-ot-soc-for-safety-reliability-and-business-continuity/",
+    "analyzed_at": "2026-03-04T13:05:06.001857+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/google-plans-two-week-release-schedule-for-chrome/",
+    "analyzed_at": "2026-03-04T13:05:12.349752+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/nyt-studie-om-formueskat-nogle-velhavende-flytter-men-de-samlede-effekter-vil-vaere",
+    "analyzed_at": "2026-03-04T13:05:13.350330+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/manden-bag-nazisternes-propaganda-saadan-forfoerte-han-en-hel-nation",
+    "analyzed_at": "2026-03-04T13:05:18.697021+00:00"
+  },
+  {
+    "url": "https://grapheneos.social/@GrapheneOS/116160393783585567",
+    "analyzed_at": "2026-03-04T13:05:25.350974+00:00"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9849.html",
+    "analyzed_at": "2026-03-04T13:05:25.351119+00:00"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/",
+    "analyzed_at": "2026-03-04T13:05:25.351225+00:00"
+  },
+  {
+    "url": "https://terriblesoftware.org/2026/03/03/nobody-gets-promoted-for-simplicity/",
+    "analyzed_at": "2026-03-04T13:05:25.351322+00:00"
+  },
+  {
+    "url": "https://iev.ee/blog/resharp-how-we-built-the-fastest-regex-in-fsharp/",
+    "analyzed_at": "2026-03-04T13:05:25.351423+00:00"
   }
 ]
