@@ -1822,5 +1822,37 @@
   {
     "url": "https://geocar.sdf1.org/fast-servers.html",
     "analyzed_at": "2026-03-05T15:55:21.192101+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/wordpress-membership-plugin-bug-exploited-to-create-admin-accounts/",
+    "analyzed_at": "2026-03-05T19:19:01.684356+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fbi-arrests-suspect-linked-to-46m-crypto-theft-from-us-marshals/",
+    "analyzed_at": "2026-03-05T19:19:01.684595+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/cisco-confirms-active-exploitation-of.html",
+    "analyzed_at": "2026-03-05T19:19:02.104684+00:00"
+  },
+  {
+    "url": "https://www.wikimediastatus.net",
+    "analyzed_at": "2026-03-05T19:19:12.199193+00:00"
+  },
+  {
+    "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
+    "analyzed_at": "2026-03-05T19:19:12.199362+00:00"
+  },
+  {
+    "url": "https://jido.run/blog/jido-2-0-is-here",
+    "analyzed_at": "2026-03-05T19:19:12.199474+00:00"
+  },
+  {
+    "url": "https://paulgraham.com/brandage.html",
+    "analyzed_at": "2026-03-05T19:19:12.199584+00:00"
+  },
+  {
+    "url": "https://ogirardot.writizzy.com/p/good-software-knows-when-to-stop",
+    "analyzed_at": "2026-03-05T19:19:12.199668+00:00"
   }
 ]
