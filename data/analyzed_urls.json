@@ -1562,5 +1562,133 @@
   {
     "url": "https://iev.ee/blog/resharp-how-we-built-the-fastest-regex-in-fsharp/",
     "analyzed_at": "2026-03-04T13:05:25.351423+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-05/Kritisk-saarbarhed-i-Apache-Artemis",
+    "analyzed_at": "2026-03-05T09:50:37.931310+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-05/Kritiske-saarbarheder-i-Cisco-Secure-Firewall-Management-Center",
+    "analyzed_at": "2026-03-05T09:50:37.931572+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/03/kritiska-sarbarheter-i-cisco-fmc-och-cisco-scc.html",
+    "analyzed_at": "2026-03-05T09:50:38.935465+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/elbiler-er-ude-datacenter-boom-traekker-laesset-hos-danfoss",
+    "analyzed_at": "2026-03-05T09:50:52.741182+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/vestas-det-er-slut-med-vaere-gdpr-duks",
+    "analyzed_at": "2026-03-05T09:50:52.741426+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/s-profils-techvision-fra-2016-hjemsoeger-hende-jeg-saa-det-ikke-dengang",
+    "analyzed_at": "2026-03-05T09:50:56.002497+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294774/microsoft-kan-vaere-paa-trapperne-med-helt-ny-licens-pakke-du-skal-betale-licens-for-ai-agenterne-som-var-det-medarbejdere",
+    "analyzed_at": "2026-03-05T09:51:00.580862+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294753/saadan-udfylder-du-den-oversete-noeglerolle-i-det-agile-arbejdsliv",
+    "analyzed_at": "2026-03-05T09:51:00.581170+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294773/stein-bagger-traekker-igen-overskrifter-computerworld-var-med-helt-fremme-i-afdaekningen-af-it-factory-her-er-den-dramatiske-historie",
+    "analyzed_at": "2026-03-05T09:51:00.581358+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294781/efter-mere-end-fem-aar-i-retten-google-slutter-fred-med-epic-i-stor-sag",
+    "analyzed_at": "2026-03-05T09:51:08.542422+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294779/muligt-amerikansk-iphone-hackervaerktoej-er-endt-i-haenderne-paa-udenlandske-spioner-og-cyberkriminelle",
+    "analyzed_at": "2026-03-05T09:51:17.193191+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/phobos-ransomware-admin-pleads-guilty-to-wire-fraud-conspiracy/",
+    "analyzed_at": "2026-03-05T09:51:18.675000+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/bitwarden-adds-support-for-passkey-login-on-windows-11/",
+    "analyzed_at": "2026-03-05T09:51:18.675270+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/mail2shell-zero-click-attack-lets-hackers-hijack-freescout-mail-servers/",
+    "analyzed_at": "2026-03-05T09:51:18.675472+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/windows-10-kb5075039-update-fixes-broken-recovery-environment/",
+    "analyzed_at": "2026-03-05T09:51:18.675687+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fake-lastpass-support-email-threads-try-to-steal-vault-passwords/",
+    "analyzed_at": "2026-03-05T09:51:18.675909+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/europol-led-operation-takes-down-tycoon.html",
+    "analyzed_at": "2026-03-05T09:51:19.054417+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/fbi-and-europol-seize-leakbase-forum.html",
+    "analyzed_at": "2026-03-05T09:51:19.054848+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/149-hacktivist-ddos-attacks-hit-110.html",
+    "analyzed_at": "2026-03-05T09:51:19.055268+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/coruna-ios-exploit-kit-uses-23-exploits.html",
+    "analyzed_at": "2026-03-05T09:51:28.244349+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-enterprise-networking-products/",
+    "analyzed_at": "2026-03-05T09:51:33.729920+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/nation-state-ios-exploit-kit-coruna-found-powering-global-attacks/",
+    "analyzed_at": "2026-03-05T09:51:33.730342+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/tycoon-2fa-phishing-platform-dismantled-in-global-takedown/",
+    "analyzed_at": "2026-03-05T09:51:33.730779+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/new-lexisnexis-data-breach-confirmed-after-hackers-leak-files/",
+    "analyzed_at": "2026-03-05T09:51:33.731157+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/zurich-acquires-beazley-in-11-billion-deal-to-lead-cyberinsurance/",
+    "analyzed_at": "2026-03-05T09:51:33.731511+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/hey-chat-tjekdet-lancerer-undervisningsmateriale-om-unges-brug-af-chatbots-i",
+    "analyzed_at": "2026-03-05T09:51:34.996778+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/hvem-skal-jeg-stemme-paa-bekymring-unges-brug-af-chatbots-ved-det-kommende-folketingsvalg",
+    "analyzed_at": "2026-03-05T09:51:34.996898+00:00"
+  },
+  {
+    "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
+    "analyzed_at": "2026-03-05T09:51:40.873516+00:00"
+  },
+  {
+    "url": "https://github.com/googleworkspace/cli",
+    "analyzed_at": "2026-03-05T09:51:40.873672+00:00"
+  },
+  {
+    "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
+    "analyzed_at": "2026-03-05T09:51:40.873768+00:00"
+  },
+  {
+    "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
+    "analyzed_at": "2026-03-05T09:51:40.873872+00:00"
+  },
+  {
+    "url": "https://tim.blog/2026/03/04/the-self-help-trap/",
+    "analyzed_at": "2026-03-05T09:51:40.873971+00:00"
   }
 ]
