@@ -195,5 +195,18 @@
     "timestamp": "2026-03-04",
     "verified_by": "human-review",
     "verified_at": "2026-03-04T10:54:45.684658+00:00"
+  },
+  {
+    "id": "5e0c9a98b607",
+    "name": "Stein Bagger trækker igen overskrifter: Computerworld var med helt fremme i afdæ",
+    "description": "IT-Factory-sagen trækker igen opmærksomhed, men hvad handlede danmarkshistoriens mest spektakulære sag om it-svindel i virkeligheden om? Computerworld var med helt fremme i afdækningen af Stein Bagger. Journalist Jacob Ø. Wittorf fortæller historien, som han oplevede den fra første parket.",
+    "attack_type": "digital_svindel",
+    "sector": "it",
+    "source": "Computerworld DK",
+    "link": "https://www.computerworld.dk/art/294773/stein-bagger-traekker-igen-overskrifter-computerworld-var-med-helt-fremme-i-afdaekningen-af-it-factory-her-er-den-dramatiske-historie",
+    "additional_sources": [],
+    "timestamp": "2026-03-05",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-05T09:54:18.797118+00:00"
   }
 ]
