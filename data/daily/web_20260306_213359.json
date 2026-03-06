@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Cognizant TriZetto breach exposes health data of 3.4 million patients",
+    "link": "https://www.bleepingcomputer.com/news/security/cognizant-trizetto-breach-exposes-health-data-of-34-million-patients/",
+    "published": "Fri, 06 Mar 2026 14:50:21 -0500",
+    "summary": "TriZetto Provider Solutions, a healthcare IT company that develops software and services used by health insurers and healthcare providers, has suffered a data breach that exposed the sensitive information of over 3.4 million people. [...]",
+    "source": "https://www.bleepingcomputer.com/feed/",
+    "collected_at": "2026-03-06T21:33:53.544497+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "databrud",
+    "sector": "sundhed",
+    "explanation": "Nyhedens resumé nævner ikke danske virksomheder, infrastruktur eller borgeres data, og der er ingen konkrete henvisninger til dansk påvirkning. Blevet er globalt, men uden specifikke danske mål."
+  },
+  {
+    "title": "Ada 2022",
+    "link": "https://www.adaic.org/ada-resources/standards/ada22/",
+    "published": "Fri, 06 Mar 2026 20:03:48 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47280352\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-06T21:33:59.328999+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Why it takes you and an elephant the same amount of time to poop (2017)",
+    "link": "https://www.pbs.org/newshour/health/takes-elephant-amount-time-poop",
+    "published": "Fri, 06 Mar 2026 20:19:26 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47280550\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-06T21:33:59.329105+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
+    "link": "https://twitter.com/JosephPolitano/status/2029916364664611242",
+    "published": "Fri, 06 Mar 2026 17:46:45 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47278426\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-06T21:33:59.329251+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  },
+  {
+    "title": "Hardening Firefox with Anthropic's Red Team",
+    "link": "https://www.anthropic.com/news/mozilla-firefox-security",
+    "published": "Fri, 06 Mar 2026 11:53:18 +0000",
+    "summary": "<a href=\"https://news.ycombinator.com/item?id=47273854\">Comments</a>",
+    "source": "https://news.ycombinator.com/rss",
+    "collected_at": "2026-03-06T21:33:59.329423+00:00",
+    "is_dk_relevant": false,
+    "confidence": "low",
+    "attack_type": "ukendt",
+    "sector": "ukendt",
+    "explanation": "Ingen danske nøgleord fundet i titel/resumé."
+  }
+]
