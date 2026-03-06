@@ -1894,5 +1894,61 @@
   {
     "url": "https://www.feldera.com/blog/nobody-ever-got-fired-for-using-a-struct",
     "analyzed_at": "2026-03-06T06:56:47.739237+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/chat-grok-og-gemini-er-stadig-elendige-til-matematik-en-bot-er-ligefrem-blevet-daarligere",
+    "analyzed_at": "2026-03-06T09:43:51.310932+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/ubuntus-ls1-farvelade",
+    "analyzed_at": "2026-03-06T09:43:51.311214+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294800/visma-enterprise-dropper-navnet-efter-forvirring-i-markedet-nu-skal-selskabet-hedde-intega",
+    "analyzed_at": "2026-03-06T09:44:02.740717+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294754/efter-fire-aars-pause-vender-peaky-blinders-tilbage",
+    "analyzed_at": "2026-03-06T09:44:02.740922+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294783/nu-lukker-og-slukker-danmarks-vigtigste-it-udvalg-ny-model-skal-fastholde-teknologi-paa-den-politiske-dagsorden",
+    "analyzed_at": "2026-03-06T09:44:02.741111+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294796/oracle-paa-vej-til-at-skaere-tusindvis-af-stillinger-fyringer-paa-vej-i-massevis",
+    "analyzed_at": "2026-03-06T09:44:18.388364+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294794/blev-smidt-ud-for-at-sige-nej-til-trump-administrationen-nu-kan-en-ny-pentagon-aftale-alligevel-vaere-paa-vej",
+    "analyzed_at": "2026-03-06T09:44:18.388631+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/fbi-investigates-breach-of-surveillance-and-wiretap-systems/",
+    "analyzed_at": "2026-03-06T09:44:20.279219+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/china-linked-hackers-use-terndoor.html",
+    "analyzed_at": "2026-03-06T09:44:26.262977+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/microsoft-reveals-clickfix-campaign.html",
+    "analyzed_at": "2026-03-06T09:44:35.210320+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html",
+    "analyzed_at": "2026-03-06T09:44:41.279820+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/data-security-firm-evervault-raises-25-million-in-series-b-funding/",
+    "analyzed_at": "2026-03-06T09:44:47.382530+00:00"
+  },
+  {
+    "url": "https://runxiyu.org/comp/gplproxy/",
+    "analyzed_at": "2026-03-06T09:44:49.067195+00:00"
+  },
+  {
+    "url": "https://dev.moment.com/",
+    "analyzed_at": "2026-03-06T09:44:49.067358+00:00"
   }
 ]
