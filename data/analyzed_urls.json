@@ -2082,5 +2082,29 @@
   {
     "url": "https://www.anthropic.com/news/mozilla-firefox-security",
     "analyzed_at": "2026-03-06T21:33:59.329423+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/fbi-investigating-suspicious-cyber-activity-on-system-holding-sensitive-surveillance-information/",
+    "analyzed_at": "2026-03-07T09:33:08.819740+00:00"
+  },
+  {
+    "url": "https://plasma-bigscreen.org",
+    "analyzed_at": "2026-03-07T09:33:10.189574+00:00"
+  },
+  {
+    "url": "https://github.com/golang/go/issues/62026",
+    "analyzed_at": "2026-03-07T09:33:10.189717+00:00"
+  },
+  {
+    "url": "https://will-keleher.com/posts/this-css-makes-me-human/",
+    "analyzed_at": "2026-03-07T09:33:10.189853+00:00"
+  },
+  {
+    "url": "https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code",
+    "analyzed_at": "2026-03-07T09:33:10.189952+00:00"
+  },
+  {
+    "url": "https://www.science.org/content/article/galileo-s-handwritten-notes-found-ancient-astronomy-text",
+    "analyzed_at": "2026-03-07T09:33:10.190083+00:00"
   }
 ]
