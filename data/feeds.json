@@ -68,5 +68,12 @@
     "language": "da",
     "added": "2026-03-01",
     "added_by": "discovery"
+  },
+  {
+    "url": "https://borsen.dk/rss",
+    "name": "Frontpage",
+    "language": "da",
+    "added": "2026-03-09",
+    "added_by": "discovery"
   }
 ]
