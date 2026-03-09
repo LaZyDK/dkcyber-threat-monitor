@@ -2394,5 +2394,89 @@
     "url": "https://dk.headtopics.com/news/usa-og-israel-brugte-cyberangreb-i-angreb-p-iran-80585014",
     "analyzed_at": "2026-03-09T11:10:10.306893+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.cert.se/2026/03/sakerhet-i-kommunikationsappar.html",
+    "analyzed_at": "2026-03-09T13:12:08.175863+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/eliteforskere-fanget-i-sort-hul-millioner-strander-i-dansk-bureaukrati",
+    "analyzed_at": "2026-03-09T13:12:08.462662+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294819/danske-asetek-forsoemte-at-informere-markedet-som-loven-kraever-dagen-efter-faldt-aktien-med-mere-end-18-procent",
+    "analyzed_at": "2026-03-09T13:12:19.831180+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294813/denne-virksomhedschef-har-forstaaet-noget-om-ai-som-mange-direktioner-stadig-overser",
+    "analyzed_at": "2026-03-09T13:12:26.417579+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294816/dansk-it-firma-pumper-760-millioner-kroner-ind-i-et-af-verdens-bedste-cykel-hold-i-stor-sponsorat-faar-fremtraedende-rolle-i-tour-de-france",
+    "analyzed_at": "2026-03-09T13:12:31.958401+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294814/microsoft-udskyder-vigtig-tvangs-aendring-i-outlook-med-et-helt-aar-admins-faar-mere-tid-til-at-forberede-sig",
+    "analyzed_at": "2026-03-09T13:12:37.199629+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294720/vejle-kommune-har-flyttet-ai-fra-microsofts-sky-til-dansk-supercomputer-kvaliteten-er-paa-niveau",
+    "analyzed_at": "2026-03-09T13:12:37.200027+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/can-security-platform-finally-deliver.html",
+    "analyzed_at": "2026-03-09T13:12:50.427367+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/chrome-extension-turns-malicious-after.html",
+    "analyzed_at": "2026-03-09T13:12:55.221489+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/clickfix-attack-uses-windows-terminal-to-evade-detection/",
+    "analyzed_at": "2026-03-09T13:13:01.561431+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/internet-infrastructure-tld-arpa-abused-in-phishing-attacks/",
+    "analyzed_at": "2026-03-09T13:13:01.561804+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/cloned-ai-tool-sites-distribute-malware-in-installfix-campaign/",
+    "analyzed_at": "2026-03-09T13:13:01.562187+00:00"
+  },
+  {
+    "url": "https://arcade.pirillo.com/fontcrafter.html",
+    "analyzed_at": "2026-03-09T13:13:03.289460+00:00"
+  },
+  {
+    "url": "https://www.pv-magazine.com/2025/06/20/ireland-coal-free-ends-coal-power-generation-moneypoint/",
+    "analyzed_at": "2026-03-09T13:13:03.289594+00:00"
+  },
+  {
+    "url": "https://arxiv.org/abs/2603.04782",
+    "analyzed_at": "2026-03-09T13:13:03.289742+00:00"
+  },
+  {
+    "url": "https://techcrunch.com/2026/03/08/owner-of-ice-detention-facility-sees-big-opportunity-in-ai-man-camps/",
+    "analyzed_at": "2026-03-09T13:13:03.289875+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/olieprisen-krydser-100-dollar-mens-naturgas-tager-nyt-hop-folg-med-live",
+    "analyzed_at": "2026-03-09T13:13:04.594723+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/perspektiv/det-har-kastet-dsvs-aktie-ud-i-vilde-udsving-nu-bryder-direktor-tavsheden-om-ai-planer",
+    "analyzed_at": "2026-03-09T13:13:04.594917+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/aarhusiansk-rolex-forhandler-idomt-faengselsstraf-i-svindelsag",
+    "analyzed_at": "2026-03-09T13:13:13.997795+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/analyse-frygt-for-langvarig-krig-i-mellemosten-irans-ayatollah-er-uforsonlig",
+    "analyzed_at": "2026-03-09T13:13:20.198180+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/pleasure/kendt-luksus-onlinebutik-giver-de-bedste-kunder-saerbehandling-og-det-betaler-sig",
+    "analyzed_at": "2026-03-09T13:13:20.198387+00:00"
   }
 ]
