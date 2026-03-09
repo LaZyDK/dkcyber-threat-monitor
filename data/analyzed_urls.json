@@ -2294,5 +2294,105 @@
   {
     "url": "https://www.youtube.com/watch?v=qZuR-772cks",
     "analyzed_at": "2026-03-09T09:57:33.359385+00:00"
+  },
+  {
+    "url": "https://it-kanalen.dk/cyberangreb-mod-danske-virksomheder-er-steget-med-43-pct-paa-et-aar/",
+    "analyzed_at": "2026-03-09T10:38:33.376035+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.recordere.dk/2026/03/cyberangreb-mod-danske-virksomheder-fordoblet-paa-et-aar/",
+    "analyzed_at": "2026-03-09T10:38:58.531906+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://bolster.ai/blog/2026-phishing-stats",
+    "analyzed_at": "2026-03-09T10:39:48.674811+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/",
+    "analyzed_at": "2026-03-09T10:40:22.838519+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.helpnetsecurity.com/2026/03/05/tycoon-2fa-phishing-platform-takedown-europol/",
+    "analyzed_at": "2026-03-09T10:40:55.257016+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.helpnetsecurity.com/2026/03/06/why-phishing-still-works-today/",
+    "analyzed_at": "2026-03-09T10:41:38.542730+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://ceoworld.biz/2026/03/04/phishing-for-data-how-an-online-browser-extension-or-app-can-protect-you/",
+    "analyzed_at": "2026-03-09T10:42:12.164461+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://archive.ph/74S2D",
+    "analyzed_at": "2026-03-09T10:42:29.458021+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294763/finanssektor-i-skaerpet-cyberberedskab-frygt-for-iran-relaterede-cyberangreb",
+    "analyzed_at": "2026-03-09T10:43:08.798638+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://samsik.dk/publikation/truslen-fra-paavirkningsaktiviteter-mod-folketingsvalget-2026/",
+    "analyzed_at": "2026-03-09T10:43:30.652537+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://samsik.dk/artikler/2026/03/vejledning-til-myndigheder-om-aendring-i-sikkerhedscirkulaeret/",
+    "analyzed_at": "2026-03-09T11:06:40.008624+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://hellosafe.com/da/travel-insurance/safest-countries-in-the-world",
+    "analyzed_at": "2026-03-09T11:07:00.587766+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.altinget.dk/forsvar/artikel/havnedirektoerer-miljoegodkendelser-kan-staa-i-vejen-for-kritisk-vigtig-infrastruktur",
+    "analyzed_at": "2026-03-09T11:07:12.994406+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://denmark.representation.ec.europa.eu/news/eu-i-dagens-aviser-fredag-den-6-marts-2026-2026-03-06_da",
+    "analyzed_at": "2026-03-09T11:07:42.547917+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.doi.dk/vindkraft/artikel/folketingsvalg-dansk-fjernvarme-vil-have-forsyningssikkerhed-oeverst-paa-dagsordenen",
+    "analyzed_at": "2026-03-09T11:08:30.115304+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.altinget.dk/erhverv/artikel/lars-loekke-danmark-skal-ikke-vaere-en-vindernation-i-en-taberregion-paa-cybersikkerhed",
+    "analyzed_at": "2026-03-09T11:09:11.694242+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294789/store-danske-banker-for-alvor-i-skudlinien-for-cyberangreb-nu-vil-nationalbank-direktoer-ulrik-noedgaard-bygge-sovende-noed-banker-til-krise-situationer",
+    "analyzed_at": "2026-03-09T11:09:36.089051+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294698/ny-cyber-lov-kan-blive-dyr-for-erhvervslivet-det-kan-ende-med-at-udslette-et-helt-marked-i-europa",
+    "analyzed_at": "2026-03-09T11:09:42.861683+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/cyberangreb-presser-smverne-ole-frygtede-for-sit-livsvaerk",
+    "analyzed_at": "2026-03-09T11:10:05.240001+00:00",
+    "is_dk_relevant": true
+  },
+  {
+    "url": "https://dk.headtopics.com/news/usa-og-israel-brugte-cyberangreb-i-angreb-p-iran-80585014",
+    "analyzed_at": "2026-03-09T11:10:10.306893+00:00",
+    "is_dk_relevant": false
   }
 ]
