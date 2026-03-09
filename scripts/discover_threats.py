@@ -190,7 +190,10 @@ def classify_result(result, openrouter_key, api_url, model):
         content = resp.json()["choices"][0]["message"]["content"]
         result = extract_json(content)
         if result is None:
-            print(f"  LLM returned unparseable content: {content[:200]}")
+            if content is not None:
+                print(f"  LLM returned unparseable content: {content[:200]}")
+            else:
+                print("  LLM returned unparseable content: None")
             return {"is_dk_relevant": False, "confidence": "error"}
         return result
     except (requests.RequestException, KeyError, IndexError) as e:
