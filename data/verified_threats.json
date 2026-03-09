@@ -208,5 +208,18 @@
     "timestamp": "2026-03-05",
     "verified_by": "human-review",
     "verified_at": "2026-03-05T09:54:18.797118+00:00"
+  },
+  {
+    "id": "4eabd368674f",
+    "name": "Ransomware-angreb på danske rejsesite Travelmarket",
+    "description": "I januar blev den danske rejsesite Travelmarket hacket af den russiske gruppe Akira. Cybersikkerhedsrådgiver advarer danske smv’er om stigende risiko fra AI-styrte angreb.",
+    "attack_type": "ransomware",
+    "sector": "detailhandel",
+    "source": "borsen.dk",
+    "link": "https://borsen.dk/nyheder/virksomheder/cyberangreb-presser-smverne-ole-frygtede-for-sit-livsvaerk",
+    "additional_sources": [],
+    "timestamp": "2026-03-09",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-09T11:12:11.949152+00:00"
   }
 ]
