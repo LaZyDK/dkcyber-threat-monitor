@@ -2478,5 +2478,157 @@
   {
     "url": "https://borsen.dk/nyheder/pleasure/kendt-luksus-onlinebutik-giver-de-bedste-kunder-saerbehandling-og-det-betaler-sig",
     "analyzed_at": "2026-03-09T13:13:20.198387+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-10/Kreml-stoettede-aktoerer-forsoeger-at-kapre-Signal-og-WhatsApp-konti-over-hele-verden",
+    "analyzed_at": "2026-03-10T16:03:34.025184+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/hvem-bestemmer-hvad-der-er-ulovligt",
+    "analyzed_at": "2026-03-10T16:03:35.272153+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/rigspolitiet-traekker-i-haandbremsen-udrulning-af-nyt-it-system-udskydes-efter-ustabilitet",
+    "analyzed_at": "2026-03-10T16:03:35.272731+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/paa-tre-timer-blev-danske-skolelaerere-overbevist-om-skifte-til-open-source-her-er-loesningerne-de",
+    "analyzed_at": "2026-03-10T16:03:48.896828+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294841/aarets-eneste-nye-nvidia-grafikkort-ser-ud-til-at-blive-et-budget-kort",
+    "analyzed_at": "2026-03-10T16:03:58.800348+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294843/kan-man-faa-det-hele-for-det-halve-prisvenlig-robotstoevsuger-giver-sidste-aars-topmodel-kamp-til-stregen",
+    "analyzed_at": "2026-03-10T16:03:58.800522+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294839/her-er-10-ledige-it-job-som-du-kan-soege-lige-nu",
+    "analyzed_at": "2026-03-10T16:03:58.800807+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294840/oracle-klapper-helt-i-om-massefyringer-danske-ansattes-fremtid-svaever-i-det-uvisse",
+    "analyzed_at": "2026-03-10T16:04:03.652143+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294833/i-valgkampens-skygge-presser-de-digitale-spoergsmaal-sig-paa",
+    "analyzed_at": "2026-03-10T16:04:08.964743+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-entra-brings-phishing-resistant-sign-in-to-windows/",
+    "analyzed_at": "2026-03-10T16:04:42.229334+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/new-kadnap-botnet-hijacks-asus-routers-to-fuel-cybercrime-proxy-network/",
+    "analyzed_at": "2026-03-10T16:04:42.229572+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/the-new-turing-test-how-threats-use-geometry-to-prove-humanness/",
+    "analyzed_at": "2026-03-10T16:04:42.229779+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-recently-patched-ivanti-epm-flaw-now-actively-exploited/",
+    "analyzed_at": "2026-03-10T16:04:42.230055+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-to-enable-hotpatch-security-updates-by-default-in-may/",
+    "analyzed_at": "2026-03-10T16:04:55.386446+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/new-leakylooker-flaws-in-google-looker.html",
+    "analyzed_at": "2026-03-10T16:04:55.753592+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/how-to-stop-ai-data-leaks-webinar-guide.html",
+    "analyzed_at": "2026-03-10T16:04:55.754018+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/the-zero-day-scramble-is-avoidable.html",
+    "analyzed_at": "2026-03-10T16:04:55.754456+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apt28-uses-beardshell-and-covenant.html",
+    "analyzed_at": "2026-03-10T16:04:55.754864+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/threat-actors-mass-scan-salesforce.html",
+    "analyzed_at": "2026-03-10T16:04:55.755309+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/kai-emerges-from-stealth-with-125m-in-funding-for-ai-platform-bridging-it-and-ot-security/",
+    "analyzed_at": "2026-03-10T16:04:56.042630+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/webinar-today-securing-fragile-ot-in-an-exposed-world/",
+    "analyzed_at": "2026-03-10T16:04:56.043087+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/sap-patches-critical-fs-quo-netweaver-vulnerabilities/",
+    "analyzed_at": "2026-03-10T16:04:56.043472+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/thousands-affected-by-ericsson-data-breach/",
+    "analyzed_at": "2026-03-10T16:04:56.043820+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/openai-rolls-out-codex-security-vulnerability-scanner/",
+    "analyzed_at": "2026-03-10T16:05:02.603817+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/nyt-undervisningsmateriale-ruster-chatbot-brugere-til-valget",
+    "analyzed_at": "2026-03-10T16:05:03.799852+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/aegte-krigsbilleder-bliver-gjort-tydeligere-med-kunstig-intelligens-men-fordrejer",
+    "analyzed_at": "2026-03-10T16:05:03.799940+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/webinar-hvad-sker-der-hvis-du-spoerger-en-chatbot-hvad-du-skal-stemme-til",
+    "analyzed_at": "2026-03-10T16:05:03.800183+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/muslimer-boer-ikke-stemme-lyder-det-fra-hizb-ut-tahrir-men-hvad-siger-koranen",
+    "analyzed_at": "2026-03-10T16:05:14.863199+00:00"
+  },
+  {
+    "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
+    "analyzed_at": "2026-03-10T16:05:25.669716+00:00"
+  },
+  {
+    "url": "https://entropicthoughts.com/rebasing-in-magit",
+    "analyzed_at": "2026-03-10T16:05:25.669833+00:00"
+  },
+  {
+    "url": "https://spectrum.ieee.org/fhe-intel",
+    "analyzed_at": "2026-03-10T16:05:25.669939+00:00"
+  },
+  {
+    "url": "https://howisfelix.today/",
+    "analyzed_at": "2026-03-10T16:05:25.670071+00:00"
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=47324296",
+    "analyzed_at": "2026-03-10T16:05:30.961058+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/topchefer-ville-have-en-bred-regering-nu-deler-de-deres-dom-over-svm",
+    "analyzed_at": "2026-03-10T16:05:31.987071+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/lokke-ambassaden-i-iran-lukker-midlertidigt-folg-med-her",
+    "analyzed_at": "2026-03-10T16:05:41.993382+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/investor/novo-skraber-bunden-disse-c25-aktier-far-storste-opjusteringer",
+    "analyzed_at": "2026-03-10T16:05:41.993602+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/vi-gar-og-holder-vejret-lidt-virksomheder-knokler-for-at-afbode-iran-oretaever",
+    "analyzed_at": "2026-03-10T16:05:53.098674+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/pleasure/italiensk-gastronomis-godfather-har-70000-flasker-vin-pa-lager-og-nu-kan-du-smage",
+    "analyzed_at": "2026-03-10T16:06:06.138340+00:00"
   }
 ]
