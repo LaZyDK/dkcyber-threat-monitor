@@ -2630,5 +2630,100 @@
   {
     "url": "https://borsen.dk/nyheder/pleasure/italiensk-gastronomis-godfather-har-70000-flasker-vin-pa-lager-og-nu-kan-du-smage",
     "analyzed_at": "2026-03-10T16:06:06.138340+00:00"
+  },
+  {
+    "url": "https://ekstrabladet.dk/forbrug/Teknologi/eksperter-advarer-om-saerlige-cyberangreb-efter-iran-bombning/11113179",
+    "analyzed_at": "2026-03-11T10:32:35.521152+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://ing.dk/artikel/aabne-porte-og-manglende-opdateringer-danske-vandvaerker-mangler-basal-it-sikkerhed",
+    "analyzed_at": "2026-03-11T10:33:07.834863+00:00",
+    "is_dk_relevant": true
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/lokke-angreb-regeringspartnere-i-arsmodetale-fa-overblikket-her",
+    "analyzed_at": "2026-03-11T10:33:45.080702+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.sensemydiet.dk/opskrift/glutenfri-retter/aromatisk-kold-havregroed-med-mandler/",
+    "analyzed_at": "2026-03-11T10:33:54.010754+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://cybernews.com/tech/ise-bitsch-big-tech/",
+    "analyzed_at": "2026-03-11T10:34:15.151089+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.kold.com/2026/03/05/experts-fear-irans-next-move-could-be-major-us-cyberattack/",
+    "analyzed_at": "2026-03-11T10:34:25.040165+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.brightdefense.com/resources/recent-data-breaches/",
+    "analyzed_at": "2026-03-11T10:35:01.234745+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.reuters.com/world/europe/russia-backed-hackers-breach-signal-whatsapp-accounts-officials-journalists-2026-03-09/",
+    "analyzed_at": "2026-03-11T10:35:24.904079+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.politico.com/news/2026/03/04/israel-iran-cyber-headquarters-00813364",
+    "analyzed_at": "2026-03-11T10:35:56.893228+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://industrialcyber.co/transport/cydome-report-finds-150-surge-in-maritime-ot-cyberattacks-as-ransomware-tightens-grip-in-2025/",
+    "analyzed_at": "2026-03-11T10:36:24.302178+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.politico.com/news/2026/03/06/white-house-trump-cyber-strategy-00817698",
+    "analyzed_at": "2026-03-11T10:36:46.385144+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.marinelink.com/news/navigating-third-era-maritime-cyber-risk-536724",
+    "analyzed_at": "2026-03-11T10:37:24.163087+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.blackfog.com/the-state-of-ransomware-2026/",
+    "analyzed_at": "2026-03-11T10:38:22.193152+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.freeformagency.com/post/how-to-prevent-ransomware-attacks-your-2026-enterprise-guide",
+    "analyzed_at": "2026-03-11T10:38:48.253845+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://kvscomputers.com/is-malwarebytes-safe-a-professional-review-of-the-top-anti-malware-programs-for-2026/",
+    "analyzed_at": "2026-03-11T10:39:15.171012+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.zaginfotech.click/2026/03/cluster-article-4-ransomware-2026-how.html",
+    "analyzed_at": "2026-03-11T10:39:59.086345+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://malware.news/t/ransomware-trends-2026-healthcare-defense-and-threat-actor-tactics/104682",
+    "analyzed_at": "2026-03-11T10:40:23.880587+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.purple-ops.io/cybersecurity-threat-intelligence-blog/daily-ransomware-3-7-2026/",
+    "analyzed_at": "2026-03-11T10:40:42.181537+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=pQOP_5ydvn8",
+    "analyzed_at": "2026-03-11T10:41:02.667708+00:00",
+    "is_dk_relevant": false
   }
 ]
