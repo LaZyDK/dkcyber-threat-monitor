@@ -94,6 +94,10 @@
       {
         "url": "https://www.doi.dk/solenergi/artikel/regeringen-opretter-nyt-nationalt-vandkatastrofeberedskab",
         "name": "doi.dk"
+      },
+      {
+        "url": "https://www.version2.dk/artikel/storleverandoer-til-danske-vandvaerker-har-hundredvis-af-it-saarbarheder-nu-erkender-de-svigt",
+        "name": "Version2"
       }
     ],
     "timestamp": "2026-02-27",
@@ -221,5 +225,31 @@
     "timestamp": "2026-03-09",
     "verified_by": "human-review",
     "verified_at": "2026-03-09T11:12:11.949152+00:00"
+  },
+  {
+    "id": "8f935c48d5c4",
+    "name": "Cyberangreb mod danske vandværker: Forældede firewalls og manglende opdateringer",
+    "description": "I 2023 rystede en rapport fra SektorCert den danske forsyningssektor ved at afsløre et omfattende angreb, hvor angriberne udnyttede forældede firewalls. En ny analyse viser, at 100 vandværker stadig har kritiske sikkerhedsmangler i deres IT-systemer.",
+    "attack_type": "exploit",
+    "sector": "offentlig",
+    "source": "Version2",
+    "link": "https://www.version2.dk/artikel/aabne-porte-og-manglende-opdateringer-danske-vandvaerker-mangler-basal-it-sikkerhed",
+    "additional_sources": [],
+    "timestamp": "2026-03-11",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-12T07:09:03.669266+00:00"
+  },
+  {
+    "id": "a81e4929c5a9",
+    "name": "Falsk videomøde: Grønlands udenrigsminister narret af russisk komikerduo",
+    "description": "Grønlands udenrigsminister Vivian Motzfeldt blev narret i et falsk videomøde med en russisk komikerduo, der udgav sig for at være en europæisk embedsmand. Duoen har tidligere brugt denne teknik til at snede politikere, herunder Lars Løkke Rasmussen.",
+    "attack_type": "phishing",
+    "sector": "offentlig",
+    "source": "Tjekdet Feed",
+    "link": "https://www.tjekdet.dk/faktatjek/groenlands-udenrigsminister-narret-i-falsk-videomoede-med-russisk-komikerduo",
+    "additional_sources": [],
+    "timestamp": "2026-03-12",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-12T07:09:03.669266+00:00"
   }
 ]
