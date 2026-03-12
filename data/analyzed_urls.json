@@ -2942,5 +2942,57 @@
   {
     "url": "https://ing.dk/artikel/topsoes-ptx-satsning-skuffer-kunderne-toer-ikke-investere-i-brint",
     "analyzed_at": "2026-03-12T16:03:45.506726+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/veeam-warns-of-critical-flaws-exposing-backup-servers-to-rce-attacks/",
+    "analyzed_at": "2026-03-12T18:59:17.075508+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/us-disrupts-socksescort-proxy-network-powered-by-linux-malware/",
+    "analyzed_at": "2026-03-12T18:59:17.075749+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/rust-based-venon-malware-targets-33.html",
+    "analyzed_at": "2026-03-12T18:59:17.501866+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html",
+    "analyzed_at": "2026-03-12T18:59:22.563776+00:00"
+  },
+  {
+    "url": "https://parametricavocado.itch.io/amen-sorting",
+    "analyzed_at": "2026-03-12T18:59:24.793270+00:00"
+  },
+  {
+    "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
+    "analyzed_at": "2026-03-12T18:59:24.793379+00:00"
+  },
+  {
+    "url": "https://github.com/onecli/onecli",
+    "analyzed_at": "2026-03-12T18:59:24.793503+00:00"
+  },
+  {
+    "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
+    "analyzed_at": "2026-03-12T18:59:24.793625+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/syv-grafer-viser-hvorfor-lukningen-af-hormuzstraedet-er-sa-alvorlig",
+    "analyzed_at": "2026-03-12T18:59:26.139635+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/okonomi/markedet-spar-rentestigning-fra-ecb-efter-oliechok",
+    "analyzed_at": "2026-03-12T18:59:32.089099+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/opinion/jorgen-mads-clausen-vi-gar-ikke-i-vrede-men-vi-er-ogsa-snusfornuftige",
+    "analyzed_at": "2026-03-12T18:59:41.357192+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/heunicke-sender-markant-beskyldning-mod-venstre-folg-med-her",
+    "analyzed_at": "2026-03-12T18:59:41.357562+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/nye-israelske-angreb-mod-beirut-folg-med-live-her",
+    "analyzed_at": "2026-03-12T18:59:41.357741+00:00"
   }
 ]
