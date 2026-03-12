@@ -75,5 +75,12 @@
     "language": "da",
     "added": "2026-03-09",
     "added_by": "discovery"
+  },
+  {
+    "url": "https://ing.dk/rss",
+    "name": "Ingeniøren articles",
+    "language": "da",
+    "added": "2026-03-12",
+    "added_by": "discovery"
   }
 ]
