@@ -2394,5 +2394,605 @@
     "url": "https://dk.headtopics.com/news/usa-og-israel-brugte-cyberangreb-i-angreb-p-iran-80585014",
     "analyzed_at": "2026-03-09T11:10:10.306893+00:00",
     "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.cert.se/2026/03/sakerhet-i-kommunikationsappar.html",
+    "analyzed_at": "2026-03-09T13:12:08.175863+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/eliteforskere-fanget-i-sort-hul-millioner-strander-i-dansk-bureaukrati",
+    "analyzed_at": "2026-03-09T13:12:08.462662+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294819/danske-asetek-forsoemte-at-informere-markedet-som-loven-kraever-dagen-efter-faldt-aktien-med-mere-end-18-procent",
+    "analyzed_at": "2026-03-09T13:12:19.831180+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294813/denne-virksomhedschef-har-forstaaet-noget-om-ai-som-mange-direktioner-stadig-overser",
+    "analyzed_at": "2026-03-09T13:12:26.417579+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294816/dansk-it-firma-pumper-760-millioner-kroner-ind-i-et-af-verdens-bedste-cykel-hold-i-stor-sponsorat-faar-fremtraedende-rolle-i-tour-de-france",
+    "analyzed_at": "2026-03-09T13:12:31.958401+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294814/microsoft-udskyder-vigtig-tvangs-aendring-i-outlook-med-et-helt-aar-admins-faar-mere-tid-til-at-forberede-sig",
+    "analyzed_at": "2026-03-09T13:12:37.199629+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294720/vejle-kommune-har-flyttet-ai-fra-microsofts-sky-til-dansk-supercomputer-kvaliteten-er-paa-niveau",
+    "analyzed_at": "2026-03-09T13:12:37.200027+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/can-security-platform-finally-deliver.html",
+    "analyzed_at": "2026-03-09T13:12:50.427367+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/chrome-extension-turns-malicious-after.html",
+    "analyzed_at": "2026-03-09T13:12:55.221489+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/clickfix-attack-uses-windows-terminal-to-evade-detection/",
+    "analyzed_at": "2026-03-09T13:13:01.561431+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/internet-infrastructure-tld-arpa-abused-in-phishing-attacks/",
+    "analyzed_at": "2026-03-09T13:13:01.561804+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/cloned-ai-tool-sites-distribute-malware-in-installfix-campaign/",
+    "analyzed_at": "2026-03-09T13:13:01.562187+00:00"
+  },
+  {
+    "url": "https://arcade.pirillo.com/fontcrafter.html",
+    "analyzed_at": "2026-03-09T13:13:03.289460+00:00"
+  },
+  {
+    "url": "https://www.pv-magazine.com/2025/06/20/ireland-coal-free-ends-coal-power-generation-moneypoint/",
+    "analyzed_at": "2026-03-09T13:13:03.289594+00:00"
+  },
+  {
+    "url": "https://arxiv.org/abs/2603.04782",
+    "analyzed_at": "2026-03-09T13:13:03.289742+00:00"
+  },
+  {
+    "url": "https://techcrunch.com/2026/03/08/owner-of-ice-detention-facility-sees-big-opportunity-in-ai-man-camps/",
+    "analyzed_at": "2026-03-09T13:13:03.289875+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/olieprisen-krydser-100-dollar-mens-naturgas-tager-nyt-hop-folg-med-live",
+    "analyzed_at": "2026-03-09T13:13:04.594723+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/perspektiv/det-har-kastet-dsvs-aktie-ud-i-vilde-udsving-nu-bryder-direktor-tavsheden-om-ai-planer",
+    "analyzed_at": "2026-03-09T13:13:04.594917+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/aarhusiansk-rolex-forhandler-idomt-faengselsstraf-i-svindelsag",
+    "analyzed_at": "2026-03-09T13:13:13.997795+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/analyse-frygt-for-langvarig-krig-i-mellemosten-irans-ayatollah-er-uforsonlig",
+    "analyzed_at": "2026-03-09T13:13:20.198180+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/pleasure/kendt-luksus-onlinebutik-giver-de-bedste-kunder-saerbehandling-og-det-betaler-sig",
+    "analyzed_at": "2026-03-09T13:13:20.198387+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-10/Kreml-stoettede-aktoerer-forsoeger-at-kapre-Signal-og-WhatsApp-konti-over-hele-verden",
+    "analyzed_at": "2026-03-10T16:03:34.025184+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/holdning/hvem-bestemmer-hvad-der-er-ulovligt",
+    "analyzed_at": "2026-03-10T16:03:35.272153+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/rigspolitiet-traekker-i-haandbremsen-udrulning-af-nyt-it-system-udskydes-efter-ustabilitet",
+    "analyzed_at": "2026-03-10T16:03:35.272731+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/paa-tre-timer-blev-danske-skolelaerere-overbevist-om-skifte-til-open-source-her-er-loesningerne-de",
+    "analyzed_at": "2026-03-10T16:03:48.896828+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294841/aarets-eneste-nye-nvidia-grafikkort-ser-ud-til-at-blive-et-budget-kort",
+    "analyzed_at": "2026-03-10T16:03:58.800348+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294843/kan-man-faa-det-hele-for-det-halve-prisvenlig-robotstoevsuger-giver-sidste-aars-topmodel-kamp-til-stregen",
+    "analyzed_at": "2026-03-10T16:03:58.800522+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294839/her-er-10-ledige-it-job-som-du-kan-soege-lige-nu",
+    "analyzed_at": "2026-03-10T16:03:58.800807+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294840/oracle-klapper-helt-i-om-massefyringer-danske-ansattes-fremtid-svaever-i-det-uvisse",
+    "analyzed_at": "2026-03-10T16:04:03.652143+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294833/i-valgkampens-skygge-presser-de-digitale-spoergsmaal-sig-paa",
+    "analyzed_at": "2026-03-10T16:04:08.964743+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-entra-brings-phishing-resistant-sign-in-to-windows/",
+    "analyzed_at": "2026-03-10T16:04:42.229334+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/new-kadnap-botnet-hijacks-asus-routers-to-fuel-cybercrime-proxy-network/",
+    "analyzed_at": "2026-03-10T16:04:42.229572+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/the-new-turing-test-how-threats-use-geometry-to-prove-humanness/",
+    "analyzed_at": "2026-03-10T16:04:42.229779+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-recently-patched-ivanti-epm-flaw-now-actively-exploited/",
+    "analyzed_at": "2026-03-10T16:04:42.230055+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-to-enable-hotpatch-security-updates-by-default-in-may/",
+    "analyzed_at": "2026-03-10T16:04:55.386446+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/new-leakylooker-flaws-in-google-looker.html",
+    "analyzed_at": "2026-03-10T16:04:55.753592+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/how-to-stop-ai-data-leaks-webinar-guide.html",
+    "analyzed_at": "2026-03-10T16:04:55.754018+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/the-zero-day-scramble-is-avoidable.html",
+    "analyzed_at": "2026-03-10T16:04:55.754456+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apt28-uses-beardshell-and-covenant.html",
+    "analyzed_at": "2026-03-10T16:04:55.754864+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/threat-actors-mass-scan-salesforce.html",
+    "analyzed_at": "2026-03-10T16:04:55.755309+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/kai-emerges-from-stealth-with-125m-in-funding-for-ai-platform-bridging-it-and-ot-security/",
+    "analyzed_at": "2026-03-10T16:04:56.042630+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/webinar-today-securing-fragile-ot-in-an-exposed-world/",
+    "analyzed_at": "2026-03-10T16:04:56.043087+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/sap-patches-critical-fs-quo-netweaver-vulnerabilities/",
+    "analyzed_at": "2026-03-10T16:04:56.043472+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/thousands-affected-by-ericsson-data-breach/",
+    "analyzed_at": "2026-03-10T16:04:56.043820+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/openai-rolls-out-codex-security-vulnerability-scanner/",
+    "analyzed_at": "2026-03-10T16:05:02.603817+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/nyt-undervisningsmateriale-ruster-chatbot-brugere-til-valget",
+    "analyzed_at": "2026-03-10T16:05:03.799852+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/aegte-krigsbilleder-bliver-gjort-tydeligere-med-kunstig-intelligens-men-fordrejer",
+    "analyzed_at": "2026-03-10T16:05:03.799940+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/undervisning/webinar-hvad-sker-der-hvis-du-spoerger-en-chatbot-hvad-du-skal-stemme-til",
+    "analyzed_at": "2026-03-10T16:05:03.800183+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/muslimer-boer-ikke-stemme-lyder-det-fra-hizb-ut-tahrir-men-hvad-siger-koranen",
+    "analyzed_at": "2026-03-10T16:05:14.863199+00:00"
+  },
+  {
+    "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
+    "analyzed_at": "2026-03-10T16:05:25.669716+00:00"
+  },
+  {
+    "url": "https://entropicthoughts.com/rebasing-in-magit",
+    "analyzed_at": "2026-03-10T16:05:25.669833+00:00"
+  },
+  {
+    "url": "https://spectrum.ieee.org/fhe-intel",
+    "analyzed_at": "2026-03-10T16:05:25.669939+00:00"
+  },
+  {
+    "url": "https://howisfelix.today/",
+    "analyzed_at": "2026-03-10T16:05:25.670071+00:00"
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=47324296",
+    "analyzed_at": "2026-03-10T16:05:30.961058+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/topchefer-ville-have-en-bred-regering-nu-deler-de-deres-dom-over-svm",
+    "analyzed_at": "2026-03-10T16:05:31.987071+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/lokke-ambassaden-i-iran-lukker-midlertidigt-folg-med-her",
+    "analyzed_at": "2026-03-10T16:05:41.993382+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/investor/novo-skraber-bunden-disse-c25-aktier-far-storste-opjusteringer",
+    "analyzed_at": "2026-03-10T16:05:41.993602+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/vi-gar-og-holder-vejret-lidt-virksomheder-knokler-for-at-afbode-iran-oretaever",
+    "analyzed_at": "2026-03-10T16:05:53.098674+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/pleasure/italiensk-gastronomis-godfather-har-70000-flasker-vin-pa-lager-og-nu-kan-du-smage",
+    "analyzed_at": "2026-03-10T16:06:06.138340+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-11/Google-Cloudangreb-udnytter-saarbarheder-ikke-svage-passwords",
+    "analyzed_at": "2026-03-12T07:01:02.698000+00:00"
+  },
+  {
+    "url": "https://www.cert.dk/news/2026-03-11/Globale-iPhone-angreb-sporet-tilbage-til-laekkede-vaerktoejer-fra-amerikansk-militaerleverandoer",
+    "analyzed_at": "2026-03-12T07:01:02.698319+00:00"
+  },
+  {
+    "url": "https://www.cert.se/2026/03/patchtisdag-mars-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+    "analyzed_at": "2026-03-12T07:01:03.654862+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/fagfolk-kritiserer-stoejbergs-forslag-om-ansigtsgenkendelse-det-er-et-alvorligt-indgreb-i-folks",
+    "analyzed_at": "2026-03-12T07:01:03.951753+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/storleverandoer-til-danske-vandvaerker-har-hundredvis-af-it-saarbarheder-nu-erkender-de-svigt",
+    "analyzed_at": "2026-03-12T07:01:20.397859+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/ai-agenter-bugner-af-hackerfaelder-stjaeler-dine-koder-og-toemmer-dit-dankort",
+    "analyzed_at": "2026-03-12T07:01:39.665247+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/aabne-porte-og-manglende-opdateringer-danske-vandvaerker-mangler-basal-it-sikkerhed",
+    "analyzed_at": "2026-03-12T07:01:39.665765+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294873/absurd-fbi-broeler-hacker-fandt-epstein-overgrebsmateriale-og-truede-med-at-kontakte-fbi",
+    "analyzed_at": "2026-03-12T07:04:55.970905+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294872/morgen-briefing-danica-saetter-turbo-paa-ai-agenterne-pentagon-aabner-bagdoeren-for-anthropic-angreb-mod-iransk-bank-datacenter-kan-ramme-militaerets-loen-whatsapp-lancerer-foraeldrestyrede-konti",
+    "analyzed_at": "2026-03-12T07:04:55.971175+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294870/asus-topchef-erkender-apples-budget-macbook-kommer-som-et-chok-for-hele-pc-industrien",
+    "analyzed_at": "2026-03-12T07:04:55.971553+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294868/anmelderne-er-vilde-med-apples-nye-macbook-neo-forstaa-hvorfor-her",
+    "analyzed_at": "2026-03-12T07:04:55.971822+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294837/fusion-her-er-softwareone-og-crayons-nye-danske-topchef-han-skal-faa-en-plus-en-til-at-give-tre-siger-han",
+    "analyzed_at": "2026-03-12T07:04:55.972004+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/whatsapp-introduces-parent-managed-accounts-for-pre-teens/",
+    "analyzed_at": "2026-03-12T07:05:30.488072+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/sqli-flaw-in-elementor-ally-plugin-impacts-250k-plus-wordpress-sites/",
+    "analyzed_at": "2026-03-12T07:05:30.488296+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-n8n-rce-flaw-exploited-in-attacks/",
+    "analyzed_at": "2026-03-12T07:05:30.488548+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/medtech-giant-stryker-offline-after-iran-linked-wiper-malware-attack/",
+    "analyzed_at": "2026-03-12T07:05:46.340689+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/new-phantomraven-npm-attack-wave-steals-dev-data-via-88-packages/",
+    "analyzed_at": "2026-03-12T07:05:46.341346+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html",
+    "analyzed_at": "2026-03-12T07:05:46.681106+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/researchers-trick-perplexitys-comet-ai.html",
+    "analyzed_at": "2026-03-12T07:05:46.681521+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/critical-n8n-flaws-allow-remote-code.html",
+    "analyzed_at": "2026-03-12T07:05:46.681955+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/meta-disables-150k-accounts-linked-to.html",
+    "analyzed_at": "2026-03-12T07:05:46.682385+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/dozens-of-vendors-patch-security-flaws.html",
+    "analyzed_at": "2026-03-12T07:05:46.682828+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/senate-confirms-joshua-rudd-to-lead-nsa-and-us-cyber-command/",
+    "analyzed_at": "2026-03-12T07:06:22.633653+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/medtech-giant-stryker-crippled-by-iran-linked-hacker-attack/",
+    "analyzed_at": "2026-03-12T07:06:28.999949+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/wiz-joins-google-cloud-as-landmark-acquisition-closes/",
+    "analyzed_at": "2026-03-12T07:06:29.000642+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/ciso-conversations-aimee-cardwell/",
+    "analyzed_at": "2026-03-12T07:06:29.001087+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/238000-impacted-by-bell-ambulance-data-breach/",
+    "analyzed_at": "2026-03-12T07:06:29.001450+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/faktatjek/groenlands-udenrigsminister-narret-i-falsk-videomoede-med-russisk-komikerduo",
+    "analyzed_at": "2026-03-12T07:06:30.266525+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/video/hvor-mange-boern-lever-i-relativ-fattigdom-i-danmark",
+    "analyzed_at": "2026-03-12T07:06:47.860667+00:00"
+  },
+  {
+    "url": "http://satproto.org/",
+    "analyzed_at": "2026-03-12T07:06:51.592601+00:00"
+  },
+  {
+    "url": "https://bloomberg.github.io/js-blog/post/temporal/",
+    "analyzed_at": "2026-03-12T07:06:51.592765+00:00"
+  },
+  {
+    "url": "https://www.markround.com/blog/2026/03/05/returning-to-rails-in-2026/",
+    "analyzed_at": "2026-03-12T07:06:51.592888+00:00"
+  },
+  {
+    "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
+    "analyzed_at": "2026-03-12T07:06:51.592986+00:00"
+  },
+  {
+    "url": "https://blog.brycekerley.net/2026/03/08/webpki-and-you.html",
+    "analyzed_at": "2026-03-12T07:06:51.593103+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/perspektiv/orsteds-topchef-sa-tv-med-sin-familie-pludselig-stod-han-midt-i-historisk-krise",
+    "analyzed_at": "2026-03-12T07:06:52.735090+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/finans/overblik-kun-to-banker-loftede-indtjeningen-sidste-ar",
+    "analyzed_at": "2026-03-12T07:07:11.112000+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/rene-redzepi-traekker-sig-fra-noma",
+    "analyzed_at": "2026-03-12T07:07:11.112261+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/oliepris-rykker-over-100-dollar-igen-folg-med-live-her",
+    "analyzed_at": "2026-03-12T07:07:11.112469+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/okonomi/boligpriser-stiger-fortsat-men-en-del-af-markedet-star-naesten-stille",
+    "analyzed_at": "2026-03-12T07:07:11.112754+00:00"
+  },
+  {
+    "url": "https://www.version2.dk/artikel/har-regeringen-koebt-nyt-palantir-system-midt-i-dansk-amerikansk-krise-smser-loefter-sloeret-mystisk",
+    "analyzed_at": "2026-03-12T16:01:56.077794+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294888/denne-20-kroners-usb-stik-fra-google-puster-nyt-liv-i-gamle-pcer",
+    "analyzed_at": "2026-03-12T16:02:16.554820+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294884/test-her-er-nok-verdens-bedste-hovedtelefon-naar-der-skal-lappes-tv",
+    "analyzed_at": "2026-03-12T16:02:16.555022+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294886/iran-udpeger-google-ibm-oracle-microsoft-og-flere-andre-it-firmaer-som-legitime-angrebsmaal",
+    "analyzed_at": "2026-03-12T16:02:16.555268+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294881/kina-slaar-alarm-over-populaer-ai-agent-nu-betaler-brugere-for-at-faa-openclaw-fjernet-igen",
+    "analyzed_at": "2026-03-12T16:02:16.555488+00:00"
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294882/fuld-opbremsning-columbus-omsaetning-og-indtjening-dykker-brat-indtjening-falder-med-72-procent",
+    "analyzed_at": "2026-03-12T16:02:16.555746+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/google/google-paid-171-million-for-vulnerability-reports-in-2025/",
+    "analyzed_at": "2026-03-12T16:02:17.845284+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/telus-digital-confirms-breach-after-hacker-claims-1-petabyte-data-theft/",
+    "analyzed_at": "2026-03-12T16:02:17.845486+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/going-the-extra-mile-travel-rewards-turn-into-underground-currency/",
+    "analyzed_at": "2026-03-12T16:02:24.837476+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/apple/apple-patches-older-iphones-and-ipads-against-coruna-exploits/",
+    "analyzed_at": "2026-03-12T16:02:24.837778+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/us-charges-another-ransomware-negotiator-linked-to-blackcat-attacks/",
+    "analyzed_at": "2026-03-12T16:02:24.838020+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/how-to-scale-phishing-detection-in-your.html",
+    "analyzed_at": "2026-03-12T16:02:24.992440+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/threatsday-bulletin-oauth-trap-edr.html",
+    "analyzed_at": "2026-03-12T16:02:24.992839+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/attackers-dont-just-send-phishing.html",
+    "analyzed_at": "2026-03-12T16:02:29.179047+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/apple-issues-security-updates-for-older.html",
+    "analyzed_at": "2026-03-12T16:02:36.805599+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/six-android-malware-families-target-pix.html",
+    "analyzed_at": "2026-03-12T16:02:36.806054+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/apple-updates-older-ios-versions-to-patch-coruna-exploits/",
+    "analyzed_at": "2026-03-12T16:02:37.140894+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/meta-launches-new-protection-tools-as-it-helps-disrupt-scam-centers/",
+    "analyzed_at": "2026-03-12T16:02:37.141275+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/ally-wordpress-plugin-flaw-exposes-over-200000-websites-to-attacks/",
+    "analyzed_at": "2026-03-12T16:02:37.141643+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/the-human-ioc-why-security-professionals-struggle-with-social-vetting/",
+    "analyzed_at": "2026-03-12T16:02:37.142012+00:00"
+  },
+  {
+    "url": "https://www.securityweek.com/splunk-zoom-patch-severe-vulnerabilities/",
+    "analyzed_at": "2026-03-12T16:02:43.191709+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/tjekdet-nomineret-til-international-journalistpris",
+    "analyzed_at": "2026-03-12T16:02:44.494348+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/indsigt/netvaerk-af-russiske-propagandister-forsoeger-tilsvaerte-danske-politikere-op-til",
+    "analyzed_at": "2026-03-12T16:02:50.487643+00:00"
+  },
+  {
+    "url": "https://www.tjekdet.dk/forskning/fremmede-magter-forsoeger-splitte-rigsfaellesskabet-med-historisk-massiv-desinformation",
+    "analyzed_at": "2026-03-12T16:03:01.035797+00:00"
+  },
+  {
+    "url": "https://www.lloydslist.com/LL1156592/US--and-Greek-owned-tankers-ablaze-after-Iran-claims-underwater-drone-strike-in-Iraqi-waters",
+    "analyzed_at": "2026-03-12T16:03:01.491464+00:00"
+  },
+  {
+    "url": "https://malus.sh",
+    "analyzed_at": "2026-03-12T16:03:01.491623+00:00"
+  },
+  {
+    "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
+    "analyzed_at": "2026-03-12T16:03:01.491736+00:00"
+  },
+  {
+    "url": "https://codespeak.dev/",
+    "analyzed_at": "2026-03-12T16:03:01.491860+00:00"
+  },
+  {
+    "url": "https://dolphin-emu.org/blog/2026/03/12/dolphin-progress-report-release-2603/",
+    "analyzed_at": "2026-03-12T16:03:01.491999+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/analyse-darlig-nyhed-til-trump-fra-hans-egne-spioner-iran-overgiver-sig-aldrig",
+    "analyzed_at": "2026-03-12T16:03:02.573033+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/eksperter-trump-vil-snart-erklaere-sejr-i-iran",
+    "analyzed_at": "2026-03-12T16:03:02.573265+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/bavarian-topchef-vi-kan-ikke-investere-tilstraekkeligt",
+    "analyzed_at": "2026-03-12T16:03:08.411252+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/baeredygtig/iran-krise-bringer-raffinaderier-tilbage-pa-politisk-dagsorden",
+    "analyzed_at": "2026-03-12T16:03:28.364157+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/s-under-pres-for-at-beholde-chokoladeafgift-folg-med-her",
+    "analyzed_at": "2026-03-12T16:03:28.364358+00:00"
+  },
+  {
+    "url": "https://ing.dk/artikel/donut-lab-vores-batteri-er-ikke-en-superkondensator",
+    "analyzed_at": "2026-03-12T16:03:28.632579+00:00"
+  },
+  {
+    "url": "https://ing.dk/artikel/kommer-med-noedraab-om-kollektiv-trafik-bliver-endnu-vaerre-hvis-der-ikke-sker-noget",
+    "analyzed_at": "2026-03-12T16:03:28.632701+00:00"
+  },
+  {
+    "url": "https://ing.dk/artikel/har-regeringen-koebt-nyt-palantir-system-midt-i-dansk-amerikansk-krise-smser-loefter-sloeret-mystisk",
+    "analyzed_at": "2026-03-12T16:03:35.683984+00:00"
+  },
+  {
+    "url": "https://ing.dk/artikel/baade-roede-og-blaa-ingenioeren-laesere-siger-ja-tak-til-en-slags-atomkraft",
+    "analyzed_at": "2026-03-12T16:03:45.506450+00:00"
+  },
+  {
+    "url": "https://ing.dk/artikel/topsoes-ptx-satsning-skuffer-kunderne-toer-ikke-investere-i-brint",
+    "analyzed_at": "2026-03-12T16:03:45.506726+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/veeam-warns-of-critical-flaws-exposing-backup-servers-to-rce-attacks/",
+    "analyzed_at": "2026-03-12T18:59:17.075508+00:00"
+  },
+  {
+    "url": "https://www.bleepingcomputer.com/news/security/us-disrupts-socksescort-proxy-network-powered-by-linux-malware/",
+    "analyzed_at": "2026-03-12T18:59:17.075749+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/rust-based-venon-malware-targets-33.html",
+    "analyzed_at": "2026-03-12T18:59:17.501866+00:00"
+  },
+  {
+    "url": "https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html",
+    "analyzed_at": "2026-03-12T18:59:22.563776+00:00"
+  },
+  {
+    "url": "https://parametricavocado.itch.io/amen-sorting",
+    "analyzed_at": "2026-03-12T18:59:24.793270+00:00"
+  },
+  {
+    "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
+    "analyzed_at": "2026-03-12T18:59:24.793379+00:00"
+  },
+  {
+    "url": "https://github.com/onecli/onecli",
+    "analyzed_at": "2026-03-12T18:59:24.793503+00:00"
+  },
+  {
+    "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
+    "analyzed_at": "2026-03-12T18:59:24.793625+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/virksomheder/syv-grafer-viser-hvorfor-lukningen-af-hormuzstraedet-er-sa-alvorlig",
+    "analyzed_at": "2026-03-12T18:59:26.139635+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/okonomi/markedet-spar-rentestigning-fra-ecb-efter-oliechok",
+    "analyzed_at": "2026-03-12T18:59:32.089099+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/opinion/jorgen-mads-clausen-vi-gar-ikke-i-vrede-men-vi-er-ogsa-snusfornuftige",
+    "analyzed_at": "2026-03-12T18:59:41.357192+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/politik/heunicke-sender-markant-beskyldning-mod-venstre-folg-med-her",
+    "analyzed_at": "2026-03-12T18:59:41.357562+00:00"
+  },
+  {
+    "url": "https://borsen.dk/nyheder/udland/nye-israelske-angreb-mod-beirut-folg-med-live-her",
+    "analyzed_at": "2026-03-12T18:59:41.357741+00:00"
   }
 ]
