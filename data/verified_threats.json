@@ -234,7 +234,12 @@
     "sector": "offentlig",
     "source": "Version2",
     "link": "https://www.version2.dk/artikel/aabne-porte-og-manglende-opdateringer-danske-vandvaerker-mangler-basal-it-sikkerhed",
-    "additional_sources": [],
+    "additional_sources": [
+      {
+        "url": "https://ing.dk/artikel/aabne-porte-og-manglende-opdateringer-danske-vandvaerker-mangler-basal-it-sikkerhed",
+        "name": "ing.dk"
+      }
+    ],
     "timestamp": "2026-03-11",
     "verified_by": "human-review",
     "verified_at": "2026-03-12T07:09:03.669266+00:00"
