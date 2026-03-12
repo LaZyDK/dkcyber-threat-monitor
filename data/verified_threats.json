@@ -269,5 +269,27 @@
     "timestamp": "2026-03-12",
     "verified_by": "human-review",
     "verified_at": "2026-03-12T16:47:10.872528+00:00"
+  },
+  {
+    "id": "237ec7068993",
+    "name": "Fisketorvet ramt af dataangreb i København",
+    "description": "Et cyberangreb ramte Fisketorvet, et københavnsk shoppingcenter, hvor personlige kundens oplysninger blev lækket. Selvom finansielle data ikke var kompromitteret, advarer selskabet kunderne om risiko for snyd og identitetstvist.",
+    "attack_type": "databrud",
+    "sector": "detailhandel",
+    "source": "ekstrabladet.dk",
+    "link": "https://ekstrabladet.dk/forbrug/Teknologi/fisketorvet-ramt-af-hackerangreb-ret-alvorligt/11118268",
+    "additional_sources": [
+      {
+        "url": "https://ekstrabladet.dk/forbrug/Teknologi/fisketorvet-ramt-af-databrud-advarer-kunder/11117355",
+        "name": "ekstrabladet.dk"
+      },
+      {
+        "url": "https://www.bt.dk/danske-kendte/personlige-oplysninger-laekket-hos-dansk-shoppingcenter",
+        "name": "bt.dk"
+      }
+    ],
+    "timestamp": "2026-03-12",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-12T19:01:42.324449+00:00"
   }
 ]
