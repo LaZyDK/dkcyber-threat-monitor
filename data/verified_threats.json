@@ -256,5 +256,18 @@
     "timestamp": "2026-03-12",
     "verified_by": "human-review",
     "verified_at": "2026-03-12T07:09:03.669266+00:00"
+  },
+  {
+    "id": "a357c7d59738",
+    "name": "Netværk af russiske propagandister forsøger at tilsværte danske politikere op ti",
+    "description": "En anonym Telegram-kanal ved navn “Den danske kvinde om hjørnet” er begyndt at sprede misinformation om danske politikere og den danske valgkamp på russiske kanaler.; Kontoen deler historier fra valgkampen, som så igen deles af andre russiske kanaler i det, der ligner et netværk.; Opslagene fra profilen er set over 500.000 gange, fordi den får hjælp af russiske top-propagandister.; En ekspert fra Forsvarsakademiet ser kanalen som led i en større russisk strategi.",
+    "attack_type": "digital_svindel",
+    "sector": "offentlig",
+    "source": "Tjekdet Feed",
+    "link": "https://www.tjekdet.dk/indsigt/netvaerk-af-russiske-propagandister-forsoeger-tilsvaerte-danske-politikere-op-til",
+    "additional_sources": [],
+    "timestamp": "2026-03-12",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-12T16:47:10.872528+00:00"
   }
 ]
