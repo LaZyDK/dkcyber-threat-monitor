@@ -2994,5 +2994,135 @@
   {
     "url": "https://borsen.dk/nyheder/udland/nye-israelske-angreb-mod-beirut-folg-med-live-her",
     "analyzed_at": "2026-03-12T18:59:41.357741+00:00"
+  },
+  {
+    "url": "https://samsik.dk/artikler/2026/03/ddos-angreb-hvad-er-det-og-hvordan-beskytter-man-sig-mod-dem/",
+    "analyzed_at": "2026-03-13T10:29:28.497197+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.computerworld.dk/art/294874/destruktivt-cyberangreb-rammer-global-koncern-ansattes-enheder-er-slettet",
+    "analyzed_at": "2026-03-13T10:31:50.003727+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.darkreading.com/threat-intelligence/inc-ransomware-healthcare-oceania",
+    "analyzed_at": "2026-03-13T10:32:07.133917+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.msspalert.com/news/ransom-demands-are-up-but-payments-are-down-coalition-finds",
+    "analyzed_at": "2026-03-13T10:33:22.647076+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.janamana.in/2026/03/cyber-security-complete-guide-to.html",
+    "analyzed_at": "2026-03-13T10:33:50.858629+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://insurance-edge.net/2026/03/09/new-report-offers-insights-into-ransomware-risks/",
+    "analyzed_at": "2026-03-13T10:34:23.115945+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://itbrief.co.uk/story/infosecurity-europe-2026-unveils-first-keynote-lineup",
+    "analyzed_at": "2026-03-13T10:34:46.942173+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.insurancebusinessmag.com/us/news/cyber/revealed--whats-changing-about-cyber-claims-567598.aspx",
+    "analyzed_at": "2026-03-13T10:35:09.958282+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.hackmageddon.com/2026/03/12/february-2026-cyber-attacks-statistics/",
+    "analyzed_at": "2026-03-13T10:35:30.547649+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.techzine.eu/news/security/139330/2025-was-a-new-record-year-for-ransomware/",
+    "analyzed_at": "2026-03-13T10:36:07.038399+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://dira.dk/kalender/dira-business-2026/",
+    "analyzed_at": "2026-03-13T10:37:52.043029+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.gdpr-hotline.dk/det-er-lettere-at-lade-vaere/",
+    "analyzed_at": "2026-03-13T10:38:21.733169+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://dagensbyggeri.dk/debat/danmark-kan-vinde-stort-paa-datacenterboomet/",
+    "analyzed_at": "2026-03-13T10:38:44.042298+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://vafo.dk/alarm112/flere-kunder-i-foetex-udsat-for-svindel-saadan-skete-det",
+    "analyzed_at": "2026-03-13T10:38:49.107254+00:00",
+    "is_dk_relevant": true
+  },
+  {
+    "url": "https://ing.dk/artikel/storleverandoer-til-danske-vandvaerker-har-hundredvis-af-it-saarbarheder-nu-erkender-de-svigt",
+    "analyzed_at": "2026-03-13T10:39:16.872392+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://ugebrev.dk/ledelse/gn-i-fortsat-modvind-tvivl-om-2028-maalsaetning/",
+    "analyzed_at": "2026-03-13T10:39:53.150189+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://ing.dk/artikel/eliteforskere-fanget-i-sort-hul-millioner-strander-i-dansk-bureaukrati",
+    "analyzed_at": "2026-03-13T10:40:12.551904+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://wwmt.com/news/local/expert-warns-iranian-linked-cyberattacks-stryker-hack-microsoft-economy-hacking-iran-united-states-wwmt-michigan",
+    "analyzed_at": "2026-03-13T10:40:52.533889+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.hackmageddon.com/2026/03/06/16-28-february-2026-cyber-attacks-timeline/",
+    "analyzed_at": "2026-03-13T10:41:21.435891+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://trustedcomputinggroup.org/three-major-cyber-attacks-of-2025/",
+    "analyzed_at": "2026-03-13T10:42:46.181758+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.techradar.com/pro/security/in-2026-cybercrime-has-reached-a-point-of-total-convergence-new-research-claims-ai-attacks-are-taking-over-so-how-can-your-business-stay-safe",
+    "analyzed_at": "2026-03-13T10:43:00.351697+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.cybersecuritydive.com/news/us-entities-cyber-risk-iran-war/814313/",
+    "analyzed_at": "2026-03-13T10:45:32.594059+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.axios.com/2026/03/11/iran-war-trump-israel-ai-cyberattack",
+    "analyzed_at": "2026-03-13T10:45:51.404250+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.nomios.com/news-blog/cybersecurity-2026/",
+    "analyzed_at": "2026-03-13T10:47:48.824998+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://www.securityjourney.com/post/the-top-cybersecurity-threats-in-2026-and-how-to-mitigate-them",
+    "analyzed_at": "2026-03-13T10:49:21.512227+00:00",
+    "is_dk_relevant": false
+  },
+  {
+    "url": "https://time.com/article/2026/03/12/iran-linked-cyberattack-us-company-stryker/",
+    "analyzed_at": "2026-03-13T10:49:52.107036+00:00",
+    "is_dk_relevant": false
   }
 ]
