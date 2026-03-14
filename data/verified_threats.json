@@ -291,5 +291,18 @@
     "timestamp": "2026-03-12",
     "verified_by": "human-review",
     "verified_at": "2026-03-12T19:01:42.324449+00:00"
+  },
+  {
+    "id": "ded66d3a55d2",
+    "name": "Hackere har lækket kildekode fra CGI - hævder at have stjålet komplet kildekode,",
+    "description": "Hackerne hævder at have lækket komplet kildekode og følsomt materiale fra den offentlige forvaltning. CGI afviser den dramatiske udlægning.",
+    "attack_type": "databrud",
+    "sector": "offentlig",
+    "source": "Computerworld DK",
+    "link": "https://www.computerworld.dk/art/294902/hackere-har-laekket-kildekode-fra-cgi-haevder-at-have-stjaalet-komplet-kildekode-adgangsoplysninger-og-meget-andet",
+    "additional_sources": [],
+    "timestamp": "2026-03-13",
+    "verified_by": "human-review",
+    "verified_at": "2026-03-14T15:19:42.528914+00:00"
   }
 ]
