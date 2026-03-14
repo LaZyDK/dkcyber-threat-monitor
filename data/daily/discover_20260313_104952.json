@@ -202,7 +202,7 @@
     "source": "discover:vafo.dk",
     "source_domain": "vafo.dk",
     "collected_at": "2026-03-13T10:38:49.107254+00:00",
-    "is_dk_relevant": true,
+    "is_dk_relevant": false,
     "confidence": "high",
     "attack_type": "digital_svindel",
     "sector": "detailhandel",
