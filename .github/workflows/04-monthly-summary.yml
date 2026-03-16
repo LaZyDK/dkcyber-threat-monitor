@@ -1,8 +1,8 @@
 name: 04 Monthly Summary + Review Issue
 
 on:
-  schedule:
-    - cron: '30 7 1 * *'     # 1. i måneden kl 08:30 dansk tid
+#  schedule:
+#    - cron: '30 7 1 * *'     # 1. i måneden kl 08:30 dansk tid
   workflow_dispatch:
 
 permissions:

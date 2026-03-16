@@ -1,8 +1,8 @@
 name: 05 Discover Threats
 
 on:
-  schedule:
-    - cron: '0 10 * * *'   # daily at 10:00 UTC (11:00 Danish time)
+#  schedule:
+#    - cron: '0 10 * * *'   # daily at 10:00 UTC (11:00 Danish time)
   workflow_dispatch:
 
 permissions:
